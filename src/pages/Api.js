@@ -11,11 +11,19 @@ const Api = () => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}&units=metric`;
 
   useEffect(() => {
+    if (!process.env.REACT_APP_OPEN_WEATHER_KEY) {
+      console.warn("OpenWeatherMap API key is missing. Weather data will not be fetched.");
+      return;
+    }
     Axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=ottawa&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}&units=metric`
-    ).then((response) => {
-      setData(response.data);
-    });
+    )
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching weather data:", error);
+      });
   }, []);
 
   const searchLocation = (e) => {

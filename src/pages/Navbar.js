@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-import '../styles/Navbar.css';
+
 import '../App.css';
+import './Navbar.css'; // Import the new CSS file
 import Logo from '../assets/logo-fkodama.svg';
 import Menu from '../assets/images/menu-hamburguer.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
@@ -30,27 +31,26 @@ const Navbar = () => {
   }, [isActive, isOpen]);
 
   return (
-    <header className='section navbar'>
-      <div className='container'>
+    <header className='navbar'>
+      <div className='navbar-container'>
         <Link to='hero' spy={true} smooth={true} offset={0} duration={500}>
-          <img className='navbar__logo' alt='logo fkodama' src={Logo} />
+          <img className='nav-logo' alt='logo fkodama' src={Logo} />
         </Link>
 
         {/* -------- NAVBAR TOGGLE -------- */}
 
-        <div className='navbar__toggle'>
+        <div className='menu-toggle'>
           <img
-            className='navbar__menu'
+            className='menu-icon'
             style={{
               display: isOpen ? 'none' : 'block',
-              backgroundColor: 'var(--dark-color)',
             }}
             onClick={hangleClickOpen}
             src={Menu}
             alt='hamburguer icon menu'
           />
           <img
-            className='navbar__close'
+            className='menu-icon'
             style={{
               display: isOpen ? 'block' : 'none',
             }}
@@ -63,11 +63,11 @@ const Navbar = () => {
         {/* -------- NAVBAR EXTENDED -------- */}
 
         <nav
-          className='navbar__extended'
+          className='nav-menu-mobile'
           style={{ display: isActive ? 'block' : 'none' }}
         >
           {/* <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='hero'
             spy={true}
             smooth={true}
@@ -79,7 +79,7 @@ const Navbar = () => {
             home{' '}
           </Link> */}
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='reason'
             spy={true}
             smooth={true}
@@ -90,7 +90,7 @@ const Navbar = () => {
             this.portfolio
           </Link>
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='about'
             spy={true}
             smooth={true}
@@ -101,7 +101,7 @@ const Navbar = () => {
             about.me
           </Link>
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='whyme'
             spy={true}
             smooth={true}
@@ -112,7 +112,7 @@ const Navbar = () => {
             why.me
           </Link>
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='ai'
             spy={true}
             smooth={true}
@@ -123,7 +123,7 @@ const Navbar = () => {
             a.i.
           </Link>
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='projects'
             spy={true}
             smooth={true}
@@ -135,7 +135,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='api'
             spy={true}
             smooth={true}
@@ -147,7 +147,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='code'
             spy={true}
             smooth={true}
@@ -158,7 +158,7 @@ const Navbar = () => {
             my.code
           </Link>
           <Link
-            className='navbar__item'
+            className='nav-link-mobile'
             to='contact'
             spy={true}
             smooth={true}
@@ -172,9 +172,9 @@ const Navbar = () => {
 
         {/* -------- NAVBAR HORIZONTAL -------- */}
 
-        <nav className='navbar__horizontal'>
+        <nav className='nav-menu-desktop'>
           {/* <Link
-            className='navbar__item'
+            className='nav-link-desktop'
             to='hero'
             spy={true}
             smooth={true}
@@ -186,7 +186,7 @@ const Navbar = () => {
             home{' '}
           </Link> */}
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='reason'
             spy={true}
             smooth={true}
@@ -197,7 +197,7 @@ const Navbar = () => {
             this.portfolio
           </Link>
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='about'
             spy={true}
             smooth={true}
@@ -208,7 +208,7 @@ const Navbar = () => {
             about.me
           </Link>
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='whyme'
             spy={true}
             smooth={true}
@@ -219,7 +219,7 @@ const Navbar = () => {
             why.me
           </Link>
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='ai'
             spy={true}
             smooth={true}
@@ -231,7 +231,7 @@ const Navbar = () => {
             a.i.{' '}
           </Link>
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='projects'
             spy={true}
             smooth={true}
@@ -244,7 +244,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='api'
             spy={true}
             smooth={true}
@@ -255,7 +255,7 @@ const Navbar = () => {
             api
           </Link>
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='code'
             spy={true}
             smooth={true}
@@ -266,7 +266,7 @@ const Navbar = () => {
             my.code
           </Link>
           <Link
-            className='navbar__item'
+             className='nav-link-desktop'
             to='contact'
             spy={true}
             smooth={true}
@@ -283,3 +283,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
