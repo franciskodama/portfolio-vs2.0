@@ -1,47 +1,51 @@
 import { NextResponse } from 'next/server';
-import mailgun from 'mailgun-js';
+import { Resend } from 'resend';
 
 export async function POST(request: Request) {
   const body = await request.json();
   const { name, email, message, location, messageDrag } = body;
 
-  const apiKey = process.env.REACT_APP_MAILGUN_API_KEY || process.env.MAILGUN_API_KEY;
-  const domain = process.env.REACT_APP_MAILGUN_DOMAIN || process.env.MAILGUN_DOMAIN;
-  const recipient = process.env.REACT_APP_EMAIL_RECIPIENT || process.env.EMAIL_RECIPIENT;
+  const apiKey = process.env.NEXT_RESEND_API_KEY;
+  const recipient = process.env.EMAIL_RECIPIENT;
 
-  if (!apiKey || !domain || !recipient) {
-    console.error('Missing Mailgun configuration');
+  if (!apiKey || !recipient) {
+    console.error('Missing Resend configuration:', { 
+      hasApiKey: !!apiKey, 
+      hasRecipient: !!recipient 
+    });
     return NextResponse.json({ message: 'Server configuration error' }, { status: 500 });
   }
 
-  const mg = mailgun({
-    apiKey,
-    domain,
-  });
+  console.log('Email request received from:', email);
 
-  const emailData = {
-    from: email,
-    to: recipient,
-    name: name,
-    subject: `[JOB] You got a job!`,
-    html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Preference to Work: ${location}</p>
-           <p>Message Drag n' Drop: ${messageDrag}</p>
-           <p>Message: ${message}</p>`,
-  };
+  const resend = new Resend(apiKey);
 
   try {
-    await new Promise((resolve, reject) => {
-      mg.messages().send(emailData, (error: any, body: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(body);
-        }
-      });
+    const { data, error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>', // You can customize this after verifying your domain
+      to: recipient,
+      replyTo: email,
+      subject: `[Portfolio Contact] Message from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Preference to Work:</strong> ${location}</p>
+        <p><strong>Drag & Drop Message:</strong> ${messageDrag}</p>
+        <p><strong>Additional Message:</strong></p>
+        <p>${message}</p>
+      `,
     });
 
+    if (error) {
+      console.error('Resend error details:', JSON.stringify(error, null, 2));
+      return NextResponse.json({ 
+        message: 'Error sending email', 
+        error: error.message || 'Unknown error' 
+      }, { status: 500 });
+    }
+
+    console.log('Email sent successfully:', data);
     return NextResponse.json({ message: 'Email sent successfully!' });
   } catch (error) {
     console.error('Error sending email:', error);

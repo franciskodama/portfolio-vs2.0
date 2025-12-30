@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useContext, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+
 
 import '../styles/Contact.css';
 import { AboutContext } from '../contexts/AboutContext';
@@ -22,7 +22,7 @@ let dropSpace = {
   },
 };
 
-const onDragEnd = (result, columns, setColumns) => {
+const onDragEnd = (result: any, columns: any, setColumns: any) => {
   if (!result.destination) return;
   const { source, destination } = result;
 
@@ -67,33 +67,54 @@ const Contact = () => {
   const [status, setStatus] = useState('SUBMIT');
   const formContact = useRef(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('SENDING...');
 
     const dragDropMessage = columns.drop.items.map(
       (element) => element.content
-    );
+    ).join(', ');
 
-    const allDataMessage = {
+    const formData = {
       name: name,
       email: email,
       message: message,
       location: location.data,
       messageDrag: dragDropMessage,
-    }
+    };
 
-    emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '', allDataMessage, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '')
-      .then((result) => {
-        console.log(result.text)
-          setStatus('SENT');
-          setTimeout(() => {
-            setStatus('SUBMIT');
-          }, 5000);
-      }, (error) => {
-          console.log(error.text);
-      }) 
-      handleClickClearMessage()
+    try {
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Email sent successfully:', data.message);
+        setStatus('SENT');
+        handleClickClearMessage();
+        setTimeout(() => {
+          setStatus('SUBMIT');
+        }, 5000);
+      } else {
+        console.error('Error sending email:', data.message);
+        setStatus('ERROR - TRY AGAIN');
+        setTimeout(() => {
+          setStatus('SUBMIT');
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setStatus('ERROR - TRY AGAIN');
+      setTimeout(() => {
+        setStatus('SUBMIT');
+      }, 5000);
+    }
   };
 
   const handleClickClearMessage = () => {
