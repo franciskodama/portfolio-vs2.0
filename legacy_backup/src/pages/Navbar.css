@@ -1,0 +1,160 @@
+/* Navbar.css */
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--dark-color); /* Assuming this var exists, otherwise #1c1c1c */
+  overflow: visible;
+}
+
+.navbar-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-logo-link {
+  display: block;
+}
+
+.nav-logo {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.menu-icon {
+  width: 40px;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.nav-menu-mobile {
+  position: absolute;
+  top: 4.2em;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 75%;
+  padding-top: 2.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+  background-color: var(--third-color);
+  
+  /* Initial state handled by React inline styles (display: block/none) */
+}
+
+.nav-link-mobile {
+  position: relative;
+  font-family: 'axiformalight', sans-serif; /* font-main-light */
+  color: var(--bright-color); /* #ffffff */
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  transform: translateZ(0); /* translate-z-0 */
+  box-shadow: none;
+  transition: all 0.3s;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  font-family: 'axiformathin', sans-serif; /* font-main-thin override per tailwind */
+  font-size: 1.3rem;
+}
+
+.nav-link-mobile:hover:first-letter {
+  color: var(--dark-color);
+}
+
+.nav-link-mobile:hover {
+  transform: translateY(-3px);
+}
+
+/* Desktop Menu */
+.nav-menu-desktop {
+  display: none; /* Hidden by default (mobile first) */
+}
+
+/* Responsive Styles */
+
+/* Medium Devices (Tablets, ~768px and up - mapped from md-custom: 48em) */
+@media (min-width: 768px) { 
+  .navbar-container {
+    width: 90%; /* Matches md-custom:w-[90%] - same as mobile but explicit */
+  }
+  
+  .nav-menu-mobile {
+    width: 50%; /* md-custom:w-[50%] */
+    padding: 5em 5em 3em 5em; /* md-custom:p-[5em_5em_3em_5em] */
+  }
+}
+
+/* Large Devices (Desktops, ~992px and up - mapped from lg-custom: 62em) */
+@media (min-width: 992px) {
+  .menu-toggle {
+    display: none; /* lg-custom:hidden */
+  }
+
+  .nav-menu-mobile {
+    display: none !important; /* lg-custom:hidden */
+  }
+
+  .nav-menu-desktop {
+    display: grid;
+    position: relative;
+    top: 0;
+    /* lg-custom:grid-cols-[8rem_6.6rem_5.5rem_3.3rem_5.8rem_3.6rem_6rem_4.3rem] */
+    grid-template-columns: 8rem 6.6rem 5.5rem 3.3rem 5.8rem 3.6rem 6rem 4.3rem; 
+    align-items: center;
+    justify-content: end;
+    width: 40em;
+    padding: 0;
+    background-color: var(--dark-color);
+  }
+
+  .nav-link-desktop {
+    position: relative;
+    font-family: 'axiformalight', sans-serif;
+    color: var(--bright-color);
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    transform: translateZ(0);
+    box-shadow: none;
+    transition: all 0.3s;
+    margin-bottom: 0; /* lg-custom:mb-0 (implied, reset mobile mb-4) */
+    margin-right: 0; /* lg-custom:mr-0 */
+    
+    font-family: 'axiformathin', sans-serif;
+    font-size: 1rem; /* lg-custom:text-[1rem] */
+  }
+
+  .nav-link-desktop:hover {
+    transform: translateY(-3px);
+  }
+
+  .nav-link-desktop:hover:first-letter {
+    color: var(--third-color);
+    font-family: 'axiformaregular', sans-serif;
+  }
+}

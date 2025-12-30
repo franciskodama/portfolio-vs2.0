@@ -1,0 +1,355 @@
+.code {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: var(--dark-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--dark-color)), to(#292929));
+  background: linear-gradient(180deg, var(--dark-color) 0%, #292929 100%);
+  /* ------- BACKGROUND ------- */
+  /* ------- SEE MY CODE ICON ------- */
+}
+
+.code .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 70em;
+  margin-top: 8em;
+  margin-bottom: 5em;
+}
+
+.code__subtitle {
+  margin-top: 0.8em;
+  text-align: center;
+}
+
+.code__background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("../assets/images/xray.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-animation: code-appearance 0.3s both;
+          animation: code-appearance 0.3s both;
+  height: 135em;
+}
+
+@-webkit-keyframes code-appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes code-appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.code__button {
+  display: none;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  font-family: var(--main-font-regular);
+  font-size: 0.7rem;
+  line-height: 1rem;
+  cursor: pointer;
+}
+
+/* ------------------------------- */
+/*             QUOTE               */
+/* ------------------------------- */
+.quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.quote__text {
+  font-family: var(--main-font-regular);
+  font-size: 1.6rem;
+  line-height: 2rem;
+  width: 20ch;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+.quote__author-name {
+  font-family: var(--main-font-light);
+  font-size: 1.3rem;
+  margin-bottom: 0.1em;
+  text-align: center;
+}
+
+.quote__author {
+  font-family: var(--main-font-thin);
+  font-size: 1rem;
+  margin-bottom: 12em;
+  text-align: center;
+}
+
+/* ------------------------------- */
+/*             WORDS               */
+/* ------------------------------- */
+.words {
+  font-family: var(--main-font-heavy);
+  text-transform: uppercase;
+  text-align: center;
+  height: 30em;
+  -webkit-animation: code-appearance 2s both;
+          animation: code-appearance 2s both;
+  margin-right: 10em;
+  /* ------- WORDS INDIVIDUALS ------- */
+}
+
+.words__bright {
+  -webkit-transform: skew(60deg, -30deg) scaleY(0.66667);
+          transform: skew(60deg, -30deg) scaleY(0.66667);
+  color: var(--bright-color);
+}
+
+.words__dark {
+  -webkit-transform: skew(0deg, -30deg) scaleY(1.33333);
+          transform: skew(0deg, -30deg) scaleY(1.33333);
+  color: var(--third-color);
+}
+
+.words--dry {
+  font-size: 3.75rem;
+  line-height: 3.5rem;
+}
+
+.words--meticulousness {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+
+.words--easy-read {
+  font-size: 2.25rem;
+  line-height: 2.62rem;
+  text-align: left;
+  padding-left: 5em;
+}
+
+.words--easy-change {
+  font-size: 1.875rem;
+  line-height: 2.1rem;
+  text-align: left;
+  padding-left: 6.1em;
+}
+
+.words--naming {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  text-align: left;
+  padding-left: 8.3em;
+}
+
+.words--conventions {
+  font-size: 0.82rem;
+  line-height: 1.3rem;
+  text-align: left;
+  padding-left: 16.5em;
+}
+
+.words--repeat {
+  font-size: 1.5em;
+  line-height: 1.87rem;
+  text-align: left;
+  padding-left: 9.3em;
+}
+
+.words--self {
+  font-size: 1.95rem;
+  line-height: 2.25rem;
+  text-align: left;
+  padding-left: 7.2em;
+}
+
+.words--keep {
+  font-size: 2.1rem;
+  line-height: 2.62rem;
+  padding-left: 0.7em;
+}
+
+.words--simple {
+  font-size: 2.1rem;
+  line-height: 2.62rem;
+  padding-left: 2.6em;
+}
+
+.words--concise {
+  font-size: 1.72rem;
+  line-height: 2.25rem;
+  padding-left: 5em;
+}
+
+.words--consistency {
+  font-size: 2.25rem;
+  line-height: 2.85rem;
+  text-align: left;
+  padding-left: 6em;
+}
+
+.words--uncomplicate {
+  font-size: 2.25rem;
+  line-height: 2.85rem;
+  text-align: right;
+  padding-left: 1em;
+}
+
+.words--bem {
+  font-size: 3.75rem;
+  line-height: 4.125rem;
+  text-align: left;
+  padding-left: 3.8em;
+}
+
+/* ====================================
+            MEDIA QUERY
+======================================= */
+@media only screen and (min-width: 48em) {
+  .code .container {
+    height: 110em;
+  }
+  .code__button {
+    display: block;
+  }
+  .quote__text {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+  .quote__author-name {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .quote__author {
+    margin-bottom: 20em;
+  }
+  .words {
+    width: 28em;
+    height: 30em;
+    font-size: 2em;
+    line-height: 2.5rem;
+    margin-right: 0;
+  }
+  .words--dry {
+    font-size: 7.5rem;
+    line-height: 7rem;
+  }
+  .words--meticulousness {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+  }
+  .words--easy-read {
+    font-size: 4.5rem;
+    line-height: 5.25rem;
+    text-align: left;
+    padding-left: 2em;
+  }
+  .words--easy-change {
+    font-size: 3.75rem;
+    line-height: 4rem;
+    text-align: left;
+    padding-left: 2.4em;
+  }
+  .words--naming {
+    font-size: 3rem;
+    line-height: 3.75rem;
+    text-align: left;
+    padding-left: 3.5em;
+  }
+  .words--conventions {
+    font-size: 1.65rem;
+    line-height: 2.25rem;
+    text-align: left;
+    padding-left: 7.9em;
+  }
+  .words--repeat {
+    font-size: 3rem;
+    line-height: 3.75rem;
+    text-align: left;
+    padding-left: 4.6em;
+  }
+  .words--self {
+    font-size: 3.9rem;
+    line-height: 4.2rem;
+    text-align: left;
+    padding-left: 3.6em;
+  }
+  .words--keep {
+    font-size: 4.2rem;
+    line-height: 5rem;
+    padding-right: 1.1em;
+  }
+  .words--simple {
+    font-size: 4.2rem;
+    line-height: 5rem;
+    padding-left: 0.7em;
+  }
+  .words--concise {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    padding-right: 6.5em;
+  }
+  .words--consistency {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+    text-align: left;
+    padding-left: 4.2em;
+  }
+  .words--uncomplicate {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    text-align: right;
+    padding-right: 4.4em;
+  }
+  .words--bem {
+    font-size: 7.5rem;
+    line-height: 8.9rem;
+    text-align: left;
+    padding-left: 2.85em;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .words--uncomplicate {
+    font-size: 4.5rem;
+    line-height: 4.8rem;
+    padding-left: 3.7em;
+  }
+}
+/*# sourceMappingURL=CleanCode.css.map */

@@ -1,0 +1,158 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+/* ====================================
+        FONTS
+======================================= */
+@font-face {
+  font-family: "axiformalight";
+  src: url("../assets/fonts/kastelov_-_axiforma_light-webfont.woff2") format("woff2"),
+       url("../assets/fonts/kastelov_-_axiforma_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "axiformamedium";
+  src: url("../assets/fonts/kastelov_-_axiforma_medium-webfont.woff2") format("woff2"),
+       url("../assets/fonts/kastelov_-_axiforma_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "axiformaregular";
+  src: url("../assets/fonts/kastelov_-_axiforma_regular-webfont.woff2") format("woff2"),
+       url("../assets/fonts/kastelov_-_axiforma_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "axiformasemibold";
+  src: url("../assets/fonts/kastelov_-_axiforma_semibold-webfont.woff2") format("woff2"),
+       url("../assets/fonts/kastelov_-_axiforma_semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "axiformathin";
+  src: url("../assets/fonts/kastelov_-_axiforma_thin-webfont.woff2") format("woff2"),
+       url("../assets/fonts/kastelov_-_axiforma_thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "axiformaheavy";
+  src: url("../assets/fonts/kastelov_-_axiforma_heavy-webfont.woff2") format("woff2"),
+       url("../assets/fonts/kastelov_-_axiforma_heavy-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ====================================
+        THEME & VARIABLES
+======================================= */
+@theme {
+  /* Colors */
+  --color-dark: #1c1c1c;
+  --color-third: #ed1c24;
+  --color-bright: #ffffff;
+  
+  /* Fonts */
+  --font-main-thin: "axiformathin", sans-serif;
+  --font-main-light: "axiformalight", sans-serif;
+  --font-main-regular: "axiformaregular", sans-serif;
+  --font-main-medium: "axiformamedium", sans-serif;
+  --font-main-semibold: "axiformasemibold", sans-serif;
+  --font-main-heavy: "axiformaheavy", sans-serif;
+  
+
+  /* Screens */
+  --breakpoint-md-custom: 48em; /* ~768px */
+  --breakpoint-lg-custom: 62em; /* ~992px */
+}
+
+:root {
+  --main-font-thin: "axiformathin", sans-serif;
+  --main-font-light: "axiformalight", sans-serif;
+  --main-font-regular: "axiformaregular", sans-serif;
+  --main-font-medium: "axiformamedium", sans-serif;
+  --main-font-semibold: "axiformasemibold", sans-serif;
+  --main-font-heavy: "axiformaheavy", sans-serif;
+  --second-font: "Hubballi", cursive;
+  --dark-color: #1c1c1c;
+  --bright-color: #ffffff;
+  --third-color: #ed1c24;
+  --transparent: hsla(0, 0%, 0%, 0);
+  --gradient: linear-gradient(to right top, #1c1c1c, #3a3939, #5a5959, #7c7b7a, #9f9f9d);
+}
+
+/* ====================================
+        GLOBAL STYLES
+======================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--main-font-thin);
+  font-size: 100%;
+  background-color: var(--dark-color);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--dark-color);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+/* Typography */
+h1, h2, button {
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--main-font-regular);
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 3em;
+  line-height: 3.5rem;
+}
+
+input, textarea, ::placeholder {
+  font-family: var(--main-font-light);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: 1em;
+  color: var(--dark-color); /* Added from App.css conflict resolution */
+}
+
+/* Layout Utilities matches generic App.css */
+.container {
+  max-width: 85em;
+  margin: 0 auto;
+}
+
+.third-color {
+  color: var(--third-color);
+}
