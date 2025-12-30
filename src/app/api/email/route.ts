@@ -21,15 +21,10 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
 
   try {
-    // NOTE: Resend's free tier only allows sending to your verified email address.
-    // To send to other recipients, you need to:
-    // 1. Verify a custom domain at resend.com/domains
-    // 2. Update the 'from' address to use your verified domain
-    // Current limitation: emails can only be sent to the EMAIL_RECIPIENT in .env
     
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', // Change to your-email@yourdomain.com after domain verification
-      to: recipient, // Must be your verified email (fkodama.server@gmail.com) until domain is verified
+      from: 'Portfolio Contact <onboarding@resend.dev>', 
+      to: recipient,
       replyTo: email,
       subject: `[Portfolio Contact] Message from ${name}`,
       html: `
@@ -46,7 +41,6 @@ export async function POST(request: Request) {
     if (error) {
       console.error('Resend error details:', JSON.stringify(error, null, 2));
       
-      // Provide more helpful error messages
       let userMessage = 'Error sending email';
       if (error.message?.includes('verify a domain')) {
         userMessage = 'Email service configuration needed. Please contact the site owner.';
