@@ -1,0 +1,170 @@
+'use client';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import "../components/Card.css";
+import IconClose from "../assets/images/card-icon-close-white.svg";
+import Line from "../assets/images/line-cracked.svg";
+
+const Card = ({ project }: { project: any }) => {
+  const [isOpen, setIsOpen] = useState({
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+  });
+
+  const handleClickToOpen = () => {
+    handleClickToClose();
+    setIsOpen((prev) => ({ ...prev, [project.id]: true }));
+  };
+
+  useEffect(() => {
+    // console.log(project.id);
+  }, [isOpen]);
+
+  const handleClickToClose = () => {
+    setIsOpen({
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+    });
+  };
+
+  // ========================== ANIMATION ==========================
+
+  useEffect(() => {
+    const reveal = () => {
+      const reveals = document.querySelectorAll(".card-front__reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("card-front__reveal--active");
+        } else {
+          reveals[i].classList.remove("card-front__reveal--active");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", reveal);
+    reveal();
+
+    return () => {
+      window.removeEventListener("scroll", reveal);
+    };
+  }, []);
+
+  return (
+    <div className="card">
+      {/* ========================== CARD FRONT ========================== */}
+      <div
+        className="card-front card-front__reveal"
+        onClick={handleClickToOpen}
+        style={{
+          display: isOpen[project.id] ? "none" : "block",
+        }}
+      >
+        <p className="card-front__category">{project.category}</p>
+        <div className="card-front__box">
+          <Image
+            className="card-front__icon"
+            src={project.icon}
+            alt="icon project"
+          />
+          <div className="card-front__title-wrapper">
+            <h3 className="card-front__title--red">{project.title0}</h3>
+            <h3 className="card-front__title">{project.titleA}</h3>
+            <h3 className="card-front__tech">{project.tech}</h3>
+          </div>
+        </div>
+        <p className="card-front__description">{project.frontText}</p>
+      </div>
+
+      {/* ========================== CARD BACK ========================== */}
+
+      <div
+        className="card-back"
+        style={{
+          display: isOpen[project.id] ? "block" : "none",
+        }}
+        onClick={handleClickToClose}
+      >
+        <div
+          className="card-back__background"
+          style={{ backgroundColor: project.backgroundColor }}
+        >
+          <Image
+            className="card-back__close"
+            onClick={handleClickToClose}
+            src={IconClose}
+            alt="close button"
+          />
+          <div className="card-back__first-container">
+            <div className="card-back__first-wrapper">
+              <h2 className="card-back__main-title">
+                <span>{project.title0}</span>
+                {project.titleA}
+              </h2>
+              <h3 className="card-back__year">{project.year}</h3>
+              <Image
+                className="card-back__image"
+                src={project.image}
+                alt="main project"
+              />
+              {project.visitIcon ? (
+                <a
+                  className="card-back__visit-wraper"
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p className="card-back__visit icon-visit">visit project</p>
+                </a>
+              ) : null}
+            </div>
+          </div>
+
+          <Image src={Line} alt="line separation" className="card-back__line" />
+
+          <div className="card-back__second-container">
+            <div className="card-back__second-wrapper">
+              <p className="card-back__category">{project.category}</p>
+
+              <h4 className="card-back__title">{project.backText_titleOne}</h4>
+              <p className="card-back__text">{project.backText_textOne}</p>
+              <h4 className="card-back__title">{project.backText_titleTwo}</h4>
+              <p className="card-back__text">{project.backText_textTwo}</p>
+              <h4 className="card-back__title">
+                {project.backText_titleThree}
+              </h4>
+              <p className="card-back__text card-back__text--last">
+                {project.backText_textThree}
+              </p>
+              <h4 className="card-back__title">{project.backText_titleFour}</h4>
+              <p className="card-back__text card-back__text--last">
+                {project.backText_textFour}
+              </p>
+              <a
+                className="card-back__text card-back__text--bold"
+                href={project.backText_link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {project.backText_linkName}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================== END CARDS ========================== */}
+    </div>
+  );
+};
+
+export default Card;

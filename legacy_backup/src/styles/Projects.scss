@@ -1,0 +1,45 @@
+.projects {
+  position: relative;
+  background-color: var(--dark-color);
+  padding-bottom: 15em;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* ====================================
+            MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  .projects {
+    padding-bottom: 10em;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .projects {
+    width: 100%;
+    padding-bottom: 15em;
+
+    .container {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (min-width: 75em) {
+}
