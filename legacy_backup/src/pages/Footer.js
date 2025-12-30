@@ -24,7 +24,7 @@ const Footer = () => {
           GET<span>CONNECTED</span>
         </h2>
         <p className='footer__aboutme'>
-          A web developer with a great deal of experience in marketing, a
+          A Software Engineer with a great deal of experience in marketing, a
           natural leader, curious, and constantly provoked by new challenges.
         </p>
         <div className='footer__menu'>
