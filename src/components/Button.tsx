@@ -1,8 +1,11 @@
 'use client';
 import React from "react";
-import "../components/Button.css";
-
-const Button = ({ text, align, onClick, className }: any) => {
+const Button = ({ text = "Click", align = "flex-start", onClick, className = "btn btn--third-color" }: {
+  text?: string;
+  align?: string;
+  onClick: (e: any) => void;
+  className?: string;
+}) => {
   return (
     <button
       className={className}
@@ -13,12 +16,6 @@ const Button = ({ text, align, onClick, className }: any) => {
       {text}
     </button>
   );
-};
-
-Button.defaultProps = {
-  align: "flex-start",
-  text: "Click",
-  className: "btn btn--third-color",
 };
 
 // Button.propTypes = {

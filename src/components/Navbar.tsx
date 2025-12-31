@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Link } from 'react-scroll';
 
-import '../app/globals.css';
+
 import './Navbar.css'; // Import the new CSS file
 import Logo from '../assets/logo-fkodama.svg';
 import Menu from '../assets/images/menu-hamburguer.svg';

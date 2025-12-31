@@ -1,6 +1,5 @@
 'use client';
 import React, { useRef, useEffect } from "react";
-import "../styles/Reason.css";
 import WhyCard from "../components/WhyCard";
 import { whyData } from "../data/Data";
 import { gsap } from "gsap";
@@ -19,14 +18,20 @@ const Reason = () => {
   const createGrid = () => {
     for (let i = 0; i < arrOfLettersBright.length; i++) {
       arrOfDiv.push(
-        <div key={i} className="reason__letter-bright reason__reveal-bright">
+        <div 
+          key={i} 
+          className="reason__reveal-bright border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[1.6rem] bg-dark relative opacity-0 transition-all duration-[2000ms] ease-in-out -translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]"
+        >
           {arrOfLettersBright[i]}
         </div>
       );
     }
     for (let l = 0; l < arrOfLettersDark.length; l++) {
       arrOfDiv.push(
-        <div key={l + 100} className="reason__letter-dark reason__reveal-dark">
+        <div 
+          key={l + 100} 
+          className="reason__reveal-dark border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[1.6rem] bg-dark text-third relative opacity-0 transition-all duration-[2000ms] ease-in-out translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]"
+        >
           {arrOfLettersDark[l]}
         </div>
       );
@@ -43,23 +48,25 @@ const Reason = () => {
       const elementVisible = 250;
       let windowHeight = window.innerHeight;
 
-      for (var a = 0; a < revealsBright.length; a++) {
-        let elementTop = revealsBright[a].getBoundingClientRect().top;
-        if (elementTop < windowHeight - elementVisible) {
-          revealsBright[a].classList.add("reason__reveal--active");
-        } else {
-          revealsBright[a].classList.remove("reason__reveal--active");
-        }
-      }
+      const activeClasses = ["!translate-x-0", "!opacity-100"];
 
-      for (var b = 0; b < revealsDark.length; b++) {
-        let elementTop = revealsDark[b].getBoundingClientRect().top;
+      revealsBright.forEach((el) => {
+        let elementTop = el.getBoundingClientRect().top;
         if (elementTop < windowHeight - elementVisible) {
-          revealsDark[b].classList.add("reason__reveal--active");
+          el.classList.add(...activeClasses);
         } else {
-          revealsDark[b].classList.remove("reason__reveal--active");
+          el.classList.remove(...activeClasses);
         }
-      }
+      });
+
+      revealsDark.forEach((el) => {
+        let elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          el.classList.add(...activeClasses);
+        } else {
+          el.classList.remove(...activeClasses);
+        }
+      });
     };
 
     window.addEventListener("scroll", reasonReveal);
@@ -70,46 +77,11 @@ const Reason = () => {
     };
   }, []);
 
-  // -------------- ANIMATION --------------
-
   const gridRef = useRef(null);
-  // const q = gsap.utils.selector(gridRef);
-
-  // useEffect(() => {
-  //   gsap.from(q(".reason__letter-bright"), {
-  //     scrollTrigger: {
-  //       trigger: q(".reason__letter-bright"),
-  //       toggleActions: "restart pause reverse pause",
-  //       start: "top bottom",
-  //       end: "top 20%",
-  //       scrub: true,
-  //       pin: true,
-  //     },
-  //     duration: 1,
-  //     x: "1000",
-  //     stagger: 0.01,
-  //     yoyo: true,
-  //   });
-  //   gsap.from(q(".reason__letter-dark"), {
-  //     scrollTrigger: {
-  //       trigger: q(".reason__letter-dark"),
-  //       toggleActions: "restart pause reverse pause",
-  //       start: "top bottom",
-  //       end: "top center",
-  //       scrub: true,
-  //       pin: true,
-  //     },
-  //     duration: 1,
-  //     x: "-1000",
-  //     stagger: 0.01,
-  //     yoyo: true,
-  //     ease: "power1.inOut",
-  //   });
-  // }, []);
 
   return (
-    <section className="section reason" id="reason">
-      <div className="reason__grid" ref={gridRef}>
+    <section className="section flex flex-col max-w-[94em] mx-auto" id="reason">
+      <div className="flex flex-wrap gap-[0.3em] justify-center mt-[30em] mb-[10em]" ref={gridRef}>
         {createGrid()}
       </div>
       <WhyCard

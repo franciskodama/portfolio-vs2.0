@@ -1,13 +1,10 @@
 'use client';
 import React from 'react'
-import '../styles/ErrorPage.css'
-
 const ErrorPage = () => {
-  
   return (
-    <section className='section section-error'>
-        <div className='container'>
-            <h1>ERROR PAGE</h1>
+    <section className='section h-screen flex justify-center items-center'>
+        <div className='container mx-auto text-center'>
+            <h1 className='text-[10rem] h-full'>ERROR PAGE</h1>
         </div> 
     </section>
   )

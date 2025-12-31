@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 
 
-import '../styles/Contact.css';
 import { AboutContext } from '../contexts/AboutContext';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { whyData } from '../data/Data';
@@ -66,6 +65,17 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('SUBMIT');
   const formContact = useRef(null)
+
+  const [columns, setColumns] = useState(dropSpace);
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    setEnabled(true);
+  }, []);
+
+  if (!enabled) {
+    return <section className='section border-t-[0.2px] border-white/20 pb-40 relative' id='contact'></section>;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -133,41 +143,37 @@ const Contact = () => {
     });
   };
 
-  const [columns, setColumns] = useState(dropSpace);
-
-
   return (
-    <section className='section contact' id='contact'>
-      <div className='container'>
-        <h1 className='section-title' style={{ textAlign: 'left' }}>
+    <section className='section border-t-[0.2px] border-white/20 pb-40 relative' id='contact'>
+      <div className='container mx-auto w-[90%] mb-8 md-custom:w-[80%] lg-custom:w-[60%]'>
+        <h1 className='section-title text-left'>
           hello generator
         </h1>
         <p>{`Let me help you drop me a line! ;)`}</p>
         <DragDropContext
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
         >
-          {Object.entries(columns).map(([columnId, column], index) => {
+          {Object.entries(columns).map(([columnId, column]) => {
             return (
-              <div className='drop' key={columnId}>
-                <h2 className='drop__title'>{column.name}</h2>
+              <div className='flex flex-col' key={columnId}>
+                <h2 className='mt-16 mb-2 uppercase font-main-medium text-third'>{column.name}</h2>
                 <div>
                   <Droppable
                     droppableId={columnId}
                     key={columnId}
                     isDropDisabled={false}
                     isCombineEnabled={false}
-                    ignoreContainerClipping={false}
                   >
                     {(provided, snapshot) => {
                       return (
                         <div
                           {...provided.droppableProps}
                           ref={provided.innerRef}
-                          className='drop__space'
+                          className='border border-dashed border-bright p-[0.5em_1em] min-h-[7em]'
                           style={{
                             background: snapshot.isDraggingOver
                               ? 'rgba(255, 255, 255, 0.1)'
-                              : 'var(--dark-color)',
+                              : 'transparent',
                           }}
                         >
                           {column.items.map((item, index) => {
@@ -180,15 +186,15 @@ const Contact = () => {
                                 {(provided, snapshot) => {
                                   return (
                                     <div
-                                      className='phrase'
+                                      className='inline-block w-auto font-main-light uppercase p-[0.4em_1.2em] select-none cursor-pointer my-2 mr-4 border-[0.5px] border-bright transition-all duration-200 ease-in-out hover:translate-x-[5px] hover:-translate-y-[5px] hover:[box-shadow:var(--color-dark)_-5px_5px_0px_-0.5px,var(--color-bright)_-5px_5px]'
                                       ref={provided.innerRef}
                                       {...provided.draggableProps}
                                       {...provided.dragHandleProps}
                                       style={{
                                         backgroundColor: snapshot.isDragging
-                                          ? 'var(--third-color)'
-                                          : 'var(--dark-color)',
-                                        color: 'var(--bright-color)',
+                                          ? 'var(--color-third)'
+                                          : 'var(--color-dark)',
+                                        color: 'var(--color-bright)',
                                         ...provided.draggableProps.style,
                                       }}
                                     >
@@ -210,10 +216,10 @@ const Contact = () => {
           })}
         </DragDropContext>
 
-        <form ref={formContact} className='form-contact' onSubmit={handleSubmit}>
-          <p className='form-contact__title'>Additional comments:</p>
+        <form ref={formContact} className='flex flex-col' onSubmit={handleSubmit}>
+          <p className='mt-16 mb-2 uppercase font-main-medium text-third'>Additional comments:</p>
           <textarea
-            className='form-contact__input form-contact__input--textarea'
+            className='mb-8 w-full p-2 bg-bright text-dark h-28'
             placeholder='type some additional comments'
             value={message}
             onChange={(e) => {
@@ -221,9 +227,9 @@ const Contact = () => {
             }}
             name='message'
           ></textarea>{' '}
-          <div className='form-contact__input-wrapper'>
+          <div className='flex flex-col md-custom:flex-row'>
             <input
-              className='form-contact__input'
+              className='mb-8 w-full p-2 bg-bright text-dark'
               placeholder='name'
               type='text'
               value={name}
@@ -234,7 +240,7 @@ const Contact = () => {
               required
             />
             <input
-              className='form-contact__input'
+              className='mb-8 w-full p-2 bg-bright text-dark md-custom:ml-8'
               placeholder='email'
               type='email'
               value={email}
@@ -245,7 +251,7 @@ const Contact = () => {
               required
             />
           </div>
-          <div className='form-contact__buttons'>
+          <div className='flex justify-between mt-8 lg-custom:mt-4'>
             <Button
               className={'btn btn--dark-dark-bg'}
               onClick={handleClickClearMessage}
@@ -259,8 +265,8 @@ const Contact = () => {
               style={{
                 backgroundColor:
                   status === 'SENT'
-                    ? 'var(--dark-color)'
-                    : 'var(--third-color)',
+                    ? 'var(--color-dark)'
+                    : 'var(--color-third)',
               }}
             >
               {status}

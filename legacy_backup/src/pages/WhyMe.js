@@ -103,7 +103,7 @@ const WhyMe = () => {
                     {String.fromCharCode(123)}
                   </span>
                   <div className='cv__first-title--bright'>
-                    software developer
+                    software engineer
                   </div>
                   <span className='cv__first-title-curly'>
                     {String.fromCharCode(125)}
