@@ -66,7 +66,7 @@ const WhyMe = () => {
           style={{ display: heartShown ? 'flex' : 'none' }}
         >
           <h4 className='circle-clicked__title'>PASSION</h4>
-          <h6 className='circle-clicked__text'>
+          <div className='circle-clicked__text'>
             My career in marketing <br></br> spanned more than two decades, and
             I achieved important positions <br></br>I had planned. Now is the
             time for me to pursue a career I've been passionate about since I
@@ -78,7 +78,7 @@ const WhyMe = () => {
               "When you have fun, you can do amazing things."
             </q>
             <p className='circle-clicked__quote--bright'>- Joe Namath</p>
-          </h6>
+          </div>
         </div>
 
         <div

@@ -34,7 +34,7 @@ const Reason = () => {
     return arrOfDiv;
   };
 
-  // ========================== ANIMATION ==========================
+  // ======================== ANIMATION ==========================
 
   useEffect(() => {
     const reasonReveal = () => {
@@ -63,7 +63,7 @@ const Reason = () => {
     };
 
     window.addEventListener("scroll", reasonReveal);
-    reasonReveal(); // Initial check
+    reasonReveal(); 
 
     return () => {
       window.removeEventListener("scroll", reasonReveal);
@@ -73,39 +73,6 @@ const Reason = () => {
   // -------------- ANIMATION --------------
 
   const gridRef = useRef(null);
-  // const q = gsap.utils.selector(gridRef);
-
-  // useEffect(() => {
-  //   gsap.from(q(".reason__letter-bright"), {
-  //     scrollTrigger: {
-  //       trigger: q(".reason__letter-bright"),
-  //       toggleActions: "restart pause reverse pause",
-  //       start: "top bottom",
-  //       end: "top 20%",
-  //       scrub: true,
-  //       pin: true,
-  //     },
-  //     duration: 1,
-  //     x: "1000",
-  //     stagger: 0.01,
-  //     yoyo: true,
-  //   });
-  //   gsap.from(q(".reason__letter-dark"), {
-  //     scrollTrigger: {
-  //       trigger: q(".reason__letter-dark"),
-  //       toggleActions: "restart pause reverse pause",
-  //       start: "top bottom",
-  //       end: "top center",
-  //       scrub: true,
-  //       pin: true,
-  //     },
-  //     duration: 1,
-  //     x: "-1000",
-  //     stagger: 0.01,
-  //     yoyo: true,
-  //     ease: "power1.inOut",
-  //   });
-  // }, []);
 
   return (
     <section className="section reason" id="reason">

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 
 
 import '../styles/Contact.css';
@@ -134,7 +134,15 @@ const Contact = () => {
   };
 
   const [columns, setColumns] = useState(dropSpace);
+  const [enabled, setEnabled] = useState(false);
 
+  useEffect(() => {
+    setEnabled(true);
+  }, []);
+
+  if (!enabled) {
+    return <section className='section contact' id='contact'></section>;
+  }
 
   return (
     <section className='section contact' id='contact'>

@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import "../components/WhyCard.css";
@@ -64,7 +65,7 @@ const WhyCard = ({
       >
         <span
           className={`why-container__label ${
-            isOnMouse && !isCardShow ? "why-container__label--active" : null
+            isOnMouse && !isCardShow ? "why-container__label--active" : ""
           }`}
           ref={refButtonLabel}
         >
@@ -83,12 +84,14 @@ const WhyCard = ({
         ref={refWhy}
         style={{ display: isCardShow ? "block" : "none" }}
       >
-        <Image
-          className="why__close"
-          onClick={clickHandler}
-          src={Close}
-          alt="close button icon"
-        />
+        <li className="why__item">
+          <Image
+            className="why__close"
+            onClick={clickHandler}
+            src={Close}
+            alt="close button icon"
+          />
+        </li>
 
         <li
           className="why__item"

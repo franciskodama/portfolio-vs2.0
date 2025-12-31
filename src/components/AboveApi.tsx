@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+
 import "../styles/AboveApi.scss";
 
 const AboveApi = () => {

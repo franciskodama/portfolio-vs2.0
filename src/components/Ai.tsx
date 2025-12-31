@@ -34,7 +34,7 @@ const Ai = ({ color }: { color: { first: boolean; second: boolean; third: boolea
 
     const openai = new OpenAI({
       apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-      dangerouslyAllowBrowser: true // Enabling client-side usage to match legacy behavior
+      dangerouslyAllowBrowser: true 
     });
 
     setStatus('Thinking...');

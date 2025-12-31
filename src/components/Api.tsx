@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Axios from "axios";
@@ -80,24 +81,24 @@ const Api = () => {
             ) : null}
 
             <h4 className="api__log">
-              Longitude {data.coord ? <p>{data.coord.lon}</p> : null}
+              Longitude {data.coord ? <span>{data.coord.lon}</span> : null}
             </h4>
             <h4 className="api__lat">
-              Latitude {data.coord ? <p>{data.coord.lat}</p> : null}
+              Latitude {data.coord ? <span>{data.coord.lat}</span> : null}
             </h4>
             {/* =============== SECOND SIDE =============== */}
 
             <h3 className="api__description">
-              {data.weather ? <p>{data.weather[0].description}</p> : null}
+              {data.weather ? <span>{data.weather[0].description}</span> : null}
             </h3>
 
             <div className="api__feels-wrapper">
               <h4 className="api__feels-title">Feels like</h4>
               <h3>
                 {data.main ? (
-                  <p className="data-feels">
+                  <span className="data-feels">
                     {Math.trunc(data.main.feels_like)}
-                  </p>
+                  </span>
                 ) : null}
               </h3>
             </div>
@@ -107,14 +108,14 @@ const Api = () => {
               <h4 className="api__temp-title">Current weather</h4>
               <h3>
                 {data.main ? (
-                  <p className="api__temp">{Math.trunc(data.main.temp)}°C</p>
+                  <span className="api__temp">{Math.trunc(data.main.temp)}°C</span>
                 ) : null}
               </h3>
             </div>
             <div className="api__wind-wrapper">
               <h4 className="api__others-title">Wind</h4>
               <h3>
-                {data.wind ? <p className="data">{data.wind.speed}</p> : null}
+                {data.wind ? <span className="data">{data.wind.speed}</span> : null}
               </h3>
               <h5 className="api__unit">km/h</h5>
             </div>
@@ -123,7 +124,7 @@ const Api = () => {
               <h4 className="api__others-title">Pressure</h4>
               <h3>
                 {data.main ? (
-                  <p className="data">{data.main.pressure}</p>
+                  <span className="data">{data.main.pressure}</span>
                 ) : null}
               </h3>
               <h5 className="api__unit">kPa</h5>
@@ -133,7 +134,7 @@ const Api = () => {
               <h4 className="api__others-title">Humidity</h4>
               <h3>
                 {data.main ? (
-                  <p className="data">{data.main.humidity}</p>
+                  <span className="data">{data.main.humidity}</span>
                 ) : null}
               </h3>
               <h5 className="api__unit">%</h5>
@@ -149,11 +150,11 @@ const Api = () => {
               <h4 className="api__others-title">Sunrise</h4>
               <h3>
                 {data.sys ? (
-                  <p className="data">
+                  <span className="data">
                     {new Date(data.sys.sunrise * 6000 - data.timezone * 1000)
                       .toString()
                       .slice(17, 21)}
-                  </p>
+                  </span>
                 ) : null}
               </h3>
               <h5 className="api__unit">a.m.</h5>
@@ -163,11 +164,11 @@ const Api = () => {
               <h4 className="api__others-title">Sunset</h4>
               <h3>
                 {data.sys ? (
-                  <p className="data">
+                  <span className="data">
                     {new Date(data.sys.sunrise * 6000 - data.timezone * 1000)
                       .toString()
                       .slice(17, 21)}
-                  </p>
+                  </span>
                 ) : null}
               </h3>
               <h5 className="api__unit">p.m.</h5>
