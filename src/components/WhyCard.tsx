@@ -83,12 +83,14 @@ const WhyCard = ({
         }`}
         ref={refWhy}
       >
-        <Image
-          className="absolute top-0 right-0 p-2 cursor-pointer"
-          onClick={clickHandler}
-          src={Close}
-          alt="close button icon"
-        />
+        <li className="why__item">
+          <Image
+            className="absolute top-0 right-0 p-2 cursor-pointer"
+            onClick={clickHandler}
+            src={Close}
+            alt="close button icon"
+          />
+        </li>
 
         <li
           className="flex flex-col w-auto md-custom:w-[30ch]"

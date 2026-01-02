@@ -69,23 +69,23 @@ const Api = () => {
             ) : null}
 
             <h4 className="col-span-1 row-start-6 mt-20 font-main-regular text-[0.8rem] inline-block lg-custom:row-start-8 lg-custom:mt-8">
-              Longitude {data.coord ? <p className="font-main-semibold text-[1.5rem] inline">{data.coord.lon}</p> : null}
+              Longitude {data.coord ? <span className="font-main-semibold text-[1.5rem] inline">{data.coord.lon}</span> : null}
             </h4>
             <h4 className="col-start-2 col-span-1 row-start-6 mt-20 font-main-regular text-[0.8rem] inline-block lg-custom:row-start-8 lg-custom:mt-8">
-              Latitude {data.coord ? <p className="font-main-semibold text-[1.5rem] inline">{data.coord.lat}</p> : null}
+              Latitude {data.coord ? <span className="font-main-semibold text-[1.5rem] inline">{data.coord.lat}</span> : null}
             </h4>
             
             <h3 className="col-span-4 row-start-1 font-main-semibold text-[1.8rem] capitalize text-center mb-[3.5em] lg-custom:col-span-8 lg-custom:text-right lg-custom:mb-[1.5em] lg-custom:text-[2.25rem]">
-              {data.weather ? <p>{data.weather[0].description}</p> : null}
+              {data.weather ? <span>{data.weather[0].description}</span> : null}
             </h3>
 
             <div className="hidden flex-col text-right p-2 ml-4 lg-custom:flex lg-custom:col-start-6 lg-custom:row-start-2 lg-custom:text-right">
               <h4 className="font-main-regular">Feels like</h4>
               <h3>
                 {data.main ? (
-                  <p className="font-main-semibold text-[1.5rem]">
+                  <span className="font-main-semibold text-[1.5rem]">
                     {Math.trunc(data.main.feels_like)}
-                  </p>
+                  </span>
                 ) : null}
               </h3>
             </div>
@@ -95,7 +95,7 @@ const Api = () => {
               <h4 className="font-main-regular">Current weather</h4>
               <h3>
                 {data.main ? (
-                  <p className="font-main-semibold text-5xl mb-[-0.5rem] md-custom:text-[5rem]">{Math.trunc(data.main.temp)}°C</p>
+                  <span className="font-main-semibold text-5xl mb-[-0.5rem] md-custom:text-[5rem] block">{Math.trunc(data.main.temp)}°C</span>
                 ) : null}
               </h3>
             </div>
@@ -103,7 +103,7 @@ const Api = () => {
             <div className="col-span-1 col-start-2 row-start-9 mt-12 flex flex-col text-right p-2 ml-4 lg-custom:col-start-7 lg-custom:row-start-4 lg-custom:mt-0">
               <h4 className="font-main-regular">Wind</h4>
               <h3>
-                {data.wind ? <p className="font-main-semibold text-[1.5rem]">{data.wind.speed}</p> : null}
+                {data.wind ? <span className="font-main-semibold text-[1.5rem] block">{data.wind.speed}</span> : null}
               </h3>
               <h5 className="font-main-light text-[0.8rem]">km/h</h5>
             </div>
@@ -112,7 +112,7 @@ const Api = () => {
               <h4 className="font-main-regular">Pressure</h4>
               <h3>
                 {data.main ? (
-                  <p className="font-main-semibold text-[1.5rem]">{data.main.pressure}</p>
+                  <span className="font-main-semibold text-[1.5rem] block">{data.main.pressure}</span>
                 ) : null}
               </h3>
               <h5 className="font-main-light text-[0.8rem]">kPa</h5>
@@ -122,7 +122,7 @@ const Api = () => {
               <h4 className="font-main-regular">Humidity</h4>
               <h3>
                 {data.main ? (
-                  <p className="font-main-semibold text-[1.5rem]">{data.main.humidity}</p>
+                  <span className="font-main-semibold text-[1.5rem] block">{data.main.humidity}</span>
                 ) : null}
               </h3>
               <h5 className="font-main-light text-[0.8rem]">%</h5>

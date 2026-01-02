@@ -63,7 +63,7 @@ const WhyMe = () => {
           className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-dark border-2 border-third p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[1.8em_2.5em] ${heartShown ? 'flex' : 'hidden'}`}
         >
           <h4 className='text-center uppercase font-main-heavy text-[1.3rem] mb-[0.3em] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>PASSION</h4>
-          <h6 className='text-center uppercase font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
+          <div className='text-center uppercase font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
             My career in marketing <br></br> spanned more than two decades, and
             I achieved important positions <br></br>I had planned. Now is the
             time for me to pursue a career I've been passionate about since I
@@ -74,8 +74,8 @@ const WhyMe = () => {
             <q className='hidden font-main-light italic text-bright lg-custom:block' rel='Joe Namath'>
               "When you have fun, you can do amazing things."
             </q>
-            <p className='hidden text-bright mt-2 lg-custom:block'>- Joe Namath</p>
-          </h6>
+            <span className='hidden text-bright mt-2 lg-custom:block'>- Joe Namath</span>
+          </div>
         </div>
 
         <div
