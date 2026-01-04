@@ -54,9 +54,11 @@
   font-style: normal;
 }
 
+
 /* ====================================
         KEYFRAMES
 ======================================= */
+
 @keyframes cube-left-up {
   100% { opacity: 0.4; }
 }
@@ -154,9 +156,11 @@
   100% { transform: translateY(-30%); opacity: 1; }
 }
 
+
 /* ====================================
         THEME & VARIABLES
 ======================================= */
+
 @theme {
   /* Colors */
   --color-dark: var(--dark-color);
@@ -199,9 +203,11 @@
   --animate-colors-up: colors-up 1s ease-in-out forwards;
 }
 
+
 /* ====================================
         UTILITIES
 ======================================= */
+
 @utility btn {
   display: inline-block;
   font-family: var(--font-main-medium);
@@ -277,9 +283,11 @@
   color: var(--third-color);
 }
 
+
 /* ====================================
         VARIABLES
 ======================================= */
+
 :root {
   --main-font-thin: "axiformathin", sans-serif;
   --main-font-light: "axiformalight", sans-serif;
@@ -295,13 +303,13 @@
   --gradient: linear-gradient(to right top, #1c1c1c, #3a3939, #5a5959, #7c7b7a, #9f9f9d);
 }
 
+
 /* ====================================
         GLOBAL STYLES
 ======================================= */
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -321,15 +329,15 @@ a {
   text-decoration: none;
 }
 
-/* Typography */
 h1, h2, button {
   text-transform: uppercase;
 }
 
 input, textarea, ::placeholder {
+  color: var(--dark-color);
   font-family: var(--main-font-light);
   font-size: 1rem;
   line-height: 1.5;
   padding-left: 1em;
-  color: var(--dark-color);
 }
+
