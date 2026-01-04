@@ -1,87 +1,167 @@
+'use client';
+
 import React, { useState } from 'react';
+import Image from 'next/image';
+import WhyCard from '../components/WhyCard';
+import { whyData } from '../data/Data';
 
-const CareerAlchemist = () => {
-  const [input, setInput] = useState('');
-  const [result, setResult] = useState(null);
-  const [isBrewing, setIsBrewing] = useState(false);
+const CareerAlchemist = ({ color }: { color: { first: boolean; second: boolean; third: boolean } }) => {
+  const [status, setStatus] = useState('Ask me');
+  const [prompt, setPrompt] = useState('');
+  const [newPrompt, setNewPrompt] = useState('');
+  const [result, setResult] = useState('');
+  const [isResultActive, setIsResultActive] = useState(false);
+  
+  let imageRightHand = null;
+  let imageLeftHand = null;
 
-  const brewPotion = async () => {
-    if (!input.trim()) return;
-    
-    setIsBrewing(true);
-    setResult(null);
+  if (color.first) {
+    imageRightHand = require('../assets/images/hand-right-black-bg.png');
+    imageLeftHand = require('../assets/images/hand-left-black-bg.png');
+  } else if (color.second) {
+    imageRightHand = require('../assets/images/hand-right-blue-bg.png');
+    imageLeftHand = require('../assets/images/hand-left-blue-bg.png');
+  } else if (color.third) {
+    imageRightHand = require('../assets/images/hand-right-grey-bg.png');
+    imageLeftHand = require('../assets/images/hand-left-grey-bg.png');
+  }
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('Thinking...');
 
     try {
-      const response = await fetch('/api/gemini', {
+      const response = await fetch('/api/ai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ input }),
+        body: JSON.stringify({ prompt }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to brew potion');
-      }
-
       const data = await response.json();
-      setResult(data);
+
+      if (response.ok) {
+        setResult(data.result);
+        setIsResultActive(true);
+        setNewPrompt(prompt);
+        setStatus('ASK ME AGAIN');
+        setPrompt('');
+      } else {
+        console.error('Error from AI API:', data.message);
+        setStatus('ERROR - TRY AGAIN');
+        setTimeout(() => {
+          setStatus('Ask me');
+        }, 3000);
+      }
     } catch (error) {
-      console.error('Magic failure:', error);
-      // Fallback or error state could be handled here
-    } finally {
-      setIsBrewing(false);
+      console.error('Network error:', error);
+      setStatus('ERROR - TRY AGAIN');
+      setTimeout(() => {
+        setStatus('Ask me');
+      }, 3000);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-10 bg-slate-900 text-white rounded-3xl border border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.2)]">
-      <h2 className="text-2xl font-bold mb-6 text-purple-300">The Career Alchemist</h2>
-      
-      {/* The Crystal Ball Visual */}
-      <div className={`relative w-64 h-64 rounded-full border-4 border-purple-400/50 flex items-center justify-center overflow-hidden transition-all duration-700 ${isBrewing ? 'animate-pulse shadow-[0_0_100px_rgba(168,85,247,0.6)]' : 'shadow-inner'}`}>
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
-        
-        {isBrewing ? (
-          <div className="text-center animate-bounce">🔮 <br/> Brewing...</div>
-        ) : (
-          <textarea 
-            className="z-10 bg-transparent text-center p-4 w-full h-full outline-none resize-none placeholder-purple-300/50"
-            placeholder="Paste a Job Description or Company Name here..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        )}
-      </div>
-
-      {/* The Magic Hands (Abstracted) */}
-      <div className="flex justify-between w-80 -mt-10 pointer-events-none">
-        <span className="text-5xl animate-bounce">🖐️</span>
-        <span className="text-5xl animate-bounce delay-100">🤚</span>
-      </div>
-
-      {!result && !isBrewing && (
-        <button 
-          onClick={brewPotion}
-          className="mt-8 px-6 py-2 bg-purple-600 hover:bg-purple-500 rounded-full font-bold transition-all"
-        >
-          See My Future at Your Company
-        </button>
-      )}
-
-      {/* The Result: The Potion */}
-      {result && (
-        <div className="mt-8 p-6 bg-white/10 rounded-xl border border-white/20 backdrop-blur-md animate-in fade-in zoom-in">
-          <h3 className="text-xl font-bold text-green-400">Match Found: {result.score}%</h3>
-          <p className="italic mt-2">"The stars align. {result.prediction}"</p>
-          <div className="mt-4 flex gap-2">
-            {result.ingredients.map(ing => (
-              <span key={ing} className="text-xs bg-purple-900 px-2 py-1 rounded-full border border-purple-400">✨ {ing}</span>
-            ))}
+    <section className='section relative pb-40' id='ai'>
+      <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
+        <h1 className='section-title'>Crystal Ball</h1>
+        <p className='my-[0.8em_0_5em_0] text-center'>A.I. technology or Witchcraft?</p>
+        <form className='flex flex-col items-center' onSubmit={onSubmit}>
+          <div className='text-third border border-dashed border-third rounded-[10px] p-4 mb-28 text-center'>
+            <h2 className='font-main-semibold mb-4'>
+              Here are some suggestions for what to ask for:
+            </h2>
+            <ul className='flex flex-col gap-2'>
+              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
+                Suggest a drama movie based on a true story with a good score on
+                the rotten tomatoes website.
+              </li>
+              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
+                I need a gift suggestion for my wife. She is 35 years old and
+                loves to work out and challenge herself.
+              </li>
+              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
+                Correct this to standard English: She no went to the market.
+              </li>
+              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
+                Write a recipe based on these ingredients: meat, cheddar cheese,
+                onions, sour cream, and rice.
+              </li>
+            </ul>
           </div>
-        </div>
-      )}
-    </div>
+          
+          <div className='pr-10 relative flex justify-center items-center w-full'>
+            {imageLeftHand && (
+            <Image
+              className='absolute left-0 w-[7.5em] animate-hand-left md-custom:w-[15em] lg-custom:w-[22em]'
+              src={imageLeftHand}
+              alt='hand over crystal ball'
+            />
+            )}
+            
+            <textarea
+              className='text-center w-[20em] h-[20em] rounded-full p-20 mb-4 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-[2] text-dark bg-bright md-custom:w-[35em] md-custom:h-[35em] md-custom:p-[15em_5em]'
+              name='prompt'
+              placeholder='Ask me anything, but at your own risk.'
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              required
+            />
+
+            {imageRightHand && (
+            <Image
+              className='absolute right-0 w-[8.5em] animate-hand-right md-custom:w-[15em] lg-custom:w-[22em]'
+              src={imageRightHand}
+              alt='hand over crystal ball'
+            />
+            )}
+          </div>
+
+          <button
+            className='btn btn--third-color mt-4'
+            type='submit'
+            style={{
+              backgroundColor:
+                status === 'Thinking...'
+                  ? 'var(--color-dark)'
+                  : 'var(--color-third)',
+            }}
+          >
+            {status}
+          </button>
+        </form>
+
+        <ul
+          className={`mt-4 w-3/5 mx-auto text-dark font-main-light leading-[1.5] animate-result-ai-appear ${isResultActive ? 'flex' : 'hidden'} flex-col-reverse`}
+        >
+          <li className='text-left p-4 bg-bright mb-4 rounded-[10px] md-custom:px-8'>
+            <div className='flex'>
+              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>Your question:</h4>
+              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>{newPrompt}</p>
+            </div>
+            <div className='flex'>
+              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>My wisdom:</h4>
+              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>{result}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <WhyCard
+        titleOne={whyData.ai.titleOne}
+        textOne={whyData.ai.textOne}
+        titleTwo={whyData.ai.titleTwo}
+        textTwo={whyData.ai.textTwo}
+        titleThree={whyData.ai.titleThree}
+        textThree={whyData.ai.textThree}
+        titleFour={whyData.ai.titleFour}
+        textFour={whyData.ai.textFour}
+        observation={whyData.ai.observation}
+        bottom={whyData.ai.bottom}
+        left={whyData.ai.left}
+      />
+    </section>
   );
 };
 

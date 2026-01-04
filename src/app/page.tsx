@@ -16,7 +16,8 @@ import Api from '../components/Api';
 import CleanCode from '../components/CleanCode';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import CareerAlchemist from '@/components/CareerAlchemist';
+import CareerAlchemist from '@/components/CareerAlchemistTest';
+import CareerAlchemistTest from '@/components/CareerAlchemistTest';
 
 export default function Home() {
   const [location, setLocation] = useState({ data: '' });
@@ -86,6 +87,7 @@ export default function Home() {
           <About />
           <WhyMe />
           <CareerAlchemist />
+          <CareerAlchemistTest />
           <Ai color={color} />
           <Projects />
           <AboveApi />
