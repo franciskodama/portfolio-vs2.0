@@ -5,7 +5,7 @@ import Image from 'next/image';
 import WhyCard from '../components/WhyCard';
 import { whyData } from '../data/Data';
 
-const CareerAlchemist = ({ color }: { color: { first: boolean; second: boolean; third: boolean } }) => {
+const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; third: boolean } }) => {
   const [status, setStatus] = useState('Ask me');
   const [prompt, setPrompt] = useState('');
   const [newPrompt, setNewPrompt] = useState('');
@@ -66,12 +66,14 @@ const CareerAlchemist = ({ color }: { color: { first: boolean; second: boolean; 
   return (
     <section className='section relative pb-40' id='ai'>
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
-        <h1 className='section-title'>Crystal Ball</h1>
-        <p className='my-[0.8em_0_5em_0] text-center'>A.I. technology or Witchcraft?</p>
+        <h1 className='section-title'>Synergy Seer</h1>
+        <p className='my-[0.8em_0_5em_0] text-center mb-12'>
+            {`I’m the missing piece that fits your specific puzzle.`}
+        </p>
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
           <div className='text-third border border-dashed border-third rounded-[10px] p-4 mb-28 text-center'>
             <h2 className='font-main-semibold mb-4'>
-              Here are some suggestions for what to ask for:
+                     See our future at your company
             </h2>
             <ul className='flex flex-col gap-2'>
               <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
@@ -165,4 +167,4 @@ const CareerAlchemist = ({ color }: { color: { first: boolean; second: boolean; 
   );
 };
 
-export default CareerAlchemist;
+export default SynergySeer;
