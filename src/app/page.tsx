@@ -16,6 +16,7 @@ import Api from '../components/Api';
 import CleanCode from '../components/CleanCode';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import CareerAlchemist from '@/components/CareerAlchemist';
 
 export default function Home() {
   const [location, setLocation] = useState({ data: '' });
@@ -84,6 +85,7 @@ export default function Home() {
         <AboutContext.Provider value={{ location, setLocation }}>
           <About />
           <WhyMe />
+          <CareerAlchemist />
           <Ai color={color} />
           <Projects />
           <AboveApi />
