@@ -89,7 +89,7 @@ export default function Home() {
           <WhyMe />
           {/* <CareerAlchemistTest /> */}
           <SynergySeer color={color} />
-          <Ai color={color} />
+          {/* <Ai color={color} /> */}
           <Projects />
           <AboveApi />
           <Api />

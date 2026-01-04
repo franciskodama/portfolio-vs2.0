@@ -6,10 +6,14 @@ import WhyCard from '../components/WhyCard';
 import { whyData } from '../data/Data';
 
 const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; third: boolean } }) => {
-  const [status, setStatus] = useState('Ask me');
-  const [prompt, setPrompt] = useState('');
-  const [newPrompt, setNewPrompt] = useState('');
-  const [result, setResult] = useState('');
+  const [status, setStatus] = useState('Brew Potion');
+  const [formData, setFormData] = useState({
+    company: '',
+    position: '',
+    description: ''
+  });
+  
+  const [result, setResult] = useState<any>(null);
   const [isResultActive, setIsResultActive] = useState(false);
   
   let imageRightHand = null;
@@ -26,9 +30,15 @@ const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; thir
     imageLeftHand = require('../assets/images/hand-left-grey-bg.png');
   }
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('Thinking...');
+    setStatus('Summoning...');
+    setIsResultActive(false);
 
     try {
       const response = await fetch('/api/ai', {
@@ -36,30 +46,27 @@ const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; thir
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setResult(data.result);
+        setResult(data);
         setIsResultActive(true);
-        setNewPrompt(prompt);
-        setStatus('ASK ME AGAIN');
-        setPrompt('');
+        setStatus('BREW ANOTHER');
+        setFormData({ company: '', position: '', description: '' });
       } else {
         console.error('Error from AI API:', data.message);
-        setStatus('ERROR - TRY AGAIN');
-        setTimeout(() => {
-          setStatus('Ask me');
-        }, 3000);
+        console.error('Full Error Data:', data);
+        if (data.error) alert(`Gemini Error: ${data.error}`);
+        setStatus('CLOUDED - TRY AGAIN');
+        setTimeout(() => setStatus('Brew Potion'), 3000);
       }
     } catch (error) {
       console.error('Network error:', error);
-      setStatus('ERROR - TRY AGAIN');
-      setTimeout(() => {
-        setStatus('Ask me');
-      }, 3000);
+      setStatus('OFFLINE - TRY AGAIN');
+      setTimeout(() => setStatus('Brew Potion'), 3000);
     }
   };
 
@@ -68,53 +75,65 @@ const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; thir
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
         <h1 className='section-title'>Synergy Seer</h1>
         <p className='my-[0.8em_0_5em_0] text-center mb-12'>
-            {`I’m the missing piece that fits your specific puzzle.`}
+            {`I'm the missing piece that fits your specific puzzle.`}
         </p>
+        
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third border border-dashed border-third rounded-[10px] p-4 mb-28 text-center'>
-            <h2 className='font-main-semibold mb-4'>
-                     See our future at your company
+          <div className='text-third border border-dashed border-third rounded-[10px] p-4 mb-16 text-center max-w-2xl'>
+            <h2 className='font-main-semibold mb-4 uppercase tracking-wider'>
+                     The Ritual of Recruitment
             </h2>
-            <ul className='flex flex-col gap-2'>
-              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
-                Suggest a drama movie based on a true story with a good score on
-                the rotten tomatoes website.
-              </li>
-              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
-                I need a gift suggestion for my wife. She is 35 years old and
-                loves to work out and challenge herself.
-              </li>
-              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
-                Correct this to standard English: She no went to the market.
-              </li>
-              <li className='font-main-light text-[1rem] leading-[1.8] text-bright list-decimal list-inside text-left'>
-                Write a recipe based on these ingredients: meat, cheddar cheese,
-                onions, sour cream, and rice.
-              </li>
-            </ul>
+            <p className='font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+              Type the name of your company, the desired position, and paste the job description if you have it. 
+              The crystal ball will reveal the compatibility potion and predict our first 90 days together.
+            </p>
           </div>
           
-          <div className='pr-10 relative flex justify-center items-center w-full'>
+          <div className='relative flex justify-center items-center w-full mb-12'>
             {imageLeftHand && (
             <Image
-              className='absolute left-0 w-[7.5em] animate-hand-left md-custom:w-[15em] lg-custom:w-[22em]'
+              className='absolute left-[-5%] w-[7.5em] animate-hand-left md-custom:w-[15em] lg-custom:w-[22em] z-[3] pointer-events-none'
               src={imageLeftHand}
               alt='hand over crystal ball'
             />
             )}
             
-            <textarea
-              className='text-center w-[20em] h-[20em] rounded-full p-20 mb-4 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-[2] text-dark bg-bright md-custom:w-[35em] md-custom:h-[35em] md-custom:p-[15em_5em]'
-              name='prompt'
-              placeholder='Ask me anything, but at your own risk.'
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-              required
-            />
+            <div className='relative flex flex-col items-center justify-center w-[20em] h-[20em] rounded-full p-8 md-custom:w-[35em] md-custom:h-[35em] md-custom:p-20 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-[2] bg-bright'>
+              <div className='flex flex-col gap-3 w-full max-w-[250px] md-custom:max-w-[400px] z-10'>
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company Name"
+                  className="bg-transparent border-b border-dark/20 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  type="text"
+                  name="position"
+                  placeholder="Target Position"
+                  className="bg-transparent border-b border-dark/20 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors"
+                  value={formData.position}
+                  onChange={handleInputChange}
+                  required
+                />
+                <textarea
+                  name="description"
+                  placeholder="Paste Job Description (optional)"
+                  className="bg-transparent border border-dark/10 rounded-lg p-3 h-24 md-custom:h-32 text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors text-sm resize-none"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              {/* Magical Glow effect inside */}
+              <div className='absolute inset-0 bg-gradient-to-t from-third/10 to-transparent pointer-events-none animate-pulse'></div>
+            </div>
 
             {imageRightHand && (
             <Image
-              className='absolute right-0 w-[8.5em] animate-hand-right md-custom:w-[15em] lg-custom:w-[22em]'
+              className='absolute right-[-5%] w-[8.5em] animate-hand-right md-custom:w-[15em] lg-custom:w-[22em] z-[3] pointer-events-none'
               src={imageRightHand}
               alt='hand over crystal ball'
             />
@@ -122,11 +141,12 @@ const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; thir
           </div>
 
           <button
-            className='btn btn--third-color mt-4'
+            className='btn btn--third-color'
             type='submit'
+            disabled={status === 'Summoning...'}
             style={{
               backgroundColor:
-                status === 'Thinking...'
+                status === 'Summoning...'
                   ? 'var(--color-dark)'
                   : 'var(--color-third)',
             }}
@@ -135,20 +155,78 @@ const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; thir
           </button>
         </form>
 
-        <ul
-          className={`mt-4 w-3/5 mx-auto text-dark font-main-light leading-[1.5] animate-result-ai-appear ${isResultActive ? 'flex' : 'hidden'} flex-col-reverse`}
-        >
-          <li className='text-left p-4 bg-bright mb-4 rounded-[10px] md-custom:px-8'>
-            <div className='flex'>
-              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>Your question:</h4>
-              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>{newPrompt}</p>
+        {isResultActive && result && (
+          <div className='mt-20 w-full max-w-4xl mx-auto animate-result-ai-appear'>
+            <div className='bg-bright p-8 md-custom:p-12 rounded-[20px] shadow-2xl border-t-4 border-third'>
+              <div className='flex flex-col md:flex-row justify-between items-center mb-12 gap-8'>
+                <div className='text-center md:text-left'>
+                  <h3 className='text-dark font-main-heavy text-4xl mb-2 uppercase tracking-tighter'>Compatibility Potion</h3>
+                  <p className='text-dark/60 font-main-regular'>The stars have aligned for our future.</p>
+                </div>
+                <div className='relative flex items-center justify-center'>
+                   <svg className="w-32 h-32 transform -rotate-90">
+                    <circle
+                      cx="64"
+                      cy="64"
+                      r="58"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      fill="transparent"
+                      className="text-dark/10"
+                    />
+                    <circle
+                      cx="64"
+                      cy="64"
+                      r="58"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      fill="transparent"
+                      strokeDasharray={364.4}
+                      strokeDashoffset={364.4 - (364.4 * result.score) / 100}
+                      className="text-third transition-all duration-1000 ease-out"
+                    />
+                  </svg>
+                  <div className='absolute flex flex-col items-center justify-center'>
+                    <span className='text-dark font-main-heavy text-3xl'>{result.score}%</span>
+                    <span className='text-dark/50 text-[0.6rem] uppercase font-bold'>Match</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+                <div>
+                  <h4 className='text-third font-main-semibold uppercase text-sm tracking-widest mb-6 border-b border-third/20 pb-2'>Core Ingredients</h4>
+                  <div className='flex flex-wrap gap-3'>
+                    {result.ingredients.map((ing: string, i: number) => (
+                      <span key={i} className='px-4 py-2 bg-dark text-bright rounded-full text-xs font-main-medium uppercase tracking-wider shadow-md hover:scale-105 transition-transform'>
+                        {ing}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <h4 className='text-third font-main-semibold uppercase text-sm tracking-widest mt-12 mb-6 border-b border-third/20 pb-2'>The Prophecy</h4>
+                  <p className='text-dark font-main-regular italic text-lg leading-relaxed'>
+                    "{result.prediction}"
+                  </p>
+                </div>
+
+                <div className='bg-dark/5 p-6 rounded-xl border border-dark/5'>
+                  <h4 className='text-third font-main-semibold uppercase text-sm tracking-widest mb-6 border-b border-third/20 pb-2'>First 90 Days High-Impact Projects</h4>
+                  <ul className='flex flex-col gap-6'>
+                    {result.projects.map((project: string, i: number) => (
+                      <li key={i} className='flex gap-4 items-start group'>
+                        <span className='flex-shrink-0 w-8 h-8 rounded-full bg-third text-dark flex items-center justify-center font-main-bold text-sm group-hover:scale-110 transition-transform'>
+                          {i + 1}
+                        </span>
+                        <p className='text-dark font-main-regular text-sm leading-6'>{project}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className='flex'>
-              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>My wisdom:</h4>
-              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>{result}</p>
-            </div>
-          </li>
-        </ul>
+          </div>
+        )}
       </div>
       <WhyCard
         titleOne={whyData.ai.titleOne}
@@ -166,5 +244,6 @@ const SynergySeer = ({ color }: { color: { first: boolean; second: boolean; thir
     </section>
   );
 };
+
 
 export default SynergySeer;

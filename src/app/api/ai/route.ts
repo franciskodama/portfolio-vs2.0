@@ -1,71 +1,104 @@
-import { NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
+import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
-  const body = await request.json();
-  const { prompt } = body;
 
-  const apiKey = process.env.OPENAI_API_KEY;
 
-  if (!apiKey) {
-    console.error('Missing OpenAI API key');
-    return NextResponse.json({ message: 'Server configuration error' }, { status: 500 });
-  }
+const SYSTEM_PROMPT = `
+You are the Synergy Seer, a mystical AI assistant for Francis Kodama, a Software Engineer and Product Strategist. 
+Francis has 24 years of experience, moving from a successful career in Marketing and Advertising (General Director, Planning Director) to Software Engineering.
+He is expert in: React, Next.js, JavaScript, TypeScript, CSS, SASS, HTML, GSAP, and Product Strategy.
+He is resourceful, curious, creative, and a critical thinker.
 
-  if (!prompt || prompt.trim().length === 0) {
-    return NextResponse.json({ message: 'Prompt is required' }, { status: 400 });
-  }
+Incoming Request:
+The user will provide a Company Name, a Target Position, and optionally a Job Description.
 
-  console.log('AI request received with prompt length:', prompt.length);
+Your Task:
+Brew a "Synergy Magic" for Francis and this specific opportunity. 
+Research (using your internal knowledge) the company or role and determine how Francis's unique blend of veteran leadership and modern tech skills makes him the perfect fit.
 
-  const openai = new OpenAI({
-    apiKey: apiKey,
-  });
+The response must be a valid JSON object with the following structure:
+{
+  "score": number (85-100, representing the match percentage),
+  "ingredients": string[] (3-5 mystical-sounding but real skills/qualities, e.g., "Strategic Sorcery", "React Mastery", "Leadership Essence"),
+  "prediction": string (A bold, mystical prophecy starting with "Within 90 days..."),
+  "projects": string[] (3 high-impact project ideas Francis could complete in his first 90 days)
+}
 
+Be mystical, encouraging, and highly professional. Return ONLY the JSON.
+`;
+
+export async function POST(req: Request) {
   try {
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'system',
-          content: 'You are a helpful and creative assistant. Provide concise, accurate, and engaging responses.'
-        },
-        {
-          role: 'user',
-          content: prompt
-        }
-      ],
-      temperature: 0.8,
-      max_tokens: 300,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
+    const formData = await req.json();
+    const { company, position, description } = formData;
+
+    const rawApiKey = process.env.GEMINI_API_KEY || "";
+    const apiKey = rawApiKey.trim().replace(/^['"]|['"]$/g, '');
+
+    console.log("Synergy Seer Request:", { 
+      company, 
+      position, 
+      hasKey: !!apiKey,
+      keyStart: apiKey.substring(0, 6) + "...",
+      keyLength: apiKey.length 
     });
 
-    const result = completion.choices[0].message.content?.trim() || 'No response generated.';
+    if (!apiKey) {
+      console.error("Gemini API key is missing");
+      return NextResponse.json({ message: "Gemini API key not configured" }, { status: 500 });
+    }
 
-    console.log('AI response generated successfully');
-    return NextResponse.json({ 
-      result: result,
-      model: completion.model,
-      usage: completion.usage 
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+    const userPrompt = `
+      ${SYSTEM_PROMPT}
+
+      Analyze this opportunity:
+      Position: ${position}
+      Company: ${company}
+      Job Description: ${description || "Not provided"}
+    `;
+
+    // Safety settings to prevent accidental blocking of professional content
+    const safetySettings = [
+      { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+      { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+      { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+      { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+    ];
+
+    const result = await model.generateContent({
+      contents: [{ role: "user", parts: [{ text: userPrompt }] }],
+      generationConfig: { 
+        temperature: 0.7,
+        maxOutputTokens: 1024,
+      },
+      safetySettings,
     });
-  } catch (error: any) {
-    console.error('OpenAI API error:', error);
+
+    const response = await result.response;
+    let text = response.text();
     
-    let userMessage = 'Error generating response';
-    if (error?.status === 401) {
-      userMessage = 'API authentication failed. Please check your API key.';
-    } else if (error?.status === 429) {
-      userMessage = 'Rate limit exceeded. Please try again later.';
-    } else if (error?.status === 500) {
-      userMessage = 'OpenAI service error. Please try again.';
+    if (!text) {
+      throw new Error("The crystal ball remained dark (Empty response).");
+    }
+
+    // Extraction logic to find JSON structure even if model adds conversational text
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.error("No JSON found in response:", text);
+      throw new Error("The prophecy format was invalid.");
     }
     
+    const parsedData = JSON.parse(jsonMatch[0].trim());
+    return NextResponse.json(parsedData);
+  } catch (error: any) {
+    console.error("Gemini API Error details:", error);
     return NextResponse.json({ 
-      message: userMessage,
-      error: error?.message || 'Unknown error',
-      details: process.env.NODE_ENV === 'development' ? error : undefined
+      message: "The crystal ball is clouded.", 
+      error: error.message,
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
     }, { status: 500 });
   }
 }
