@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'fk.fkodama.com',
+  title: 'fkodama.com',
   description: 'Francis Kodama Portfolio',
 };
 

@@ -16,7 +16,7 @@ Research (using your internal knowledge) the company or role and determine how F
 
 The response must be a valid JSON object with the following structure:
 {
-  "score": number (85-100, representing the match percentage),
+  "score": number (94-100, representing the match percentage),
   "ingredients": string[] (3-5 mystical-sounding but real skills/qualities, e.g., "Strategic Sorcery", "React Mastery", "Leadership Essence"),
   "prediction": string (A bold, mystical prophecy starting with "Within 90 days..."),
   "projects": string[] (3 high-impact project ideas Francis could complete in his first 90 days)
