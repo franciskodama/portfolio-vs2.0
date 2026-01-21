@@ -19,6 +19,21 @@ import WhyPic13 from '../assets/images/why-pic-13.jpg';
 import WhyPic14 from '../assets/images/why-pic-14.jpg';
 import WhyPic15 from '../assets/images/why-pic-15.jpg';
 import WhyPic16 from '../assets/images/why-pic-16.jpg';
+import WhyPic20 from '../assets/images/why-pic-20.jpg';
+import WhyPic21 from '../assets/images/why-pic-21.jpg';
+import WhyPic22 from '../assets/images/why-pic-22.jpg';
+import WhyPic23 from '../assets/images/why-pic-23.jpg';
+import WhyPic26 from '../assets/images/why-pic-26.jpg';
+import WhyPic27 from '../assets/images/why-pic-27.jpg';
+import WhyPic28 from '../assets/images/why-pic-28.jpg';
+import WhyPic29 from '../assets/images/why-pic-29.jpg';
+import WhyPic30 from '../assets/images/why-pic-30.jpg';
+import WhyPic31 from '../assets/images/why-pic-31.jpg';
+import WhyPic33 from '../assets/images/why-pic-33.jpg';
+import WhyPic37 from '../assets/images/why-pic-37.jpg';
+import WhyPic38 from '../assets/images/why-pic-38.jpg';
+import WhyPic40 from '../assets/images/why-pic-40.jpg';
+import WhyPic41 from '../assets/images/why-pic-41.jpg';
 
 const WhyMe = () => {
   const [heartShown, setHeartShown] = useState(false);
@@ -39,6 +54,21 @@ const WhyMe = () => {
   const [fourteenShown, setFourteenShown] = useState(false);
   const [fifteenShown, setFifteenShown] = useState(false);
   const [sixteenShown, setSixteenShown] = useState(false);
+  const [twentyShown, setTwentyShown] = useState(false);
+  const [twentyOneShown, setTwentyOneShown] = useState(false);
+  const [twentyTwoShown, setTwentyTwoShown] = useState(false);
+  const [twentyThreeShown, setTwentyThreeShown] = useState(false);
+  const [twentySixShown, setTwentySixShown] = useState(false);
+  const [twentySevenShown, setTwentySevenShown] = useState(false);
+  const [twentyEightShown, setTwentyEightShown] = useState(false);
+  const [twentyNineShown, setTwentyNineShown] = useState(false);
+  const [thirtyShown, setThirtyShown] = useState(false);
+  const [thirtyOneShown, setThirtyOneShown] = useState(false);
+  const [thirtyThreeShown, setThirtyThreeShown] = useState(false);
+  const [thirtySevenShown, setThirtySevenShown] = useState(false);
+  const [thirtyEightShown, setThirtyEightShown] = useState(false);
+  const [fortyShown, setFortyShown] = useState(false);
+  const [fortyOneShown, setFortyOneShown] = useState(false);
 
   return (
     <section className='section bg-dark' id='whyme'>
@@ -50,9 +80,13 @@ const WhyMe = () => {
         </p>
 
         <div
-          className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-third p-8 lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[3.3em_3.5em_4em_3.5em] ${heartShown ? 'hidden' : 'flex'}`}
+          className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-third p-8 lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[3.3em_3.5em_4em_3.5em] ${
+            heartShown ? 'hidden' : 'flex'
+          }`}
         >
-          <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] text-center uppercase font-main-heavy'>Whole package</h4>
+          <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] text-center uppercase font-main-heavy'>
+            Whole package
+          </h4>
           <p className='text-[1.5rem] text-center uppercase font-main-semibold leading-[1.7rem]'>
             Maturity, organization, strategic view, and much more from 24 years
             of experience.
@@ -60,9 +94,13 @@ const WhyMe = () => {
         </div>
 
         <div
-          className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-dark border-2 border-third p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[1.8em_2.5em] ${heartShown ? 'flex' : 'hidden'}`}
+          className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-dark border-2 border-third p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[1.8em_2.5em] ${
+            heartShown ? 'flex' : 'hidden'
+          }`}
         >
-          <h4 className='text-center uppercase font-main-heavy text-[1.3rem] mb-[0.3em] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>PASSION</h4>
+          <h4 className='text-center uppercase font-main-heavy text-[1.3rem] mb-[0.3em] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
+            PASSION
+          </h4>
           <div className='text-center uppercase font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
             My career in marketing <br></br> spanned more than two decades, and
             I achieved important positions <br></br>I had planned. Now is the
@@ -71,19 +109,28 @@ const WhyMe = () => {
             of fun with!
             <br></br>
             <br></br>
-            <q className='hidden font-main-light italic text-bright lg-custom:block' rel='Joe Namath'>
+            <q
+              className='hidden font-main-light italic text-bright lg-custom:block'
+              rel='Joe Namath'
+            >
               "When you have fun, you can do amazing things."
             </q>
-            <span className='hidden text-bright mt-2 lg-custom:block'>- Joe Namath</span>
+            <span className='hidden text-bright mt-2 lg-custom:block'>
+              - Joe Namath
+            </span>
           </div>
         </div>
 
         <div
-          className='absolute left-1/2 -translate-x-1/2 -translate-y-[35px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] mx-auto border-2 border-dark cursor-pointer z-[3]'
+          className='absolute left-1/2 -translate-x-1/2 -translate-y-[35px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] mx-auto border-2 border-dark cursor-pointer z-3'
           onClick={() => setHeartShown(!heartShown)}
         >
-          <h4 className='w-[8ch] font-main-semibold text-dark mb-2 text-[0.5rem] leading-[0.5rem] text-center uppercase'>Why changing carrers?</h4>
-          <p className='font-main-regular text-[0.5rem] leading-[0.5rem] text-center uppercase w-[5ch]'>Click here</p>
+          <h4 className='w-[8ch] font-main-semibold text-dark mb-2 text-[0.5rem] leading-2 text-center uppercase'>
+            Why changing carrers?
+          </h4>
+          <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
+            Click here
+          </p>
         </div>
 
         <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
@@ -95,13 +142,13 @@ const WhyMe = () => {
             <div className='flex flex-col items-center justify-center mt-12 lg-custom:flex-row lg-custom:mt-20'>
               <div className='flex flex-col items-center relative m-0 w-[85%] lg-custom:w-[25em] lg-custom:block lg-custom:mr-10'>
                 <div className='flex flex-wrap items-center justify-center lg-custom:flex-nowrap lg-custom:justify-end'>
-                  <h3 className='text-third text-[1.5rem] uppercase font-main-heavy leading-[1.5rem] p-0 lg-custom:w-[8ch]'>Changing carreers</h3>
-                  <span
-                    className='text-[2.8em] font-main-regular text-third pb-1 mx-[0.3em]'
-                  >
+                  <h3 className='text-third text-[1.5rem] uppercase font-main-heavy leading-6 p-0 lg-custom:w-[8ch]'>
+                    Changing carreers
+                  </h3>
+                  <span className='text-[2.8em] font-main-regular text-third pb-1 mx-[0.3em]'>
                     {String.fromCharCode(123)}
                   </span>
-                  <div className='text-[1.5rem] uppercase font-main-heavy leading-[1.5rem] w-[10ch]'>
+                  <div className='text-[1.5rem] uppercase font-main-heavy leading-6 w-[10ch]'>
                     software engineer
                   </div>
                   <span className='text-[2.8em] font-main-regular text-third pb-1'>
@@ -110,22 +157,27 @@ const WhyMe = () => {
                   <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
                 </div>
                 <p className='text-third font-main-regular text-center text-[0.8rem]'>
-                  2020 ~ <span className='font-main-semibold bg-third text-dark px-[0.6em]'>TODAY</span>
+                  2020 ~{' '}
+                  <span className='font-main-semibold bg-third text-dark px-[0.6em]'>
+                    TODAY
+                  </span>
                 </p>
-                <p className='text-right text-[0.8rem] font-main-regular leading-4 mt-1 uppercase text-center lg-custom:text-right'
-                style={{ width: "95%"}}
+                <p
+                  className='text-right text-[0.8rem] font-main-regular leading-4 mt-1 uppercase lg-custom:text-right'
+                  style={{ width: '95%' }}
                 >
-                  React | Next.js | JavaScript | Typescript | CSS3 | SASS | HTML5 | 
-                  Styled Components | Tailwind | APIs | Prisma | GraphQL | Retool | 
-                  Airtable | Firebase | Responsive Design | Git | Yarn | NPM | 
-                  Figma | Adobe Photoshop | Jira | Agile | ...And a big  smile
+                  React | Next.js | JavaScript | Typescript | CSS3 | SASS |
+                  HTML5 | Styled Components | Tailwind | APIs | Prisma | GraphQL
+                  | Retool | Airtable | Firebase | Responsive Design | Git |
+                  Yarn | NPM | Figma | Adobe Photoshop | Jira | Agile | ...And a
+                  big smile
                 </p>
               </div>
               <div className='flex flex-col items-center text-center mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:items-start lg-custom:text-left lg-custom:m-0 lg-custom:ml-10'>
                 <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
                   How does all of this benefit you?
                 </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-[1.5rem] mt-2 uppercase lg-custom:w-[25ch]'>
+                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
                   I will work with teams, contributing and inspiring colleagues
                   in order to get the best out of us.
                 </h5>
@@ -140,10 +192,15 @@ const WhyMe = () => {
           >
             <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
               <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-[1.5rem] text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em] leading-[1.1em]'>General Director</h3>
+                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
+                  General Director
+                </h3>
                 <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
                 <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Circus | <span className='text-third font-main-regular'>2016 ~ 2020</span>
+                  Circus |{' '}
+                  <span className='text-third font-main-regular'>
+                    2016 ~ 2020
+                  </span>
                 </p>
                 <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
                   <li>Leadership</li>
@@ -153,9 +210,12 @@ const WhyMe = () => {
               </div>
 
               <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>Why is it good for you?</h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-[1.5rem] mt-2 uppercase lg-custom:w-[25ch]'>
-                  I will bring valuable experience and leadership skills to your organization.
+                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
+                  Why is it good for you?
+                </h6>
+                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
+                  I will bring valuable experience and leadership skills to your
+                  organization.
                 </h5>
               </div>
             </div>
@@ -168,12 +228,15 @@ const WhyMe = () => {
           >
             <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
               <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-[1.5rem] text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em] leading-[1.1em]'>
+                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
                   Planning and new business director
                 </h3>
                 <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
                 <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Circus | <span className='text-third font-main-regular'>2011 ~ 2015</span>
+                  Circus |{' '}
+                  <span className='text-third font-main-regular'>
+                    2011 ~ 2015
+                  </span>
                 </p>
                 <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
                   <li>Presentations</li>
@@ -183,8 +246,10 @@ const WhyMe = () => {
               </div>
 
               <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>Why is it good for you?</h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-[1.5rem] mt-2 uppercase lg-custom:w-[25ch]'>
+                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
+                  Why is it good for you?
+                </h6>
+                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
                   Through listening, <br></br>strategy, and effective
                   communication, I will present my ideas, negotiating and
                   optimizing results on multiple fronts.
@@ -200,14 +265,21 @@ const WhyMe = () => {
           >
             <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
               <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-[1.5rem] text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em] leading-[1.1em]'>Client Services Director</h3>
+                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
+                  Client Services Director
+                </h3>
                 <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
                 <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  WE | <span className='text-third font-main-regular'>2008 ~ 2010</span>
+                  WE |{' '}
+                  <span className='text-third font-main-regular'>
+                    2008 ~ 2010
+                  </span>
                 </p>
                 <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
                   Rapp Collins |{' '}
-                  <span className='text-third font-main-regular'>2007 ~ 2008</span>
+                  <span className='text-third font-main-regular'>
+                    2007 ~ 2008
+                  </span>
                 </p>
                 <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
                   <li>Leadership</li>
@@ -217,8 +289,10 @@ const WhyMe = () => {
               </div>
 
               <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>Why is it good for you?</h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-[1.5rem] mt-2 uppercase lg-custom:w-[25ch]'>
+                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
+                  Why is it good for you?
+                </h6>
+                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
                   I will listen closely to customers to understand and discover
                   their real needs.
                 </h5>
@@ -233,13 +307,15 @@ const WhyMe = () => {
           >
             <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
               <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-[1.5rem] text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em] leading-[1.1em] uppercase'>
+                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
                   Advertising <br></br>and digital marketing manager
                 </h3>
                 <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
                 <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
                   Peugeot-Citroën Automobile |{' '}
-                  <span className='text-third font-main-regular'>2000 ~ 2007</span>
+                  <span className='text-third font-main-regular'>
+                    2000 ~ 2007
+                  </span>
                 </p>
                 <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
                   <li>Critical Thinking</li>
@@ -249,8 +325,10 @@ const WhyMe = () => {
               </div>
 
               <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>Why is it good for you?</h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-[1.5rem] mt-2 uppercase lg-custom:w-[25ch]'>
+                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
+                  Why is it good for you?
+                </h6>
+                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
                   I will use my experience in campaign evaluation, critical
                   thinking, and a keen eye for design to provide my opinion so
                   the team can develop the best digital product.
@@ -269,7 +347,11 @@ const WhyMe = () => {
               onMouseEnter={() => setOneShown(true)}
               onMouseLeave={() => setOneShown(false)}
             />
-            {oneShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>WE 2008</p> : null}
+            {oneShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                WE 2008
+              </p>
+            ) : null}
           </div>
 
           <div className='relative grid-row-span-2 row-span-2'>
@@ -280,7 +362,11 @@ const WhyMe = () => {
               onMouseEnter={() => setTwoShown(true)}
               onMouseLeave={() => setTwoShown(false)}
             />
-            {twoShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2017</p> : null}
+            {twoShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2017
+              </p>
+            ) : null}
           </div>
 
           <div className='relative'>
@@ -292,7 +378,9 @@ const WhyMe = () => {
               onMouseLeave={() => setThirteenShown(false)}
             />
             {thirteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2019</p>
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2019
+              </p>
             ) : null}
           </div>
 
@@ -304,7 +392,11 @@ const WhyMe = () => {
               onMouseEnter={() => setFourShown(true)}
               onMouseLeave={() => setFourShown(false)}
             />
-            {fourShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Citroën 2007</p> : null}
+            {fourShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën 2007
+              </p>
+            ) : null}
           </div>
 
           <div className='relative grid-row-span-2 row-span-2'>
@@ -315,7 +407,11 @@ const WhyMe = () => {
               onMouseEnter={() => setFiveShown(true)}
               onMouseLeave={() => setFiveShown(false)}
             />
-            {fiveShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>WE 2008</p> : null}
+            {fiveShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                WE 2008
+              </p>
+            ) : null}
           </div>
 
           <div className='relative grid-row-span-2 row-span-2'>
@@ -326,7 +422,11 @@ const WhyMe = () => {
               onMouseEnter={() => setSixShown(true)}
               onMouseLeave={() => setSixShown(false)}
             />
-            {sixShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2020</p> : null}
+            {sixShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2020
+              </p>
+            ) : null}
           </div>
 
           <div className='relative'>
@@ -337,7 +437,11 @@ const WhyMe = () => {
               onMouseEnter={() => setSevenShown(true)}
               onMouseLeave={() => setSevenShown(false)}
             />
-            {sevenShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2016</p> : null}
+            {sevenShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2016
+              </p>
+            ) : null}
           </div>
 
           <div className='relative grid-row-span-2 row-span-2'>
@@ -348,7 +452,11 @@ const WhyMe = () => {
               onMouseEnter={() => setEightShown(true)}
               onMouseLeave={() => setEightShown(false)}
             />
-            {eightShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2014</p> : null}
+            {eightShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2014
+              </p>
+            ) : null}
           </div>
 
           <div className='relative grid-row-span-2 row-span-2'>
@@ -359,7 +467,11 @@ const WhyMe = () => {
               onMouseEnter={() => setNineShown(true)}
               onMouseLeave={() => setNineShown(false)}
             />
-            {nineShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Citroën 2006</p> : null}
+            {nineShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën 2006
+              </p>
+            ) : null}
           </div>
 
           <div className='relative grid-row-span-2 row-span-2'>
@@ -370,7 +482,11 @@ const WhyMe = () => {
               onMouseEnter={() => setTenShown(true)}
               onMouseLeave={() => setTenShown(false)}
             />
-            {tenShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2020</p> : null}
+            {tenShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2020
+              </p>
+            ) : null}
           </div>
 
           <div className='relative'>
@@ -381,7 +497,11 @@ const WhyMe = () => {
               onMouseEnter={() => setElevenShown(true)}
               onMouseLeave={() => setElevenShown(false)}
             />
-            {elevenShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2019</p> : null}
+            {elevenShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2019
+              </p>
+            ) : null}
           </div>
 
           <div className='relative'>
@@ -393,7 +513,9 @@ const WhyMe = () => {
               onMouseLeave={() => setTwelveShown(false)}
             />
             {twelveShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Rapp Collins 2008</p>
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Rapp Collins 2008
+              </p>
             ) : null}
           </div>
           <div className='relative'>
@@ -404,7 +526,11 @@ const WhyMe = () => {
               onMouseEnter={() => setThreeShown(true)}
               onMouseLeave={() => setThreeShown(false)}
             />
-            {threeShown ? <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2012</p> : null}
+            {threeShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2012
+              </p>
+            ) : null}
           </div>
 
           <div className='relative'>
@@ -416,7 +542,9 @@ const WhyMe = () => {
               onMouseLeave={() => setFourteenShown(false)}
             />
             {fourteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Rapp Collins 2007</p>
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Rapp Collins 2007
+              </p>
             ) : null}
           </div>
 
@@ -429,7 +557,9 @@ const WhyMe = () => {
               onMouseLeave={() => setFifteenShown(false)}
             />
             {fifteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Circus 2013</p>
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Circus 2013
+              </p>
             ) : null}
           </div>
 
@@ -442,7 +572,234 @@ const WhyMe = () => {
               onMouseLeave={() => setSixteenShown(false)}
             />
             {sixteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>Rapp Collins 2007</p>
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Rapp Collins 2007
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic20}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentyShown(true)}
+              onMouseLeave={() => setTwentyShown(false)}
+            />
+            {twentyShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                WE 2008
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic21}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentyOneShown(true)}
+              onMouseLeave={() => setTwentyOneShown(false)}
+            />
+            {twentyOneShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                WE 2008
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic22}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentyTwoShown(true)}
+              onMouseLeave={() => setTwentyTwoShown(false)}
+            />
+            {twentyTwoShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                RAPP COLLINS 2008
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic23}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentyThreeShown(true)}
+              onMouseLeave={() => setTwentyThreeShown(false)}
+            />
+            {twentyThreeShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                CIRCUS 2018
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic26}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentySixShown(true)}
+              onMouseLeave={() => setTwentySixShown(false)}
+            />
+            {twentySixShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën 2005
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic27}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentySevenShown(true)}
+              onMouseLeave={() => setTwentySevenShown(false)}
+            />
+            {twentySevenShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                THE LNK 2022
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic40}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setFortyShown(true)}
+              onMouseLeave={() => setFortyShown(false)}
+            />
+            {fortyShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën 2003
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic28}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentyEightShown(true)}
+              onMouseLeave={() => setTwentyEightShown(false)}
+            />
+            {twentyEightShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën France 2003
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic29}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setTwentyNineShown(true)}
+              onMouseLeave={() => setTwentyNineShown(false)}
+            />
+            {twentyNineShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                RAPP COLLINS 2008
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic30}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setThirtyShown(true)}
+              onMouseLeave={() => setThirtyShown(false)}
+            />
+            {thirtyShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                THE LNK 2023
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic31}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setThirtyOneShown(true)}
+              onMouseLeave={() => setThirtyOneShown(false)}
+            />
+            {thirtyOneShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën 2002
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic33}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setThirtyThreeShown(true)}
+              onMouseLeave={() => setThirtyThreeShown(false)}
+            />
+            {thirtyThreeShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                REMOTE 2024
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic37}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setThirtySevenShown(true)}
+              onMouseLeave={() => setThirtySevenShown(false)}
+            />
+            {thirtySevenShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                Citroën 2007
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic38}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setThirtyEightShown(true)}
+              onMouseLeave={() => setThirtyEightShown(false)}
+            />
+            {thirtyEightShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                THE LNK 2023
+              </p>
+            ) : null}
+          </div>
+
+          <div className='relative'>
+            <Image
+              src={WhyPic41}
+              alt='gallery element'
+              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              onMouseEnter={() => setFortyOneShown(true)}
+              onMouseLeave={() => setFortyOneShown(false)}
+            />
+            {fortyOneShown ? (
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
+                THE LNK 2022
+              </p>
             ) : null}
           </div>
         </section>

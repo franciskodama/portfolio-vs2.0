@@ -89,10 +89,12 @@ const SynergySeer = ({
             <h2 className='font-main-semibold mb-4 uppercase tracking-wider'>
               The Ritual of Recruitment
             </h2>
-            <p className='font-main-light text-[0.9rem] leading-[1.6] text-bright'>
-              Type the name of your company, the desired position, and paste the
-              job description if you have it. The crystal ball will reveal the
-              compatibility potion and predict our first 90 days together.
+            <p className='font-main-light text-[0.9rem] leading-[1.6] text-bright w-[45ch] p-4'>
+              Type the name of your company, the title of this role, and paste
+              the job description if you have one.
+              <br />
+              <br /> The crystal ball will then reveal the compatibility
+              prophecy and predict our first 90 days together.
             </p>
           </div>
 
@@ -108,12 +110,12 @@ const SynergySeer = ({
             )}
 
             <div className='relative flex flex-col items-center justify-center mt-32 w-[20em] h-[20em] rounded-full p-8 md-custom:w-[35em] md-custom:h-[35em] md-custom:p-20 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-2 bg-bright'>
-              <div className='flex flex-col gap-3 w-full max-w-[250px] md-custom:max-w-[400px] z-10'>
+              <div className='flex flex-col gap-6 w-full max-w-[250px] md-custom:max-w-[400px] z-10'>
                 <input
                   type='text'
                   name='company'
-                  placeholder='Company Name'
-                  className='bg-transparent border-b border-dark/20 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors'
+                  placeholder='Type here your Company Name'
+                  className='bg-transparent border-0 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors'
                   value={formData.company}
                   onChange={handleInputChange}
                   required
@@ -121,16 +123,16 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='position'
-                  placeholder='Target Position'
-                  className='bg-transparent border-b border-dark/20 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors'
+                  placeholder='Type here the Title Position'
+                  className='bg-transparent border-0 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors'
                   value={formData.position}
                   onChange={handleInputChange}
                   required
                 />
                 <textarea
                   name='description'
-                  placeholder='Paste Job Description (optional)'
-                  className='bg-transparent border border-dark/10 p-3 h-24 md-custom:h-32 text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors text-sm resize-none'
+                  placeholder='Paste here the Job Description (optional)'
+                  className='bg-transparent text-center border-0 p-3 h-24 md-custom:h-32 text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors text-sm resize-none'
                   value={formData.description}
                   onChange={handleInputChange}
                 />
