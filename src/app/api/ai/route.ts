@@ -1,7 +1,5 @@
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-import { NextResponse } from "next/server";
-
-
+import OpenAI from 'openai';
+import { NextResponse } from 'next/server';
 
 const SYSTEM_PROMPT = `
 You are the Synergy Seer, a mystical AI assistant for Francis Kodama, a Software Engineer and Product Strategist. 
@@ -32,73 +30,62 @@ export async function POST(req: Request) {
     const formData = await req.json();
     const { company, position, description } = formData;
 
-    const rawApiKey = process.env.GEMINI_API_KEY || "";
-    const apiKey = rawApiKey.trim().replace(/^['"]|['"]$/g, '');
+    const apiKey = process.env.OPENAI_API_KEY;
 
-    console.log("Synergy Seer Request:", { 
-      company, 
-      position, 
+    console.log('Synergy Seer Request (OpenAI):', {
+      company,
+      position,
       hasKey: !!apiKey,
-      keyStart: apiKey.substring(0, 6) + "...",
-      keyLength: apiKey.length 
     });
 
     if (!apiKey) {
-      console.error("Gemini API key is missing");
-      return NextResponse.json({ message: "Gemini API key not configured" }, { status: 500 });
+      console.error('OpenAI API key is missing');
+      return NextResponse.json(
+        { message: 'OpenAI API key not configured' },
+        { status: 500 }
+      );
     }
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
-    const userPrompt = `
-      ${SYSTEM_PROMPT}
-
-      Analyze this opportunity:
-      Position: ${position}
-      Company: ${company}
-      Job Description: ${description || "Not provided"}
-    `;
-
-    // Safety settings to prevent accidental blocking of professional content
-    const safetySettings = [
-      { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-      { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
-      { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
-      { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
-    ];
-
-    const result = await model.generateContent({
-      contents: [{ role: "user", parts: [{ text: userPrompt }] }],
-      generationConfig: { 
-        temperature: 0.7,
-        maxOutputTokens: 1024,
-      },
-      safetySettings,
+    const openai = new OpenAI({
+      apiKey: apiKey,
     });
 
-    const response = await result.response;
-    let text = response.text();
-    
-    if (!text) {
-      throw new Error("The crystal ball remained dark (Empty response).");
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      response_format: { type: 'json_object' },
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        {
+          role: 'user',
+          content: `
+            Analyze this opportunity:
+            Position: ${position}
+            Company: ${company}
+            Job Description: ${description || 'Not provided'}
+          `,
+        },
+      ],
+      temperature: 0.7,
+    });
+
+    const content = completion.choices[0].message.content;
+
+    if (!content) {
+      throw new Error('The crystal ball remained dark (Empty response).');
     }
 
-    // Extraction logic to find JSON structure even if model adds conversational text
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.error("No JSON found in response:", text);
-      throw new Error("The prophecy format was invalid.");
-    }
-    
-    const parsedData = JSON.parse(jsonMatch[0].trim());
+    const parsedData = JSON.parse(content);
     return NextResponse.json(parsedData);
   } catch (error: any) {
-    console.error("Gemini API Error details:", error);
-    return NextResponse.json({ 
-      message: "The crystal ball is clouded.", 
-      error: error.message,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
-    }, { status: 500 });
+    console.error('OpenAI API Error details:', error);
+    return NextResponse.json(
+      {
+        message: 'The crystal ball is clouded.',
+        error: error.message,
+        details:
+          process.env.NODE_ENV === 'development' ? error.stack : undefined,
+      },
+      { status: 500 }
+    );
   }
 }
