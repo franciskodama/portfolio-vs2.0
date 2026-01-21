@@ -10,7 +10,7 @@ const SynergySeer = ({
 }: {
   color: { first: boolean; second: boolean; third: boolean };
 }) => {
-  const [status, setStatus] = useState('Brew Potion');
+  const [status, setStatus] = useState('Consult the Seer');
   const [formData, setFormData] = useState({
     company: '',
     position: '',
@@ -60,19 +60,19 @@ const SynergySeer = ({
       if (response.ok) {
         setResult(data);
         setIsResultActive(true);
-        setStatus('BREW ANOTHER');
+        setStatus('CONSULT AGAIN');
         setFormData({ company: '', position: '', description: '' });
       } else {
         console.error('Error from AI API:', data.message);
         console.error('Full Error Data:', data);
         if (data.error) alert(`Synergy Seer Error: ${data.error}`);
         setStatus('CLOUDED - TRY AGAIN');
-        setTimeout(() => setStatus('Brew Potion'), 3000);
+        setTimeout(() => setStatus('Consult the Seer'), 3000);
       }
     } catch (error) {
       console.error('Network error:', error);
       setStatus('OFFLINE - TRY AGAIN');
-      setTimeout(() => setStatus('Brew Potion'), 3000);
+      setTimeout(() => setStatus('Consult the Seer'), 3000);
     }
   };
 
@@ -85,7 +85,7 @@ const SynergySeer = ({
         </p>
 
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third border border-dashed border-third rounded-[10px] p-4 mb-16 text-center max-w-2xl'>
+          <div className='text-third border border-dashed border-third p-4 mb-16 text-center max-w-2xl'>
             <h2 className='font-main-semibold mb-4 uppercase tracking-wider'>
               The Ritual of Recruitment
             </h2>
@@ -96,16 +96,18 @@ const SynergySeer = ({
             </p>
           </div>
 
-          <div className='relative flex justify-center items-center w-full mb-12'>
+          <div className='relative flex justify-center items-center w-full mt-32 mb-12'>
             {imageLeftHand && (
-              <Image
-                className='absolute left-[-5%] w-[7.5em] animate-hand-left md-custom:w-[15em] lg-custom:w-[22em] z-3 pointer-events-none'
-                src={imageLeftHand}
-                alt='hand over crystal ball'
-              />
+              <div className='absolute top-[-15%] left-1/2 z-1 pointer-events-none transform -translate-x-full -ml-2 w-[7.5em] md-custom:w-[15em] lg-custom:w-[22em]'>
+                <Image
+                  className='w-full animate-hand-left'
+                  src={imageLeftHand}
+                  alt='hand over crystal ball'
+                />
+              </div>
             )}
 
-            <div className='relative flex flex-col items-center justify-center w-[20em] h-[20em] rounded-full p-8 md-custom:w-[35em] md-custom:h-[35em] md-custom:p-20 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-2 bg-bright'>
+            <div className='relative flex flex-col items-center justify-center mt-32 w-[20em] h-[20em] rounded-full p-8 md-custom:w-[35em] md-custom:h-[35em] md-custom:p-20 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-2 bg-bright'>
               <div className='flex flex-col gap-3 w-full max-w-[250px] md-custom:max-w-[400px] z-10'>
                 <input
                   type='text'
@@ -128,32 +130,33 @@ const SynergySeer = ({
                 <textarea
                   name='description'
                   placeholder='Paste Job Description (optional)'
-                  className='bg-transparent border border-dark/10 rounded-lg p-3 h-24 md-custom:h-32 text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors text-sm resize-none'
+                  className='bg-transparent border border-dark/10 p-3 h-24 md-custom:h-32 text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors text-sm resize-none'
                   value={formData.description}
                   onChange={handleInputChange}
                 />
               </div>
 
-              {/* Magical Glow effect inside */}
               <div className='absolute inset-0 bg-linear-to-t from-third/10 to-transparent pointer-events-none animate-pulse'></div>
             </div>
 
             {imageRightHand && (
-              <Image
-                className='absolute right-[-5%] w-[8.5em] animate-hand-right md-custom:w-[15em] lg-custom:w-[22em] z-3 pointer-events-none'
-                src={imageRightHand}
-                alt='hand over crystal ball'
-              />
+              <div className='absolute top-[-15%] left-1/2 z-1 pointer-events-none transform ml-2 w-[8.5em] md-custom:w-[15em] lg-custom:w-[22em]'>
+                <Image
+                  className='w-full animate-hand-right'
+                  src={imageRightHand}
+                  alt='hand over crystal ball'
+                />
+              </div>
             )}
           </div>
 
           <button
             className='btn btn--third-color'
             type='submit'
-            disabled={status === 'Summoning...'}
+            disabled={status === 'Divining...'}
             style={{
               backgroundColor:
-                status === 'Summoning...'
+                status === 'Divining...'
                   ? 'var(--color-dark)'
                   : 'var(--color-third)',
             }}
@@ -168,7 +171,7 @@ const SynergySeer = ({
               <div className='flex flex-col md:flex-row justify-between items-center mb-12 gap-8'>
                 <div className='text-center md:text-left'>
                   <h3 className='text-dark font-main-heavy text-4xl mb-2 uppercase tracking-tighter'>
-                    Compatibility Potion
+                    Compatibility Reading
                   </h3>
                   <p className='text-dark/60 font-main-regular'>
                     The stars have aligned for our future.
@@ -211,7 +214,7 @@ const SynergySeer = ({
               <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
                 <div>
                   <h4 className='text-third font-main-semibold uppercase text-sm tracking-widest mb-6 border-b border-third/20 pb-2'>
-                    Core Ingredients
+                    Elemental Forces
                   </h4>
                   <div className='flex flex-wrap gap-3'>
                     {result.ingredients.map((ing: string, i: number) => (
