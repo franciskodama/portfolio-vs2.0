@@ -3,72 +3,48 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
-import WhyPic01 from '../assets/images/why-pic-01.jpg';
-import WhyPic02 from '../assets/images/why-pic-02.jpg';
-import WhyPic03 from '../assets/images/why-pic-03.jpg';
-import WhyPic04 from '../assets/images/why-pic-04.jpg';
-import WhyPic05 from '../assets/images/why-pic-05.jpg';
-import WhyPic06 from '../assets/images/why-pic-06.jpg';
-import WhyPic07 from '../assets/images/why-pic-07.jpg';
-import WhyPic08 from '../assets/images/why-pic-08.jpg';
-import WhyPic09 from '../assets/images/why-pic-09.jpg';
-import WhyPic10 from '../assets/images/why-pic-10.jpg';
-import WhyPic11 from '../assets/images/why-pic-11.jpg';
-import WhyPic12 from '../assets/images/why-pic-12.jpg';
-import WhyPic13 from '../assets/images/why-pic-13.jpg';
-import WhyPic14 from '../assets/images/why-pic-14.jpg';
-import WhyPic15 from '../assets/images/why-pic-15.jpg';
-import WhyPic16 from '../assets/images/why-pic-16.jpg';
-import WhyPic20 from '../assets/images/why-pic-20.jpg';
-import WhyPic21 from '../assets/images/why-pic-21.jpg';
-import WhyPic22 from '../assets/images/why-pic-22.jpg';
-import WhyPic23 from '../assets/images/why-pic-23.jpg';
-import WhyPic26 from '../assets/images/why-pic-26.jpg';
-import WhyPic27 from '../assets/images/why-pic-27.jpg';
-import WhyPic28 from '../assets/images/why-pic-28.jpg';
-import WhyPic29 from '../assets/images/why-pic-29.jpg';
-import WhyPic30 from '../assets/images/why-pic-30.jpg';
-import WhyPic31 from '../assets/images/why-pic-31.jpg';
-import WhyPic33 from '../assets/images/why-pic-33.jpg';
-import WhyPic37 from '../assets/images/why-pic-37.jpg';
-import WhyPic38 from '../assets/images/why-pic-38.jpg';
-import WhyPic40 from '../assets/images/why-pic-40.jpg';
-import WhyPic41 from '../assets/images/why-pic-41.jpg';
+
+const galleryData = [
+  { id: '01', caption: 'WE 2008', span: true },
+  { id: '02', caption: 'Circus 2017', span: true },
+  { id: '03', caption: 'Circus 2019', span: false },
+  { id: '04', caption: 'Citroën 2007', span: true },
+  { id: '05', caption: 'WE 2008', span: true },
+  { id: '06', caption: 'Circus 2020', span: true },
+  { id: '07', caption: 'Circus 2016', span: false },
+  { id: '08', caption: 'Circus 2014', span: true },
+  { id: '09', caption: 'Citroën 2006', span: true },
+  { id: '10', caption: 'Circus 2020', span: true },
+  { id: '11', caption: 'Circus 2019', span: false },
+  { id: '12', caption: 'Rapp Collins 2008', span: false },
+  { id: '13', caption: 'Circus 2012', span: false },
+  { id: '14', caption: 'Rapp Collins 2007', span: false },
+  { id: '15', caption: 'Circus 2013', span: false },
+  { id: '16', caption: 'Rapp Collins 2007', span: false },
+  { id: '17', caption: 'Rapp Collins 2007', span: false },
+  { id: '18', caption: 'Rapp Collins 2007', span: false },
+  { id: '19', caption: 'Rapp Collins 2007', span: false },
+  { id: '20', caption: 'WE 2008', span: false },
+  { id: '21', caption: 'WE 2008', span: false },
+  { id: '22', caption: 'RAPP COLLINS 2008', span: false },
+  { id: '23', caption: 'CIRCUS 2018', span: false },
+  { id: '24', caption: 'CIRCUS 2018', span: false },
+  { id: '25', caption: 'Portfolio', span: false },
+  { id: '26', caption: 'Citroën 2005', span: false },
+  { id: '27', caption: 'THE LNK 2022', span: false },
+  { id: '28', caption: 'Citroën France 2003', span: false },
+  { id: '29', caption: 'RAPP COLLINS 2008', span: false },
+  { id: '30', caption: 'THE LNK 2023', span: false },
+  { id: '31', caption: 'Citroën 2002', span: false },
+  { id: '32', caption: 'Portfolio', span: false },
+  { id: '33', caption: 'REMOTE 2024', span: false },
+  { id: '34', caption: 'Portfolio', span: false },
+  { id: '35', caption: 'Portfolio', span: false },
+  { id: '36', caption: 'Citroën 2007', span: false },
+];
 
 const WhyMe = () => {
   const [heartShown, setHeartShown] = useState(false);
-
-  const [oneShown, setOneShown] = useState(false);
-  const [twoShown, setTwoShown] = useState(false);
-  const [threeShown, setThreeShown] = useState(false);
-  const [fourShown, setFourShown] = useState(false);
-  const [fiveShown, setFiveShown] = useState(false);
-  const [sixShown, setSixShown] = useState(false);
-  const [sevenShown, setSevenShown] = useState(false);
-  const [eightShown, setEightShown] = useState(false);
-  const [nineShown, setNineShown] = useState(false);
-  const [tenShown, setTenShown] = useState(false);
-  const [elevenShown, setElevenShown] = useState(false);
-  const [twelveShown, setTwelveShown] = useState(false);
-  const [thirteenShown, setThirteenShown] = useState(false);
-  const [fourteenShown, setFourteenShown] = useState(false);
-  const [fifteenShown, setFifteenShown] = useState(false);
-  const [sixteenShown, setSixteenShown] = useState(false);
-  const [twentyShown, setTwentyShown] = useState(false);
-  const [twentyOneShown, setTwentyOneShown] = useState(false);
-  const [twentyTwoShown, setTwentyTwoShown] = useState(false);
-  const [twentyThreeShown, setTwentyThreeShown] = useState(false);
-  const [twentySixShown, setTwentySixShown] = useState(false);
-  const [twentySevenShown, setTwentySevenShown] = useState(false);
-  const [twentyEightShown, setTwentyEightShown] = useState(false);
-  const [twentyNineShown, setTwentyNineShown] = useState(false);
-  const [thirtyShown, setThirtyShown] = useState(false);
-  const [thirtyOneShown, setThirtyOneShown] = useState(false);
-  const [thirtyThreeShown, setThirtyThreeShown] = useState(false);
-  const [thirtySevenShown, setThirtySevenShown] = useState(false);
-  const [thirtyEightShown, setThirtyEightShown] = useState(false);
-  const [fortyShown, setFortyShown] = useState(false);
-  const [fortyOneShown, setFortyOneShown] = useState(false);
 
   return (
     <section className='section bg-dark' id='whyme'>
@@ -339,469 +315,23 @@ const WhyMe = () => {
         </section>
 
         <section className='hidden lg-custom:grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] auto-rows-[150px] grid-flow-dense gap-5 mt-[15em] mb-20 mx-12'>
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic01}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setOneShown(true)}
-              onMouseLeave={() => setOneShown(false)}
-            />
-            {oneShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                WE 2008
+          {galleryData.map((item) => (
+            <div
+              key={item.id}
+              className={`relative ${
+                item.span ? 'grid-row-span-2 row-span-2' : ''
+              } group`}
+            >
+              <Image
+                src={require(`../assets/images/why-pic-${item.id}.jpg`)}
+                alt='gallery element'
+                className='w-full h-full opacity-30 saturate-0 object-contain group-hover:opacity-100 group-hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+              />
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 hidden group-hover:block animate-subtitle-why-appear'>
+                {item.caption}
               </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic02}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwoShown(true)}
-              onMouseLeave={() => setTwoShown(false)}
-            />
-            {twoShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2017
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic03}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThirteenShown(true)}
-              onMouseLeave={() => setThirteenShown(false)}
-            />
-            {thirteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2019
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic04}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setFourShown(true)}
-              onMouseLeave={() => setFourShown(false)}
-            />
-            {fourShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën 2007
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic05}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setFiveShown(true)}
-              onMouseLeave={() => setFiveShown(false)}
-            />
-            {fiveShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                WE 2008
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic06}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setSixShown(true)}
-              onMouseLeave={() => setSixShown(false)}
-            />
-            {sixShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2020
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic07}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setSevenShown(true)}
-              onMouseLeave={() => setSevenShown(false)}
-            />
-            {sevenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2016
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic08}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setEightShown(true)}
-              onMouseLeave={() => setEightShown(false)}
-            />
-            {eightShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2014
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic09}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setNineShown(true)}
-              onMouseLeave={() => setNineShown(false)}
-            />
-            {nineShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën 2006
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative grid-row-span-2 row-span-2'>
-            <Image
-              src={WhyPic10}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTenShown(true)}
-              onMouseLeave={() => setTenShown(false)}
-            />
-            {tenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2020
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic11}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setElevenShown(true)}
-              onMouseLeave={() => setElevenShown(false)}
-            />
-            {elevenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2019
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic12}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwelveShown(true)}
-              onMouseLeave={() => setTwelveShown(false)}
-            />
-            {twelveShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Rapp Collins 2008
-              </p>
-            ) : null}
-          </div>
-          <div className='relative'>
-            <Image
-              src={WhyPic13}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThreeShown(true)}
-              onMouseLeave={() => setThreeShown(false)}
-            />
-            {threeShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2012
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic14}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setFourteenShown(true)}
-              onMouseLeave={() => setFourteenShown(false)}
-            />
-            {fourteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Rapp Collins 2007
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic15}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setFifteenShown(true)}
-              onMouseLeave={() => setFifteenShown(false)}
-            />
-            {fifteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Circus 2013
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic16}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setSixteenShown(true)}
-              onMouseLeave={() => setSixteenShown(false)}
-            />
-            {sixteenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Rapp Collins 2007
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic20}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentyShown(true)}
-              onMouseLeave={() => setTwentyShown(false)}
-            />
-            {twentyShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                WE 2008
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic21}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentyOneShown(true)}
-              onMouseLeave={() => setTwentyOneShown(false)}
-            />
-            {twentyOneShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                WE 2008
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic22}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentyTwoShown(true)}
-              onMouseLeave={() => setTwentyTwoShown(false)}
-            />
-            {twentyTwoShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                RAPP COLLINS 2008
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic23}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentyThreeShown(true)}
-              onMouseLeave={() => setTwentyThreeShown(false)}
-            />
-            {twentyThreeShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                CIRCUS 2018
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic26}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentySixShown(true)}
-              onMouseLeave={() => setTwentySixShown(false)}
-            />
-            {twentySixShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën 2005
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic27}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentySevenShown(true)}
-              onMouseLeave={() => setTwentySevenShown(false)}
-            />
-            {twentySevenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                THE LNK 2022
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic40}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setFortyShown(true)}
-              onMouseLeave={() => setFortyShown(false)}
-            />
-            {fortyShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën 2003
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic28}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentyEightShown(true)}
-              onMouseLeave={() => setTwentyEightShown(false)}
-            />
-            {twentyEightShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën France 2003
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic29}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setTwentyNineShown(true)}
-              onMouseLeave={() => setTwentyNineShown(false)}
-            />
-            {twentyNineShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                RAPP COLLINS 2008
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic30}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThirtyShown(true)}
-              onMouseLeave={() => setThirtyShown(false)}
-            />
-            {thirtyShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                THE LNK 2023
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic31}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThirtyOneShown(true)}
-              onMouseLeave={() => setThirtyOneShown(false)}
-            />
-            {thirtyOneShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën 2002
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic33}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThirtyThreeShown(true)}
-              onMouseLeave={() => setThirtyThreeShown(false)}
-            />
-            {thirtyThreeShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                REMOTE 2024
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic37}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThirtySevenShown(true)}
-              onMouseLeave={() => setThirtySevenShown(false)}
-            />
-            {thirtySevenShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                Citroën 2007
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic38}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setThirtyEightShown(true)}
-              onMouseLeave={() => setThirtyEightShown(false)}
-            />
-            {thirtyEightShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                THE LNK 2023
-              </p>
-            ) : null}
-          </div>
-
-          <div className='relative'>
-            <Image
-              src={WhyPic41}
-              alt='gallery element'
-              className='w-full h-full opacity-30 saturate-0 object-contain hover:opacity-100 hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
-              onMouseEnter={() => setFortyOneShown(true)}
-              onMouseLeave={() => setFortyOneShown(false)}
-            />
-            {fortyOneShown ? (
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 animate-subtitle-why-appear'>
-                THE LNK 2022
-              </p>
-            ) : null}
-          </div>
+            </div>
+          ))}
         </section>
       </div>
     </section>
