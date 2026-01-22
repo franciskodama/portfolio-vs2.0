@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import WhyCard from '../components/WhyCard';
 import { whyData } from '../data/Data';
@@ -19,6 +19,13 @@ const SynergySeer = ({
   });
 
   const [result, setResult] = useState<any>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (result && resultRef.current) {
+      resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [result]);
 
   /* Hand Image Logic */
   const handImages = {
@@ -52,7 +59,7 @@ const SynergySeer = ({
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('Summoning...');
+    setStatus('Divining...');
     setResult(null);
 
     try {
@@ -178,7 +185,7 @@ const SynergySeer = ({
           </button>
         </form>
 
-        {result && <SynergyResult result={result} />}
+        <div ref={resultRef}>{result && <SynergyResult result={result} />}</div>
       </div>
       <WhyCard
         titleOne={whyData.ai.titleOne}
