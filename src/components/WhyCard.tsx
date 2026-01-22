@@ -57,7 +57,7 @@ const WhyCard = ({
     >
       <button
         ref={refButton}
-        className={`relative flex flex-col w-10 h-10 bg-dark items-center justify-center border-0 transition-all duration-300 ease-in-out translate-x-0 translate-y-0 cursor-pointer ${
+        className={`relative flex flex-col w-10 h-10 bg-dark rounded-full items-center justify-center border-0 transition-all duration-300 ease-in-out translate-x-0 translate-y-0 cursor-pointer ${
           isCardShow
             ? 'bg-third [box-shadow:-1px_1px_var(--color-bright),-2px_2px_var(--color-bright),-3px_3px_var(--color-bright)] translate-x-[3px] translate-y-[3px]'
             : ''

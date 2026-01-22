@@ -1,16 +1,21 @@
 'use client';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import WhyCard from '../components/WhyCard';
 import { whyData } from '../data/Data';
 
-const Ai = ({ color }: { color: { first: boolean; second: boolean; third: boolean } }) => {
+const Ai = ({
+  color,
+}: {
+  color: { first: boolean; second: boolean; third: boolean };
+}) => {
   const [status, setStatus] = useState('Ask me');
   const [prompt, setPrompt] = useState('');
   const [newPrompt, setNewPrompt] = useState('');
   const [result, setResult] = useState('');
   const [isResultActive, setIsResultActive] = useState(false);
-  
+
   let imageRightHand = null;
   let imageLeftHand = null;
 
@@ -66,7 +71,9 @@ const Ai = ({ color }: { color: { first: boolean; second: boolean; third: boolea
     <section className='section relative pb-40' id='ai'>
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
         <h1 className='section-title'>Crystal Ball</h1>
-        <p className='my-[0.8em_0_5em_0] text-center'>A.I. technology or Witchcraft?</p>
+        <p className='my-[0.8em_0_5em_0] text-center'>
+          A.I. technology or Witchcraft?
+        </p>
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
           <div className='text-third border border-dashed border-third rounded-[10px] p-4 mb-28 text-center'>
             <h2 className='font-main-semibold mb-4'>
@@ -90,18 +97,18 @@ const Ai = ({ color }: { color: { first: boolean; second: boolean; third: boolea
               </li>
             </ul>
           </div>
-          
+
           <div className='pr-10 relative flex justify-center items-center w-full'>
             {imageLeftHand && (
-            <Image
-              className='absolute left-0 w-[7.5em] animate-hand-left md-custom:w-[15em] lg-custom:w-[22em]'
-              src={imageLeftHand}
-              alt='hand over crystal ball'
-            />
+              <Image
+                className='absolute left-0 w-[7.5em] animate-hand-left md-custom:w-[15em] lg-custom:w-[22em]'
+                src={imageLeftHand}
+                alt='hand over crystal ball'
+              />
             )}
-            
+
             <textarea
-              className='text-center w-[20em] h-[20em] rounded-full p-20 mb-4 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-[2] text-dark bg-bright md-custom:w-[35em] md-custom:h-[35em] md-custom:p-[15em_5em]'
+              className='text-center w-[20em] h-[20em] rounded-full p-20 mb-4 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-2 text-dark bg-bright md-custom:w-[35em] md-custom:h-[35em] md-custom:p-[15em_5em]'
               name='prompt'
               placeholder='Ask me anything, but at your own risk.'
               value={prompt}
@@ -110,11 +117,11 @@ const Ai = ({ color }: { color: { first: boolean; second: boolean; third: boolea
             />
 
             {imageRightHand && (
-            <Image
-              className='absolute right-0 w-[8.5em] animate-hand-right md-custom:w-[15em] lg-custom:w-[22em]'
-              src={imageRightHand}
-              alt='hand over crystal ball'
-            />
+              <Image
+                className='absolute right-0 w-[8.5em] animate-hand-right md-custom:w-[15em] lg-custom:w-[22em]'
+                src={imageRightHand}
+                alt='hand over crystal ball'
+              />
             )}
           </div>
 
@@ -133,16 +140,26 @@ const Ai = ({ color }: { color: { first: boolean; second: boolean; third: boolea
         </form>
 
         <ul
-          className={`mt-4 w-3/5 mx-auto text-dark font-main-light leading-[1.5] animate-result-ai-appear ${isResultActive ? 'flex' : 'hidden'} flex-col-reverse`}
+          className={`mt-4 w-3/5 mx-auto text-dark font-main-light leading-normal animate-result-ai-appear ${
+            isResultActive ? 'flex' : 'hidden'
+          } flex-col-reverse`}
         >
           <li className='text-left p-4 bg-bright mb-4 rounded-[10px] md-custom:px-8'>
             <div className='flex'>
-              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>Your question:</h4>
-              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>{newPrompt}</p>
+              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>
+                Your question:
+              </h4>
+              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>
+                {newPrompt}
+              </p>
             </div>
             <div className='flex'>
-              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>My wisdom:</h4>
-              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>{result}</p>
+              <h4 className='py-2 w-1/4 font-main-medium text-[0.8rem] md-custom:text-[1rem] md-custom:w-1/5'>
+                My wisdom:
+              </h4>
+              <p className='py-2 px-4 w-3/4 md-custom:w-4/5 md-custom:pl-0'>
+                {result}
+              </p>
             </div>
           </li>
         </ul>

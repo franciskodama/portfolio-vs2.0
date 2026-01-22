@@ -1,5 +1,6 @@
 'use client';
-import React, { useEffect, useRef, useState, useContext } from 'react';
+
+import { useEffect, useRef, useState, useContext } from 'react';
 import Image from 'next/image';
 import { AboutContext } from '../contexts/AboutContext';
 import { Link } from 'react-scroll';
@@ -20,7 +21,7 @@ const About = () => {
   const [addMe, setAddMe] = useState({ showMe: false });
   const [showMessage, setShowMessage] = useState({ show: false });
   const [inBag, setInBag] = useState(false);
-  
+
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -70,7 +71,9 @@ const About = () => {
 
   useEffect(() => {
     const revealAbout = () => {
-      const reveals = document.querySelectorAll('.about__container-reveal-trigger');
+      const reveals = document.querySelectorAll(
+        '.about__container-reveal-trigger'
+      );
 
       reveals.forEach((el) => {
         let windowHeight = window.innerHeight;
@@ -93,9 +96,12 @@ const About = () => {
   }, []);
 
   return (
-    <section className='section bg-dark lg-custom:px-20 lg-custom:pt-20 lg-custom:pb-8' id='about'>
+    <section
+      className='section bg-dark lg-custom:px-20 lg-custom:pt-20 lg-custom:pb-8'
+      id='about'
+    >
       <div className='container max-w-[85em] mx-auto relative flex flex-col bg-bright text-dark mt-20 mb-24 lg-custom:flex-row lg-custom:mb-12'>
-        <div className='about__container-reveal-trigger absolute top-0 left-0 w-full h-full bg-dark z-10 translate-x-0 opacity-100 transition-all duration-[2000ms] ease-in-out'></div>
+        <div className='about__container-reveal-trigger absolute top-0 left-0 w-full h-full bg-dark z-10 translate-x-0 opacity-100 transition-all duration-2000 ease-in-out'></div>
         <div className='relative w-full bg-[#eaeaea] lg-custom:w-1/2'>
           <Avatar />
         </div>
@@ -106,10 +112,14 @@ const About = () => {
             <p>to work in Canada</p>
           </div>
 
-          <div onClick={handleClickBag} className='relative self-end cursor-pointer mr-2 mt-12 hover:animate-icon-shake focus:animate-icon-shake active:animate-icon-shake' id='bag'>
+          <div
+            onClick={handleClickBag}
+            className='relative self-end cursor-pointer mr-2 mt-12 hover:animate-icon-shake focus:animate-icon-shake active:animate-icon-shake'
+            id='bag'
+          >
             <Image src={BagEmpty} alt='Shop bag empty' />
             <p
-              className='absolute top-[1.2em] left-[-0.5em] px-[0.4rem] z-[2] text-[0.7rem] font-main-semibold text-bright bg-third rounded-full text-center animate-number-one'
+              className='absolute top-[1.2em] left-[-0.5em] px-[0.4rem] z-2 text-[0.7rem] font-main-semibold text-bright bg-third rounded-full text-center animate-number-one'
               style={{ display: addMe.showMe ? 'block' : 'none' }}
             >
               1
@@ -119,7 +129,7 @@ const About = () => {
           {/* ======================= MODAL ========================= */}
 
           <div
-            className='absolute right-[65px] top-[33px] text-bright bg-dark p-4 h-[19em] w-[18em] animate-modal-open z-[20] before:content-[""] before:absolute before:w-0 before:height-0 before:border-t-[12px] before:border-t-transparent before:border-l-[12px] before:border-l-dark before:border-r-[12px] before:border-r-transparent before:border-b-[12px] before:border-b-transparent before:top-5 before:right-[-24px] md-custom:right-[50px] md-custom:p-8 md-custom:w-[23.5em] lg-custom:top-[94px]'
+            className='absolute right-[65px] top-[33px] text-bright bg-dark p-4 h-[19em] w-[18em] animate-modal-open z-20 before:content-[""] before:absolute before:w-0 before:height-0 before:border-t-12 before:border-t-transparent before:border-l-12 before:border-l-dark before:border-r-12 before:border-r-transparent before:border-b-12 before:border-b-transparent before:top-5 before:right-[-24px] md-custom:right-[50px] md-custom:p-8 md-custom:w-[23.5em] lg-custom:top-[94px]'
             ref={modalRef}
             style={{ display: showMessage.show ? 'block' : 'none' }}
           >
@@ -143,12 +153,16 @@ const About = () => {
                   alt='thumbanail avatar'
                 />
                 <div className='flex flex-col justify-center'>
-                  <h4 className='font-main-regular leading-[1.2rem]'>Francis Kodama</h4>
-                  <p className='hidden text-[0.8rem] pb-2 border-b-[0.5px] border-dashed border-bright md-custom:block'>fk@fkodama.com</p>
+                  <h4 className='font-main-regular leading-[1.2rem]'>
+                    Francis Kodama
+                  </h4>
+                  <p className='hidden text-[0.8rem] pb-2 border-b-[0.5px] border-dashed border-bright md-custom:block'>
+                    fk@fkodama.com
+                  </p>
                   <div className='modal__location-wrapper'>
                     <p className='text-[0.8rem]'>
                       Location:{' '}
-                      <span className="uppercase font-main-semibold">
+                      <span className='uppercase font-main-semibold'>
                         {location.data}
                       </span>
                     </p>
@@ -179,10 +193,16 @@ const About = () => {
 
             {/* ==================== MODAL EMPTY ====================== */}
 
-            <div className={`${!inBag ? 'flex' : 'hidden'} flex-col bg-[url(../assets/images/about-empty.svg)] bg-no-repeat bg-[length:6em] bg-[1em_1.5em] md-custom:bg-[2em_1.5em]`}>
+            <div
+              className={`${
+                !inBag ? 'flex' : 'hidden'
+              } flex-col bg-[url(../assets/images/about-empty.svg)] bg-no-repeat bg-size-[6em] bg-position-[1em_1.5em] md-custom:bg-position-[2em_1.5em]`}
+            >
               <div className='mt-8 ml-32 mb-10 relative after:content-[""] after:absolute after:bottom-[-1em] after:left-[-9em] after:w-[19.2em] after:border-b-[0.5px] after:border-dashed after:border-bright md-custom:ml-[9em]'>
                 <p className='font-main-light text-[1.2rem]'>Your bag is</p>
-                <h3 className='text-third font-main-semibold text-[1.85rem]'>EMPTY</h3>
+                <h3 className='text-third font-main-semibold text-[1.85rem]'>
+                  EMPTY
+                </h3>
               </div>
 
               <p className='text-[0.8rem] mb-2'>Would you like to return?</p>
@@ -194,11 +214,19 @@ const About = () => {
             </div>
           </div>
 
-          <div className='w-full'>
-            <h3 className='mt-20 text-[1.2rem] font-main-thin mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>Francis Kodama</h3>
-            <h2 className='text-[1.5rem] font-main-medium uppercase'>Software Engineer</h2>
-            <h2 className='text-[1.5rem] font-main-medium uppercase mb-0'>React, Next.js, JavaScript,</h2>
-            <h2 className='text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>Typescript, CSS,<span className='text-[0.8rem] lowercase font-main-light'> and</span> HTML</h2>
+          <div className='w-full ml-12'>
+            <h3 className='mt-20 text-[1.2rem] font-main-thin mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
+              Francis Kodama
+            </h3>
+            <h2 className='text-[1.5rem] font-main-medium uppercase'>
+              Software Engineer
+            </h2>
+            <h2 className='text-[1.5rem] font-main-medium uppercase mb-0'>
+              React, Next.js, Typescript,
+            </h2>
+            <h2 className='text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
+              CSS, Prisma, UX/UI design
+            </h2>
             <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
               I'm an experienced tech services provider with a strong
               understanding of the industry trends, as well as of the entire web
@@ -212,9 +240,11 @@ const About = () => {
             </p>
           </div>
 
-          <div className='flex items-end justify-between'>
+          <div className='flex items-end justify-between ml-12'>
             <div className='flex flex-col relative'>
-              <p className='text-[0.7rem] font-main-light mt-12 mb-2'>location:</p>
+              <p className='text-[0.7rem] font-main-light mt-12 mb-2'>
+                location:
+              </p>
               <form className='flex items-center mb-12'>
                 <input
                   onClick={handleClickLocation}
@@ -223,7 +253,12 @@ const About = () => {
                   name='location'
                   value='remote'
                 />
-                <label className="font-main-semibold text-[0.8rem] mx-2 mr-6" htmlFor='remote'>Remote</label>
+                <label
+                  className='font-main-semibold text-[0.8rem] mx-2 mr-6'
+                  htmlFor='remote'
+                >
+                  Remote
+                </label>
                 <input
                   onClick={handleClickLocation}
                   className='h-[0.8rem] cursor-pointer'
@@ -231,7 +266,12 @@ const About = () => {
                   name='location'
                   value='ottawa'
                 />
-                <label className="font-main-semibold text-[0.8rem] mx-2 mr-6" htmlFor='ottawa'>Ottawa</label>
+                <label
+                  className='font-main-semibold text-[0.8rem] mx-2 mr-6'
+                  htmlFor='ottawa'
+                >
+                  Ottawa
+                </label>
                 <input
                   onClick={handleClickLocation}
                   className='h-[0.8rem] cursor-pointer'
@@ -239,7 +279,12 @@ const About = () => {
                   name='location'
                   value='hybrid'
                 />
-                <label className="font-main-semibold text-[0.8rem] mx-2 mr-6" htmlFor='hybrid'>Hybrid</label>
+                <label
+                  className='font-main-semibold text-[0.8rem] mx-2 mr-6'
+                  htmlFor='hybrid'
+                >
+                  Hybrid
+                </label>
               </form>
 
               <Button
@@ -256,17 +301,6 @@ const About = () => {
               >
                 ...Ops, choose a location
               </p>
-            </div>
-
-            <div className='hidden flex-col font-main-medium text-[0.6rem] uppercase text-right mr-2 mb-[8em] md-custom:flex lg-custom:mb-0'>
-              <p className='mb-2 capitalize text-[0.7rem] font-main-light'>included:</p>
-              <p>git</p>
-              <p>jira</p>
-              <p>agile</p>
-              <p>figma</p>
-              <p>adobe xd</p>
-              <p>adobe photoshop</p>
-              <p>adobe illustrator</p>
             </div>
           </div>
         </div>

@@ -66,11 +66,11 @@ const WhyMe = () => {
         </div>
 
         <div
-          className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-dark border-2 border-third p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[1.8em_2.5em] ${
+          className={`relative flex-col gap-1 rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-dark border-2 border-third p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[1.8em_2.5em] ${
             heartShown ? 'flex' : 'hidden'
           }`}
         >
-          <h4 className='text-center uppercase font-main-heavy text-[1.3rem] mb-[0.3em] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
+          <h4 className='text-center uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
             PASSION
           </h4>
           <div className='text-center uppercase font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
@@ -87,7 +87,7 @@ const WhyMe = () => {
             >
               "When you have fun, you can do amazing things."
             </q>
-            <span className='hidden text-bright mt-2 lg-custom:block'>
+            <span className='hidden text-bright mt-1 lg-custom:block'>
               - Joe Namath
             </span>
           </div>
@@ -97,7 +97,7 @@ const WhyMe = () => {
           className='absolute left-1/2 -translate-x-1/2 -translate-y-[35px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] mx-auto border-2 border-dark cursor-pointer z-3'
           onClick={() => setHeartShown(!heartShown)}
         >
-          <h4 className='w-[8ch] font-main-semibold text-dark mb-2 text-[0.5rem] leading-2 text-center uppercase'>
+          <h4 className='w-[8ch] font-main-semibold text-dark mb-1 text-[0.5rem] leading-2 text-center uppercase'>
             Why changing carrers?
           </h4>
           <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
