@@ -114,7 +114,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='company'
-                  placeholder='Type here your Company Name'
+                  placeholder='Type here your company name'
                   className='bg-transparent border-0 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors'
                   value={formData.company}
                   onChange={handleInputChange}
@@ -123,7 +123,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='position'
-                  placeholder='Type here the Title Position'
+                  placeholder='Type here the title position'
                   className='bg-transparent border-0 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors'
                   value={formData.position}
                   onChange={handleInputChange}
@@ -131,7 +131,7 @@ const SynergySeer = ({
                 />
                 <textarea
                   name='description'
-                  placeholder='Paste here the Job Description (optional)'
+                  placeholder='Paste here the job description (optional)'
                   className='bg-transparent text-center border-0 p-3 h-24 md-custom:h-32 text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors text-sm resize-none'
                   value={formData.description}
                   onChange={handleInputChange}
