@@ -21,26 +21,22 @@ const galleryData = [
   { id: '14', caption: 'Rapp Collins 2007', span: false },
   { id: '15', caption: 'Circus 2013', span: false },
   { id: '16', caption: 'Rapp Collins 2007', span: false },
-  { id: '17', caption: 'Rapp Collins 2007', span: false },
-  { id: '18', caption: 'Rapp Collins 2007', span: false },
-  { id: '19', caption: 'Rapp Collins 2007', span: false },
+  { id: '17', caption: 'Citroën 2006', span: false },
+  { id: '18', caption: 'THE LNK 2022', span: false },
+  { id: '19', caption: 'Citroën 2003', span: false },
   { id: '20', caption: 'WE 2008', span: false },
-  { id: '21', caption: 'WE 2008', span: false },
+  { id: '21', caption: 'WE 2009', span: false },
   { id: '22', caption: 'RAPP COLLINS 2008', span: false },
   { id: '23', caption: 'CIRCUS 2018', span: false },
-  { id: '24', caption: 'CIRCUS 2018', span: false },
-  { id: '25', caption: 'Portfolio', span: false },
+  { id: '24', caption: 'Citroën 2004', span: false },
+  { id: '25', caption: 'THE LNK 2023', span: false },
   { id: '26', caption: 'Citroën 2005', span: false },
   { id: '27', caption: 'THE LNK 2022', span: false },
   { id: '28', caption: 'Citroën France 2003', span: false },
   { id: '29', caption: 'RAPP COLLINS 2008', span: false },
   { id: '30', caption: 'THE LNK 2023', span: false },
   { id: '31', caption: 'Citroën 2002', span: false },
-  { id: '32', caption: 'Portfolio', span: false },
-  { id: '33', caption: 'REMOTE 2024', span: false },
-  { id: '34', caption: 'Portfolio', span: false },
-  { id: '35', caption: 'Portfolio', span: false },
-  { id: '36', caption: 'Citroën 2007', span: false },
+  { id: '32', caption: 'THE LNK 2023', span: false },
 ];
 
 const WhyMe = () => {
@@ -314,7 +310,7 @@ const WhyMe = () => {
           </Parallax>
         </section>
 
-        <section className='grid grid-cols-2 lg-custom:grid-cols-4 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[50%] lg-custom:mx-auto'>
+        <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[80%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
             <div
               key={item.id}
@@ -327,7 +323,7 @@ const WhyMe = () => {
                 alt='gallery element'
                 className='w-full h-full opacity-30 saturate-0 object-cover group-hover:opacity-100 group-hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
               />
-              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 hidden group-hover:block animate-subtitle-why-appear'>
+              <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.6rem] uppercase leading-4 -translate-x-1/2 hidden group-hover:block animate-subtitle-why-appear'>
                 {item.caption}
               </p>
             </div>
