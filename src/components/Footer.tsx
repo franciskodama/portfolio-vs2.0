@@ -10,9 +10,11 @@ const Resume = '/assets/resume.pdf';
 
 const Footer = () => {
   return (
-    <section className='section flex justify-center items-center flex-row bg-[#282828] border-t border-white/20' id='footer'>
+    <section
+      className='section flex justify-center items-center flex-row bg-[#282828] border-t border-white/20'
+      id='footer'
+    >
       <div className='grid grid-cols-1 grid-rows-[repeat(12,auto)] lg-custom:grid-cols-[2fr_1fr_1fr_1fr] lg-custom:grid-rows-[repeat(4,auto)] lg-custom:gap-x-16 w-[70%] max-w-[80em] mx-auto pb-16'>
-        
         {/* ==================== TITLES ==================== */}
         <h2 className='font-main-semibold mt-20 mb-4 lg-custom:col-start-1 lg-custom:row-start-1'>
           ABOUT<span className='text-third'>ME</span>
@@ -42,7 +44,7 @@ const Footer = () => {
             { to: 'projects', text: 'projects' },
             { to: 'api', text: 'api', offset: -150 },
             { to: 'code', text: 'my code' },
-            { to: 'contact', text: 'contact', offset: -150 }
+            { to: 'contact', text: 'contact', offset: -150 },
           ].map((item) => (
             <Link
               key={item.to}
@@ -74,9 +76,21 @@ const Footer = () => {
 
         <div className='flex flex-wrap flex-row h-[70%] items-start mt-4 lg-custom:col-start-4 lg-custom:row-start-2 lg-custom:mt-0'>
           {[
-            { href: 'https://github.com/franciskodama', src: Git, alt: 'logo Github' },
-            { href: 'https://www.linkedin.com/in/kodama/', src: Linkedin, alt: 'logo Linkedin' },
-            { href: 'https://www.instagram.com/franciskodama/', src: Insta, alt: 'logo Instagram' }
+            {
+              href: 'https://github.com/franciskodama',
+              src: Git,
+              alt: 'logo Github',
+            },
+            {
+              href: 'https://www.linkedin.com/in/kodama/',
+              src: Linkedin,
+              alt: 'logo Linkedin',
+            },
+            {
+              href: 'https://www.instagram.com/franciskodama/',
+              src: Insta,
+              alt: 'logo Instagram',
+            },
           ].map((icon, idx) => (
             <a
               key={idx}
@@ -91,16 +105,23 @@ const Footer = () => {
           ))}
         </div>
 
-        <Image className='hidden lg-custom:block lg-custom:col-start-1 lg-custom:row-start-3 lg-custom:w-[120px] lg-custom:opacity-40 mt-8' src={LogoFooter} alt='logo fkodama' />
+        <Image
+          className='hidden lg-custom:block lg-custom:col-start-1 lg-custom:row-start-3 lg-custom:w-[120px] lg-custom:opacity-40 mt-8'
+          src={LogoFooter}
+          alt='logo fkodama'
+        />
 
         <div className='flex flex-col text-[0.8rem] mt-16 lg-custom:col-start-4 lg-custom:row-start-3 lg-custom:mt-0'>
           <p>Designed and built by</p>
           <p className='font-main-regular'>Francis Kodama</p>
           <p>Copyright 2023</p>
+          <p>Updated 2026</p>
         </div>
 
         <div className='flex mt-12 items-end lg-custom:col-start-1 lg-custom:row-start-4 lg-custom:mt-0'>
-          <h2 className='font-main-semibold mr-4 text-center leading-none'>RESUME</h2>
+          <h2 className='font-main-semibold mr-4 text-center leading-none'>
+            RESUME
+          </h2>
           <a
             className='block cursor-pointer text-white active:text-white visited:text-white hover:font-main-semibold hover:text-third hover:-translate-x-[3px]'
             href={Resume}
