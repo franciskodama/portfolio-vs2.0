@@ -314,11 +314,11 @@ const WhyMe = () => {
           </Parallax>
         </section>
 
-        <section className='grid grid-cols-2 lg-custom:grid-cols-4 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12'>
+        <section className='grid grid-cols-2 lg-custom:grid-cols-4 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[50%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
             <div
               key={item.id}
-              className={`relative overflow-hidden rounded ${
+              className={`relative overflow-hidden ${
                 item.span ? 'row-span-2' : 'aspect-square'
               } group w-full h-full`}
             >
