@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAE,AAAA,UAAU,CAAC;EACT,gBAAgB,EAAE,iBAAiB;EACnC,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,EAAE;EACX,SAAS,EAAE,qDAAqD;EAChE,aAAa,EAAE,MAAM;CACtB",
-    "sources": [
-        "AboveApi.scss"
-    ],
-    "names": [],
-    "file": "AboveApi.css"
-}
