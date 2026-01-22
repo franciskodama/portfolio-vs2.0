@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Link } from 'react-scroll';
 
-
 import './Navbar.css'; // Import the new CSS file
-import Logo from '../assets/logo-fkodama.svg';
+import Logo from '../assets/images/fk-white-transparent-bg.png';
 import Menu from '../assets/images/menu-hamburguer.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
 
@@ -36,7 +35,9 @@ const Navbar = () => {
     <header className='navbar'>
       <div className='navbar-container'>
         <Link to='hero' spy={true} smooth={true} offset={0} duration={500}>
-          <Image className='nav-logo' alt='logo fkodama' src={Logo} />
+          <div className='py-2'>
+            <Image className='nav-logo' alt='logo fkodama' src={Logo} />
+          </div>
         </Link>
 
         {/* -------- NAVBAR TOGGLE -------- */}
@@ -188,7 +189,7 @@ const Navbar = () => {
             home{' '}
           </Link> */}
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='reason'
             spy={true}
             smooth={true}
@@ -199,7 +200,7 @@ const Navbar = () => {
             this.portfolio
           </Link>
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='about'
             spy={true}
             smooth={true}
@@ -210,7 +211,7 @@ const Navbar = () => {
             about.me
           </Link>
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='whyme'
             spy={true}
             smooth={true}
@@ -221,7 +222,7 @@ const Navbar = () => {
             why.me
           </Link>
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='ai'
             spy={true}
             smooth={true}
@@ -233,7 +234,7 @@ const Navbar = () => {
             a.i.{' '}
           </Link>
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='projects'
             spy={true}
             smooth={true}
@@ -246,7 +247,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='api'
             spy={true}
             smooth={true}
@@ -257,7 +258,7 @@ const Navbar = () => {
             api
           </Link>
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='code'
             spy={true}
             smooth={true}
@@ -268,7 +269,7 @@ const Navbar = () => {
             my.code
           </Link>
           <Link
-             className='nav-link-desktop'
+            className='nav-link-desktop'
             to='contact'
             spy={true}
             smooth={true}
@@ -285,4 +286,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

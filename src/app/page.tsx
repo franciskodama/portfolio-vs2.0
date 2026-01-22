@@ -16,6 +16,9 @@ import Api from '../components/Api';
 import CleanCode from '../components/CleanCode';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import CareerAlchemist from '@/components/CareerAlchemistTest';
+import CareerAlchemistTest from '@/components/CareerAlchemistTest';
+import SynergySeer from '@/components/SynergySeer';
 
 export default function Home() {
   const [location, setLocation] = useState({ data: '' });
@@ -84,7 +87,9 @@ export default function Home() {
         <AboutContext.Provider value={{ location, setLocation }}>
           <About />
           <WhyMe />
-          <Ai color={color} />
+          {/* <CareerAlchemistTest /> */}
+          <SynergySeer color={color} />
+          {/* <Ai color={color} /> */}
           <Projects />
           <AboveApi />
           <Api />

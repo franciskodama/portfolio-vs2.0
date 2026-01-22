@@ -17,6 +17,7 @@ import WhyPic13 from '../assets/images/why-pic-13.jpg';
 import WhyPic14 from '../assets/images/why-pic-14.jpg';
 import WhyPic15 from '../assets/images/why-pic-15.jpg';
 import WhyPic16 from '../assets/images/why-pic-16.jpg';
+import WhyPic20 from '../assets/images/why-pic-20.jpg';
 
 const WhyMe = () => {
   const [heartShown, setHeartShown] = useState(false);
@@ -37,6 +38,7 @@ const WhyMe = () => {
   const [fourteenShown, setFourteenShown] = useState(false);
   const [fifteenShown, setFifteenShown] = useState(false);
   const [sixteenShown, setSixteenShown] = useState(false);
+  const [twentyShown, setTwentyShown] = useState(false);
 
   return (
     <section className='section whyme' id='whyme'>
@@ -441,6 +443,19 @@ const WhyMe = () => {
               onMouseLeave={() => setSixteenShown(false)}
             />
             {sixteenShown ? (
+              <p className='pics__subtitle'>Rapp Collins 2007</p>
+            ) : null}
+          </div>
+
+           <div className='pics__wrapper'>
+            <img
+              src={WhyPic20}
+              alt='gallery element'
+              className='pics__pic'
+              onMouseEnter={() => setTwentyShown(true)}
+              onMouseLeave={() => setTwentyShown(false)}
+            />
+            {twentyShown ? (
               <p className='pics__subtitle'>Rapp Collins 2007</p>
             ) : null}
           </div>
