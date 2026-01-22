@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Reason = () => {
   const originalMessageBright =
-    'this portfolio has been built to showcase my variety of skills from creativity to code';
+    'this portfolio has been built to showcase my wide variety of skills from creativity to code';
   const originalMessageDark =
-    '.click on the eye below to know more about each page';
+    '.please click on the eye below to learn more about every page.';
   const arrOfLettersBright = Array.from(originalMessageBright);
   const arrOfLettersDark = Array.from(originalMessageDark);
   let arrOfDiv = [];
