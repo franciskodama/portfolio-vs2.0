@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 
@@ -314,18 +314,18 @@ const WhyMe = () => {
           </Parallax>
         </section>
 
-        <section className='hidden lg-custom:grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] auto-rows-[150px] grid-flow-dense gap-5 mt-[15em] mb-20 mx-12'>
+        <section className='grid grid-cols-2 lg-custom:grid-cols-4 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12'>
           {galleryData.map((item) => (
             <div
               key={item.id}
-              className={`relative ${
-                item.span ? 'grid-row-span-2 row-span-2' : ''
-              } group`}
+              className={`relative overflow-hidden rounded ${
+                item.span ? 'row-span-2' : 'aspect-square'
+              } group w-full h-full`}
             >
               <Image
                 src={require(`../assets/images/why-pic-${item.id}.jpg`)}
                 alt='gallery element'
-                className='w-full h-full opacity-30 saturate-0 object-contain group-hover:opacity-100 group-hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
+                className='w-full h-full opacity-30 saturate-0 object-cover group-hover:opacity-100 group-hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
               />
               <p className='absolute text-center left-1/2 bottom-0 text-bright [text-shadow:-1px_1px_var(--color-dark)] font-main-light text-[0.8rem] uppercase leading-4 -translate-x-1/2 hidden group-hover:block animate-subtitle-why-appear'>
                 {item.caption}
