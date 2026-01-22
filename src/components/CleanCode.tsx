@@ -1,51 +1,26 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import WhyCard from '../components/WhyCard';
 import { whyData } from '../data/Data';
 import ZoomIn from '../assets/images/code-check.svg';
-import ZoomOut from '../assets/images/code-check-return.svg';
 
 const CleanCode = () => {
-  const [showBackground, setShowBackground] = useState(false);
-
-  const handleClick = () => {
-    setShowBackground(!showBackground);
-  };
-
   return (
     <section
       id='code'
-      className={`section relative flex flex-col transition-all duration-300 ${
-        showBackground
-          ? 'bg-[url("../assets/images/xray.jpg")] bg-no-repeat bg-center animate-code-appearance h-[135em]'
-          : 'bg-dark bg-linear-to-b from-dark to-[#292929]'
-      }`}
-      style={{ padding: showBackground ? '35em' : '0' }}
+      className='section relative flex flex-col transition-all duration-300 bg-dark bg-linear-to-b from-dark to-[#292929]'
     >
       <Parallax opacity={[0, 2]}>
-        <h1
-          className='section-title text-center'
-          style={{ display: showBackground ? 'none' : 'block' }}
-        >
-          My code
-        </h1>
-        <p
-          className='mt-[0.8em] text-center'
-          style={{ display: showBackground ? 'none' : 'block' }}
-        >
-          It must be read like a story
-        </p>
+        <h1 className='section-title text-center'>My code</h1>
+        <p className='mt-[0.8em] text-center'>It must be read like a story</p>
       </Parallax>
 
       <div className='container relative flex flex-col items-center w-full min-h-[70em] mt-32 mb-20 md-custom:min-h-[110em] mx-auto'>
         <Parallax opacity={[0, 2]} translateY={['0%', '-10%']}>
-          <div
-            className='flex flex-col'
-            style={{ display: showBackground ? 'none' : 'flex' }}
-          >
+          <div className='flex flex-col'>
             <q className='font-main-regular text-[1.6rem] leading-8 w-[20ch] mb-[0.8em] text-center md-custom:text-[2rem] md-custom:leading-[2.3rem]'>
               “Clean code always looks like it was written by someone who
               cares.”
@@ -59,36 +34,20 @@ const CleanCode = () => {
           </div>
         </Parallax>
 
-        <div
+        <a
+          href='https://github.com/franciskodama?tab=repositories'
+          target='_blank'
+          rel='noopener noreferrer'
           className='hidden md-custom:block absolute top-[15%] left-1/2 -translate-x-1/2 text-center font-main-regular text-[0.7rem] leading-4 cursor-pointer z-10'
-          onClick={handleClick}
         >
-          <Image
-            src={!showBackground ? ZoomIn : ZoomOut}
-            alt='icon zoom in or out'
-          />
-          <p
-            className='w-[8ch]'
-            style={{
-              display: !showBackground ? 'block' : 'none',
-            }}
-          >
-            CHECK MY CODE
-          </p>
-          <p
-            style={{
-              display: showBackground ? 'block' : 'none',
-            }}
-          >
-            RETURN
-          </p>
-        </div>
+          <div className='flex items-center gap-2'>
+            <Image src={ZoomIn} alt='icon zoom in' />
+            <p className='w-[8ch]'>CHECK MY CODE</p>
+          </div>
+        </a>
 
         <Parallax opacity={[0, 2]}>
-          <ul
-            className='font-main-heavy uppercase text-center h-[30em] animate-words-appearance mr-40 md-custom:mr-0 md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10'
-            style={{ display: showBackground ? 'none' : 'block' }}
-          >
+          <ul className='font-main-heavy uppercase text-center h-[30em] animate-words-appearance mr-40 md-custom:mr-0 md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10'>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[3.75rem] leading-14 md-custom:text-[7.5rem] md-custom:leading-28'>
               DRY
             </li>
@@ -134,21 +93,19 @@ const CleanCode = () => {
           </ul>
         </Parallax>
 
-        {!showBackground ? (
-          <WhyCard
-            titleOne={whyData.code.titleOne}
-            textOne={whyData.code.textOne}
-            titleTwo={whyData.code.titleTwo}
-            textTwo={whyData.code.textTwo}
-            titleThree={whyData.code.titleThree}
-            textThree={whyData.code.textThree}
-            titleFour={whyData.code.titleFour}
-            textFour={whyData.code.textFour}
-            observation={whyData.code.observation}
-            bottom={whyData.code.bottom}
-            left={whyData.code.left}
-          />
-        ) : null}
+        <WhyCard
+          titleOne={whyData.code.titleOne}
+          textOne={whyData.code.textOne}
+          titleTwo={whyData.code.titleTwo}
+          textTwo={whyData.code.textTwo}
+          titleThree={whyData.code.titleThree}
+          textThree={whyData.code.textThree}
+          titleFour={whyData.code.titleFour}
+          textFour={whyData.code.textFour}
+          observation={whyData.code.observation}
+          bottom={whyData.code.bottom}
+          left={whyData.code.left}
+        />
       </div>
     </section>
   );
