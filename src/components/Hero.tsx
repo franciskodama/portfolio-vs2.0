@@ -70,6 +70,9 @@ const Hero = () => {
 
       {/* Main Massive Typography */}
       <div className='relative z-10 flex flex-col items-center leading-none select-none mix-blend-difference'>
+        <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+          Hello, I am
+        </h2>
         <h1
           ref={titleOneRef}
           className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
@@ -82,6 +85,9 @@ const Hero = () => {
         >
           KODAMA
         </h1>
+        <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+          Software Engineer
+        </h2>
       </div>
 
       {/* Center/Floating Skills - Replaces 'Boring Weather' */}
