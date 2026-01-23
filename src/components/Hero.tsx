@@ -3,7 +3,10 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
-import TechAssets from '../assets/images/hero-3d-assets.png';
+import InputFieldImg from '../assets/images/hero_3d_input_field.png';
+import BracketsImg from '../assets/images/hero_3d_code_brackets.png';
+import SubmitBtnImg from '../assets/images/hero_3d_submit_button.png';
+import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,21 +24,38 @@ const Hero = () => {
       [titleOneRef.current, titleTwoRef.current],
       { y: 100, opacity: 0 },
       { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', stagger: 0.2 }
-    ).fromTo(
-      [leftRef.current, rightRef.current],
-      { opacity: 0 },
-      { opacity: 1, duration: 1 },
-      '-=0.5'
-    );
+    )
+      .fromTo(
+        [leftRef.current, rightRef.current],
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+        '-=0.5'
+      )
+      .fromTo(
+        '.floating-asset',
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'back.out(1.7)',
+        },
+        '-=1'
+      );
 
     // Floating Animation for the 3D Image
-    gsap.to('.hero-3d-assets', {
-      y: -20,
-      rotation: 2,
-      duration: 4,
+    gsap.to('.floating-asset', {
+      y: -15,
+      rotation: 5,
+      duration: 3,
       repeat: -1,
       yoyo: true,
       ease: 'sine.inOut',
+      stagger: {
+        each: 0.5,
+        from: 'random',
+      },
     });
   }, []);
 
@@ -45,34 +65,46 @@ const Hero = () => {
       id='hero'
       className='relative w-full h-[150vh] bg-black overflow-hidden flex flex-col items-center justify-center'
     >
-      {/* 3D Floating Elements (Mocked with the single generated chart for now) */}
-      {/* Ideally these would be separate images, but we use the composite for effect */}
-      <div className='absolute z-20 top-[15%] left-[5%] md:left-[15%] w-[150px] md:w-[300px] hero-3d-assets pointer-events-none opacity-90'>
-        {/* Using visual cropping via CSS object-position for variety if needed, 
-             but here just placing the main asset group floating */}
+      {/* 3D Floating Elements - Corners */}
+
+      {/* Top Left - Input Field (Like the Plane) */}
+      <div className='absolute z-20 top-[15%] left-[5%] md:left-[10%] w-[180px] md:w-[250px] floating-asset pointer-events-none'>
         <Image
-          src={TechAssets}
-          alt='Floating 3D Tech Assets'
-          className='w-full h-auto drop-shadow-2xl'
+          src={InputFieldImg}
+          alt='3D Input Field'
+          className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-12'
         />
       </div>
 
-      <div
-        className='absolute z-20 bottom-[20%] right-[5%] md:right-[15%] w-[180px] md:w-[350px] hero-3d-assets pointer-events-none opacity-90'
-        style={{ animationDelay: '1s' }}
-      >
+      {/* Top Right - Submit Button (Like the Money Roll) */}
+      <div className='absolute z-20 top-[18%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset pointer-events-none'>
         <Image
-          src={TechAssets}
-          alt='Floating 3D Tech Assets'
-          className='w-full h-auto drop-shadow-2xl scale-x-[-1] rotate-12'
+          src={SubmitBtnImg}
+          alt='3D Submit Button'
+          className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
+        />
+      </div>
+
+      {/* Bottom Left - Curly Braces (Like the Glove) */}
+      <div className='absolute z-20 bottom-[20%] left-[8%] md:left-[12%] w-[100px] md:w-[150px] floating-asset pointer-events-none'>
+        <Image
+          src={CurlyBracesImg}
+          alt='3D Curly Braces'
+          className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-6'
+        />
+      </div>
+
+      {/* Bottom Right - Angle Brackets (Like the Car) */}
+      <div className='absolute z-20 bottom-[15%] right-[5%] md:right-[15%] w-[120px] md:w-[180px] floating-asset pointer-events-none'>
+        <Image
+          src={BracketsImg}
+          alt='3D Code Brackets'
+          className='w-full h-auto drop-shadow-2xl opacity-90 rotate-12'
         />
       </div>
 
       {/* Main Massive Typography */}
       <div className='relative z-10 flex flex-col items-center leading-none select-none mix-blend-difference'>
-        <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
-          Hello, I am
-        </h2>
         <h1
           ref={titleOneRef}
           className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
@@ -85,9 +117,6 @@ const Hero = () => {
         >
           KODAMA
         </h1>
-        <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
-          Software Engineer
-        </h2>
       </div>
 
       {/* Center/Floating Skills - Replaces 'Boring Weather' */}
