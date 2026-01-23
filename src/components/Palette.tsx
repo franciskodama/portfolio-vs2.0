@@ -15,7 +15,7 @@ const Color = ({
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className='absolute bottom-[10%] right-[50%] z-10'>
+    <div className='absolute top-[8%] right-[50%] z-10'>
       <div
         className={`hidden lg-custom:block w-[50px] h-[50px] bg-no-repeat bg-center bg-size-[32px] p-4 cursor-pointer transition-all duration-300 ${
           toggle
@@ -26,7 +26,7 @@ const Color = ({
       ></div>
 
       <div
-        className={`absolute bottom-8 left-0 flex-col w-auto p-[0.2em] -z-10 animate-colors-up ${
+        className={`absolute top-18 left-0 flex-col w-auto p-[0.2em] -z-10 animate-colors-up ${
           toggle ? 'flex' : 'hidden'
         }`}
       >

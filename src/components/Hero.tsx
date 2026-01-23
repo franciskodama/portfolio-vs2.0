@@ -3,8 +3,8 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
-import InputFieldImg from '../assets/images/hero_3d_input_field.png';
-import BracketsImg from '../assets/images/hero_3d_code_brackets.png';
+import SquareBracketsImg from '../assets/images/hero_3d_square_brackets.png';
+import CodeBracketsImg from '../assets/images/hero_3d_code_brackets.png';
 import CurlyBracesImg2 from '../assets/images/hero_3d_curly_braces2.png';
 import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
 import { Link } from 'react-scroll';
@@ -101,14 +101,14 @@ const Hero = () => {
       id='hero'
       className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
     >
-      {/* Top Left - @id */}
+      {/* Top Left - [] */}
       <div
-        className='absolute z-20 top-[30%] left-[5%] md:left-[8%] w-[180px] md:w-[250px] floating-asset cursor-pointer'
+        className='absolute z-20 top-[30%] left-[5%] md:left-[10%] w-[180px] md:w-[135px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
       >
         <Image
-          src={InputFieldImg}
-          alt='3D Input Field'
+          src={SquareBracketsImg}
+          alt='3D Square Brackets'
           className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-12'
         />
       </div>
@@ -120,7 +120,7 @@ const Hero = () => {
       >
         <Image
           src={CurlyBracesImg2}
-          alt='3D Submit Button'
+          alt='3D Curly Braces'
           className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
         />
       </div>
@@ -143,7 +143,7 @@ const Hero = () => {
         onMouseEnter={pushAsset}
       >
         <Image
-          src={BracketsImg}
+          src={CodeBracketsImg}
           alt='3D Code Brackets'
           className='w-full h-auto drop-shadow-2xl opacity-90 rotate-12'
         />
