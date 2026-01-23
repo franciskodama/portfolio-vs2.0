@@ -1,82 +1,246 @@
 'use client';
-import React, { useRef } from 'react';
+
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { gsap } from 'gsap';
+import SquareBracketsImg from '../assets/images/hero_3d_square_brackets.png';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+import CodeBracketsImg from '../assets/images/hero_3d_code_brackets.png';
+import CurlyBracesImg2 from '../assets/images/hero_3d_curly_braces2.png';
+import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
 import { Link } from 'react-scroll';
-const Video = '/assets/hero-bg.mp4';
 import Scroll from '../assets/images/ico-scroll.svg';
 
 const Hero = () => {
-  const sidesWrapperRef = useRef<HTMLDivElement>(null);
-  const sideLeftRef = useRef<HTMLDivElement>(null);
-  const sideTopRef = useRef<HTMLDivElement>(null);
-  const sideRightRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleOneRef = useRef<HTMLHeadingElement>(null);
+  const titleTwoRef = useRef<HTMLHeadingElement>(null);
 
-  const onMoveHandler = (e: React.MouseEvent) => {
-    let X = e.pageX;
-    let Y = e.pageY;
+  const leftRef = useRef<HTMLUListElement>(null);
+  const rightRef = useRef<HTMLUListElement>(null);
 
-    if (sideLeftRef.current && sideTopRef.current && sideRightRef.current) {
-      sideLeftRef.current.style.transform =
-        'skew(0deg, 30deg) scaleY(1.33333) translate(' +
-        (X / 100) * -3 +
-        'px, ' +
-        (Y / 100) * -3 +
-        'px)';
-      sideTopRef.current.style.transform =
-        'skew(60deg, -30deg) scaleY(.66667) translate(' +
-        (X / 100) * 3 +
-        'px, ' +
-        (Y / 100) * -3 +
-        'px)';
-      sideRightRef.current.style.transform =
-        'skew(0deg, -30deg) scaleY(1.33333) translate(' +
-        (X / 100) * -3 +
-        'px, ' +
-        (Y / 100) * -3 +
-        'px)';
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    // Initial Appearance
+    tl.fromTo(
+      [titleOneRef.current, titleTwoRef.current],
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', stagger: 0.2 }
+    )
+      .fromTo(
+        [leftRef.current, rightRef.current],
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+        '-=0.5'
+      )
+      .fromTo(
+        '.floating-asset',
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'back.out(1.7)',
+        },
+        '-=1'
+      );
+
+    // Floating Animation for the 3D Image
+    gsap.to('.floating-asset', {
+      y: -35,
+      rotation: 15,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      stagger: {
+        each: 0.5,
+        from: 'random',
+      },
+    });
+    // Scroll Trigger Animation for Lists and Name
+    if (leftRef.current && rightRef.current) {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: '50% top',
+            scrub: 1,
+          },
+        })
+        .to(leftRef.current, { x: -300, opacity: 0 })
+        .to(rightRef.current, { x: 300, opacity: 0 }, '<')
+        .to(
+          '.hero-letter',
+          {
+            x: () => (Math.random() - 0.5) * 1500,
+            y: () => (Math.random() - 0.5) * 1500,
+            rotation: () => (Math.random() - 0.5) * 360,
+            opacity: 0,
+            scale: 0.5,
+          },
+          '<'
+        );
     }
+  }, []);
+
+  const pushAsset = (e: React.MouseEvent<HTMLDivElement>) => {
+    const element = e.currentTarget;
+    const img = element.querySelector('img');
+    if (!img) return;
+
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const deltaX = centerX - e.clientX;
+    const deltaY = centerY - e.clientY;
+
+    const angle = Math.atan2(deltaY, deltaX);
+    const distance = 50;
+
+    const moveX = Math.cos(angle) * distance;
+    const moveY = Math.sin(angle) * distance;
+
+    gsap.to(img, {
+      x: moveX,
+      y: moveY,
+      duration: 0.4,
+      ease: 'power2.out',
+      onComplete: () => {
+        gsap.to(img, {
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          ease: 'elastic.out(1, 0.3)',
+        });
+      },
+    });
+  };
+
+  const renderLetters = (text: string) => {
+    return text.split('').map((char, index) => (
+      <span key={index} className='hero-letter inline-block'>
+        {char}
+      </span>
+    ));
   };
 
   return (
-    <section className='section relative w-full h-screen pt-[7.5em] bg-dark overflow-hidden' id='hero'>
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute w-full h-screen left-1/2 top-0 object-cover -translate-x-1/2 z-[1]"
+    <section
+      ref={containerRef}
+      id='hero'
+      className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
+    >
+      {/* Top Left - [] */}
+      <div
+        className='absolute z-20 top-[30%] left-[5%] md:left-[10%] w-[180px] md:w-[135px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
       >
-        <source src={Video} type='video/mp4' />
-      </video>
-      <div className='absolute top-0 left-0 w-full h-screen bg-dark opacity-50 z-[2]'></div>
-      <div className='container flex justify-center items-center relative h-full w-[90%] mx-auto z-[3]' ref={sidesWrapperRef}>
-        <div className='relative font-main-heavy text-[1.7rem] leading-[1.5rem] w-[15em] h-[13em] z-10 md-custom:text-[3.5rem] md-custom:leading-[3rem] xl-custom:w-[14.5em] xl-custom:h-[13em]' onMouseMove={onMoveHandler}>
-          <div className='flex flex-col absolute skew-y-[30deg] scale-y-[1.33333] top-[47%] left-[8.2%] text-bright opacity-0 animate-cube-left xl-custom:top-[42%] xl-custom:left-[13%]' ref={sideLeftRef}>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">hey, I'm</h2>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Francis</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Kodama</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Based in</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Ottawa, </h2>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Canada.</h2>
-          </div>
-          <div className='flex flex-col absolute [transform:skew(60deg,-30deg)_scaleY(0.66667)] top-[2%] left-[30%] text-bright opacity-0 animate-cube-top xl-custom:left-[30.5%]' ref={sideTopRef}>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Software</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">engineer </h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">-----------</h2>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">react sass</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">next.js, js</h2>
-          </div>
-          <div className='flex flex-col absolute skew-y-[-30deg] scale-y-[1.33333] top-[39%] left-[48%] text-third opacity-0 animate-cube-right md-custom:top-[37%] md-custom:left-[47%] xl-custom:top-[38%] xl-custom:left-[47%]' ref={sideRightRef}>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">typescript</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">apis design</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">agile + jira</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">git figma xd</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">PHOTOSHOP</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">responsive</h2>
-          </div>
-        </div>
+        <Image
+          src={SquareBracketsImg}
+          alt='3D Square Brackets'
+          className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-12'
+        />
+      </div>
+
+      {/* Top Right - {}2*/}
+      <div
+        className='absolute z-20 top-[25%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
+        <Image
+          src={CurlyBracesImg2}
+          alt='3D Curly Braces'
+          className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
+        />
+      </div>
+
+      {/* Bottom Left - {} */}
+      <div
+        className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
+        <Image
+          src={CurlyBracesImg}
+          alt='3D Curly Braces'
+          className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-6'
+        />
+      </div>
+
+      {/* Bottom Right - </> */}
+      <div
+        className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
+        <Image
+          src={CodeBracketsImg}
+          alt='3D Code Brackets'
+          className='w-full h-auto drop-shadow-2xl opacity-90 rotate-12'
+        />
+      </div>
+
+      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+        Hello, I am
+      </h2>
+
+      <div className='relative z-40 flex flex-col items-center leading-none select-none'>
+        <h1
+          ref={titleOneRef}
+          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+        >
+          {renderLetters('FRANCIS')}
+        </h1>
+        <h1
+          ref={titleTwoRef}
+          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+        >
+          {renderLetters('KODAMA')}
+        </h1>
+      </div>
+
+      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+        Software Engineer
+      </h2>
+
+      <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30'>
+        <ul
+          ref={leftRef}
+          className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
+        >
+          <li className='text-white font-main-bold mb-2'>Stack</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Typescript</li>
+          <li>CSS</li>
+          <li>Tailwind</li>
+        </ul>
+      </div>
+
+      <div className='absolute top-[50%] -translate-y-1/2 right-4 md:right-12 z-30'>
+        <ul
+          ref={rightRef}
+          className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
+        >
+          <li className='text-white font-main-bold mb-2'>Tools</li>
+          <li>Agile</li>
+          <li>Jira</li>
+          <li>Algolia</li>
+          <li>Marketing</li>
+          <li>Design</li>
+        </ul>
       </div>
       <Link to='reason' spy={true} smooth={true} offset={-150} duration={2000}>
-        <Image src={Scroll} className='absolute bottom-[3%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-[3]' alt='icon to scroll' />
+        <Image
+          src={Scroll}
+          className='absolute bottom-[6%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-3'
+          alt='icon to scroll'
+        />
       </Link>
     </section>
   );
