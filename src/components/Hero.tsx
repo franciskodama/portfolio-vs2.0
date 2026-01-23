@@ -1,12 +1,14 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import InputFieldImg from '../assets/images/hero_3d_input_field.png';
 import BracketsImg from '../assets/images/hero_3d_code_brackets.png';
-import SubmitBtnImg from '../assets/images/hero_3d_submit_button.png';
+import CurlyBracesImg2 from '../assets/images/hero_3d_curly_braces2.png';
 import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
+import { Link } from 'react-scroll';
+import Scroll from '../assets/images/ico-scroll.svg';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,8 +48,8 @@ const Hero = () => {
 
     // Floating Animation for the 3D Image
     gsap.to('.floating-asset', {
-      y: -15,
-      rotation: 5,
+      y: -35,
+      rotation: 15,
       duration: 3,
       repeat: -1,
       yoyo: true,
@@ -63,12 +65,10 @@ const Hero = () => {
     <section
       ref={containerRef}
       id='hero'
-      className='relative w-full h-[150vh] bg-black overflow-hidden flex flex-col items-center justify-center'
+      className='relative w-full h-screen background-color overflow-hidden flex flex-col items-center justify-center'
     >
-      {/* 3D Floating Elements - Corners */}
-
-      {/* Top Left - Input Field (Like the Plane) */}
-      <div className='absolute z-20 top-[15%] left-[5%] md:left-[10%] w-[180px] md:w-[250px] floating-asset pointer-events-none'>
+      {/* Top Left - @id */}
+      <div className='absolute z-20 top-[30%] left-[5%] md:left-[8%] w-[180px] md:w-[250px] floating-asset pointer-events-none'>
         <Image
           src={InputFieldImg}
           alt='3D Input Field'
@@ -76,17 +76,17 @@ const Hero = () => {
         />
       </div>
 
-      {/* Top Right - Submit Button (Like the Money Roll) */}
-      <div className='absolute z-20 top-[18%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset pointer-events-none'>
+      {/* Top Right - {}2*/}
+      <div className='absolute z-20 top-[25%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset pointer-events-none'>
         <Image
-          src={SubmitBtnImg}
+          src={CurlyBracesImg2}
           alt='3D Submit Button'
           className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
         />
       </div>
 
-      {/* Bottom Left - Curly Braces (Like the Glove) */}
-      <div className='absolute z-20 bottom-[20%] left-[8%] md:left-[12%] w-[100px] md:w-[150px] floating-asset pointer-events-none'>
+      {/* Bottom Left - {} */}
+      <div className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset pointer-events-none'>
         <Image
           src={CurlyBracesImg}
           alt='3D Curly Braces'
@@ -94,8 +94,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* Bottom Right - Angle Brackets (Like the Car) */}
-      <div className='absolute z-20 bottom-[15%] right-[5%] md:right-[15%] w-[120px] md:w-[180px] floating-asset pointer-events-none'>
+      {/* Bottom Right - </> */}
+      <div className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset pointer-events-none'>
         <Image
           src={BracketsImg}
           alt='3D Code Brackets'
@@ -103,8 +103,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Main Massive Typography */}
-      <div className='relative z-10 flex flex-col items-center leading-none select-none mix-blend-difference'>
+      <div className='relative z-40 flex flex-col items-center leading-none select-none'>
         <h1
           ref={titleOneRef}
           className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
@@ -119,8 +118,7 @@ const Hero = () => {
         </h1>
       </div>
 
-      {/* Center/Floating Skills - Replaces 'Boring Weather' */}
-      <div className='absolute top-[40%] left-4 md:left-12 z-30'>
+      <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30'>
         <ul
           ref={leftRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
@@ -129,23 +127,31 @@ const Hero = () => {
           <li>React</li>
           <li>Next.js</li>
           <li>Typescript</li>
-          <li>Prisma</li>
+          <li>CSS</li>
+          <li>Tailwind</li>
         </ul>
       </div>
 
-      {/* Right/Floating Skills - Replaces 'Visibility' */}
-      <div className='absolute bottom-[40%] right-4 md:right-12 z-30'>
+      <div className='absolute top-[50%] -translate-y-1/2 right-4 md:right-12 z-30'>
         <ul
           ref={rightRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
         >
           <li className='text-white font-main-bold mb-2'>Tools_V.2</li>
-          <li>CSS</li>
-          <li>APIs</li>
           <li>Agile</li>
           <li>Jira</li>
+          <li>Algolia</li>
+          <li>Marketing</li>
+          <li>Design</li>
         </ul>
       </div>
+      <Link to='reason' spy={true} smooth={true} offset={-150} duration={2000}>
+        <Image
+          src={Scroll}
+          className='absolute bottom-[3%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-3'
+          alt='icon to scroll'
+        />
+      </Link>
     </section>
   );
 };
