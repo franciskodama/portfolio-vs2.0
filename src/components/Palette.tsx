@@ -15,7 +15,7 @@ const Color = ({
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className='absolute bottom-[18%] right-[50%] z-10'>
+    <div className='absolute bottom-[10%] right-[50%] z-10'>
       <div
         className={`hidden lg-custom:block w-[50px] h-[50px] bg-no-repeat bg-center bg-size-[32px] p-4 cursor-pointer transition-all duration-300 ${
           toggle

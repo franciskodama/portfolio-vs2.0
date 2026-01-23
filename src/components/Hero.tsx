@@ -103,6 +103,10 @@ const Hero = () => {
         />
       </div>
 
+      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+        Hello, I am
+      </h2>
+
       <div className='relative z-40 flex flex-col items-center leading-none select-none'>
         <h1
           ref={titleOneRef}
@@ -117,6 +121,10 @@ const Hero = () => {
           KODAMA
         </h1>
       </div>
+
+      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+        Software Engineer
+      </h2>
 
       <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30'>
         <ul
