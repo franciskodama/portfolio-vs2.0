@@ -150,8 +150,9 @@ const WhyMe = () => {
                   How does all of this benefit you?
                 </h6>
                 <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  I will work with teams, contributing and inspiring colleagues
-                  in order to get the best out of us.
+                  I bring a collaborative mindset and technical expertise,
+                  empowering the team to solve complex problems and deliver
+                  exceptional software.
                 </h5>
               </div>
             </div>
