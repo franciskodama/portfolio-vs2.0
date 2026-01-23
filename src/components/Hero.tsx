@@ -4,6 +4,9 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import SquareBracketsImg from '../assets/images/hero_3d_square_brackets.png';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 import CodeBracketsImg from '../assets/images/hero_3d_code_brackets.png';
 import CurlyBracesImg2 from '../assets/images/hero_3d_curly_braces2.png';
 import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
@@ -59,6 +62,20 @@ const Hero = () => {
         from: 'random',
       },
     });
+    // Scroll Trigger Animation for Lists
+    if (leftRef.current && rightRef.current) {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: '50% top',
+            scrub: 1,
+          },
+        })
+        .to(leftRef.current, { x: -300, opacity: 0 })
+        .to(rightRef.current, { x: 300, opacity: 0 }, '<');
+    }
   }, []);
 
   const pushAsset = (e: React.MouseEvent<HTMLDivElement>) => {
