@@ -124,7 +124,7 @@ const SynergySeer = ({
                 href='#curve'
                 startOffset='50%'
                 textAnchor='middle'
-                className='font-main-semibold uppercase tracking-wider fill-current text-[1.2rem]'
+                className='font-main-regular uppercase tracking-wider fill-current text-[1rem]'
               >
                 The Ritual of Recruitment
               </textPath>
@@ -132,16 +132,45 @@ const SynergySeer = ({
           </svg>
         </div>
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third p-4 my-8 text-center max-w-2xl'>
-            <div className='flex gap-12 font-main-light text-[0.9rem] leading-[1.6] text-bright w-[60ch] p-4'>
-              <p className='text-right'>
-                Type the name of your company, the title of this role, and paste
-                the job description if you have one.
-              </p>
-              <p className='text-left'>
-                The crystal ball will then reveal the compatibility prophecy and
-                predict our first 90 days together.
-              </p>
+          <div className='text-third p-4 my-8 text-center max-w-2xl w-full'>
+            <div className='relative flex justify-between gap-8 max-w-[40ch] mx-auto my-8'>
+              {/* Circuit Connector */}
+              <svg
+                className='absolute top-5 left-0 w-full h-12 -z-10 opacity-50'
+                viewBox='0 0 500 100'
+                preserveAspectRatio='none'
+                overflow='visible'
+              >
+                <path
+                  d='M 40 20 Q 250 100 460 20'
+                  stroke='var(--third-color)'
+                  strokeWidth='3'
+                  fill='none'
+                  strokeDasharray='5 5'
+                />
+              </svg>
+
+              {/* Step 1 */}
+              <div className='flex flex-col items-center flex-1'>
+                <div className='w-10 h-10 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
+                  1
+                </div>
+                <p className='text-center font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+                  Type the name of your company , the title of this role , and
+                  paste the job description if you have one.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className='flex flex-col items-center flex-1'>
+                <div className='w-10 h-10 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
+                  2
+                </div>
+                <p className='text-center font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+                  The crystal ball will then reveal the compatibility prophecy
+                  and predict our first 90 days together.
+                </p>
+              </div>
             </div>
           </div>
 
