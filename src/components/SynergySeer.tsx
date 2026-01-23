@@ -102,17 +102,21 @@ const SynergySeer = ({
         </p>
 
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third border border-dashed border-third p-4 mb-16 text-center max-w-2xl'>
+          <div className='text-third p-4 my-16 text-center max-w-2xl'>
             <h2 className='font-main-semibold mb-4 uppercase tracking-wider'>
               The Ritual of Recruitment
             </h2>
-            <p className='font-main-light text-[0.9rem] leading-[1.6] text-bright w-[45ch] p-4'>
-              Type the name of your company, the title of this role, and paste
-              the job description if you have one.
-              <br />
-              <br /> The crystal ball will then reveal the compatibility
-              prophecy and predict our first 90 days together.
-            </p>
+
+            <div className='flex gap-12 font-main-light text-[0.9rem] leading-[1.6] text-bright w-[60ch] p-4'>
+              <p className='text-right'>
+                Type the name of your company, the title of this role, and paste
+                the job description if you have one.
+              </p>
+              <p className='text-left'>
+                The crystal ball will then reveal the compatibility prophecy and
+                predict our first 90 days together.
+              </p>
+            </div>
           </div>
 
           <div className='relative flex justify-center items-center w-full mt-32 mb-12'>
