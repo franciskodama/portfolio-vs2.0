@@ -103,9 +103,31 @@ const SynergySeer = ({
 
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
           <div className='text-third p-4 my-16 text-center max-w-2xl'>
-            <h2 className='font-main-semibold mb-4 uppercase tracking-wider'>
-              The Ritual of Recruitment
-            </h2>
+            <div
+              className='w-full max-w-lg mb-4 text-third'
+              aria-label='The Ritual of Recruitment'
+            >
+              <svg
+                viewBox='0 0 400 100'
+                className='w-full h-auto overflow-visible'
+              >
+                <path
+                  id='curve'
+                  d='M 50 100 Q 200 0 350 100'
+                  fill='transparent'
+                />
+                <text width='400'>
+                  <textPath
+                    href='#curve'
+                    startOffset='50%'
+                    textAnchor='middle'
+                    className='font-main-semibold uppercase tracking-wider fill-current text-[1.2rem]'
+                  >
+                    The Ritual of Recruitment
+                  </textPath>
+                </text>
+              </svg>
+            </div>
 
             <div className='flex gap-12 font-main-light text-[0.9rem] leading-[1.6] text-bright w-[60ch] p-4'>
               <p className='text-right'>
@@ -135,7 +157,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='company'
-                  placeholder='Type here your company name'
+                  placeholder='Your company name'
                   className={baseInputClass}
                   value={formData.company}
                   onChange={handleInputChange}
@@ -144,7 +166,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='position'
-                  placeholder='Type here the title position'
+                  placeholder='Title position'
                   className={baseInputClass}
                   value={formData.position}
                   onChange={handleInputChange}
