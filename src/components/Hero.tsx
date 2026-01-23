@@ -1,83 +1,116 @@
 'use client';
-import React, { useRef } from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Link } from 'react-scroll';
-const Video = '/assets/hero-bg.mp4';
-import Scroll from '../assets/images/ico-scroll.svg';
+import { gsap } from 'gsap';
+import TechAssets from '../assets/images/hero-3d-assets.png';
 
 const Hero = () => {
-  const sidesWrapperRef = useRef<HTMLDivElement>(null);
-  const sideLeftRef = useRef<HTMLDivElement>(null);
-  const sideTopRef = useRef<HTMLDivElement>(null);
-  const sideRightRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleOneRef = useRef<HTMLHeadingElement>(null);
+  const titleTwoRef = useRef<HTMLHeadingElement>(null);
 
-  const onMoveHandler = (e: React.MouseEvent) => {
-    let X = e.pageX;
-    let Y = e.pageY;
+  const leftRef = useRef<HTMLUListElement>(null);
+  const rightRef = useRef<HTMLUListElement>(null);
 
-    if (sideLeftRef.current && sideTopRef.current && sideRightRef.current) {
-      sideLeftRef.current.style.transform =
-        'skew(0deg, 30deg) scaleY(1.33333) translate(' +
-        (X / 100) * -3 +
-        'px, ' +
-        (Y / 100) * -3 +
-        'px)';
-      sideTopRef.current.style.transform =
-        'skew(60deg, -30deg) scaleY(.66667) translate(' +
-        (X / 100) * 3 +
-        'px, ' +
-        (Y / 100) * -3 +
-        'px)';
-      sideRightRef.current.style.transform =
-        'skew(0deg, -30deg) scaleY(1.33333) translate(' +
-        (X / 100) * -3 +
-        'px, ' +
-        (Y / 100) * -3 +
-        'px)';
-    }
-  };
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    // Initial Appearance
+    tl.fromTo(
+      [titleOneRef.current, titleTwoRef.current],
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', stagger: 0.2 }
+    ).fromTo(
+      [leftRef.current, rightRef.current],
+      { opacity: 0 },
+      { opacity: 1, duration: 1 },
+      '-=0.5'
+    );
+
+    // Floating Animation for the 3D Image
+    gsap.to('.hero-3d-assets', {
+      y: -20,
+      rotation: 2,
+      duration: 4,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    });
+  }, []);
 
   return (
-    <section className='section relative w-full h-screen pt-[7.5em] bg-dark overflow-hidden' id='hero'>
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute w-full h-screen left-1/2 top-0 object-cover -translate-x-1/2 z-[1]"
-      >
-        <source src={Video} type='video/mp4' />
-      </video>
-      <div className='absolute top-0 left-0 w-full h-screen bg-dark opacity-50 z-[2]'></div>
-      <div className='container flex justify-center items-center relative h-full w-[90%] mx-auto z-[3]' ref={sidesWrapperRef}>
-        <div className='relative font-main-heavy text-[1.7rem] leading-[1.5rem] w-[15em] h-[13em] z-10 md-custom:text-[3.5rem] md-custom:leading-[3rem] xl-custom:w-[14.5em] xl-custom:h-[13em]' onMouseMove={onMoveHandler}>
-          <div className='flex flex-col absolute skew-y-[30deg] scale-y-[1.33333] top-[47%] left-[8.2%] text-bright opacity-0 animate-cube-left xl-custom:top-[42%] xl-custom:left-[13%]' ref={sideLeftRef}>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">hey, I'm</h2>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Francis</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Kodama</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Based in</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Ottawa, </h2>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Canada.</h2>
-          </div>
-          <div className='flex flex-col absolute [transform:skew(60deg,-30deg)_scaleY(0.66667)] top-[2%] left-[30%] text-bright opacity-0 animate-cube-top xl-custom:left-[30.5%]' ref={sideTopRef}>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">Software</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">engineer </h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">-----------</h2>
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">react sass</h2> 
-            <h2 className="transition-all duration-100 hover:text-third hover:scale-110">next.js, js</h2>
-          </div>
-          <div className='flex flex-col absolute skew-y-[-30deg] scale-y-[1.33333] top-[39%] left-[48%] text-third opacity-0 animate-cube-right md-custom:top-[37%] md-custom:left-[47%] xl-custom:top-[38%] xl-custom:left-[47%]' ref={sideRightRef}>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">typescript</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">apis design</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">agile + jira</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">git figma xd</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">PHOTOSHOP</h2>
-            <h2 className="transition-all duration-100 hover:text-bright hover:scale-110">responsive</h2>
-          </div>
-        </div>
+    <section
+      ref={containerRef}
+      id='hero'
+      className='relative w-full h-[150vh] bg-black overflow-hidden flex flex-col items-center justify-center'
+    >
+      {/* 3D Floating Elements (Mocked with the single generated chart for now) */}
+      {/* Ideally these would be separate images, but we use the composite for effect */}
+      <div className='absolute z-20 top-[15%] left-[5%] md:left-[15%] w-[150px] md:w-[300px] hero-3d-assets pointer-events-none opacity-90'>
+        {/* Using visual cropping via CSS object-position for variety if needed, 
+             but here just placing the main asset group floating */}
+        <Image
+          src={TechAssets}
+          alt='Floating 3D Tech Assets'
+          className='w-full h-auto drop-shadow-2xl'
+        />
       </div>
-      <Link to='reason' spy={true} smooth={true} offset={-150} duration={2000}>
-        <Image src={Scroll} className='absolute bottom-[3%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-[3]' alt='icon to scroll' />
-      </Link>
+
+      <div
+        className='absolute z-20 bottom-[20%] right-[5%] md:right-[15%] w-[180px] md:w-[350px] hero-3d-assets pointer-events-none opacity-90'
+        style={{ animationDelay: '1s' }}
+      >
+        <Image
+          src={TechAssets}
+          alt='Floating 3D Tech Assets'
+          className='w-full h-auto drop-shadow-2xl scale-x-[-1] rotate-12'
+        />
+      </div>
+
+      {/* Main Massive Typography */}
+      <div className='relative z-10 flex flex-col items-center leading-none select-none mix-blend-difference'>
+        <h1
+          ref={titleOneRef}
+          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+        >
+          FRANCIS
+        </h1>
+        <h1
+          ref={titleTwoRef}
+          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+        >
+          KODAMA
+        </h1>
+      </div>
+
+      {/* Center/Floating Skills - Replaces 'Boring Weather' */}
+      <div className='absolute top-[40%] left-4 md:left-12 z-30'>
+        <ul
+          ref={leftRef}
+          className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
+        >
+          <li className='text-white font-main-bold mb-2'>Stack_V.1</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Typescript</li>
+          <li>Prisma</li>
+        </ul>
+      </div>
+
+      {/* Right/Floating Skills - Replaces 'Visibility' */}
+      <div className='absolute bottom-[40%] right-4 md:right-12 z-30'>
+        <ul
+          ref={rightRef}
+          className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
+        >
+          <li className='text-white font-main-bold mb-2'>Tools_V.2</li>
+          <li>CSS</li>
+          <li>APIs</li>
+          <li>Agile</li>
+          <li>Jira</li>
+        </ul>
+      </div>
     </section>
   );
 };
