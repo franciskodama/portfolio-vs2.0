@@ -62,7 +62,7 @@ const Hero = () => {
         from: 'random',
       },
     });
-    // Scroll Trigger Animation for Lists
+    // Scroll Trigger Animation for Lists and Name
     if (leftRef.current && rightRef.current) {
       gsap
         .timeline({
@@ -74,7 +74,18 @@ const Hero = () => {
           },
         })
         .to(leftRef.current, { x: -300, opacity: 0 })
-        .to(rightRef.current, { x: 300, opacity: 0 }, '<');
+        .to(rightRef.current, { x: 300, opacity: 0 }, '<')
+        .to(
+          '.hero-letter',
+          {
+            x: () => (Math.random() - 0.5) * 1500,
+            y: () => (Math.random() - 0.5) * 1500,
+            rotation: () => (Math.random() - 0.5) * 360,
+            opacity: 0,
+            scale: 0.5,
+          },
+          '<'
+        );
     }
   }, []);
 
@@ -110,6 +121,14 @@ const Hero = () => {
         });
       },
     });
+  };
+
+  const renderLetters = (text: string) => {
+    return text.split('').map((char, index) => (
+      <span key={index} className='hero-letter inline-block'>
+        {char}
+      </span>
+    ));
   };
 
   return (
@@ -175,13 +194,13 @@ const Hero = () => {
           ref={titleOneRef}
           className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
         >
-          FRANCIS
+          {renderLetters('FRANCIS')}
         </h1>
         <h1
           ref={titleTwoRef}
           className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
         >
-          KODAMA
+          {renderLetters('KODAMA')}
         </h1>
       </div>
 
@@ -219,7 +238,7 @@ const Hero = () => {
       <Link to='reason' spy={true} smooth={true} offset={-150} duration={2000}>
         <Image
           src={Scroll}
-          className='absolute bottom-[3%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-3'
+          className='absolute bottom-[6%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-3'
           alt='icon to scroll'
         />
       </Link>
