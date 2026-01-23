@@ -210,36 +210,117 @@ const SynergySeer = ({
             )}
           </div>
 
-          <button
-            className='btn btn--third-color'
-            type='submit'
-            disabled={status === 'Divining...'}
-            style={{
-              backgroundColor:
-                status === 'Divining...'
-                  ? 'var(--color-dark)'
-                  : 'var(--color-third)',
-            }}
-          >
-            {status}
-          </button>
+          <div className='relative'>
+            <div className='absolute -left-[100px] -top-[40px] w-[120px] h-[100px] pointer-events-none z-10'>
+              <div className='relative'>
+                <p
+                  className='absolute bottom-22 -left-8 text-white text-[1.5rem] leading-6 -rotate-12 translate-x-2'
+                  style={{ fontFamily: 'var(--font-gloria)' }}
+                >
+                  click
+                  <br />
+                  here
+                </p>
+                <svg
+                  viewBox='0 0 120 120'
+                  className='w-full h-full overflow-visible text-white mt-2 rotate-6 scale-y-75'
+                >
+                  <path
+                    d='M 10 50 Q 60 100 110 20'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    markerEnd='url(#arrowhead)'
+                    strokeLinecap='round'
+                  />
+                  <defs>
+                    <marker
+                      id='arrowhead'
+                      markerWidth='10'
+                      markerHeight='10'
+                      refX='9'
+                      refY='3'
+                      orient='auto'
+                      markerUnits='strokeWidth'
+                    >
+                      <path d='M0,0 L0,6 L9,3 z' fill='currentColor' />
+                    </marker>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button
+              type='submit'
+              disabled={status === 'Divining...'}
+              className='relative w-[300px] h-[160px] -mt-33 group focus:outline-none transition-transform hover:scale-105 active:scale-95'
+              aria-label={status}
+            >
+              <svg
+                viewBox='0 0 300 160'
+                className='w-full h-full overflow-visible'
+              >
+                <defs>
+                  <filter
+                    id='glow'
+                    x='-20%'
+                    y='-20%'
+                    width='140%'
+                    height='140%'
+                  >
+                    <feGaussianBlur stdDeviation='5' result='blur' />
+                    <feComposite
+                      in='SourceGraphic'
+                      in2='blur'
+                      operator='over'
+                    />
+                  </filter>
+                </defs>
+                <path
+                  d='M 0 30 Q 150 100 300 30 L 300 100 Q 150 170 0 100 Z'
+                  fill={
+                    status === 'Divining...'
+                      ? 'var(--color-dark)'
+                      : 'var(--color-third)'
+                  }
+                  className='transition-colors duration-300 shadow-xl group-hover:filter-[url(#glow)]'
+                />
+                <path
+                  id='curve-btn'
+                  d='M 0 80 Q 150 150 300 80'
+                  fill='transparent'
+                />
+                <text width='300'>
+                  <textPath
+                    href='#curve-btn'
+                    startOffset='50%'
+                    textAnchor='middle'
+                    className='font-main-regular uppercase tracking-normal fill-white text-[1.4rem] pointer-events-none'
+                  >
+                    {status}
+                  </textPath>
+                </text>
+              </svg>
+            </button>
+          </div>
         </form>
 
         <div ref={resultRef}>{result && <SynergyResult result={result} />}</div>
       </div>
-      <WhyCard
-        titleOne={whyData.ai.titleOne}
-        textOne={whyData.ai.textOne}
-        titleTwo={whyData.ai.titleTwo}
-        textTwo={whyData.ai.textTwo}
-        titleThree={whyData.ai.titleThree}
-        textThree={whyData.ai.textThree}
-        titleFour={whyData.ai.titleFour}
-        textFour={whyData.ai.textFour}
-        observation={whyData.ai.observation}
-        bottom={whyData.ai.bottom}
-        left={whyData.ai.left}
-      />
+      <div className='mt-32'>
+        <WhyCard
+          titleOne={whyData.ai.titleOne}
+          textOne={whyData.ai.textOne}
+          titleTwo={whyData.ai.titleTwo}
+          textTwo={whyData.ai.textTwo}
+          titleThree={whyData.ai.titleThree}
+          textThree={whyData.ai.textThree}
+          titleFour={whyData.ai.titleFour}
+          textFour={whyData.ai.textFour}
+          observation={whyData.ai.observation}
+          bottom={whyData.ai.bottom}
+          left={whyData.ai.left}
+        />
+      </div>
     </section>
   );
 };
