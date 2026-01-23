@@ -124,7 +124,7 @@ const SynergySeer = ({
                 href='#curve'
                 startOffset='50%'
                 textAnchor='middle'
-                className='font-main-regular uppercase tracking-wider fill-current text-[1rem]'
+                className='font-main-semibold uppercase tracking-wider fill-current text-[1rem]'
               >
                 The Ritual of Recruitment
               </textPath>
@@ -133,12 +133,12 @@ const SynergySeer = ({
         </div>
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
           <div className='text-third p-4 my-8 text-center max-w-2xl w-full'>
-            <div className='relative flex justify-between gap-8 max-w-[40ch] mx-auto mb-12'>
+            <div className='relative flex justify-between gap-12 max-w-[42ch] mx-auto mb-12'>
               <div className='flex flex-col items-center flex-1'>
                 <div className='w-10 h-10 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
                   1
                 </div>
-                <p className='text-center font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+                <p className='text-right font-main-light text-[0.9rem] leading-[1.6] text-bright'>
                   Type the name of your company, the title of this role, and
                   paste the job description if you have one.
                 </p>
@@ -148,7 +148,7 @@ const SynergySeer = ({
                 <div className='w-10 h-10 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
                   2
                 </div>
-                <p className='text-center font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+                <p className='text-left font-main-light text-[0.9rem] leading-[1.6] text-bright'>
                   The crystal ball will then reveal the compatibility prophecy
                   and predict our first 90 days together.
                 </p>
