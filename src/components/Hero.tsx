@@ -65,7 +65,7 @@ const Hero = () => {
     <section
       ref={containerRef}
       id='hero'
-      className='relative w-full h-screen background-color overflow-hidden flex flex-col items-center justify-center'
+      className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
     >
       {/* Top Left - @id */}
       <div className='absolute z-20 top-[30%] left-[5%] md:left-[8%] w-[180px] md:w-[250px] floating-asset pointer-events-none'>
