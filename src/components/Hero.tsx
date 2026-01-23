@@ -61,6 +61,40 @@ const Hero = () => {
     });
   }, []);
 
+  const pushAsset = (e: React.MouseEvent<HTMLDivElement>) => {
+    const element = e.currentTarget;
+    const img = element.querySelector('img');
+    if (!img) return;
+
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const deltaX = centerX - e.clientX;
+    const deltaY = centerY - e.clientY;
+
+    const angle = Math.atan2(deltaY, deltaX);
+    const distance = 50;
+
+    const moveX = Math.cos(angle) * distance;
+    const moveY = Math.sin(angle) * distance;
+
+    gsap.to(img, {
+      x: moveX,
+      y: moveY,
+      duration: 0.4,
+      ease: 'power2.out',
+      onComplete: () => {
+        gsap.to(img, {
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          ease: 'elastic.out(1, 0.3)',
+        });
+      },
+    });
+  };
+
   return (
     <section
       ref={containerRef}
@@ -68,7 +102,10 @@ const Hero = () => {
       className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
     >
       {/* Top Left - @id */}
-      <div className='absolute z-20 top-[30%] left-[5%] md:left-[8%] w-[180px] md:w-[250px] floating-asset pointer-events-none'>
+      <div
+        className='absolute z-20 top-[30%] left-[5%] md:left-[8%] w-[180px] md:w-[250px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
         <Image
           src={InputFieldImg}
           alt='3D Input Field'
@@ -77,7 +114,10 @@ const Hero = () => {
       </div>
 
       {/* Top Right - {}2*/}
-      <div className='absolute z-20 top-[25%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset pointer-events-none'>
+      <div
+        className='absolute z-20 top-[25%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
         <Image
           src={CurlyBracesImg2}
           alt='3D Submit Button'
@@ -86,7 +126,10 @@ const Hero = () => {
       </div>
 
       {/* Bottom Left - {} */}
-      <div className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset pointer-events-none'>
+      <div
+        className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
         <Image
           src={CurlyBracesImg}
           alt='3D Curly Braces'
@@ -95,7 +138,10 @@ const Hero = () => {
       </div>
 
       {/* Bottom Right - </> */}
-      <div className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset pointer-events-none'>
+      <div
+        className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset cursor-pointer'
+        onMouseEnter={pushAsset}
+      >
         <Image
           src={BracketsImg}
           alt='3D Code Brackets'
@@ -131,7 +177,7 @@ const Hero = () => {
           ref={leftRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
         >
-          <li className='text-white font-main-bold mb-2'>Stack_V.1</li>
+          <li className='text-white font-main-bold mb-2'>Stack</li>
           <li>React</li>
           <li>Next.js</li>
           <li>Typescript</li>
@@ -145,7 +191,7 @@ const Hero = () => {
           ref={rightRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
         >
-          <li className='text-white font-main-bold mb-2'>Tools_V.2</li>
+          <li className='text-white font-main-bold mb-2'>Tools</li>
           <li>Agile</li>
           <li>Jira</li>
           <li>Algolia</li>
