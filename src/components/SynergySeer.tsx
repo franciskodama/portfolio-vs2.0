@@ -96,39 +96,43 @@ const SynergySeer = ({
   return (
     <section className='section relative pb-40' id='ai'>
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
-        <h1 className='section-title'>Synergy Seer</h1>
-        <p className='my-[0.8em_0_5em_0] text-center mb-12'>
-          {`I'm the missing piece that fits your specific puzzle.`}
-        </p>
-
-        <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third p-4 my-16 text-center max-w-2xl'>
-            <div
-              className='w-full max-w-lg mb-4 text-third'
-              aria-label='The Ritual of Recruitment'
-            >
-              <svg
-                viewBox='0 0 400 100'
-                className='w-full h-auto overflow-visible'
+        <div className='relative flex flex-col items-center'>
+          <svg viewBox='0 0 500 120' className='w-full h-auto overflow-visible'>
+            <path
+              id='curve-title'
+              d='M 50 120 Q 250 10 450 120'
+              fill='transparent'
+            />
+            <text width='500'>
+              <textPath
+                href='#curve-title'
+                startOffset='50%'
+                textAnchor='middle'
+                className='font-main-regular text-white uppercase tracking-tighter fill-current text-[1.4rem]'
               >
-                <path
-                  id='curve'
-                  d='M 50 100 Q 200 0 350 100'
-                  fill='transparent'
-                />
-                <text width='400'>
-                  <textPath
-                    href='#curve'
-                    startOffset='50%'
-                    textAnchor='middle'
-                    className='font-main-semibold uppercase tracking-wider fill-current text-[1.2rem]'
-                  >
-                    The Ritual of Recruitment
-                  </textPath>
-                </text>
-              </svg>
-            </div>
-
+                Synergy Seer
+              </textPath>
+            </text>
+          </svg>
+          <svg
+            viewBox='0 0 500 120'
+            className='absolute top-22 w-[80%] h-auto overflow-visible text-third'
+          >
+            <path id='curve' d='M 50 120 Q 250 10 450 120' fill='transparent' />
+            <text width='500'>
+              <textPath
+                href='#curve'
+                startOffset='50%'
+                textAnchor='middle'
+                className='font-main-semibold uppercase tracking-wider fill-current text-[1.2rem]'
+              >
+                The Ritual of Recruitment
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <form className='flex flex-col items-center' onSubmit={onSubmit}>
+          <div className='text-third p-4 my-8 text-center max-w-2xl'>
             <div className='flex gap-12 font-main-light text-[0.9rem] leading-[1.6] text-bright w-[60ch] p-4'>
               <p className='text-right'>
                 Type the name of your company, the title of this role, and paste
