@@ -62,7 +62,8 @@ const Hero = () => {
         from: 'random',
       },
     });
-    // Scroll Trigger Animation for Lists and Name
+
+    // Scroll Trigger Animation for Skills, Tools, and Name
     if (leftRef.current && rightRef.current) {
       gsap
         .timeline({

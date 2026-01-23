@@ -1,7 +1,3 @@
-// ----------------------------------------
-// --------------- WHY CARD ---------------
-// ----------------------------------------
-
 export const whyData = {
   reason: {
     titleOne: 'Why?',
@@ -39,7 +35,8 @@ export const whyData = {
     textTwo:
       'To demonstrate how powerful this technology is, I created a fun and mystical area where you can place any question, and the crystal ball will give you a reasonable response.',
     titleThree: 'Tech used',
-    textThree: 'I used a cutting-edge API called Google Generative AI (Gemini) to achieve this.',
+    textThree:
+      'I used a cutting-edge API called Google Generative AI (Gemini) to achieve this.',
     titleFour: '',
     textFour: '',
     observation: '',
@@ -112,10 +109,6 @@ export const whyData = {
   },
 };
 
-// ----------------------------------------
-// ---------------- AVATAR ----------------
-// ----------------------------------------
-
 export const avatarData = [
   {
     key: 0,
@@ -167,10 +160,6 @@ export const avatarData = [
     imgUrl: require('../assets/images/avatar-friendly.jpg'),
   },
 ];
-
-// ----------------------------------------
-// --------------- PROJECTS ---------------
-// ----------------------------------------
 
 export const projects = [
   {

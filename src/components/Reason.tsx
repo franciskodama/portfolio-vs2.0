@@ -39,8 +39,6 @@ const Reason = () => {
     return arrOfDiv;
   };
 
-  // ========================== ANIMATION ==========================
-
   useEffect(() => {
     const reasonReveal = () => {
       const revealsBright = document.querySelectorAll('.reason__reveal-bright');
@@ -70,7 +68,7 @@ const Reason = () => {
     };
 
     window.addEventListener('scroll', reasonReveal);
-    reasonReveal(); // Initial check
+    reasonReveal();
 
     return () => {
       window.removeEventListener('scroll', reasonReveal);

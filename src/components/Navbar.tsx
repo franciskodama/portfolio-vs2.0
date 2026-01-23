@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Link } from 'react-scroll';
 
-import './Navbar.css'; // Import the new CSS file
+import './Navbar.css';
 import Logo from '../assets/images/fk-white-transparent-bg.png';
 import Menu from '../assets/images/menu-hamburguer.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
@@ -27,9 +27,7 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    // console.log(isOpen, isActive);
-  }, [isActive, isOpen]);
+  useEffect(() => {}, [isActive, isOpen]);
 
   return (
     <header className='navbar'>
@@ -39,8 +37,6 @@ const Navbar = () => {
             <Image className='nav-logo' alt='logo fkodama' src={Logo} />
           </div>
         </Link>
-
-        {/* -------- NAVBAR TOGGLE -------- */}
 
         <div className='menu-toggle'>
           <Image
@@ -63,24 +59,10 @@ const Navbar = () => {
           />
         </div>
 
-        {/* -------- NAVBAR EXTENDED -------- */}
-
         <nav
           className='nav-menu-mobile'
           style={{ display: isActive ? 'block' : 'none' }}
         >
-          {/* <Link
-            className='nav-link-mobile'
-            to='hero'
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-            onClick={handleClickOnLink}
-          >
-            {' '}
-            home{' '}
-          </Link> */}
           <Link
             className='nav-link-mobile'
             to='reason'
@@ -173,21 +155,7 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        {/* -------- NAVBAR HORIZONTAL -------- */}
-
         <nav className='nav-menu-desktop'>
-          {/* <Link
-            className='nav-link-desktop'
-            to='hero'
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-            onClick={handleClickOnLink}
-          >
-            {' '}
-            home{' '}
-          </Link> */}
           <Link
             className='nav-link-desktop'
             to='reason'

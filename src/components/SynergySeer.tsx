@@ -27,7 +27,6 @@ const SynergySeer = ({
     }
   }, [result]);
 
-  /* Hand Image Logic */
   const handImages = {
     first: {
       right: require('../assets/images/hand-right-black-bg.png'),
