@@ -2,7 +2,6 @@
 
 import React, { useState, useContext, useRef, useEffect } from 'react';
 
-
 import { AboutContext } from '../contexts/AboutContext';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { whyData } from '../data/Data';
@@ -64,7 +63,7 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('SUBMIT');
-  const formContact = useRef(null)
+  const formContact = useRef(null);
 
   const [columns, setColumns] = useState(dropSpace);
   const [enabled, setEnabled] = useState(false);
@@ -74,16 +73,21 @@ const Contact = () => {
   }, []);
 
   if (!enabled) {
-    return <section className='section border-t-[0.2px] border-white/20 pb-40 relative' id='contact'></section>;
+    return (
+      <section
+        className='section border-t-[0.2px] border-white/20 pb-40 relative'
+        id='contact'
+      ></section>
+    );
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('SENDING...');
 
-    const dragDropMessage = columns.drop.items.map(
-      (element) => element.content
-    ).join(', ');
+    const dragDropMessage = columns.drop.items
+      .map((element) => element.content)
+      .join(', ');
 
     const formData = {
       name: name,
@@ -144,9 +148,12 @@ const Contact = () => {
   };
 
   return (
-    <section className='section border-t-[0.2px] border-white/20 pb-40 relative' id='contact'>
+    <section
+      className='section border-t-[0.2px] border-white/20 pb-40 relative'
+      id='contact'
+    >
       <div className='container mx-auto w-[90%] mb-8 md-custom:w-[80%] lg-custom:w-[60%]'>
-        <h1 className='section-title text-left'>
+        <h1 className='section-title text-left text-regular'>
           hello generator
         </h1>
         <p>{`Let me help you drop me a line! ;)`}</p>
@@ -156,7 +163,9 @@ const Contact = () => {
           {Object.entries(columns).map(([columnId, column]) => {
             return (
               <div className='flex flex-col' key={columnId}>
-                <h2 className='mt-16 mb-2 uppercase font-main-medium text-third'>{column.name}</h2>
+                <h2 className='mt-16 mb-2 uppercase font-main-medium text-third'>
+                  {column.name}
+                </h2>
                 <div>
                   <Droppable
                     droppableId={columnId}
@@ -216,8 +225,14 @@ const Contact = () => {
           })}
         </DragDropContext>
 
-        <form ref={formContact} className='flex flex-col' onSubmit={handleSubmit}>
-          <p className='mt-16 mb-2 uppercase font-main-medium text-third'>Additional comments:</p>
+        <form
+          ref={formContact}
+          className='flex flex-col'
+          onSubmit={handleSubmit}
+        >
+          <p className='mt-16 mb-2 uppercase font-main-medium text-third'>
+            Additional comments:
+          </p>
           <textarea
             className='mb-8 w-full p-2 bg-bright text-dark h-28'
             placeholder='type some additional comments'
@@ -275,7 +290,7 @@ const Contact = () => {
         </form>
       </div>
 
-      <WhyCard
+      {/* <WhyCard
         titleOne={whyData.contact.titleOne}
         textOne={whyData.contact.textOne}
         titleTwo={whyData.contact.titleTwo}
@@ -287,7 +302,7 @@ const Contact = () => {
         observation={whyData.contact.observation}
         bottom={whyData.contact.bottom}
         left={whyData.contact.left}
-      />
+      /> */}
     </section>
   );
 };

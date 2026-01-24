@@ -306,7 +306,7 @@ const SynergySeer = ({
 
         <div ref={resultRef}>{result && <SynergyResult result={result} />}</div>
       </div>
-      <div className='mt-32'>
+      {/* <div className='mt-32'>
         <WhyCard
           titleOne={whyData.ai.titleOne}
           textOne={whyData.ai.textOne}
@@ -320,7 +320,7 @@ const SynergySeer = ({
           bottom={whyData.ai.bottom}
           left={whyData.ai.left}
         />
-      </div>
+      </div> */}
     </section>
   );
 };

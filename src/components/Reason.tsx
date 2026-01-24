@@ -85,7 +85,7 @@ const Reason = () => {
       >
         {createGrid()}
       </div>
-      <WhyCard
+      {/* <WhyCard
         titleOne={whyData.reason.titleOne}
         textOne={whyData.reason.textOne}
         titleTwo={whyData.reason.titleTwo}
@@ -97,7 +97,7 @@ const Reason = () => {
         observation={whyData.reason.observation}
         bottom={whyData.reason.bottom}
         left={whyData.reason.left}
-      />
+      /> */}
     </section>
   );
 };

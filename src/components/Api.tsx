@@ -183,7 +183,7 @@ const Api = () => {
           </div>
         </div>
 
-        <WhyCard
+        {/* <WhyCard
           titleOne={whyData.api.titleOne}
           textOne={whyData.api.textOne}
           titleTwo={whyData.api.titleTwo}
@@ -195,7 +195,7 @@ const Api = () => {
           observation={whyData.api.observation}
           bottom={whyData.api.bottom}
           left={whyData.api.left}
-        />
+        /> */}
       </section>
     </div>
   );

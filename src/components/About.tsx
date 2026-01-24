@@ -308,7 +308,7 @@ const About = () => {
         </div>
       </div>
 
-      <WhyCard
+      {/* <WhyCard
         titleOne={whyData.about.titleOne}
         textOne={whyData.about.textOne}
         titleTwo={whyData.about.titleTwo}
@@ -320,7 +320,7 @@ const About = () => {
         observation={whyData.about.observation}
         bottom={whyData.about.bottom}
         left={whyData.about.left}
-      />
+      /> */}
     </section>
   );
 };
