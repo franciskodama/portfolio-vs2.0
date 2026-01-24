@@ -73,7 +73,6 @@ const Navbar = () => {
             { to: 'whyme', label: 'why.me', offset: 100 },
             { to: 'ai', label: 'a.i.', offset: 100 },
             { to: 'projects', label: 'projects', offset: 0 },
-            { to: 'api', label: 'api', offset: -150 },
             { to: 'code', label: 'my.code', offset: 0 },
             { to: 'contact', label: 'contact', offset: 0 },
           ].map((link) => (
@@ -101,7 +100,6 @@ const Navbar = () => {
             { to: 'whyme', label: 'why.me', offset: 100 },
             { to: 'ai', label: 'a.i.', offset: 100 },
             { to: 'projects', label: 'projects', offset: 0 },
-            { to: 'api', label: 'api', offset: -150 },
             { to: 'code', label: 'my.code', offset: 0 },
             { to: 'contact', label: 'contact', offset: 0 },
           ].map((link) => (

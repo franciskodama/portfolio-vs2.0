@@ -1,24 +1,21 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Palette from '../components/Palette';
 import Reason from '../components/Reason';
-import { AboutContext } from '../contexts/AboutContext';
 import About from '../components/About';
 import WhyMe from '../components/WhyMe';
-import Ai from '../components/Ai';
+import SynergySeer from '@/components/SynergySeer';
+import ProjectsAbove from '../components/ProjectsAbove';
 import Projects from '../components/Projects';
-import AboveApi from '../components/AboveApi';
-import Api from '../components/Api';
 import CleanCode from '../components/CleanCode';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import CareerAlchemist from '@/components/CareerAlchemistTest';
-import CareerAlchemistTest from '@/components/CareerAlchemistTest';
-import SynergySeer from '@/components/SynergySeer';
+import { AboutContext } from '../contexts/AboutContext';
 
 export default function Home() {
   const [location, setLocation] = useState({ data: '' });
@@ -73,7 +70,7 @@ export default function Home() {
   const color = isActive;
 
   return (
-    <main className="App">
+    <main className='App'>
       <ParallaxProvider>
         <Navbar />
         <Hero />
@@ -87,12 +84,9 @@ export default function Home() {
         <AboutContext.Provider value={{ location, setLocation }}>
           <About />
           <WhyMe />
-          {/* <CareerAlchemistTest /> */}
           <SynergySeer color={color} />
-          {/* <Ai color={color} /> */}
+          <ProjectsAbove />
           <Projects />
-          <AboveApi />
-          <Api />
           <CleanCode />
           <Contact />
         </AboutContext.Provider>

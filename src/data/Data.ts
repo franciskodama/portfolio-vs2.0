@@ -165,7 +165,7 @@ export const projects = [
   {
     id: 1,
     frontShow: true,
-    icon: require('../assets/images/card-icon-thisportfolio.png'),
+    icon: 'Book',
     title0: 'this.',
     titleA: 'Portfolio',
     year: '2022',
@@ -188,15 +188,14 @@ export const projects = [
   {
     id: 2,
     frontShow: true,
-    icon: require('../assets/images/card-icon-seletos.png'),
+    icon: 'GraduationCap',
     titleA: 'Seletos',
     year: '2021',
     tech: 'html css',
     category: 'website',
     url: 'https://fkodama.com/_dev/seletos',
     image: require('../assets/images/project-seletos.jpg'),
-    frontText:
-      'This was the first website that I fully developed with HTML, CSS, and JS.',
+    frontText: 'First website that I fully developed with HTML, CSS, and JS.',
     backText_titleOne: 'why',
     backText_textOne:
       'Customizing template websites was already something I knew how to do. Now, it was time to build a website from scratch.',
@@ -214,7 +213,7 @@ export const projects = [
   {
     id: 3,
     frontShow: true,
-    icon: require('../assets/images/card-icon-pacman.png'),
+    icon: 'Ghost',
     titleA: 'Pac Man',
     year: '2021',
     tech: 'html css js',
@@ -241,7 +240,7 @@ export const projects = [
   {
     id: 4,
     frontShow: true,
-    icon: require('../assets/images/card-icon-mundial.png'),
+    icon: 'Globe',
     titleA: 'Mundial',
     year: '2021',
     tech: 'html css',
@@ -266,7 +265,7 @@ export const projects = [
   {
     id: 5,
     frontShow: true,
-    icon: require('../assets/images/card-icon-resume.png'),
+    icon: 'FileText',
     titleA: 'Resume',
     year: '2021',
     tech: 'html css js',
@@ -291,7 +290,7 @@ export const projects = [
   {
     id: 6,
     frontShow: true,
-    icon: require('../assets/images/card-icon-spaceinvaders.png'),
+    icon: 'Rocket',
     titleA: 'Space Invaders',
     year: '2021',
     tech: 'html css js',
