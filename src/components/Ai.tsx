@@ -164,7 +164,7 @@ const Ai = ({
           </li>
         </ul>
       </div>
-      <WhyCard
+      {/* <WhyCard
         titleOne={whyData.ai.titleOne}
         textOne={whyData.ai.textOne}
         titleTwo={whyData.ai.titleTwo}
@@ -176,7 +176,7 @@ const Ai = ({
         observation={whyData.ai.observation}
         bottom={whyData.ai.bottom}
         left={whyData.ai.left}
-      />
+      /> */}
     </section>
   );
 };

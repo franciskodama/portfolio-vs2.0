@@ -88,7 +88,7 @@ const About = () => {
     };
 
     window.addEventListener('scroll', revealAbout);
-    revealAbout(); // Initial check
+    revealAbout();
 
     return () => {
       window.removeEventListener('scroll', revealAbout);
@@ -109,7 +109,7 @@ const About = () => {
         <div className='relative flex flex-col w-full justify-center max-w-[36em] px-4 overflow-hidden mb-12 md-custom:pl-[10em] md-custom:max-w-[41em] md-custom:items-start lg-custom:pl-16 lg-custom:mb-0 lg-custom:w-1/2 lg-custom:max-w-[36em]'>
           <div className='absolute top-12 left-[-5.2em] font-main-light text-[0.8rem] w-[20em] leading-[1.2em] p-2 text-bright bg-third -rotate-45 text-center'>
             <p className='font-main-semibold'>VALID WORK PERMIT</p>
-            <p>to work in Canada</p>
+            <p className='font-main-light'>to work in Canada</p>
           </div>
 
           <div
@@ -215,7 +215,7 @@ const About = () => {
           </div>
 
           <div className='w-full ml-12'>
-            <h3 className='mt-20 text-[1.2rem] font-main-thin mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
+            <h3 className='mt-20 text-[1.2rem] font-main-light mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
               Francis Kodama
             </h3>
             <h2 className='text-[1.5rem] font-main-medium uppercase'>
@@ -227,17 +227,19 @@ const About = () => {
             <h2 className='text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
               CSS, Prisma, UX/UI design
             </h2>
-            <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
-              I'm an experienced tech services provider with a strong
-              understanding of the industry trends, as well as of the entire web
-              development process, including coding, UX/UI design, product
-              management, and client services.
-            </p>
-            <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
-              Resourceful, curious, creative, and critical thinker, who loves to
-              solve problems by designing and coding enjoyable and useful
-              products.
-            </p>
+            <div className='font-main-light'>
+              <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
+                I'm an experienced tech services provider with a strong
+                understanding of the industry trends, as well as of the entire
+                web development process, including coding, UX/UI design, product
+                management, and client services.
+              </p>
+              <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
+                Resourceful, curious, creative, and critical thinker, who loves
+                to solve problems by designing and coding enjoyable and useful
+                products.
+              </p>
+            </div>
           </div>
 
           <div className='flex items-end justify-between ml-12'>
@@ -306,7 +308,7 @@ const About = () => {
         </div>
       </div>
 
-      <WhyCard
+      {/* <WhyCard
         titleOne={whyData.about.titleOne}
         textOne={whyData.about.textOne}
         titleTwo={whyData.about.titleTwo}
@@ -318,7 +320,7 @@ const About = () => {
         observation={whyData.about.observation}
         bottom={whyData.about.bottom}
         left={whyData.about.left}
-      />
+      /> */}
     </section>
   );
 };

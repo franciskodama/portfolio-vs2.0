@@ -15,15 +15,14 @@ const CleanCode = () => {
     >
       <Parallax opacity={[0, 2]}>
         <h1 className='section-title text-center'>My code</h1>
-        <p className='mt-[0.8em] text-center'>It must be read like a story</p>
+        <p className='mt-[0.4em] text-center'>It must be read like a story</p>
       </Parallax>
 
-      <div className='container relative flex flex-col items-center w-full min-h-[70em] mt-32 mb-20 md-custom:min-h-[110em] mx-auto'>
+      <div className='container relative flex flex-col items-center w-full min-h-[70em] mt-36 mb-20 md-custom:min-h-[110em] mx-auto'>
         <Parallax opacity={[0, 2]} translateY={['0%', '-10%']}>
           <div className='flex flex-col'>
-            <q className='font-main-regular text-[1.6rem] leading-8 w-[20ch] mb-[0.8em] text-center md-custom:text-[2rem] md-custom:leading-[2.3rem]'>
-              “Clean code always looks like it was written by someone who
-              cares.”
+            <q className='font-main-regular text-[1.6rem] leading-8 w-[20ch] mb-[2em] text-center md-custom:text-[2rem] md-custom:leading-[2.3rem]'>
+              Clean code always looks like it was written by someone who cares.
             </q>
             <p className='font-main-light text-[1.3rem] mb-[0.1em] text-center md-custom:text-[1.5rem] md-custom:leading-8'>
               <span className='text-third'>― </span>Robert C. Martin
@@ -38,7 +37,7 @@ const CleanCode = () => {
           href='https://github.com/franciskodama?tab=repositories'
           target='_blank'
           rel='noopener noreferrer'
-          className='hidden md-custom:block absolute top-[15%] left-1/2 -translate-x-1/2 text-center font-main-regular text-[0.7rem] leading-4 cursor-pointer z-10'
+          className='hidden md-custom:block absolute top-[18%] left-1/2 -translate-x-1/2 text-center font-main-regular text-[0.7rem] leading-4 cursor-pointer z-10'
         >
           <div className='flex items-center gap-2'>
             <Image src={ZoomIn} alt='icon zoom in' />
@@ -93,7 +92,7 @@ const CleanCode = () => {
           </ul>
         </Parallax>
 
-        <WhyCard
+        {/* <WhyCard
           titleOne={whyData.code.titleOne}
           textOne={whyData.code.textOne}
           titleTwo={whyData.code.titleTwo}
@@ -105,7 +104,7 @@ const CleanCode = () => {
           observation={whyData.code.observation}
           bottom={whyData.code.bottom}
           left={whyData.code.left}
-        />
+        /> */}
       </div>
     </section>
   );

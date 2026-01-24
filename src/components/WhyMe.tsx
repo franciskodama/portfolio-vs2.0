@@ -150,8 +150,46 @@ const WhyMe = () => {
                   How does all of this benefit you?
                 </h6>
                 <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  I will work with teams, contributing and inspiring colleagues
-                  in order to get the best out of us.
+                  I bring a collaborative mindset and technical expertise,
+                  empowering the team to solve complex problems and deliver
+                  exceptional software.
+                </h5>
+              </div>
+            </div>
+          </Parallax>
+
+          <Parallax
+            opacity={[0, 2]}
+            translateY={['100%', '-50%']}
+            scale={[2, 0.8]}
+          >
+            <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
+              <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
+                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
+                  Independent Investor
+                </h3>
+                <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
+                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
+                  Self-Employed |{' '}
+                  <span className='text-third font-main-regular'>
+                    2023 ~ 2025
+                  </span>
+                </p>
+                <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
+                  <li>Technical Analysis</li>
+                  <li>Portfolio Management</li>
+                  <li>Elliott Wave Analysis</li>
+                </ul>
+              </div>
+
+              <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
+                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
+                  Why is it good for you?
+                </h6>
+                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
+                  My experience in high-pressure markets honed my ability to
+                  stay focused, analyze patterns, and make calculated decisions
+                  under uncertainty.
                 </h5>
               </div>
             </div>

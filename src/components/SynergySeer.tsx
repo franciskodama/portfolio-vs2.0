@@ -27,7 +27,6 @@ const SynergySeer = ({
     }
   }, [result]);
 
-  /* Hand Image Logic */
   const handImages = {
     first: {
       right: require('../assets/images/hand-right-black-bg.png'),
@@ -97,23 +96,64 @@ const SynergySeer = ({
   return (
     <section className='section relative pb-40' id='ai'>
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
-        <h1 className='section-title'>Synergy Seer</h1>
-        <p className='my-[0.8em_0_5em_0] text-center mb-12'>
-          {`I'm the missing piece that fits your specific puzzle.`}
-        </p>
-
+        <div className='relative flex flex-col items-center'>
+          <svg viewBox='0 0 500 120' className='w-full h-auto overflow-visible'>
+            <path
+              id='curve-title'
+              d='M 50 120 Q 250 10 450 120'
+              fill='transparent'
+            />
+            <text width='500'>
+              <textPath
+                href='#curve-title'
+                startOffset='50%'
+                textAnchor='middle'
+                className='font-main-regular text-white uppercase tracking-tighter fill-current text-[1.4rem]'
+              >
+                Synergy Seer
+              </textPath>
+            </text>
+          </svg>
+          <svg
+            viewBox='0 0 500 120'
+            className='absolute top-22 w-[80%] h-auto overflow-visible text-third'
+          >
+            <path id='curve' d='M 50 120 Q 250 10 450 120' fill='transparent' />
+            <text width='500'>
+              <textPath
+                href='#curve'
+                startOffset='50%'
+                textAnchor='middle'
+                className='font-main-semibold uppercase tracking-wider fill-current text-[1rem]'
+              >
+                The Ritual of Recruitment
+              </textPath>
+            </text>
+          </svg>
+        </div>
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third border border-dashed border-third p-4 mb-16 text-center max-w-2xl'>
-            <h2 className='font-main-semibold mb-4 uppercase tracking-wider'>
-              The Ritual of Recruitment
-            </h2>
-            <p className='font-main-light text-[0.9rem] leading-[1.6] text-bright w-[45ch] p-4'>
-              Type the name of your company, the title of this role, and paste
-              the job description if you have one.
-              <br />
-              <br /> The crystal ball will then reveal the compatibility
-              prophecy and predict our first 90 days together.
-            </p>
+          <div className='text-third p-4 my-8 text-center max-w-2xl w-full'>
+            <div className='relative flex justify-between gap-12 max-w-[42ch] mx-auto mb-12'>
+              <div className='flex flex-col items-center flex-1'>
+                <div className='w-10 h-10 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
+                  1
+                </div>
+                <p className='text-right font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+                  Type the name of your company, the title of this role, and
+                  paste the job description if you have one.
+                </p>
+              </div>
+
+              <div className='flex flex-col items-center flex-1'>
+                <div className='w-10 h-10 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
+                  2
+                </div>
+                <p className='text-left font-main-light text-[0.9rem] leading-[1.6] text-bright'>
+                  The crystal ball will then reveal the compatibility prophecy
+                  and predict our first 90 days together.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className='relative flex justify-center items-center w-full mt-32 mb-12'>
@@ -132,7 +172,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='company'
-                  placeholder='Type here your company name'
+                  placeholder='Your company name'
                   className={baseInputClass}
                   value={formData.company}
                   onChange={handleInputChange}
@@ -141,7 +181,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='position'
-                  placeholder='Type here the title position'
+                  placeholder='Title position'
                   className={baseInputClass}
                   value={formData.position}
                   onChange={handleInputChange}
@@ -170,36 +210,117 @@ const SynergySeer = ({
             )}
           </div>
 
-          <button
-            className='btn btn--third-color'
-            type='submit'
-            disabled={status === 'Divining...'}
-            style={{
-              backgroundColor:
-                status === 'Divining...'
-                  ? 'var(--color-dark)'
-                  : 'var(--color-third)',
-            }}
-          >
-            {status}
-          </button>
+          <div className='relative'>
+            <div className='absolute -left-[100px] -top-[40px] w-[120px] h-[100px] pointer-events-none z-10'>
+              <div className='relative'>
+                <p
+                  className='absolute bottom-22 -left-8 text-white text-[1.5rem] leading-6 -rotate-12 translate-x-2'
+                  style={{ fontFamily: 'var(--font-gloria)' }}
+                >
+                  click
+                  <br />
+                  here
+                </p>
+                <svg
+                  viewBox='0 0 120 120'
+                  className='w-full h-full overflow-visible text-white mt-2 rotate-6 scale-y-75'
+                >
+                  <path
+                    d='M 10 50 Q 60 100 110 20'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    markerEnd='url(#arrowhead)'
+                    strokeLinecap='round'
+                  />
+                  <defs>
+                    <marker
+                      id='arrowhead'
+                      markerWidth='10'
+                      markerHeight='10'
+                      refX='9'
+                      refY='3'
+                      orient='auto'
+                      markerUnits='strokeWidth'
+                    >
+                      <path d='M0,0 L0,6 L9,3 z' fill='currentColor' />
+                    </marker>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button
+              type='submit'
+              disabled={status === 'Divining...'}
+              className='relative w-[300px] h-[160px] -mt-33 group focus:outline-none transition-transform hover:scale-105 active:scale-95'
+              aria-label={status}
+            >
+              <svg
+                viewBox='0 0 300 160'
+                className='w-full h-full overflow-visible'
+              >
+                <defs>
+                  <filter
+                    id='glow'
+                    x='-20%'
+                    y='-20%'
+                    width='140%'
+                    height='140%'
+                  >
+                    <feGaussianBlur stdDeviation='5' result='blur' />
+                    <feComposite
+                      in='SourceGraphic'
+                      in2='blur'
+                      operator='over'
+                    />
+                  </filter>
+                </defs>
+                <path
+                  d='M 0 30 Q 150 100 300 30 L 300 100 Q 150 170 0 100 Z'
+                  fill={
+                    status === 'Divining...'
+                      ? 'var(--color-dark)'
+                      : 'var(--color-third)'
+                  }
+                  className='transition-colors duration-300 shadow-xl group-hover:filter-[url(#glow)]'
+                />
+                <path
+                  id='curve-btn'
+                  d='M 0 80 Q 150 150 300 80'
+                  fill='transparent'
+                />
+                <text width='300'>
+                  <textPath
+                    href='#curve-btn'
+                    startOffset='50%'
+                    textAnchor='middle'
+                    className='font-main-regular uppercase tracking-normal fill-white text-[1.4rem] pointer-events-none'
+                  >
+                    {status}
+                  </textPath>
+                </text>
+              </svg>
+            </button>
+          </div>
         </form>
 
         <div ref={resultRef}>{result && <SynergyResult result={result} />}</div>
       </div>
-      <WhyCard
-        titleOne={whyData.ai.titleOne}
-        textOne={whyData.ai.textOne}
-        titleTwo={whyData.ai.titleTwo}
-        textTwo={whyData.ai.textTwo}
-        titleThree={whyData.ai.titleThree}
-        textThree={whyData.ai.textThree}
-        titleFour={whyData.ai.titleFour}
-        textFour={whyData.ai.textFour}
-        observation={whyData.ai.observation}
-        bottom={whyData.ai.bottom}
-        left={whyData.ai.left}
-      />
+      {/* <div className='mt-32'>
+        <WhyCard
+          titleOne={whyData.ai.titleOne}
+          textOne={whyData.ai.textOne}
+          titleTwo={whyData.ai.titleTwo}
+          textTwo={whyData.ai.textTwo}
+          titleThree={whyData.ai.titleThree}
+          textThree={whyData.ai.textThree}
+          titleFour={whyData.ai.titleFour}
+          textFour={whyData.ai.textFour}
+          observation={whyData.ai.observation}
+          bottom={whyData.ai.bottom}
+          left={whyData.ai.left}
+        />
+      </div> */}
     </section>
   );
 };

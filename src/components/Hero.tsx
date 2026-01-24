@@ -62,7 +62,7 @@ const Hero = () => {
         from: 'random',
       },
     });
-    // Scroll Trigger Animation for Lists and Name
+
     if (leftRef.current && rightRef.current) {
       gsap
         .timeline({
@@ -217,8 +217,8 @@ const Hero = () => {
           <li>React</li>
           <li>Next.js</li>
           <li>Typescript</li>
-          <li>CSS</li>
-          <li>Tailwind</li>
+          <li>Prisma</li>
+          <li>CSS / Tailwind</li>
         </ul>
       </div>
 
@@ -227,7 +227,8 @@ const Hero = () => {
           ref={rightRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
         >
-          <li className='text-white font-main-bold mb-2'>Tools</li>
+          <li className='text-white font-main-bold mb-2'>Skills</li>
+          <li>A.I.</li>
           <li>Agile</li>
           <li>Jira</li>
           <li>Algolia</li>
