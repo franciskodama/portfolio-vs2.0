@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 import CodeBracketsImg from '../assets/images/hero_3d_code_brackets.png';
-import CurlyBracesImg2 from '../assets/images/hero_3d_curly_braces2.png';
+import CurlyBracesBiggerImg from '../assets/images/hero_3d_curly_braces2.png';
 import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
 import { Link } from 'react-scroll';
 import Scroll from '../assets/images/ico-scroll.svg';
@@ -49,7 +49,6 @@ const Hero = () => {
         '-=1'
       );
 
-    // Floating Animation for the 3D Image
     gsap.to('.floating-asset', {
       y: -35,
       rotation: 15,
@@ -137,7 +136,6 @@ const Hero = () => {
       id='hero'
       className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
     >
-      {/* Top Left - [] */}
       <div
         className='absolute z-20 top-[30%] left-[5%] md:left-[10%] w-[180px] md:w-[135px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
@@ -149,19 +147,17 @@ const Hero = () => {
         />
       </div>
 
-      {/* Top Right - {}2*/}
       <div
-        className='absolute z-20 top-[25%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset cursor-pointer'
+        className='absolute z-20 top-[27%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
       >
         <Image
-          src={CurlyBracesImg2}
+          src={CurlyBracesBiggerImg}
           alt='3D Curly Braces'
           className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
         />
       </div>
 
-      {/* Bottom Left - {} */}
       <div
         className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
@@ -173,7 +169,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Bottom Right - </> */}
       <div
         className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
@@ -192,7 +187,7 @@ const Hero = () => {
       <div className='relative z-40 flex flex-col items-center leading-none select-none'>
         <h1
           ref={titleOneRef}
-          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+          className='font-main-heavy text-white text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter leading-[0.8]'
         >
           {renderLetters('FRANCIS')}
         </h1>

@@ -27,7 +27,7 @@ const CleanCode = () => {
             <p className='font-main-light text-[1.3rem] mb-[0.1em] text-center md-custom:text-[1.5rem] md-custom:leading-8'>
               <span className='text-third'>― </span>Robert C. Martin
             </p>
-            <p className='font-main-thin text-[1rem] mb-48 text-center md-custom:mb-80'>
+            <p className='font-main-light text-[1rem] mb-48 text-center md-custom:mb-80'>
               Author of Clean Code
             </p>
           </div>

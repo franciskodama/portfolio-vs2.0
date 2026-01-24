@@ -90,8 +90,13 @@ const SynergySeer = ({
     }
   };
 
+  const handleCloseResult = () => {
+    setResult(null);
+    setStatus('CONSULT THE SEER');
+  };
+
   const baseInputClass =
-    'bg-transparent border-0 p-2 text-center text-dark placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors w-full';
+    'bg-transparent border-0 p-2 text-center text-dark placeholder:uppercase placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors w-full';
 
   return (
     <section className='section relative pb-40' id='ai'>
@@ -181,7 +186,7 @@ const SynergySeer = ({
                 <input
                   type='text'
                   name='position'
-                  placeholder='Title position'
+                  placeholder='Title job position'
                   className={baseInputClass}
                   value={formData.position}
                   onChange={handleInputChange}
@@ -252,7 +257,7 @@ const SynergySeer = ({
             <button
               type='submit'
               disabled={status === 'Divining...'}
-              className='relative w-[300px] h-[160px] -mt-33 group focus:outline-none transition-transform hover:scale-105 active:scale-95'
+              className='relative w-[300px] h-[160px] -mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
               aria-label={status}
             >
               <svg
@@ -304,7 +309,11 @@ const SynergySeer = ({
           </div>
         </form>
 
-        <div ref={resultRef}>{result && <SynergyResult result={result} />}</div>
+        <div ref={resultRef}>
+          {result && (
+            <SynergyResult result={result} onClose={handleCloseResult} />
+          )}
+        </div>
       </div>
       {/* <div className='mt-32'>
         <WhyCard
