@@ -6,7 +6,7 @@ import LogoFooter from '../assets/images/logo-fkodama-footer.svg';
 import Linkedin from '../assets/images/ico-linkedin-white.svg';
 import Insta from '../assets/images/ico-instagram-white.svg';
 import Git from '../assets/images/ico-github-white.svg';
-const Resume = '/assets/resume.pdf';
+const Resume = '/assets/files/resume.pdf';
 
 const Footer = () => {
   return (
@@ -94,12 +94,11 @@ const Footer = () => {
           ].map((icon, idx) => (
             <a
               key={idx}
-              className='relative mr-4 group'
+              className='relative mr-4 transition-transform duration-300 ease-in-out hover:scale-110 hover:drop-shadow-[0_0_8px_#ed1c24]'
               href={icon.href}
               target='_blank'
               rel='noreferrer'
             >
-              <div className='absolute inset-0 border-2 border-third rounded-full w-[33px] h-[33px] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></div>
               <Image className='w-[35px]' src={icon.src} alt={icon.alt} />
             </a>
           ))}
