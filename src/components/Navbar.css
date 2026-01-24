@@ -62,6 +62,7 @@
 
 .nav-link-mobile {
   position: relative;
+  font-family: 'axiformaregular', sans-serif;
   color: var(--bright-color);
   text-decoration: none;
   cursor: pointer;
@@ -71,7 +72,7 @@
   transition: all 0.3s;
   margin-bottom: 1rem;
   margin-right: 1rem;
-  font-family: 'axiformathin', sans-serif;
+  font-family: 'axiformaregular', sans-serif;
   font-size: 1.3rem;
 }
 
@@ -97,6 +98,7 @@
     padding: 5em 5em 3em 5em;
   }
 }
+
 @media (min-width: 992px) {
   .menu-toggle {
     display: none;
@@ -120,6 +122,7 @@
 
   .nav-link-desktop {
     position: relative;
+    font-family: 'axiformaregular', sans-serif;
     color: var(--bright-color);
     text-decoration: none;
     cursor: pointer;
@@ -129,7 +132,8 @@
     transition: all 0.3s;
     margin-bottom: 0;
     margin-right: 0;
-    font-family: 'axiformathin', sans-serif;
+
+    font-family: 'axiformaregular', sans-serif;
     font-size: 1rem;
   }
 
@@ -139,5 +143,6 @@
 
   .nav-link-desktop:hover:first-letter {
     color: var(--third-color);
+    font-family: 'axiformaregular', sans-serif;
   }
 }

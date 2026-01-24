@@ -38,6 +38,8 @@ const Navbar = () => {
           </div>
         </Link>
 
+        {/* -------- NAVBAR TOGGLE -------- */}
+
         <div className='menu-toggle'>
           <Image
             className='menu-icon'
@@ -59,11 +61,14 @@ const Navbar = () => {
           />
         </div>
 
+        {/* -------- NAVBAR EXTENDED -------- */}
+
         <nav
           className='nav-menu-mobile'
           style={{ display: isActive ? 'block' : 'none' }}
         >
           <Link
+            className='nav-link-mobile'
             to='reason'
             spy={true}
             smooth={true}
@@ -74,6 +79,7 @@ const Navbar = () => {
             this.portfolio
           </Link>
           <Link
+            className='nav-link-mobile'
             to='about'
             spy={true}
             smooth={true}
@@ -84,6 +90,7 @@ const Navbar = () => {
             about.me
           </Link>
           <Link
+            className='nav-link-mobile'
             to='whyme'
             spy={true}
             smooth={true}
@@ -94,6 +101,7 @@ const Navbar = () => {
             why.me
           </Link>
           <Link
+            className='nav-link-mobile'
             to='ai'
             spy={true}
             smooth={true}
@@ -104,6 +112,7 @@ const Navbar = () => {
             a.i.
           </Link>
           <Link
+            className='nav-link-mobile'
             to='projects'
             spy={true}
             smooth={true}
@@ -115,6 +124,7 @@ const Navbar = () => {
           </Link>
 
           <Link
+            className='nav-link-mobile'
             to='api'
             spy={true}
             smooth={true}
@@ -126,6 +136,7 @@ const Navbar = () => {
           </Link>
 
           <Link
+            className='nav-link-mobile'
             to='code'
             spy={true}
             smooth={true}
@@ -136,6 +147,7 @@ const Navbar = () => {
             my.code
           </Link>
           <Link
+            className='nav-link-mobile'
             to='contact'
             spy={true}
             smooth={true}
@@ -147,8 +159,11 @@ const Navbar = () => {
           </Link>
         </nav>
 
+        {/* -------- NAVBAR HORIZONTAL -------- */}
+
         <nav className='nav-menu-desktop'>
           <Link
+            className='nav-link-desktop'
             to='reason'
             spy={true}
             smooth={true}
@@ -159,6 +174,7 @@ const Navbar = () => {
             this.portfolio
           </Link>
           <Link
+            className='nav-link-desktop'
             to='about'
             spy={true}
             smooth={true}
@@ -169,6 +185,7 @@ const Navbar = () => {
             about.me
           </Link>
           <Link
+            className='nav-link-desktop'
             to='whyme'
             spy={true}
             smooth={true}
@@ -179,6 +196,7 @@ const Navbar = () => {
             why.me
           </Link>
           <Link
+            className='nav-link-desktop'
             to='ai'
             spy={true}
             smooth={true}
@@ -190,6 +208,7 @@ const Navbar = () => {
             a.i.{' '}
           </Link>
           <Link
+            className='nav-link-desktop'
             to='projects'
             spy={true}
             smooth={true}
@@ -202,6 +221,7 @@ const Navbar = () => {
           </Link>
 
           <Link
+            className='nav-link-desktop'
             to='api'
             spy={true}
             smooth={true}
@@ -212,6 +232,7 @@ const Navbar = () => {
             api
           </Link>
           <Link
+            className='nav-link-desktop'
             to='code'
             spy={true}
             smooth={true}
@@ -222,6 +243,7 @@ const Navbar = () => {
             my.code
           </Link>
           <Link
+            className='nav-link-desktop'
             to='contact'
             spy={true}
             smooth={true}
