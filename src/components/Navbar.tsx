@@ -1,5 +1,6 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Link } from 'react-scroll';
 
@@ -93,7 +94,7 @@ const Navbar = () => {
 
         {/* -------- NAVBAR HORIZONTAL -------- */}
 
-        <nav className='hidden lg-custom:grid grid-cols-[8rem_6.6rem_5.5rem_3.3rem_5.8rem_3.6rem_6rem_4.3rem] items-center justify-end w-[40em] mr-[5em]'>
+        <nav className='hidden lg-custom:grid grid-cols-[8rem_6.6rem_5.5rem_3.3rem_5.8rem_3.6rem_6rem_4.3rem] items-center justify-end'>
           {[
             { to: 'reason', label: 'this.portfolio', offset: -50 },
             { to: 'about', label: 'about.me', offset: 0 },
@@ -106,7 +107,7 @@ const Navbar = () => {
           ].map((link) => (
             <Link
               key={link.to}
-              className='block relative text-bright no-underline cursor-pointer transition-all duration-300 font-main-regular text-[1rem] hover:scale-105 hover:first-letter:text-third'
+              className='block relative text-bright font-main-light text-[1rem] no-underline cursor-pointer transition-all duration-300  hover:scale-105 hover:first-letter:text-third'
               to={link.to}
               spy={true}
               smooth={true}
