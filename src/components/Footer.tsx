@@ -6,7 +6,7 @@ import LogoFooter from '../assets/images/logo-fkodama-footer.svg';
 import Linkedin from '../assets/images/ico-linkedin-white.svg';
 import Insta from '../assets/images/ico-instagram-white.svg';
 import Git from '../assets/images/ico-github-white.svg';
-const Resume = '/assets/resume.pdf';
+const Resume = '/assets/files/resume.pdf';
 
 const Footer = () => {
   return (
