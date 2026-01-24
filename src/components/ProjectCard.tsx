@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import IconClose from '../assets/images/card-icon-close-white.svg';
 import Line from '../assets/images/line-cracked.svg';
@@ -8,6 +8,7 @@ import * as LucideIcons from 'lucide-react';
 
 const ProjectCard = ({ project }: { project: any }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const handleClickToOpen = () => {
     setIsOpen(true);
@@ -20,18 +21,17 @@ const ProjectCard = ({ project }: { project: any }) => {
 
   useEffect(() => {
     const reveal = () => {
-      const reveals = document.querySelectorAll('.card-front__reveal');
+      if (cardRef.current) {
+        const windowHeight = window.innerHeight;
+        const elementTop = cardRef.current.getBoundingClientRect().top;
+        const elementVisible = 150;
 
-      reveals.forEach((el) => {
-        let windowHeight = window.innerHeight;
-        let elementTop = el.getBoundingClientRect().top;
-        let elementVisible = 150;
         if (elementTop < windowHeight - elementVisible) {
-          el.classList.add('!translate-y-0', '!opacity-100');
+          cardRef.current.classList.add('!translate-y-0', '!opacity-100');
         } else {
-          el.classList.remove('!translate-y-0', '!opacity-100');
+          cardRef.current.classList.remove('!translate-y-0', '!opacity-100');
         }
-      });
+      }
     };
 
     window.addEventListener('scroll', reveal);
@@ -40,13 +40,14 @@ const ProjectCard = ({ project }: { project: any }) => {
     return () => {
       window.removeEventListener('scroll', reveal);
     };
-  }, []);
+  }, [isOpen]);
 
   const Icon = (LucideIcons as any)[project.icon];
 
   return (
     <div className='relative m-2 md-custom:mx-8 xl-custom:m-8'>
       <div
+        ref={cardRef}
         className={`card-front__reveal relative translate-y-[100px] opacity-0 transition-all duration-1000 ease-in-out flex flex-col my-4 w-[240px] text-left md-custom:w-[270px] md-custom:my-[2em_0_1em_0] xl-custom:mt-8 xl-custom:mb-0 ${
           isOpen ? 'hidden' : 'flex'
         }`}
@@ -76,12 +77,12 @@ const ProjectCard = ({ project }: { project: any }) => {
             <h3 className='font-main-semibold text-[1.4rem] leading-9 pb-[0.1em] uppercase md-custom:text-[2.25rem]'>
               {project.titleA}
             </h3>
-            <h3 className='font-main-semibold text-[1rem] text-third uppercase md-custom:text-[1.3rem]'>
+            <h3 className='mt-2 font-main-semibold text-[0.9rem] text-third'>
               {project.tech}
             </h3>
           </div>
         </div>
-        <p className='font-main-regular text-[0.9rem] mt-[0.8em] md-custom:text-[1rem] md-custom:mt-6'>
+        <p className='font-main-regular text-[0.8rem] mt-[0.8em] md-custom:text-[1rem] md-custom:mt-6'>
           {project.frontText}
         </p>
       </div>

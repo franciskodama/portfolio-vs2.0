@@ -163,6 +163,88 @@ export const avatarData = [
 
 export const projects = [
   {
+    id: 9,
+    frontShow: true,
+    icon: 'Hammer',
+    title0: '',
+    titleA: 'Handy ForMe',
+    year: '2024',
+    tech: 'React, Next.js, TypeScript, Prisma, PostgreSQL, Neon, Auth.js, Tailwind CSS, Zod',
+    category: 'SaaS / Web App',
+    url: 'https://handyfor.me/',
+    image: require('../assets/images/project-portfolio.jpg'),
+    frontText:
+      'A sophisticated multi-tool platform featuring AI integration and interactive gamification.',
+    backText_titleOne: 'why',
+    backText_textOne: `I wanted to build an "all-in-one" utility ecosystem that prioritizes user experience through a clean, intuitive interface while handling complex conditional logic.`,
+    backText_titleTwo: 'how',
+    backText_textTwo:
+      'Leveraging Next.js and Tailwind CSS, I engineered a highly modular architecture. I focused on atomic design principles to create reusable components like the dynamic Sidebar and interactive game modules.',
+    backText_titleThree: 'what',
+    backText_textThree:
+      'Integrated AI capabilities, custom-built logic for "Spin Magic" and "Letter Leap," and a fully responsive dashboard layout with refined UI transitions.',
+    backText_titleFour: 'result',
+    backText_textFour:
+      'A high-performance, scalable web application that demonstrates my ability to bridge the gap between complex backend logic and pixel-perfect frontend execution.',
+    backgroundColor: '#0EA5E9',
+    visitIcon: true,
+  },
+  {
+    id: 7,
+    frontShow: true,
+    icon: 'Calculator',
+    title0: '',
+    titleA: 'Monkey Business',
+    year: '2026',
+    tech: 'React, Next.js, TypeScript, A.I., Prisma, PostgreSQL, Neon, Auth.js, Tailwind CSS, Zod',
+    category: 'fintech app',
+    url: 'https://monkeybusiness-olive.vercel.app/',
+    image: require('../assets/images/project-portfolio.jpg'),
+    frontText:
+      'A high-performance financial engine featuring AI-powered transaction automation and advanced budget tracking.',
+    backText_titleOne: 'why',
+    backText_textOne:
+      'I wanted to solve the complexity of manual expense tracking by building a "financial command center" that bridge the gap between static bank statements and dynamic household planning.',
+    backText_titleTwo: 'how',
+    backText_textTwo:
+      'I engineered a sophisticated data pipeline using Google Gemini AI to parse bank statements, coupled with a custom "Smart Rules" engine that learns user categorization patterns over time.',
+    backText_titleThree: 'logic',
+    backText_textThree:
+      'The architecture supports multi-month state management and relational database integrity, ensuring transactions are accurately mapped to specific monthly budget targets.',
+    backText_titleFour: 'aesthetic',
+    backText_textFour:
+      'Developed with a "Strict Geometric" design system, utilizing high-contrast typography and minimalist UI to deliver a professional, architectural user experience.',
+    backgroundColor: '#EAB308',
+    visitIcon: true,
+  },
+  {
+    id: 8,
+    frontShow: true,
+    icon: 'PiggyBank',
+    title0: '',
+    titleA: 'Trezo',
+    year: '2024',
+    tech: 'React, Next.js, TypeScript, Prisma, PostgreSQL, Neon, Tailwind CSS, Clerk, Zod',
+    category: 'Full-stack App',
+    url: 'https://trezo.app/',
+    image: require('../assets/images/project-portfolio.jpg'),
+    frontText:
+      'A high-performance assets manager featuring the latest Next.js 15 and Prisma 7 architecture.',
+    backText_titleOne: 'why',
+    backText_textOne: `I wanted to build a bulletproof asset management system that leveraged the cutting-edge 'Edge Runtime' for speed while maintaining a secure, scalable database connection.`,
+    backText_titleTwo: 'how',
+    backText_textTwo:
+      'I navigated a complex migration to Prisma 7 and Next.js 15, solving deep architectural conflicts between Node.js dependencies and Edge-light environments. I implemented a custom serverless database adapter (Neon) to ensure 100% uptime even when accessed through restrictive network environments or VPNs.',
+    backText_titleThree: 'challenge',
+    backText_textThree:
+      'The biggest win was debugging a "phantom" crypto module error by decoupling the authentication middleware from the database driver, ensuring the app remains lightning-fast and globally accessible.',
+    backText_titleFour: 'what',
+    backText_textFour:
+      'Next.js 15 (App Router), Prisma 7, Neon Serverless Postgres, Clerk Auth, Tailwind CSS, and Zod for robust schema validation.',
+    backgroundColor: '#00E699',
+    visitIcon: true,
+  },
+  {
     id: 1,
     frontShow: true,
     icon: 'Book',
