@@ -187,7 +187,7 @@ const Hero = () => {
       <div className='relative z-40 flex flex-col items-center leading-none select-none'>
         <h1
           ref={titleOneRef}
-          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+          className='font-main-heavy text-white text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter leading-[0.8]'
         >
           {renderLetters('FRANCIS')}
         </h1>

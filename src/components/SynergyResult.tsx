@@ -7,15 +7,36 @@ interface SynergyResultProps {
     prediction: string;
     projects: string[];
   };
+  onClose: () => void;
 }
 
-const SynergyResult: React.FC<SynergyResultProps> = ({ result }) => {
+const SynergyResult: React.FC<SynergyResultProps> = ({ result, onClose }) => {
   return (
-    <div className='mt-20 w-full max-w-4xl mx-auto animate-result-ai-appear'>
-      <div className='bg-bright p-8 md-custom:p-12 shadow-2xl border-t-4 border-third'>
+    <div className='mt-20 w-full max-w-4xl mx-auto animate-result-ai-appear relative'>
+      <div className='bg-bright p-8 md-custom:p-12 shadow-2xl border-t-4 border-third relative'>
+        <button
+          onClick={onClose}
+          className='absolute top-2 right-2 cursor-pointer text-third hover:text-dark transition-colors p-2'
+          aria-label='Close result'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-4 w-4'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='grey'
+            strokeWidth={2.5}
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M6 18L18 6M6 6l12 12'
+            />
+          </svg>
+        </button>
         <div className='flex flex-col md:flex-row justify-between items-center mb-12 gap-8'>
           <div className='text-center md:text-left'>
-            <h3 className='text-dark font-main-heavy text-4xl mb-2 uppercase tracking-tighter'>
+            <h3 className='text-dark font-main-semibold text-4xl mb-2 uppercase tracking-tighter'>
               Compatibility Reading
             </h3>
             <p className='text-dark/60 font-main-regular'>
@@ -49,7 +70,7 @@ const SynergyResult: React.FC<SynergyResultProps> = ({ result }) => {
               <span className='text-dark font-main-heavy text-3xl'>
                 {result.score}%
               </span>
-              <span className='text-dark/50 text-[0.6rem] uppercase font-bold'>
+              <span className='text-dark/50 text-[0.6rem] uppercase font-main-semibold'>
                 Match
               </span>
             </div>
@@ -87,7 +108,7 @@ const SynergyResult: React.FC<SynergyResultProps> = ({ result }) => {
             <ul className='flex flex-col gap-6'>
               {result.projects.map((project: string, i: number) => (
                 <li key={i} className='flex gap-4 items-start group'>
-                  <span className='shrink-0 w-8 h-8 rounded-full text-white font-bold bg-third flex items-center justify-center font-main-bold text-sm group-hover:scale-110 transition-transform'>
+                  <span className='shrink-0 w-8 h-8 rounded-full text-white font-main-semibold bg-third flex items-center justify-center font-main-bold text-sm group-hover:scale-110 transition-transform'>
                     {i + 1}
                   </span>
                   <p className='text-dark font-main-regular text-sm leading-6'>
