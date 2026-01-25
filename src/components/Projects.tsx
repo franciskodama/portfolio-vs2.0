@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
+import { ArrowCurved } from './icons/ArrowCurved';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
+import { Undo } from 'lucide-react';
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,12 +18,39 @@ const Projects = () => {
     (a, b) => Number(a.year) - Number(b.year)
   );
 
+  const [inView, setInView] = useState(false);
+
   useEffect(() => {
     setIsMounted(true);
+
+    // Intersection Observer to detect when section is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          } else {
+            // Uncomment to reset when leaving view
+            setInView(false);
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% visible
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
-    if (!isMounted || !containerRef.current) return;
+    if (!isMounted || !containerRef.current || !inView) return;
 
     const Engine = Matter.Engine,
       Render = Matter.Render,
@@ -44,17 +73,6 @@ const Projects = () => {
     const angle = -Math.atan(slope);
 
     // Create boundaries
-    // Ground needs to be angled.
-    // We adjust Y position to ensure the lowest point (left) is visible within the container
-    // The left edge is lower (higher Y) than the center by (width/2)*sin(angle) roughly?
-    // Simpler: Center Y at height. Left side is at height + (w/2)*tan(alpha).
-    // We want left side to be at ~height - 20 (buffer).
-    // So Center Y = height - 20 - (width/2)*slope.
-
-    // Actually, let's keep it simple and position it so it looks like the "floor"
-    // matching the clip path which is at the visual bottom.
-    // The relative container height is 50vh.
-
     const floorYOffset = (width / 2) * slope;
     const groundY = height - 10; // Base at bottom
 
@@ -86,16 +104,13 @@ const Projects = () => {
     const bodies: Matter.Body[] = [];
     const cardElements = cardsRef.current;
 
-    sortedProjects.forEach((_, index) => {
-      const cardEl = cardElements[index];
-      if (!cardEl) return;
-
-      // Use a consistent size or measure the element
-      const cardWidth = 270; // Approximation of md-custom width
-      const cardHeight = 350; // Approximation including text
-
-      // Staggered creation handled by setTimeout inside, or we create them all far up
-      // User wants chronological order (newest first), falling one by one.
+    // Reset cards style before starting animation (hide them again)
+    // This is crucial for "restarting" the animation
+    cardElements.forEach((el) => {
+      if (el) {
+        el.style.opacity = '0';
+        el.style.transform = 'none';
+      }
     });
 
     // Helper to add a body
@@ -125,11 +140,16 @@ const Projects = () => {
       bodies[index] = body;
     };
 
-    // Stagger drop
+    // Stagger drop timers
+    const timers: NodeJS.Timeout[] = [];
     sortedProjects.forEach((_, i) => {
-      setTimeout(() => {
-        addBody(i);
+      const timer = setTimeout(() => {
+        // Check if still mounted and in view before adding body
+        if (containerRef.current && inView) {
+          addBody(i);
+        }
       }, i * 400); // 400ms delay between drops
+      timers.push(timer);
     });
 
     // Run the engine
@@ -147,8 +167,6 @@ const Projects = () => {
           cardEl.style.transform = `translate(${x - 135}px, ${
             y - 150
           }px) rotate(${rotation}rad)`;
-          // -135 and -150 to center the origin (half of approximately 270x300) to the body position
-          // Assuming cardEl is absolutely positioned at 0,0
           cardEl.style.opacity = '1';
         }
       });
@@ -162,29 +180,43 @@ const Projects = () => {
       Runner.stop(runner);
       Composite.clear(world, false);
       Engine.clear(engine);
+      timers.forEach((t) => clearTimeout(t)); // Clear timeouts to prevent bodies adding after unmount/scroll away
     };
-  }, [isMounted]);
+  }, [isMounted, inView]);
 
   return (
     <div className='api-external relative'>
       <section
-        className='section bg-bright text-dark py-32 pb-40 w-full 
+        className='section bg-bright text-dark py-12 pb-40 w-full 
         [clip-path:polygon(0_0,100%_0,100%_calc(100%-7.5vw),0_100%)]
-        md-custom:py-48 md-custom:pb-56 lg-custom:py-56 lg-custom:pb-44'
+        md-custom:py-18 md-custom:pb-56 lg-custom:py-16 lg-custom:pb-44'
         id='projects'
       >
         <div className='container mx-auto lg-custom:w-full'>
-          <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
-            <h2 className='section-title w-[8ch] leading-12 font-main-semibold text-left'>
-              selected projects
-            </h2>
-          </Parallax>
+          <div className='relative -mt-24'>
+            <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
+              <h2 className='section-title text-7xl w-[8ch] -rotate-[4.29deg] leading-19 font-main-semibold text-right ml-auto mr-[20%]'>
+                selected projects
+              </h2>
+            </Parallax>
+            <div className='absolute top-45 right-120 w-20 h-20 rotate-50'>
+              <ArrowCurved className='w-full h-full text-third mt-2' />
+            </div>
+            <p
+              className='absolute top-40 right-60 font-semibold text-third text-[1.5rem] leading-9 -rotate-[4.29deg] translate-x-2'
+              style={{ fontFamily: 'var(--font-gloria)' }}
+            >
+              <span className='text-[1.2rem]'>Most recommended:</span>
+              <br />- Monkey Business
+              <br />- Handyfor.me
+              <br />- Trezo.app
+            </p>
+          </div>
 
           <div
+            // Container Height
             ref={containerRef}
-            className='relative w-full h-[65vh]'
-            // Made container taller (150vh) to allow falling space.
-            // Removed flex/justify-center because we are using absolute positioning now.
+            className='relative w-full h-[55vh]'
           >
             {sortedProjects.map((project, index) => (
               <div
