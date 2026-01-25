@@ -4,6 +4,8 @@ import ProjectCard from './ProjectCard';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
 
+// #d1ea13 yellow
+
 const Projects = () => {
   return (
     <div className='api-external relative'>

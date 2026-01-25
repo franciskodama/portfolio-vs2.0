@@ -93,7 +93,7 @@ const Navbar = () => {
 
         {/* -------- NAVBAR HORIZONTAL -------- */}
 
-        <nav className='hidden lg-custom:grid grid-cols-[8rem_6.6rem_5.5rem_3.3rem_5.8rem_3.6rem_6rem_4.3rem] items-center justify-end'>
+        <nav className='hidden lg-custom:grid grid-cols-[8rem_6.6rem_5.5rem_3.3rem_5.8rem_6rem_4.3rem] items-center justify-end'>
           {[
             { to: 'reason', label: 'this.portfolio', offset: -50 },
             { to: 'about', label: 'about.me', offset: 0 },

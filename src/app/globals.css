@@ -286,6 +286,7 @@
   --color-bright: var(--bright-color);
   --color-dark: var(--dark-color);
   --color-third: var(--third-color);
+  --color-fourth: var(--fourth-color);
 
   /* Fonts */
   --font-main-thin: 'axiformathin', sans-serif;
@@ -423,6 +424,7 @@
   --dark-color: #1c1c1c;
   --bright-color: #ffffff;
   --third-color: #ed1c24;
+  --fourth-color: #eafc62;
   --transparent: hsla(0, 0%, 0%, 0);
   --gradient: linear-gradient(
     to right top,
