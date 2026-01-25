@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
+import ProjectModal from './ProjectModal';
 import { ArrowCurved } from './icons/ArrowCurved';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
@@ -12,6 +13,8 @@ const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [isMounted, setIsMounted] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   // Sort projects by year ascending (newest last)
   const sortedProjects = [...projects].sort(
@@ -199,7 +202,7 @@ const Projects = () => {
                 selected projects
               </h2>
             </Parallax>
-            <div className='absolute top-45 right-120 w-20 h-20 rotate-50'>
+            {/* <div className='absolute top-45 right-120 w-20 h-20 rotate-50'>
               <ArrowCurved className='w-full h-full text-third mt-2' />
             </div>
             <p
@@ -210,14 +213,10 @@ const Projects = () => {
               <br />- Monkey Business
               <br />- Handyfor.me
               <br />- Trezo.app
-            </p>
+            </p> */}
           </div>
 
-          <div
-            // Container Height
-            ref={containerRef}
-            className='relative w-full h-[55vh]'
-          >
+          <div ref={containerRef} className='relative w-full h-[55vh]'>
             {sortedProjects.map((project, index) => (
               <div
                 key={project.id}
@@ -232,13 +231,28 @@ const Projects = () => {
                 }}
               >
                 <div className='w-[270px] flex justify-center'>
-                  <ProjectCard project={project} />
+                  <ProjectCard
+                    project={project}
+                    onClick={() => {
+                      setSelectedProject(project);
+                      setIsDrawerOpen(true);
+                    }}
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Modal rendered outside the physics container to avoid transform issues */}
+
+      {/* ProjectModal with Drawer support */}
+      <ProjectModal
+        project={selectedProject}
+        open={isDrawerOpen}
+        onOpenChange={setIsDrawerOpen}
+      />
     </div>
   );
 };
