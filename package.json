@@ -11,9 +11,11 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@hello-pangea/dnd": "^18.0.1",
+    "@types/matter-js": "^0.20.2",
     "axios": "^1.13.2",
     "gsap": "^3.14.2",
     "lucide-react": "^0.563.0",
+    "matter-js": "^0.20.0",
     "next": "16.1.1",
     "openai": "^6.15.0",
     "react": "19.2.3",

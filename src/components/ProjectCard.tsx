@@ -19,36 +19,13 @@ const ProjectCard = ({ project }: { project: any }) => {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    const reveal = () => {
-      if (cardRef.current) {
-        const windowHeight = window.innerHeight;
-        const elementTop = cardRef.current.getBoundingClientRect().top;
-        const elementVisible = 150;
-
-        if (elementTop < windowHeight - elementVisible) {
-          cardRef.current.classList.add('!translate-y-0', '!opacity-100');
-        } else {
-          cardRef.current.classList.remove('!translate-y-0', '!opacity-100');
-        }
-      }
-    };
-
-    window.addEventListener('scroll', reveal);
-    reveal();
-
-    return () => {
-      window.removeEventListener('scroll', reveal);
-    };
-  }, [isOpen]);
-
   const Icon = (LucideIcons as any)[project.icon];
 
   return (
-    <div className='relative m-2 md-custom:mx-8 xl-custom:m-8'>
+    <div className='project-card relative m-2 md-custom:mx-8 xl-custom:m-8'>
       <div
         ref={cardRef}
-        className={`card-front__reveal relative translate-y-[100px] opacity-0 transition-all duration-1000 ease-in-out flex flex-col my-4 w-[240px] text-left md-custom:w-[270px] md-custom:my-[2em_0_1em_0] xl-custom:mt-8 xl-custom:mb-0 ${
+        className={`relative flex flex-col w-[240px] text-left md-custom:w-[270px] md-custom:my-[2em_0_1em_0] xl-custom:mt-8 xl-custom:mb-0 ${
           isOpen ? 'hidden' : 'flex'
         }`}
         onClick={handleClickToOpen}
@@ -57,7 +34,7 @@ const ProjectCard = ({ project }: { project: any }) => {
           {project.category}
         </p>
         <div
-          className='relative w-[240px] rounded-[10px] border-2 border-dark bg-bright pl-4 pb-4 cursor-pointer transition-all duration-200 ease-in-out
+          className='relative w-[240px] rounded-[50px] border-2 border-dark bg-bright pl-4 pb-4 cursor-pointer transition-all duration-200 ease-in-out
          [box-shadow:var(--color-dark)_0px_0px_0px_0px_inset,var(--color-bright)_-10px_10px_0px_-1px,var(--color-bright)_0px_0px]
          hover:translate-x-[10px] hover:-translate-y-[10px]
          hover:[box-shadow:var(--color-bright)_0px_0px_0px_0px_inset,var(--color-dark)_-10px_10px_0px_-1px,var(--color-dark)_-10px_10px]
