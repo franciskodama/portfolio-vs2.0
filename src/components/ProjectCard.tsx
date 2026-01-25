@@ -57,7 +57,7 @@ const ProjectCard = ({ project }: { project: any }) => {
           {project.category}
         </p>
         <div
-          className='relative w-[240px] border-2 border-dark bg-bright pl-4 pb-4 cursor-pointer transition-all duration-200 ease-in-out
+          className='relative w-[240px] rounded-[10px] border-2 border-dark bg-bright pl-4 pb-4 cursor-pointer transition-all duration-200 ease-in-out
          [box-shadow:var(--color-dark)_0px_0px_0px_0px_inset,var(--color-bright)_-10px_10px_0px_-1px,var(--color-bright)_0px_0px]
          hover:translate-x-[10px] hover:-translate-y-[10px]
          hover:[box-shadow:var(--color-bright)_0px_0px_0px_0px_inset,var(--color-dark)_-10px_10px_0px_-1px,var(--color-dark)_-10px_10px]
