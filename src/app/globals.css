@@ -46,6 +46,22 @@
 }
 
 @font-face {
+  font-family: 'axiformabold';
+  src: url('../assets/fonts/kastelov_-_axiforma_bold-webfont.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'axiformabold';
+  src: url('../assets/fonts/kastelov_-_axiforma_semibold-webfont.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
   font-family: 'axiformathin';
   src: url('../assets/fonts/kastelov_-_axiforma_thin-webfont.woff2')
       format('woff2'),
@@ -277,6 +293,7 @@
   --font-main-regular: 'axiformaregular', sans-serif;
   --font-main-medium: 'axiformamedium', sans-serif;
   --font-main-semibold: 'axiformasemibold', sans-serif;
+  --font-main-bold: 'axiformabold', sans-serif;
   --font-main-heavy: 'axiformaheavy', sans-serif;
 
   /* Screens */

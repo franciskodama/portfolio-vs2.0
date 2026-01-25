@@ -74,10 +74,10 @@ const ProjectCard = ({ project }: { project: any }) => {
             <h3 className='hidden lowercase text-third font-main-semibold text-[1.2rem] md-custom:block md-custom:text-[1.8rem]'>
               {project.title0}
             </h3>
-            <h3 className='font-main-semibold text-[1.4rem] leading-9 pb-[0.1em] uppercase md-custom:text-[2.25rem]'>
+            <h3 className='font-main-bold text-[1.4rem] leading-9 pb-[0.1em] uppercase md-custom:text-[2.25rem]'>
               {project.titleA}
             </h3>
-            <h3 className='mt-2 font-main-semibold text-[0.9rem] text-third'>
+            <h3 className='mt-2 font-main-semibold uppercase text-[0.9rem] text-third'>
               {project.tech}
             </h3>
           </div>
