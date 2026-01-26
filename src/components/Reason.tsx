@@ -51,69 +51,116 @@ const Reason = () => {
     const newItems: any[] = [];
     let currentColumn = 0;
 
-    const processText = (
+    const processWords = (
       text: string,
       type: 'bright' | 'dark',
       className: string
     ) => {
-      const words = text.split(' ');
-
-      words.forEach((word, index) => {
-        const wordLength = word.length;
-
-        // Handle space before word (if not start of text/line)
-        if (index > 0) {
-          if (currentColumn < columns && currentColumn > 0) {
-            // Add space
-            newItems.push({
-              char: ' ',
-              type,
-              className,
-              key: `space-${type}-${newItems.length}`,
-            });
-            currentColumn++;
-          } else if (currentColumn >= columns) {
-            // Space causes wrap, just reset
-            currentColumn = 0;
-          }
-        }
-
-        // Handle Word Flow
-        if (currentColumn + wordLength > columns) {
-          // Word doesn't fit, fill rest of line
-          const remaining = columns - currentColumn;
-          for (let i = 0; i < remaining; i++) {
-            // Fillers use the same class as the text to match animation/border style
-            newItems.push({
-              char: '',
-              type: 'filler',
-              className,
-              key: `filler-${newItems.length}`,
-            });
-          }
-          currentColumn = 0;
-        }
-
-        // Add Word Characters
-        for (let char of word) {
-          newItems.push({
-            char,
-            type,
-            className,
-            key: `char-${type}-${newItems.length}`,
-          });
-        }
-        currentColumn += wordLength;
-
-        // If word ended exactly at limit, reset (or wrap if larger than line)
-        if (currentColumn >= columns) {
-          currentColumn = currentColumn % columns;
-        }
-      });
+      return text.split(' ').map((word) => ({
+        text: word,
+        type,
+        className,
+        length: word.length,
+      }));
     };
 
-    processText(originalMessageBright, 'bright', brightClasses);
-    processText(originalMessageDark, 'dark', darkClasses);
+    const brightWords = processWords(
+      originalMessageBright,
+      'bright',
+      brightClasses
+    );
+    const darkWords = processWords(originalMessageDark, 'dark', darkClasses);
+    const allWords = [...brightWords, ...darkWords];
+
+    // Build lines
+    let currentLine: any[] = [];
+    let currentLineLength = 0;
+
+    const finalizeLine = (line: any[], lineWordsLength: number) => {
+      if (line.length === 0) return;
+
+      const remaining = columns - lineWordsLength;
+      const padLeft = Math.floor(remaining / 2);
+      const padRight = remaining - padLeft;
+
+      // Add Left Fillers
+      for (let i = 0; i < padLeft; i++) {
+        // Use the style of the first word in the line for consistent animation logic, or default to bright
+        const fillerClass = line[0]?.className || brightClasses;
+        newItems.push({
+          char: '',
+          type: 'filler',
+          className: fillerClass,
+          key: `filler-l-${newItems.length}`,
+        });
+      }
+
+      // Add Content
+      line.forEach((item) => {
+        if (item.isSpace) {
+          newItems.push({
+            char: ' ',
+            type: item.type,
+            className: item.className,
+            key: `space-${newItems.length}`,
+          });
+        } else {
+          // It's a word, break into chars
+          for (let char of item.text) {
+            newItems.push({
+              char,
+              type: item.type,
+              className: item.className,
+              key: `char-${newItems.length}`,
+            });
+          }
+        }
+      });
+
+      // Add Right Fillers
+      for (let i = 0; i < padRight; i++) {
+        const fillerClass = line[line.length - 1]?.className || brightClasses;
+        newItems.push({
+          char: '',
+          type: 'filler',
+          className: fillerClass,
+          key: `filler-r-${newItems.length}`,
+        });
+      }
+    };
+
+    allWords.forEach((wordObj, index) => {
+      // Determine if we need a space before this word
+      const needsSpace = index > 0;
+      const spaceCost = needsSpace ? 1 : 0;
+      const wordCost = wordObj.length;
+
+      if (currentLineLength + spaceCost + wordCost <= columns) {
+        // Fits in current line
+        if (needsSpace) {
+          // We store the space as a token in the line so we can render it later
+          // Using the current word's type/class for the space
+          currentLine.push({
+            isSpace: true,
+            type: wordObj.type,
+            className: wordObj.className,
+          });
+          currentLineLength += 1;
+        }
+        currentLine.push(wordObj);
+        currentLineLength += wordCost;
+      } else {
+        // Doesn't fit, finalize current line
+        finalizeLine(currentLine, currentLineLength);
+
+        // Start new line with this word
+        currentLine = [wordObj];
+        currentLineLength = wordCost;
+      }
+    });
+
+    // Finalize the last line
+    finalizeLine(currentLine, currentLineLength);
 
     setGridItems(newItems);
   }, []);
