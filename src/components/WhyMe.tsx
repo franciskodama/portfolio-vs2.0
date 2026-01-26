@@ -78,31 +78,25 @@ const WhyMe = () => {
             </div>
           </Balloon>
 
-          <Balloon variant='outlined' heartShown={heartShown}>
-            <h4 className='text-center uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
-              PASSION
-            </h4>
-            <div className='text-center font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
-              My career in marketing <br></br> spanned more than two decades,
-              and I achieved important positions <br></br>I had planned. Now is
-              the time for me to pursue a career I've been passionate about
-              since I was a teenager. A career that I've been working on and
-              having a lot of fun with!
-              <br></br>
-              <br></br>
-              <q
-                className='hidden font-main-light italic text-bright lg-custom:block'
-                rel='Joe Namath'
-              >
-                "When you have fun, you can do amazing things."
-              </q>
-              <span className='hidden text-bright mt-1 lg-custom:block'>
-                - Joe Namath
-              </span>
-            </div>
+          <Balloon
+            variant='outlined'
+            heartShown={heartShown}
+            color='var(--color-third)'
+            size='43em'
+            rotate={13}
+          >
+            {/* <div className='flex flex-col items-left text-left ml-10 mb-35 rotate-[-25deg]'>
+              <h4 className='uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
+                PASSION
+              </h4>
+              <div className='w-[15ch] font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
+                My career in marketing <br></br> spanned more than two decades,
+                and I achieved important positions I had planned.
+              </div>
+            </div> */}
           </Balloon>
 
-          <div
+          {/* <div
             className='absolute left-1/2 -translate-x-1/2 -bottom-[25px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] border-2 border-dark cursor-pointer'
             onClick={() => setHeartShown(!heartShown)}
           >
@@ -112,62 +106,10 @@ const WhyMe = () => {
             <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
               Click here
             </p>
-          </div>
+          </div> */}
         </div>
 
         <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
-          <Parallax
-            opacity={[0, 2]}
-            translateY={['100%', '-50%']}
-            scale={[2, 0.8]}
-          >
-            <div className='flex flex-col items-center justify-center mt-12 lg-custom:flex-row lg-custom:mt-20'>
-              <div className='flex flex-col items-center relative m-0 w-[85%] lg-custom:w-[25em] lg-custom:block lg-custom:mr-10'>
-                <div className='flex flex-wrap items-center justify-center lg-custom:flex-nowrap lg-custom:justify-end'>
-                  <h3 className='text-third text-[1.5rem] uppercase font-main-heavy leading-6 p-0 lg-custom:w-[8ch]'>
-                    Changing careers
-                  </h3>
-                  <span className='text-[2.8em] font-main-regular text-third pb-1 mx-[0.3em]'>
-                    {String.fromCharCode(123)}
-                  </span>
-                  <div className='text-[1.5rem] uppercase font-main-heavy leading-6 w-[10ch]'>
-                    software engineer
-                  </div>
-                  <span className='text-[2.8em] font-main-regular text-third pb-1'>
-                    {String.fromCharCode(125)}
-                  </span>
-                  <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                </div>
-                <p className='text-third font-main-regular text-center text-[0.8rem]'>
-                  2020 ~{' '}
-                  <span className='font-main-semibold bg-third text-dark px-[0.6em]'>
-                    TODAY
-                  </span>
-                </p>
-                <p
-                  className='text-right text-[0.8rem] font-main-regular leading-4 mt-1 uppercase lg-custom:text-right'
-                  style={{ width: '95%' }}
-                >
-                  React | Next.js | JavaScript | Typescript | CSS3 | SASS |
-                  HTML5 | Styled Components | Tailwind | APIs | Prisma | GraphQL
-                  | Retool | Airtable | Firebase | Responsive Design | Git |
-                  Yarn | NPM | Figma | Adobe Photoshop | Jira | Agile | ...And a
-                  big smile
-                </p>
-              </div>
-              <div className='flex flex-col items-center text-center mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:items-start lg-custom:text-left lg-custom:m-0 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase tracking-widest'>
-                  How does all of this benefit you?
-                </h6>
-                <h5 className='font-main-light text-[1rem] leading-7 mt-2 lg-custom:w-[30em]'>
-                  I bring a collaborative mindset and technical expertise,
-                  empowering the team to solve complex problems and deliver
-                  exceptional software.
-                </h5>
-              </div>
-            </div>
-          </Parallax>
-
           {jobs.map((job) => (
             <Parallax
               key={job.id}
@@ -177,7 +119,8 @@ const WhyMe = () => {
             >
               <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
                 <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                  <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
+                  <h3 className='text-[1.5rem] leading-6 text-bright uppercase font-main-regular'>
+                    {/* <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'> */}
                     {job.title}
                   </h3>
                   <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
@@ -194,7 +137,7 @@ const WhyMe = () => {
                   ))}
                   <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
                     {job.skills.map((skill, index) => (
-                      <li key={index}>{skill}</li>
+                      <p key={index}>{skill}</p>
                     ))}
                   </ul>
                 </div>
