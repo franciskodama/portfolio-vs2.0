@@ -199,9 +199,13 @@ const Hero = () => {
         </h1>
       </div>
 
-      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em]'>
         Software Engineer
       </h2>
+      <h3 className='flex items-center gap-2 mt-2 font-main-light text-bright/80 text-xs uppercase tracking-[0.2em]'>
+        Brazilian<span className='text-lg'>🇧🇷</span>based in Ottawa, Canada
+        <span className='text-lg'>🇨🇦</span>
+      </h3>
 
       <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30'>
         <ul
