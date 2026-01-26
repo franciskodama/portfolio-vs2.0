@@ -11,8 +11,12 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@hello-pangea/dnd": "^18.0.1",
+    "@types/matter-js": "^0.20.2",
     "axios": "^1.13.2",
+    "clsx": "^2.1.1",
     "gsap": "^3.14.2",
+    "lucide-react": "^0.563.0",
+    "matter-js": "^0.20.0",
     "next": "16.1.1",
     "openai": "^6.15.0",
     "react": "19.2.3",
@@ -23,6 +27,8 @@
     "react-scroll-parallax": "^3.5.0",
     "resend": "^6.6.0",
     "sass": "^1.97.1",
+    "tailwind-merge": "^3.4.0",
+    "vaul": "^1.1.2",
     "yup": "^1.7.1"
   },
   "devDependencies": {

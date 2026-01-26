@@ -3,8 +3,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Axios from 'axios';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 
 const Api = () => {
   const [data, setData] = useState<any>({});
@@ -182,20 +180,6 @@ const Api = () => {
             </div>
           </div>
         </div>
-
-        {/* <WhyCard
-          titleOne={whyData.api.titleOne}
-          textOne={whyData.api.textOne}
-          titleTwo={whyData.api.titleTwo}
-          textTwo={whyData.api.textTwo}
-          titleThree={whyData.api.titleThree}
-          textThree={whyData.api.textThree}
-          titleFour={whyData.api.titleFour}
-          textFour={whyData.api.textFour}
-          observation={whyData.api.observation}
-          bottom={whyData.api.bottom}
-          left={whyData.api.left}
-        /> */}
       </section>
     </div>
   );
