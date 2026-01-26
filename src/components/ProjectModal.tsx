@@ -40,7 +40,6 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
         </div>
 
         <div className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative'>
-          {/* Close Button wrapped in DrawerClose for semantic correctness or just onClick handler */}
           <DrawerClose className='absolute right-[5%] top-[2%] z-50'>
             <Image
               className='w-8 cursor-pointer hover:opacity-70 transition-opacity'
@@ -52,10 +51,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto py-16 xl-custom:flex-row xl-custom:items-center'>
             <div className='flex flex-col pb-4 xl-custom:pb-0 xl-custom:w-1/2 xl-custom:items-center'>
               <div className='w-[18em] self-center md-custom:w-[22.5em]'>
-                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-16 capitalize'>
-                  <span className='lowercase text-bright'>
-                    {project.title0}
-                  </span>
+                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-10 capitalize'>
                   {project.titleA}
                 </h2>
                 <h3 className='font-main-semibold text-[1.2rem] mb-4 text-bright'>
@@ -93,31 +89,31 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   {project.category}
                 </p>
 
-                <h4 className='font-main-heavy text-[1.1rem] mt-6 mb-2'>
+                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleOne}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] md-custom:text-[1rem] md-custom:w-[35ch]'>
+                <p className='w-[30ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
                   {project.backText_textOne}
                 </p>
 
-                <h4 className='font-main-heavy text-[1.1rem] mt-6 mb-2'>
+                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleTwo}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] md-custom:text-[1rem] md-custom:w-[35ch]'>
+                <p className='w-[30ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
                   {project.backText_textTwo}
                 </p>
 
-                <h4 className='font-main-heavy text-[1.1rem] mt-6 mb-2'>
+                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleThree}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
+                <p className='w-[30ch] text-[0.9rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
                   {project.backText_textThree}
                 </p>
 
-                <h4 className='font-main-heavy text-[1.1rem] mt-6 mb-2'>
+                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleFour}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
+                <p className='w-[30ch] text-[0.9rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
                   {project.backText_textFour}
                 </p>
 
