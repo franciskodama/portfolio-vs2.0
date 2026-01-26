@@ -472,7 +472,7 @@ export const contactData = [
 
 export const jobs = [
   {
-    id: 1,
+    id: 6,
     title: 'Independent Investor',
     companies: [{ name: 'Self-Employed', period: '2023 ~ 2025' }],
     skills: [
@@ -484,7 +484,19 @@ export const jobs = [
       'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
   },
   {
-    id: 2,
+    id: 5,
+    title: 'Software Engineer',
+    companies: [{ name: 'THE LNK', period: '2022 ~ 2023' }],
+    skills: [
+      'Technical Analysis',
+      'Portfolio Management',
+      'Elliott Wave Analysis',
+    ],
+    benefit:
+      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+  },
+  {
+    id: 4,
     title: 'General Director',
     companies: [{ name: 'Circus', period: '2016 ~ 2020' }],
     skills: ['Leadership', 'Product Strategy', 'Agile methodology'],
@@ -500,7 +512,7 @@ export const jobs = [
       'Through listening, strategy, and effective communication, I will present my ideas, negotiating and optimizing results on multiple fronts.',
   },
   {
-    id: 4,
+    id: 2,
     title: 'Client Services Director',
     companies: [
       { name: 'WE', period: '2008 ~ 2010' },
@@ -511,7 +523,7 @@ export const jobs = [
       'I will listen closely to customers to understand and discover their real needs.',
   },
   {
-    id: 5,
+    id: 1,
     title: 'Advertising and digital marketing manager',
     companies: [{ name: 'Peugeot-Citroën Automobile', period: '2000 ~ 2007' }],
     skills: [

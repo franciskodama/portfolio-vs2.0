@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import { useId } from 'react';
 
 export const ArrowCurved = ({ className }: { className?: string }) => {
   const uniqueId = useId();

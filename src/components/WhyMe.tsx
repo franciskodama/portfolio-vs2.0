@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import { jobs } from '../data/Data';
+import Balloon from './icons/Balloon';
 
 const galleryData = [
   { id: '01', caption: 'WE 2008', span: true },
@@ -53,33 +54,31 @@ const WhyMe = () => {
         </p>
 
         <div
-          className='relative mx-auto w-fit z-10'
+          className='relative mx-auto w-fit z-10 pr-10'
           style={{
             animation:
               'circle-appear 1s ease-in-out forwards, balloon-float 6s ease-in-out infinite',
           }}
         >
-          <div
-            className={`relative flex flex-col items-center bg-third text-center w-[19em] h-[21em] p-8 lg-custom:w-[22em] lg-custom:h-[24em] lg-custom:p-[3.3em_3.5em_4em_3.5em] rounded-[50%_50%_50%_50%/40%_40%_60%_60%] ${
-              heartShown ? 'hidden' : 'flex'
-            }`}
+          <Balloon
+            variant='filled'
+            heartShown={heartShown}
+            color='var(--color-third)'
+            size='43em'
+            rotate={13}
           >
-            <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] text-center uppercase font-main-heavy'>
-              Whole package
-            </h4>
-            <p className='text-[1.1rem] text-center font-main-regular leading-[1.4rem] px-4'>
-              Maturity, organization, strategic view, and much more from 24
-              years of experience.
-            </p>
-            {/* Knot */}
-            <div className='absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-10 border-l-transparent border-r-10 border-r-transparent border-t-16 border-t-third'></div>
-          </div>
+            <div className='flex flex-col items-left text-left ml-10 mb-35 rotate-[-25deg]'>
+              <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] uppercase font-main-heavy'>
+                Whole package
+              </h4>
+              <p className='w-[15ch] text-[1.1rem] font-main-regular leading-[1.4rem]'>
+                Maturity, organization, strategic view, and much more from 24
+                years of experience.
+              </p>
+            </div>
+          </Balloon>
 
-          <div
-            className={`relative flex flex-col gap-1 items-center bg-dark border-2 border-third w-[19em] h-[21em] p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[24em] lg-custom:p-[1.8em_2.5em] rounded-[50%_50%_50%_50%/40%_40%_60%_60%] ${
-              heartShown ? 'flex' : 'hidden'
-            }`}
-          >
+          <Balloon variant='outlined' heartShown={heartShown}>
             <h4 className='text-center uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
               PASSION
             </h4>
@@ -101,11 +100,9 @@ const WhyMe = () => {
                 - Joe Namath
               </span>
             </div>
-            {/* Knot */}
-            <div className='absolute -bottom-[14px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-10 border-l-transparent border-r-10 border-r-transparent border-t-16 border-t-third'></div>
-          </div>
+          </Balloon>
 
-          {/* <div
+          <div
             className='absolute left-1/2 -translate-x-1/2 -bottom-[25px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] border-2 border-dark cursor-pointer'
             onClick={() => setHeartShown(!heartShown)}
           >
@@ -115,7 +112,7 @@ const WhyMe = () => {
             <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
               Click here
             </p>
-          </div> */}
+          </div>
         </div>
 
         <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
