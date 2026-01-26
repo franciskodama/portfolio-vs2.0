@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
+import { jobs } from '../data/Data';
 
 const galleryData = [
   { id: '01', caption: 'WE 2008', span: true },
@@ -52,57 +53,69 @@ const WhyMe = () => {
         </p>
 
         <div
-          className={`relative flex-col rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-third p-8 lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[3.3em_3.5em_4em_3.5em] ${
-            heartShown ? 'hidden' : 'flex'
-          }`}
+          className='relative mx-auto w-fit z-10'
+          style={{
+            animation:
+              'circle-appear 1s ease-in-out forwards, balloon-float 6s ease-in-out infinite',
+          }}
         >
-          <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] text-center uppercase font-main-heavy'>
-            Whole package
-          </h4>
-          <p className='text-[1.5rem] text-center uppercase font-main-semibold leading-[1.7rem]'>
-            Maturity, organization, strategic view, and much more from 24 years
-            of experience.
-          </p>
-        </div>
-
-        <div
-          className={`relative flex-col gap-1 rounded-full w-[19em] h-[19em] items-center mx-auto animate-circle-appear bg-dark border-2 border-third p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[22em] lg-custom:p-[1.8em_2.5em] ${
-            heartShown ? 'flex' : 'hidden'
-          }`}
-        >
-          <h4 className='text-center uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
-            PASSION
-          </h4>
-          <div className='text-center uppercase font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
-            My career in marketing <br></br> spanned more than two decades, and
-            I achieved important positions <br></br>I had planned. Now is the
-            time for me to pursue a career I've been passionate about since I
-            was a teenager. A career that I've been working on and having a lot
-            of fun with!
-            <br></br>
-            <br></br>
-            <q
-              className='hidden font-main-light italic text-bright lg-custom:block'
-              rel='Joe Namath'
-            >
-              "When you have fun, you can do amazing things."
-            </q>
-            <span className='hidden text-bright mt-1 lg-custom:block'>
-              - Joe Namath
-            </span>
+          <div
+            className={`relative flex flex-col items-center bg-third text-center w-[19em] h-[21em] p-8 lg-custom:w-[22em] lg-custom:h-[24em] lg-custom:p-[3.3em_3.5em_4em_3.5em] rounded-[50%_50%_50%_50%/40%_40%_60%_60%] ${
+              heartShown ? 'hidden' : 'flex'
+            }`}
+          >
+            <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] text-center uppercase font-main-heavy'>
+              Whole package
+            </h4>
+            <p className='text-[1.1rem] text-center font-main-regular leading-[1.4rem] px-4'>
+              Maturity, organization, strategic view, and much more from 24
+              years of experience.
+            </p>
+            {/* Knot */}
+            <div className='absolute -bottom-[12px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-10 border-l-transparent border-r-10 border-r-transparent border-t-16 border-t-third'></div>
           </div>
-        </div>
 
-        <div
-          className='absolute left-1/2 -translate-x-1/2 -translate-y-[35px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] mx-auto border-2 border-dark cursor-pointer z-3'
-          onClick={() => setHeartShown(!heartShown)}
-        >
-          <h4 className='w-[8ch] font-main-semibold text-dark mb-1 text-[0.5rem] leading-2 text-center uppercase'>
-            Why changing carrers?
-          </h4>
-          <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
-            Click here
-          </p>
+          <div
+            className={`relative flex flex-col gap-1 items-center bg-dark border-2 border-third w-[19em] h-[21em] p-[1.8em_3em] lg-custom:w-[22em] lg-custom:h-[24em] lg-custom:p-[1.8em_2.5em] rounded-[50%_50%_50%_50%/40%_40%_60%_60%] ${
+              heartShown ? 'flex' : 'hidden'
+            }`}
+          >
+            <h4 className='text-center uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
+              PASSION
+            </h4>
+            <div className='text-center font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
+              My career in marketing <br></br> spanned more than two decades,
+              and I achieved important positions <br></br>I had planned. Now is
+              the time for me to pursue a career I've been passionate about
+              since I was a teenager. A career that I've been working on and
+              having a lot of fun with!
+              <br></br>
+              <br></br>
+              <q
+                className='hidden font-main-light italic text-bright lg-custom:block'
+                rel='Joe Namath'
+              >
+                "When you have fun, you can do amazing things."
+              </q>
+              <span className='hidden text-bright mt-1 lg-custom:block'>
+                - Joe Namath
+              </span>
+            </div>
+            {/* Knot */}
+            <div className='absolute -bottom-[14px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-10 border-l-transparent border-r-10 border-r-transparent border-t-16 border-t-third'></div>
+          </div>
+
+          {/* <div
+            className='absolute left-1/2 -translate-x-1/2 -bottom-[25px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] border-2 border-dark cursor-pointer'
+            onClick={() => setHeartShown(!heartShown)}
+          >
+            <h4 className='w-[8ch] font-main-semibold text-dark mb-1 text-[0.5rem] leading-2 text-center uppercase'>
+              Why changing careers?
+            </h4>
+            <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
+              Click here
+            </p>
+          </div> */}
         </div>
 
         <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
@@ -115,7 +128,7 @@ const WhyMe = () => {
               <div className='flex flex-col items-center relative m-0 w-[85%] lg-custom:w-[25em] lg-custom:block lg-custom:mr-10'>
                 <div className='flex flex-wrap items-center justify-center lg-custom:flex-nowrap lg-custom:justify-end'>
                   <h3 className='text-third text-[1.5rem] uppercase font-main-heavy leading-6 p-0 lg-custom:w-[8ch]'>
-                    Changing carreers
+                    Changing careers
                   </h3>
                   <span className='text-[2.8em] font-main-regular text-third pb-1 mx-[0.3em]'>
                     {String.fromCharCode(123)}
@@ -146,10 +159,10 @@ const WhyMe = () => {
                 </p>
               </div>
               <div className='flex flex-col items-center text-center mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:items-start lg-custom:text-left lg-custom:m-0 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
+                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase tracking-widest'>
                   How does all of this benefit you?
                 </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
+                <h5 className='font-main-light text-[1rem] leading-7 mt-2 lg-custom:w-[30em]'>
                   I bring a collaborative mindset and technical expertise,
                   empowering the team to solve complex problems and deliver
                   exceptional software.
@@ -158,194 +171,48 @@ const WhyMe = () => {
             </div>
           </Parallax>
 
-          <Parallax
-            opacity={[0, 2]}
-            translateY={['100%', '-50%']}
-            scale={[2, 0.8]}
-          >
-            <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
-              <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
-                  Independent Investor
-                </h3>
-                <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Self-Employed |{' '}
-                  <span className='text-third font-main-regular'>
-                    2023 ~ 2025
-                  </span>
-                </p>
-                <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
-                  <li>Technical Analysis</li>
-                  <li>Portfolio Management</li>
-                  <li>Elliott Wave Analysis</li>
-                </ul>
-              </div>
+          {jobs.map((job) => (
+            <Parallax
+              key={job.id}
+              opacity={[0, 2]}
+              translateY={['100%', '-50%']}
+              scale={[2, 0.8]}
+            >
+              <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
+                <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
+                  <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
+                    {job.title}
+                  </h3>
+                  <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
+                  {job.companies.map((company, index) => (
+                    <p
+                      key={index}
+                      className='text-[0.8rem] font-main-light uppercase w-[25ch]'
+                    >
+                      {company.name} |{' '}
+                      <span className='text-third font-main-regular'>
+                        {company.period}
+                      </span>
+                    </p>
+                  ))}
+                  <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
+                    {job.skills.map((skill, index) => (
+                      <li key={index}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
-                  Why is it good for you?
-                </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  My experience in high-pressure markets honed my ability to
-                  stay focused, analyze patterns, and make calculated decisions
-                  under uncertainty.
-                </h5>
+                <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
+                  <h6 className='font-main-semibold text-[0.8rem] text-third uppercase tracking-widest'>
+                    Why is it good for you?
+                  </h6>
+                  <h5 className='font-main-light text-[1rem] leading-7 mt-2 lg-custom:w-[30em]'>
+                    {job.benefit}
+                  </h5>
+                </div>
               </div>
-            </div>
-          </Parallax>
-
-          <Parallax
-            opacity={[0, 2]}
-            translateY={['100%', '-50%']}
-            scale={[2, 0.8]}
-          >
-            <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
-              <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
-                  General Director
-                </h3>
-                <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Circus |{' '}
-                  <span className='text-third font-main-regular'>
-                    2016 ~ 2020
-                  </span>
-                </p>
-                <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
-                  <li>Leadership</li>
-                  <li>Product Strategy</li>
-                  <li>Agile methodology</li>
-                </ul>
-              </div>
-
-              <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
-                  Why is it good for you?
-                </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  I will bring valuable experience and leadership skills to your
-                  organization.
-                </h5>
-              </div>
-            </div>
-          </Parallax>
-
-          <Parallax
-            opacity={[0, 2]}
-            translateY={['100%', '-50%']}
-            scale={[2, 0.8]}
-          >
-            <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
-              <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
-                  Planning and new business director
-                </h3>
-                <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Circus |{' '}
-                  <span className='text-third font-main-regular'>
-                    2011 ~ 2015
-                  </span>
-                </p>
-                <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
-                  <li>Presentations</li>
-                  <li>Leadership</li>
-                  <li>Sales</li>
-                </ul>
-              </div>
-
-              <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
-                  Why is it good for you?
-                </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  Through listening, <br></br>strategy, and effective
-                  communication, I will present my ideas, negotiating and
-                  optimizing results on multiple fronts.
-                </h5>
-              </div>
-            </div>
-          </Parallax>
-
-          <Parallax
-            opacity={[0, 2]}
-            translateY={['100%', '-50%']}
-            scale={[2, 0.8]}
-          >
-            <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
-              <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
-                  Client Services Director
-                </h3>
-                <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  WE |{' '}
-                  <span className='text-third font-main-regular'>
-                    2008 ~ 2010
-                  </span>
-                </p>
-                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Rapp Collins |{' '}
-                  <span className='text-third font-main-regular'>
-                    2007 ~ 2008
-                  </span>
-                </p>
-                <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
-                  <li>Leadership</li>
-                  <li>Business & Financial</li>
-                  <li>Problem Solving</li>
-                </ul>
-              </div>
-
-              <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
-                  Why is it good for you?
-                </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  I will listen closely to customers to understand and discover
-                  their real needs.
-                </h5>
-              </div>
-            </div>
-          </Parallax>
-
-          <Parallax
-            opacity={[0, 2]}
-            translateY={['100%', '-50%']}
-            scale={[2, 0.8]}
-          >
-            <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
-              <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'>
-                  Advertising <br></br>and digital marketing manager
-                </h3>
-                <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                <p className='text-[0.8rem] font-main-light uppercase w-[25ch]'>
-                  Peugeot-Citroën Automobile |{' '}
-                  <span className='text-third font-main-regular'>
-                    2000 ~ 2007
-                  </span>
-                </p>
-                <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
-                  <li>Critical Thinking</li>
-                  <li>Strategy & Criativity</li>
-                  <li>Keen eye for design</li>
-                </ul>
-              </div>
-
-              <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                <h6 className='font-main-semibold text-[0.8rem] text-third uppercase'>
-                  Why is it good for you?
-                </h6>
-                <h5 className='font-main-semibold text-[1.2rem] leading-6 mt-2 uppercase lg-custom:w-[25ch]'>
-                  I will use my experience in campaign evaluation, critical
-                  thinking, and a keen eye for design to provide my opinion so
-                  the team can develop the best digital product.
-                </h5>
-              </div>
-            </div>
-          </Parallax>
+            </Parallax>
+          ))}
         </section>
 
         <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[80%] lg-custom:mx-auto'>

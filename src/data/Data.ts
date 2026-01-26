@@ -469,3 +469,57 @@ export const contactData = [
     content: 'Thanks! :)',
   },
 ];
+
+export const jobs = [
+  {
+    id: 1,
+    title: 'Independent Investor',
+    companies: [{ name: 'Self-Employed', period: '2023 ~ 2025' }],
+    skills: [
+      'Technical Analysis',
+      'Portfolio Management',
+      'Elliott Wave Analysis',
+    ],
+    benefit:
+      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+  },
+  {
+    id: 2,
+    title: 'General Director',
+    companies: [{ name: 'Circus', period: '2016 ~ 2020' }],
+    skills: ['Leadership', 'Product Strategy', 'Agile methodology'],
+    benefit:
+      'I will bring valuable experience and leadership skills to your organization.',
+  },
+  {
+    id: 3,
+    title: 'Planning and new business director',
+    companies: [{ name: 'Circus', period: '2011 ~ 2015' }],
+    skills: ['Presentations', 'Leadership', 'Sales'],
+    benefit:
+      'Through listening, strategy, and effective communication, I will present my ideas, negotiating and optimizing results on multiple fronts.',
+  },
+  {
+    id: 4,
+    title: 'Client Services Director',
+    companies: [
+      { name: 'WE', period: '2008 ~ 2010' },
+      { name: 'Rapp Collins', period: '2007 ~ 2008' },
+    ],
+    skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
+    benefit:
+      'I will listen closely to customers to understand and discover their real needs.',
+  },
+  {
+    id: 5,
+    title: 'Advertising and digital marketing manager',
+    companies: [{ name: 'Peugeot-Citroën Automobile', period: '2000 ~ 2007' }],
+    skills: [
+      'Critical Thinking',
+      'Strategy & Creativity',
+      'Keen eye for design',
+    ],
+    benefit:
+      'I will use my experience in campaign evaluation, critical thinking, and a keen eye for design to provide my opinion so the team can develop the best digital product.',
+  },
+];
