@@ -1,13 +1,12 @@
 export const projects = [
   {
     id: 9,
+    highlight: true,
     frontShow: true,
     icon: 'Hammer',
-    title0: '',
     titleA: 'Handy For.Me',
     year: '2024',
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
-    category: 'web app',
     url: 'https://handyfor.me/',
     image: require('../assets/images/project-portfolio.jpg'),
     frontText:
@@ -28,9 +27,9 @@ export const projects = [
   },
   {
     id: 7,
+    highlight: true,
     frontShow: true,
     icon: 'Calculator',
-    title0: '',
     titleA: 'Monkey Business',
     year: '2026',
     tech: 'React, Next.js, TypeScript, A.I., Prisma, PostgreSQL, Neon, Auth.js, Tailwind CSS, Zod',
@@ -56,9 +55,9 @@ export const projects = [
   },
   {
     id: 8,
+    highlight: true,
     frontShow: true,
     icon: 'PiggyBank',
-    title0: '',
     titleA: 'Trezo.app',
     year: '2024',
     tech: 'React, Next.js, TypeScript, Prisma, PostgreSQL, Neon, Tailwind CSS, Clerk, Zod',
@@ -83,13 +82,13 @@ export const projects = [
   },
   {
     id: 10,
+    highlight: true,
     frontShow: true,
     icon: 'Book',
-    title0: 'vs 2.0, this.',
-
     titleA: 'Portfolio',
+    titleB: 'vs.02',
     year: '2026',
-    tech: 'React, Next.js, TypeScript, Tailwind CSS',
+    tech: 'React, Next.js, TypeScript, matter-js, framer-motion, gsap, react-scroll-parallax',
     category: 'website',
     url: 'https://www.fkodama.com',
     image: require('../assets/images/project-portfolio.jpg'),
@@ -107,10 +106,11 @@ export const projects = [
   },
   {
     id: 1,
+    highlight: false,
     frontShow: true,
     icon: 'Book',
-    title0: 'vs 1.0',
     titleA: 'Portfolio',
+    titleB: 'vs.01',
     year: '2022',
     tech: 'react, js, html, sass',
     category: 'website',
@@ -130,6 +130,7 @@ export const projects = [
   },
   {
     id: 2,
+    highlight: false,
     frontShow: true,
     icon: 'GraduationCap',
     titleA: 'Seletos',
@@ -155,6 +156,7 @@ export const projects = [
   },
   {
     id: 3,
+    highlight: false,
     frontShow: true,
     icon: 'Ghost',
     titleA: 'Pac Man',
@@ -182,6 +184,7 @@ export const projects = [
   },
   {
     id: 4,
+    highlight: false,
     frontShow: true,
     icon: 'Globe',
     titleA: 'Mundial',
@@ -207,6 +210,7 @@ export const projects = [
   },
   {
     id: 5,
+    highlight: false,
     frontShow: true,
     icon: 'FileText',
     titleA: 'Resume',
@@ -232,6 +236,7 @@ export const projects = [
   },
   {
     id: 6,
+    highlight: false,
     frontShow: true,
     icon: 'Rocket',
     titleA: 'Space Invaders',

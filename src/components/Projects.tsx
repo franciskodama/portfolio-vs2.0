@@ -1,13 +1,10 @@
-// #d1ea13 yellow
-
 import { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
-import { ArrowCurved } from './icons/ArrowCurved';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
-import { Undo } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,7 +13,6 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Sort projects by year ascending (newest last)
   const sortedProjects = [...projects].sort(
     (a, b) => Number(a.year) - Number(b.year)
   );
@@ -71,8 +67,8 @@ const Projects = () => {
     const height = containerRef.current.clientHeight;
 
     // Calculate slope angle (7.5vw rise over 100vw run = 0.075 slope)
-    // Negative angle because right side is higher (lower Y value in canvas)
     const slope = 0.075;
+    // Negative angle because right side is higher (lower Y value in canvas)
     const angle = -Math.atan(slope);
 
     // Create boundaries
@@ -107,8 +103,7 @@ const Projects = () => {
     const bodies: Matter.Body[] = [];
     const cardElements = cardsRef.current;
 
-    // Reset cards style before starting animation (hide them again)
-    // This is crucial for "restarting" the animation
+    // Reset cards style before starting animation (hide them again). Crucial for "restarting" the animation
     cardElements.forEach((el) => {
       if (el) {
         el.style.opacity = '0';
@@ -122,11 +117,14 @@ const Projects = () => {
       if (!cardEl) return;
 
       const randomX = Math.random() * (width - 100) + 50;
-      const startY = -400; // Start well above
+      // const startY = -400; // Start well above
+      // or
+      // Instead of const startY = -400;
+      const startY = -400 - index * 350; // Each card starts 350px higher than the last
 
-      const body = Bodies.rectangle(randomX, startY, 270, 300, {
-        restitution: 0.9, // Bouncy like rubber
-        friction: 0.005,
+      const body = Bodies.rectangle(randomX, startY, 320, 320, {
+        restitution: 0.8, // Bouncy
+        friction: 0.1, // Slide
         frictionAir: 0.02,
         density: 0.001,
         angle: (Math.random() - 0.5) * 0.5, // Slight random rotation
@@ -196,26 +194,30 @@ const Projects = () => {
         id='projects'
       >
         <div className='container mx-auto lg-custom:w-full'>
-          <div className='relative -mt-24'>
+          <div className='-mt-24'>
             <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
-              <h2 className='section-title text-7xl w-[8ch] -rotate-[4.29deg] leading-19 font-main-semibold text-right ml-auto mr-[20%]'>
-                selected projects
-              </h2>
+              <div className='flex flex-col -rotate-[4.29deg] items-end mr-[20%]'>
+                <h2 className='section-title text-7xl w-[8ch] leading-19 font-main-semibold text-right'>
+                  selected projects
+                </h2>
+                <div className='flex items-center gap-2 mt-4 mr-8'>
+                  <Star
+                    className='w-[20px] h-[20px] mt-1'
+                    strokeWidth={1.6}
+                    fill='yellow'
+                  />
+                  <p
+                    className='font-semibold text-dark text-[1.2rem] leading-9'
+                    style={{ fontFamily: 'var(--font-gloria)' }}
+                  >
+                    most recent
+                  </p>
+                </div>
+              </div>
             </Parallax>
-            {/* <div className='absolute top-45 right-120 w-20 h-20 rotate-50'>
-              <ArrowCurved className='w-full h-full text-third mt-2' />
-            </div>
-            <p
-              className='absolute top-40 right-60 font-semibold text-third text-[1.5rem] leading-9 -rotate-[4.29deg] translate-x-2'
-              style={{ fontFamily: 'var(--font-gloria)' }}
-            >
-              <span className='text-[1.2rem]'>Most recommended:</span>
-              <br />- Monkey Business
-              <br />- Handyfor.me
-              <br />- Trezo.app
-            </p> */}
           </div>
 
+          {/* Container Height */}
           <div ref={containerRef} className='relative w-full h-[55vh]'>
             {sortedProjects.map((project, index) => (
               <div
@@ -223,14 +225,14 @@ const Projects = () => {
                 ref={(el) => {
                   cardsRef.current[index] = el;
                 }}
-                className='absolute top-0 left-0 opacity-0' // Start hidden until physics takes over
+                className='absolute top-40 left-0 opacity-0' // Start hidden until physics takes over
                 style={{
-                  width: '270px', // Enforce width for physics sync
-                  // height: '350px', // Let height be auto
+                  width: '320px', // Enforce width for physics sync
+                  height: '320px',
                   willChange: 'transform',
                 }}
               >
-                <div className='w-[270px] flex justify-center'>
+                <div className='w-[320px] flex justify-center'>
                   <ProjectCard
                     project={project}
                     onClick={() => {
@@ -246,8 +248,6 @@ const Projects = () => {
       </section>
 
       {/* Modal rendered outside the physics container to avoid transform issues */}
-
-      {/* ProjectModal with Drawer support */}
       <ProjectModal
         project={selectedProject}
         open={isDrawerOpen}
