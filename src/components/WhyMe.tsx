@@ -66,9 +66,24 @@ const WhyMe = () => {
                       )}
                     </div>
 
-                    <h4 className='max-w-120 text-right leading-6 tracking-widest text-bright/50 group-hover:text-bright text-[1rem] font-main-regular capitalize transition-colors duration-300'>
-                      {job.skills.map((skill) => skill).join(', ')}
-                    </h4>
+                    <div className='max-w-120 text-right text-bright/50 group-hover:text-bright transition-colors duration-300'>
+                      {job.skills.length <= 4 ? (
+                        <div className='flex flex-col gap-1'>
+                          {job.skills.map((skill, index) => (
+                            <h4
+                              key={index}
+                              className='leading-6 tracking-widest text-[1rem] font-main-regular capitalize'
+                            >
+                              {skill}
+                            </h4>
+                          ))}
+                        </div>
+                      ) : (
+                        <h4 className='leading-6 tracking-widest text-[1rem] font-main-regular capitalize'>
+                          {job.skills.join(', ')}
+                        </h4>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
