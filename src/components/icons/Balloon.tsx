@@ -61,13 +61,13 @@ const Balloon = ({
           strokeWidth={isFilled ? '0' : '0.5'}
         ></path>
         {/* Highlight */}
-        {isFilled && (
+        {/* {isFilled && (
           <path
             d='M78.28 13.44c-4.07-2.48-9.9-4.13-13.2.55c-1.76 2.49-.1 7.15 3.53 8.2c6.14 1.79 7.21 4 8.46 5.79c1.51 2.1 2.94 4.73 5.49 5.14s4-1.51 3.89-5.21c-.02-5.92-3.11-11.4-8.17-14.47z'
             fill='#ffffff'
             opacity='0.3'
           ></path>
-        )}
+        )} */}
       </svg>
       <div className='relative z-10 p-12 pr-16 pb-16 flex flex-col items-center justify-center text-center h-full w-full'>
         {children}

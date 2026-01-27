@@ -5,9 +5,11 @@ import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import { jobs } from '../data/Data';
 import Balloon from './icons/Balloon';
+import AvatarRoulette from './AvatarRoulette';
 
 const galleryData = [
   { id: '01', caption: 'WE 2008', span: true },
+
   { id: '02', caption: 'Circus 2017', span: true },
   { id: '03', caption: 'Circus 2019', span: false },
   { id: '04', caption: 'Citroën 2007', span: true },
@@ -154,6 +156,8 @@ const WhyMe = () => {
             </Parallax>
           ))}
         </section>
+
+        <AvatarRoulette />
 
         <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[80%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
