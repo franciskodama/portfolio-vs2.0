@@ -1,13 +1,12 @@
 'use client';
-import React, {
+
+import {
   useRef,
   useEffect,
   useState,
   useLayoutEffect,
   useCallback,
 } from 'react';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -231,19 +230,6 @@ const Reason = () => {
           </div>
         ))}
       </div>
-      {/* <WhyCard
-        titleOne={whyData.reason.titleOne}
-        textOne={whyData.reason.textOne}
-        titleTwo={whyData.reason.titleTwo}
-        textTwo={whyData.reason.textTwo}
-        titleThree={whyData.reason.titleThree}
-        textThree={whyData.reason.textThree}
-        titleFour={whyData.reason.titleFour}
-        textFour={whyData.reason.textFour}
-        observation={whyData.reason.observation}
-        bottom={whyData.reason.bottom}
-        left={whyData.reason.left}
-      /> */}
     </section>
   );
 };

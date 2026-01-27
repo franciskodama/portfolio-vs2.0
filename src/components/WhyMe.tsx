@@ -28,13 +28,6 @@ const WhyMe = () => {
                 </p>
               </div>
             </div>
-            {/* <p
-              className='w-[12ch] ml-4 text-center text-third font-bold text-[1rem] leading-6 -rotate-15 tracking-widest'
-              style={{ fontFamily: 'var(--font-gloria)' }}
-            >
-              Why become a dev?
-            </p> */}
-
             <div className='flex flex-col'>
               {jobs.map((job) => (
                 <div

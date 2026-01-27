@@ -20,10 +20,6 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
-  // If no project is selected yet, we don't render the drawer content specifics
-  // But we render the Drawer wrapper to handle logic if needed, or just return null
-  // However, relying on parent to handle state
-
   if (!project) return null;
 
   return (

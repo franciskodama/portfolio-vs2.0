@@ -108,7 +108,7 @@ const SynergyResult: React.FC<SynergyResultProps> = ({ result, onClose }) => {
             <ul className='flex flex-col gap-6'>
               {result.projects.map((project: string, i: number) => (
                 <li key={i} className='flex gap-4 items-start group'>
-                  <span className='shrink-0 w-8 h-8 rounded-full text-white font-main-semibold bg-third flex items-center justify-center font-main-bold text-sm group-hover:scale-110 transition-transform'>
+                  <span className='shrink-0 w-8 h-8 rounded-full text-white font-main-semibold bg-third flex items-center justify-center text-sm group-hover:scale-110 transition-transform'>
                     {i + 1}
                   </span>
                   <p className='text-dark font-main-regular text-sm leading-6'>

@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 import SynergyResult from './SynergyResult';
 
 const SynergySeer = ({

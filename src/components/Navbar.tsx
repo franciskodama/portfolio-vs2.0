@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { Link } from 'react-scroll';
+import Image from 'next/image';
 
 import Logo from '../assets/images/fk-white-transparent-bg.png';
 import Menu from '../assets/images/menu-hamburguer.svg';
