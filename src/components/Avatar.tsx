@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { avatarData } from '../data/Data';
 import LightBulb from '../assets/images/about-lightbulb.svg';

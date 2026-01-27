@@ -1,10 +1,7 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 import ZoomIn from '../assets/images/code-check.svg';
 
 const CleanCode = () => {
@@ -93,20 +90,6 @@ const CleanCode = () => {
             </li>
           </ul>
         </Parallax>
-
-        {/* <WhyCard
-          titleOne={whyData.code.titleOne}
-          textOne={whyData.code.textOne}
-          titleTwo={whyData.code.titleTwo}
-          textTwo={whyData.code.textTwo}
-          titleThree={whyData.code.titleThree}
-          textThree={whyData.code.textThree}
-          titleFour={whyData.code.titleFour}
-          textFour={whyData.code.textFour}
-          observation={whyData.code.observation}
-          bottom={whyData.code.bottom}
-          left={whyData.code.left}
-        /> */}
       </div>
     </section>
   );

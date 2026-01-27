@@ -20,7 +20,6 @@ const BlinkingText: React.FC<BlinkingTextProps> = ({
 
   // Pre-calculate chunks (words vs whitespace) and their graphemes + global indices
   const wordChunks = useMemo(() => {
-    // Helper to get graphemes
     const getGraphemes = (str: string) => {
       if (typeof Intl !== 'undefined' && (Intl as any).Segmenter) {
         const segmenter = new (Intl as any).Segmenter('en', {

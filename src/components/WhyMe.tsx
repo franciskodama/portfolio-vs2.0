@@ -6,7 +6,6 @@ import { galleryData, jobs } from '../data/Data';
 import BlinkingText from './BlinkingText';
 
 const WhyMe = () => {
-  const [heartShown, setHeartShown] = useState(false);
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
 
   const toggleJob = (id: number) => {
