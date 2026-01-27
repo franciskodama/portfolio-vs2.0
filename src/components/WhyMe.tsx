@@ -6,6 +6,11 @@ import { galleryData, jobs } from '../data/Data';
 
 const WhyMe = () => {
   const [heartShown, setHeartShown] = useState(false);
+  const [expandedJob, setExpandedJob] = useState<number | null>(null);
+
+  const toggleJob = (id: number) => {
+    setExpandedJob(expandedJob === id ? null : id);
+  };
 
   return (
     <section className='section max-w-[94em] mx-auto bg-dark' id='whyme'>
@@ -28,14 +33,31 @@ const WhyMe = () => {
               {jobs.map((job) => (
                 <div
                   key={job.id}
-                  className='group border-b border-white/10 px-4 py-8 cursor-pointer transition-all hover:bg-white/5'
+                  onClick={() => toggleJob(job.id)}
+                  className={`group border-b px-4 py-8 cursor-pointer transition-all duration-500 ${
+                    expandedJob === job.id
+                      ? 'border-white/40 bg-white/5'
+                      : 'border-white/10 hover:bg-white/5'
+                  }`}
                 >
                   <div className='flex items-center justify-between gap-4'>
                     <div className='flex flex-row gap-8'>
-                      <div className='text-third/50 leading-4.5 group-hover:text-third text-[1rem] font-main-semibold capitalize transition-colors duration-300'>
+                      <div
+                        className={`leading-4.5 text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
+                          expandedJob === job.id
+                            ? 'text-third'
+                            : 'text-third/50 group-hover:text-third'
+                        }`}
+                      >
                         <h4 className='px-1'>{job.companies[0].periodStart}</h4>
                         {job.companies[0].periodEnd === 'TODAY' ? (
-                          <h4 className='text-bright text-[0.8rem] bg-third/50 group-hover:text-bright px-1'>
+                          <h4
+                            className={`text-[0.8rem] px-1 ${
+                              expandedJob === job.id
+                                ? 'text-bright bg-third/80'
+                                : 'text-bright bg-third/50 group-hover:text-bright'
+                            }`}
+                          >
                             {job.companies[0].periodEnd}
                           </h4>
                         ) : (
@@ -44,29 +66,53 @@ const WhyMe = () => {
                       </div>
 
                       <div className='flex flex-col gap-1'>
-                        <h3 className='text-bright/50 group-hover:text-bright text-[2.4rem] font-main-regular capitalize leading-none transition-colors duration-300'>
+                        <h3
+                          className={`text-[2.4rem] font-main-regular capitalize leading-none transition-colors duration-300 ${
+                            expandedJob === job.id
+                              ? 'text-bright'
+                              : 'text-bright/50 group-hover:text-bright'
+                          }`}
+                        >
                           {job.title}
                         </h3>
                         <div className='flex items-center gap-2'>
-                          <h3 className='text-third/50 group-hover:text-third text-[1.2rem] font-main-regular capitalize leading-none transition-colors duration-300'>
+                          <h3
+                            className={`text-[1.2rem] font-main-regular capitalize leading-none transition-colors duration-300 ${
+                              expandedJob === job.id
+                                ? 'text-third'
+                                : 'text-third/50 group-hover:text-third'
+                            }`}
+                          >
                             {job.companies[0].name}
                           </h3>
-                          <div className='text-2xl text-third/50 group-hover:text-third'>
+                          <div
+                            className={`text-2xl transition-colors duration-300 ${
+                              expandedJob === job.id
+                                ? 'text-third'
+                                : 'text-third/50 group-hover:text-third'
+                            }`}
+                          >
                             {job.companies[0].country}
                           </div>
                         </div>
                       </div>
-                      {job.id === 8 && (
+                      {/* {job.id === 8 && (
                         <p
                           className='w-[12ch] ml-4 text-center text-third font-bold text-[1rem] leading-6 -rotate-15 tracking-widest'
                           style={{ fontFamily: 'var(--font-gloria)' }}
                         >
                           Why become a dev?
                         </p>
-                      )}
+                      )} */}
                     </div>
 
-                    <div className='max-w-120 text-right text-bright/50 group-hover:text-bright transition-colors duration-300'>
+                    <div
+                      className={`max-w-120 text-right transition-colors duration-300 ${
+                        expandedJob === job.id
+                          ? 'text-bright'
+                          : 'text-bright/50 group-hover:text-bright'
+                      }`}
+                    >
                       {job.skills.length <= 4 ? (
                         <div className='flex flex-col gap-1'>
                           {job.skills.map((skill, index) => (
@@ -83,6 +129,26 @@ const WhyMe = () => {
                           {job.skills.join(', ')}
                         </h4>
                       )}
+                    </div>
+                  </div>
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      expandedJob === job.id
+                        ? 'grid-rows-[1fr]'
+                        : 'grid-rows-[0fr]'
+                    }`}
+                  >
+                    <div className='overflow-hidden'>
+                      <div className='pt-8 pb-2 flex items-start gap-6 border-l border-third/30 ml-2 pl-6 mt-6'>
+                        <div className='flex flex-col gap-2'>
+                          <h5 className='text-third font-main-semibold text-xs tracking-[0.2em] uppercase opacity-70'>
+                            The Impact
+                          </h5>
+                          <p className='text-[1.3rem] leading-8 font-main-light text-white/90 max-w-[50ch] italic'>
+                            &ldquo;{job.benefit}&rdquo;
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
