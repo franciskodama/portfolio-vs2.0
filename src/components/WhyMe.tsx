@@ -14,7 +14,7 @@ const WhyMe = () => {
 
   return (
     <section className='section max-w-[94em] mx-auto bg-dark' id='whyme'>
-      <div className='container flex flex-col items-start mt-20 mb-24 max-w-[80%] lg-custom:max-w-full'>
+      <div className='container flex flex-col items-start my-20 max-w-[80%] lg-custom:max-w-full'>
         <div className='w-full bg-dark py-20 overflow-hidden'>
           <div className='z-10 max-w-[90%] mx-auto'>
             <div className='flex justify-between items-end mb-32'>
