@@ -43,19 +43,19 @@ const Resume = () => {
                       {job.companies[0].name}
                     </h3>
                   </div>
+                  {job.id === 8 && (
+                    <p
+                      className='w-[12ch] ml-4 text-center text-third font-bold text-[1rem] leading-6 -rotate-15 tracking-widest'
+                      style={{ fontFamily: 'var(--font-gloria)' }}
+                    >
+                      Why become a dev?
+                    </p>
+                  )}
                 </div>
 
                 <h4 className='max-w-140 text-right leading-6 text-bright/50 group-hover:text-bright text-[1rem] font-main-regular capitalize transition-colors duration-300'>
                   {job.skills.map((skill) => skill).join(', ')}
                 </h4>
-                {/* {job.id === 7 && (
-                  <p
-                    className='text-third font-bold text-[1rem] leading-6 -rotate-15 tracking-widest'
-                    style={{ fontFamily: 'var(--font-gloria)' }}
-                  >
-                    Now!
-                  </p>
-                )} */}
               </div>
             </div>
           ))}
