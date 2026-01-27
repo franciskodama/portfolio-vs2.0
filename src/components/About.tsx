@@ -1,18 +1,17 @@
 'use client';
 
-import { useEffect, useRef, useState, useContext } from 'react';
 import Image from 'next/image';
-import { AboutContext } from '../contexts/AboutContext';
+import { useEffect, useRef, useState, useContext } from 'react';
 import { Link } from 'react-scroll';
+import gsap from 'gsap';
+
+import { AboutContext } from '../contexts/AboutContext';
 import Button from '../components/Button';
 import BagEmpty from '../assets/images/bag.svg';
 import Avatar from '../components/Avatar';
 import Thumbnail from '../assets/images/avatar-70x70.jpg';
 import Trash from '../assets/images/about-trash.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
-import gsap from 'gsap';
 
 const About = () => {
   const { location, setLocation } = useContext(AboutContext);
@@ -307,20 +306,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      {/* <WhyCard
-        titleOne={whyData.about.titleOne}
-        textOne={whyData.about.textOne}
-        titleTwo={whyData.about.titleTwo}
-        textTwo={whyData.about.textTwo}
-        titleThree={whyData.about.titleThree}
-        textThree={whyData.about.textThree}
-        titleFour={whyData.about.titleFour}
-        textFour={whyData.about.textFour}
-        observation={whyData.about.observation}
-        bottom={whyData.about.bottom}
-        left={whyData.about.left}
-      /> */}
     </section>
   );
 };

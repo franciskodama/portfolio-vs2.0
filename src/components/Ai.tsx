@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 
 const Ai = ({
   color,
@@ -164,19 +162,6 @@ const Ai = ({
           </li>
         </ul>
       </div>
-      {/* <WhyCard
-        titleOne={whyData.ai.titleOne}
-        textOne={whyData.ai.textOne}
-        titleTwo={whyData.ai.titleTwo}
-        textTwo={whyData.ai.textTwo}
-        titleThree={whyData.ai.titleThree}
-        textThree={whyData.ai.textThree}
-        titleFour={whyData.ai.titleFour}
-        textFour={whyData.ai.textFour}
-        observation={whyData.ai.observation}
-        bottom={whyData.ai.bottom}
-        left={whyData.ai.left}
-      /> */}
     </section>
   );
 };

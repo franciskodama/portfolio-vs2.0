@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 import SynergyResult from './SynergyResult';
 
 const SynergySeer = ({
@@ -29,16 +27,16 @@ const SynergySeer = ({
 
   const handImages = {
     first: {
-      right: require('../assets/images/hand-right-black-bg.png'),
-      left: require('../assets/images/hand-left-black-bg.png'),
+      right: require('../assets/images/hands/hand-right-black-bg.png'),
+      left: require('../assets/images/hands/hand-left-black-bg.png'),
     },
     second: {
-      right: require('../assets/images/hand-right-blue-bg.png'),
-      left: require('../assets/images/hand-left-blue-bg.png'),
+      right: require('../assets/images/hands/hand-right-blue-bg.png'),
+      left: require('../assets/images/hands/hand-left-blue-bg.png'),
     },
     third: {
-      right: require('../assets/images/hand-right-grey-bg.png'),
-      left: require('../assets/images/hand-left-grey-bg.png'),
+      right: require('../assets/images/hands/hand-right-grey-bg.png'),
+      left: require('../assets/images/hands/hand-left-grey-bg.png'),
     },
   };
 
@@ -95,11 +93,11 @@ const SynergySeer = ({
     setStatus('CONSULT THE SEER');
   };
 
-  const baseInputClass =
+  const crystalBallInputClass =
     'bg-transparent border-0 p-2 text-center text-dark placeholder:uppercase placeholder:text-dark/40 focus:outline-none focus:border-third transition-colors w-full';
 
   return (
-    <section className='section relative pb-40' id='ai'>
+    <section className='section relative pb-40 mt-40' id='ai'>
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
         <div className='relative flex flex-col items-center'>
           <svg viewBox='0 0 500 120' className='w-full h-auto overflow-visible'>
@@ -178,7 +176,7 @@ const SynergySeer = ({
                   type='text'
                   name='company'
                   placeholder='Your company name'
-                  className={baseInputClass}
+                  className={crystalBallInputClass}
                   value={formData.company}
                   onChange={handleInputChange}
                   required
@@ -187,7 +185,7 @@ const SynergySeer = ({
                   type='text'
                   name='position'
                   placeholder='Title job position'
-                  className={baseInputClass}
+                  className={crystalBallInputClass}
                   value={formData.position}
                   onChange={handleInputChange}
                   required
@@ -195,7 +193,7 @@ const SynergySeer = ({
                 <textarea
                   name='description'
                   placeholder='Paste here the job description (optional)'
-                  className={`${baseInputClass} p-3 h-24 md-custom:h-32 text-sm resize-none`}
+                  className={`${crystalBallInputClass} p-3 h-24 md-custom:h-32 text-sm resize-none`}
                   value={formData.description}
                   onChange={handleInputChange}
                 />
@@ -315,21 +313,6 @@ const SynergySeer = ({
           )}
         </div>
       </div>
-      {/* <div className='mt-32'>
-        <WhyCard
-          titleOne={whyData.ai.titleOne}
-          textOne={whyData.ai.textOne}
-          titleTwo={whyData.ai.titleTwo}
-          textTwo={whyData.ai.textTwo}
-          titleThree={whyData.ai.titleThree}
-          textThree={whyData.ai.textThree}
-          titleFour={whyData.ai.titleFour}
-          textFour={whyData.ai.textFour}
-          observation={whyData.ai.observation}
-          bottom={whyData.ai.bottom}
-          left={whyData.ai.left}
-        />
-      </div> */}
     </section>
   );
 };

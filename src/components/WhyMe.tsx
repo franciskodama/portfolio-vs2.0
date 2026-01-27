@@ -2,161 +2,175 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Parallax } from 'react-scroll-parallax';
-import { jobs } from '../data/Data';
-import Balloon from './icons/Balloon';
-import AvatarRoulette from './AvatarRoulette';
-import Resume from './Resume';
-
-const galleryData = [
-  { id: '01', caption: 'WE 2008', span: true },
-
-  { id: '02', caption: 'Circus 2017', span: true },
-  { id: '03', caption: 'Circus 2019', span: false },
-  { id: '04', caption: 'Citroën 2007', span: true },
-  { id: '05', caption: 'WE 2008', span: true },
-  { id: '06', caption: 'Circus 2020', span: true },
-  { id: '07', caption: 'Circus 2016', span: false },
-  { id: '08', caption: 'Circus 2014', span: true },
-  { id: '09', caption: 'Citroën 2006', span: true },
-  { id: '10', caption: 'Circus 2020', span: true },
-  { id: '11', caption: 'Circus 2019', span: false },
-  { id: '12', caption: 'Rapp Collins 2008', span: false },
-  { id: '13', caption: 'Circus 2012', span: false },
-  { id: '14', caption: 'Rapp Collins 2007', span: false },
-  { id: '15', caption: 'Circus 2013', span: false },
-  { id: '16', caption: 'Rapp Collins 2007', span: false },
-  { id: '17', caption: 'Citroën 2006', span: false },
-  { id: '18', caption: 'THE LNK 2022', span: false },
-  { id: '19', caption: 'Citroën 2003', span: false },
-  { id: '20', caption: 'WE 2008', span: false },
-  { id: '21', caption: 'WE 2009', span: false },
-  { id: '22', caption: 'RAPP COLLINS 2008', span: false },
-  { id: '23', caption: 'CIRCUS 2018', span: false },
-  { id: '24', caption: 'Citroën 2004', span: false },
-  { id: '25', caption: 'THE LNK 2023', span: false },
-  { id: '26', caption: 'Citroën 2005', span: false },
-  { id: '27', caption: 'THE LNK 2022', span: false },
-  { id: '28', caption: 'Citroën France 2003', span: false },
-  { id: '29', caption: 'RAPP COLLINS 2008', span: false },
-  { id: '30', caption: 'THE LNK 2023', span: false },
-  { id: '31', caption: 'Citroën 2002', span: false },
-  { id: '32', caption: 'THE LNK 2023', span: false },
-];
+import { galleryData, jobs } from '../data/Data';
+import BlinkingText from './BlinkingText';
 
 const WhyMe = () => {
-  const [heartShown, setHeartShown] = useState(false);
+  const [expandedJob, setExpandedJob] = useState<number | null>(null);
+
+  const toggleJob = (id: number) => {
+    setExpandedJob(expandedJob === id ? null : id);
+  };
 
   return (
     <section className='section max-w-[94em] mx-auto bg-dark' id='whyme'>
-      {/* <div className='container mt-20 mb-24 max-w-[80%] mx-auto lg-custom:max-w-full'> */}
-      <div className='container flex flex-col items-start mt-20 mb-24 max-w-[80%] lg-custom:max-w-full'>
-        {/* <p className='mt-[0.8em] mb-20'>
-          The opportunity to have a fully<br></br>qualified professional in your
-          team.
-        </p> */}
-        {/* <div
-          className='relative mx-auto w-fit z-10 pr-10'
-          style={{
-            animation:
-              'circle-appear 1s ease-in-out forwards, balloon-float 6s ease-in-out infinite',
-          }}
-        >
-          <Balloon
-            variant='filled'
-            heartShown={heartShown}
-            color='var(--color-third)'
-            size='43em'
-            rotate={13}
-          >
-            <div className='flex flex-col items-left text-left ml-10 mb-35 rotate-[-25deg]'>
-              <h4 className='w-[8ch] text-dark mb-[0.8em] leading-[1.3rem] text-[1.5rem] uppercase font-main-heavy'>
-                Whole package
-              </h4>
-              <p className='w-[15ch] text-[1.1rem] font-main-regular leading-[1.4rem]'>
-                Maturity, organization, strategic view, and much more from 24
-                years of experience.
-              </p>
-            </div>
-          </Balloon>
-
-          <Balloon
-            variant='outlined'
-            heartShown={heartShown}
-            color='var(--color-third)'
-            size='43em'
-            rotate={13}
-          >
-            <div className='flex flex-col items-left text-left ml-10 mb-35 rotate-[-25deg]'>
-              <h4 className='uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
-                PASSION
-              </h4>
-              <div className='w-[15ch] font-main-regular text-third text-[0.9rem] leading-[1.1rem]'>
-                My career in marketing <br></br> spanned more than two decades,
-                and I achieved important positions I had planned.
+      <div className='container flex flex-col items-start my-20 max-w-[80%] lg-custom:max-w-full'>
+        <div className='w-full bg-dark py-20 overflow-hidden'>
+          <div className='z-10 max-w-[90%] mx-auto'>
+            <div className='flex justify-between items-end mb-32'>
+              <h1 className='section-title'>Why Me?</h1>
+              <div className='text-right'>
+                <h2 className='text-[1.5rem] font-main-semibold uppercase leading-none'>
+                  Code with a Director’s perspective.
+                </h2>
+                <p className='text-third text-[1.2rem] font-main-light'>
+                  I don't just build features; I build business outcomes.
+                </p>
               </div>
             </div>
-          </Balloon>
+            <div className='flex flex-col'>
+              {jobs.map((job) => (
+                <div
+                  key={job.id}
+                  onClick={() => toggleJob(job.id)}
+                  className={`group border-b px-4 py-8 cursor-pointer transition-all duration-500 ${
+                    expandedJob === job.id
+                      ? 'border-white/40 bg-white/5'
+                      : 'border-white/10 hover:bg-white/5'
+                  }`}
+                >
+                  <div className='flex items-center justify-between gap-4'>
+                    <div className='flex flex-row gap-8'>
+                      <div
+                        className={`leading-4.5 text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
+                          expandedJob === job.id
+                            ? 'text-third'
+                            : 'text-third/50 group-hover:text-third'
+                        }`}
+                      >
+                        <BlinkingText
+                          tag='span'
+                          text={job.companies[0].periodStart}
+                        />
+                        <span className='px-1'></span>
+                        {job.companies[0].periodEnd === 'TODAY' ? (
+                          <h4
+                            className={`inline-block text-[0.8rem] px-1 ${
+                              expandedJob === job.id
+                                ? 'text-bright bg-third/80'
+                                : 'text-bright bg-third/50 group-hover:text-bright'
+                            }`}
+                          >
+                            <BlinkingText
+                              tag='span'
+                              text={job.companies[0].periodEnd}
+                            />
+                          </h4>
+                        ) : (
+                          <BlinkingText
+                            tag='span'
+                            text={job.companies[0].periodEnd}
+                          />
+                        )}
+                      </div>
 
-          <div
-            className='absolute left-1/2 -translate-x-1/2 -bottom-[25px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] border-2 border-dark cursor-pointer'
-            onClick={() => setHeartShown(!heartShown)}
-          >
-            <h4 className='w-[8ch] font-main-semibold text-dark mb-1 text-[0.5rem] leading-2 text-center uppercase'>
-              Why changing careers?
-            </h4>
-            <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
-              Click here
-            </p>
-          </div>
-        </div> */}
-        {/* <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
-          {jobs.map((job) => (
-            <Parallax
-              key={job.id}
-              opacity={[0, 2]}
-              translateY={['100%', '-50%']}
-              scale={[2, 0.8]}
-            >
-              <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
-                <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
-                  <h3 className='text-[1.5rem] leading-6 text-bright uppercase font-main-regular'>
-                    {job.title}
-                  </h3>
-                  <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
-                  {job.companies.map((company, index) => (
-                    <p
-                      key={index}
-                      className='text-[0.8rem] font-main-light uppercase w-[25ch]'
+                      <div className='flex flex-col gap-1'>
+                        <h3
+                          className={`text-[2.4rem] font-main-regular capitalize leading-none transition-colors duration-300 ${
+                            expandedJob === job.id
+                              ? 'text-bright'
+                              : 'text-bright/50 group-hover:text-bright'
+                          }`}
+                        >
+                          <BlinkingText
+                            tag='span'
+                            text={job.title}
+                            stagger={1}
+                          />
+                        </h3>
+                        <div className='flex items-center gap-2'>
+                          <h3
+                            className={`text-[1.2rem] font-main-regular capitalize leading-none transition-colors duration-300 ${
+                              expandedJob === job.id
+                                ? 'text-third'
+                                : 'text-third/50 group-hover:text-third'
+                            }`}
+                          >
+                            <BlinkingText
+                              tag='span'
+                              text={job.companies[0].name}
+                            />
+                          </h3>
+                          <div
+                            className={`text-2xl transition-colors duration-300 ${
+                              expandedJob === job.id
+                                ? 'text-third'
+                                : 'text-third/50 group-hover:text-third'
+                            }`}
+                          >
+                            <BlinkingText
+                              tag='span'
+                              text={job.companies[0].country}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className={`max-w-120 text-right transition-colors duration-300 ${
+                        expandedJob === job.id
+                          ? 'text-bright'
+                          : 'text-bright/50 group-hover:text-bright'
+                      }`}
                     >
-                      {company.name} |{' '}
-                      <span className='text-third font-main-regular'>
-                        {company.period}
-                      </span>
-                    </p>
-                  ))}
-                  <ul className='text-[0.8rem] font-main-regular leading-4 text-right mt-1 uppercase'>
-                    {job.skills.map((skill, index) => (
-                      <p key={index}>{skill}</p>
-                    ))}
-                  </ul>
+                      {job.skills.length <= 4 ? (
+                        <div className='flex flex-col gap-1'>
+                          {job.skills.map((skill, index) => (
+                            <h4
+                              key={index}
+                              className='leading-6 tracking-widest text-[1rem] font-main-regular capitalize'
+                            >
+                              <BlinkingText tag='span' text={skill} />
+                            </h4>
+                          ))}
+                        </div>
+                      ) : (
+                        <h4 className='leading-6 tracking-widest text-[1rem] font-main-regular capitalize'>
+                          <BlinkingText
+                            tag='span'
+                            text={job.skills.join(', ')}
+                          />
+                        </h4>
+                      )}
+                    </div>
+                  </div>
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
+                      expandedJob === job.id
+                        ? 'grid-rows-[1fr]'
+                        : 'grid-rows-[0fr]'
+                    }`}
+                  >
+                    <div className='overflow-hidden'>
+                      <div className='pt-8 pb-2 flex items-start gap-6 border-l border-third/30 ml-2 pl-6 mt-6'>
+                        <div className='flex flex-col gap-2'>
+                          <h5 className='text-third font-main-semibold text-xs tracking-[0.2em] uppercase opacity-70'>
+                            The Impact
+                          </h5>
+                          <p className='text-[1.3rem] leading-8 font-main-light text-white/90 max-w-[50ch] italic'>
+                            &ldquo;{job.benefit}&rdquo;
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <div className='flex flex-col items-start text-left mt-4 ml-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:ml-10'>
-                  <h6 className='font-main-semibold text-[0.8rem] text-third uppercase tracking-widest'>
-                    Why is it good for you?
-                  </h6>
-                  <h5 className='font-main-light text-[1rem] leading-7 mt-2 lg-custom:w-[30em]'>
-                    {job.benefit}
-                  </h5>
-                </div>
-              </div>
-            </Parallax>
-          ))}
-        </section> */}
-        {/* <AvatarRoulette /> */}
-        <Resume />
-        <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[80%] lg-custom:mx-auto'>
+              ))}
+            </div>
+          </div>
+        </div>
+        <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[5em] mb-20 mx-12 lg-custom:w-[90%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
             <div
               key={item.id}
@@ -165,7 +179,7 @@ const WhyMe = () => {
               } group w-full h-full`}
             >
               <Image
-                src={require(`../assets/images/why-pic-${item.id}.jpg`)}
+                src={require(`../assets/images/whyme-gallery/why-pic-${item.id}.jpg`)}
                 alt='gallery element'
                 className='w-full h-full opacity-30 saturate-0 object-cover group-hover:opacity-100 group-hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
               />

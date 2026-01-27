@@ -1,10 +1,7 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
-import WhyCard from '../components/WhyCard';
-import { whyData } from '../data/Data';
 import ZoomIn from '../assets/images/code-check.svg';
 
 const CleanCode = () => {
@@ -15,7 +12,9 @@ const CleanCode = () => {
     >
       <Parallax opacity={[0, 2]}>
         <h1 className='section-title text-center'>My code</h1>
-        <p className='mt-[0.4em] text-center'>It must be read like a story</p>
+        <p className='mt-[0.4em] text-center text-third font-main-regular'>
+          It must be read like a story
+        </p>
       </Parallax>
 
       <div className='container relative flex flex-col items-center w-full min-h-[70em] mt-36 mb-20 md-custom:min-h-[110em] mx-auto'>
@@ -91,20 +90,6 @@ const CleanCode = () => {
             </li>
           </ul>
         </Parallax>
-
-        {/* <WhyCard
-          titleOne={whyData.code.titleOne}
-          textOne={whyData.code.textOne}
-          titleTwo={whyData.code.titleTwo}
-          textTwo={whyData.code.textTwo}
-          titleThree={whyData.code.titleThree}
-          textThree={whyData.code.textThree}
-          titleFour={whyData.code.titleFour}
-          textFour={whyData.code.textFour}
-          observation={whyData.code.observation}
-          bottom={whyData.code.bottom}
-          left={whyData.code.left}
-        /> */}
       </div>
     </section>
   );

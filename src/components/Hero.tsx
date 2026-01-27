@@ -2,15 +2,16 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import SquareBracketsImg from '../assets/images/hero_3d_square_brackets.png';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
-import CodeBracketsImg from '../assets/images/hero_3d_code_brackets.png';
-import CurlyBracesBiggerImg from '../assets/images/hero_3d_curly_braces2.png';
-import CurlyBracesImg from '../assets/images/hero_3d_curly_braces.png';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-scroll';
+import { gsap } from 'gsap';
+gsap.registerPlugin(ScrollTrigger);
+
+import SquareBracketsImg from '../assets/images/hero/hero_3d_square_brackets.png';
+import CodeBracketsImg from '../assets/images/hero/hero_3d_code_brackets.png';
+import CurlyBracesBiggerImg from '../assets/images/hero/hero_3d_curly_braces2.png';
+import CurlyBracesImg from '../assets/images/hero/hero_3d_curly_braces.png';
 import Scroll from '../assets/images/ico-scroll.svg';
 
 const Hero = () => {
@@ -187,13 +188,13 @@ const Hero = () => {
       <div className='relative z-40 flex flex-col items-center leading-none select-none'>
         <h1
           ref={titleOneRef}
-          className='font-main-heavy text-white text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter leading-[0.8]'
+          className='font-main-heavy text-white text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter leading-[0.8]'
         >
           {renderLetters('FRANCIS')}
         </h1>
         <h1
           ref={titleTwoRef}
-          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+          className='font-main-heavy text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter text-white leading-[0.8]'
         >
           {renderLetters('KODAMA')}
         </h1>

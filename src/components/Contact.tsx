@@ -1,12 +1,10 @@
 'use client';
 
 import React, { useState, useContext, useRef, useEffect } from 'react';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
 import { AboutContext } from '../contexts/AboutContext';
-import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
-import { whyData } from '../data/Data';
 import { contactData } from '../data/Data';
-import WhyCard from '../components/WhyCard';
 import Button from '../components/Button';
 
 let dropSpace = {
@@ -156,7 +154,7 @@ const Contact = () => {
         <h1 className='section-title text-left text-regular'>
           hello generator
         </h1>
-        <p>{`Let me help you drop me a line! ;)`}</p>
+        <p className='font-main-regular mt-2'>{`Let me help you drop me a line! ;)`}</p>
         <DragDropContext
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
         >
@@ -289,20 +287,6 @@ const Contact = () => {
           </div>
         </form>
       </div>
-
-      {/* <WhyCard
-        titleOne={whyData.contact.titleOne}
-        textOne={whyData.contact.textOne}
-        titleTwo={whyData.contact.titleTwo}
-        textTwo={whyData.contact.textTwo}
-        titleThree={whyData.contact.titleThree}
-        textThree={whyData.contact.textThree}
-        titleFour={whyData.contact.titleFour}
-        textFour={whyData.contact.textFour}
-        observation={whyData.contact.observation}
-        bottom={whyData.contact.bottom}
-        left={whyData.contact.left}
-      /> */}
     </section>
   );
 };

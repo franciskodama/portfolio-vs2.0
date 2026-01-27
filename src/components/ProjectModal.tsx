@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import IconClose from '../assets/images/card-icon-close-white.svg';
 import Line from '../assets/images/line-cracked.svg';
@@ -20,10 +19,6 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
-  // If no project is selected yet, we don't render the drawer content specifics
-  // But we render the Drawer wrapper to handle logic if needed, or just return null
-  // However, relying on parent to handle state
-
   if (!project) return null;
 
   return (
