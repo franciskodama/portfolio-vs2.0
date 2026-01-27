@@ -12,7 +12,7 @@ const BlinkingText: React.FC<BlinkingTextProps> = ({
   text,
   tag = 'div',
   className = '',
-  stagger = 1.5,
+  stagger = 1,
 }) => {
   const [inView, setInView] = useState(false);
   const [delays, setDelays] = useState<number[]>([]);

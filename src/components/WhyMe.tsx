@@ -186,7 +186,7 @@ const WhyMe = () => {
               } group w-full h-full`}
             >
               <Image
-                src={require(`../assets/images/why-pic-${item.id}.jpg`)}
+                src={require(`../assets/images/whyme-gallery/why-pic-${item.id}.jpg`)}
                 alt='gallery element'
                 className='w-full h-full opacity-30 saturate-0 object-cover group-hover:opacity-100 group-hover:saturate-100 transition-all duration-500 ease-in-out cursor-pointer'
               />

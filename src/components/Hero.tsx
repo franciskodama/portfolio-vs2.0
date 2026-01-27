@@ -187,13 +187,13 @@ const Hero = () => {
       <div className='relative z-40 flex flex-col items-center leading-none select-none'>
         <h1
           ref={titleOneRef}
-          className='font-main-heavy text-white text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter leading-[0.8]'
+          className='font-main-heavy text-white text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter leading-[0.8]'
         >
           {renderLetters('FRANCIS')}
         </h1>
         <h1
           ref={titleTwoRef}
-          className='font-main-heavy text-[16vw] md:text-[16vw] lg:text-[16vw] tracking-tighter text-white leading-[0.8]'
+          className='font-main-heavy text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter text-white leading-[0.8]'
         >
           {renderLetters('KODAMA')}
         </h1>
