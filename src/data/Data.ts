@@ -475,7 +475,12 @@ export const jobs = [
     id: 8,
     title: 'Software Engineer',
     companies: [
-      { name: 'Self-Employed', periodStart: '2020', periodEnd: 'TODAY' },
+      {
+        name: 'Self-Employed',
+        periodStart: '2020',
+        periodEnd: 'TODAY',
+        country: '🇨🇦',
+      },
     ],
     skills: [
       'React',
@@ -506,7 +511,12 @@ export const jobs = [
     id: 7,
     title: 'Independent Investor',
     companies: [
-      { name: 'Self-Employed', periodStart: '2023', periodEnd: '2025' },
+      {
+        name: 'Self-Employed',
+        periodStart: '2023',
+        periodEnd: '2025',
+        country: '🇨🇦',
+      },
     ],
     skills: [
       'Technical Analysis',
@@ -519,7 +529,14 @@ export const jobs = [
   {
     id: 6,
     title: 'Software Engineer',
-    companies: [{ name: 'THE LNK', periodStart: '2022', periodEnd: '2023' }],
+    companies: [
+      {
+        name: 'THE LNK',
+        periodStart: '2022',
+        periodEnd: '2023',
+        country: '🇨🇦',
+      },
+    ],
     skills: [
       'React',
       'Next.js',
@@ -546,6 +563,7 @@ export const jobs = [
         name: 'Circus Agency | Co-Founder',
         periodStart: '2016',
         periodEnd: '2020',
+        country: '🇧🇷',
       },
     ],
     skills: ['Leadership', 'Product Strategy', 'Agile methodology'],
@@ -560,6 +578,7 @@ export const jobs = [
         name: 'Circus Agency | Co-Founder',
         periodStart: '2011',
         periodEnd: '2015',
+        country: '🇧🇷',
       },
     ],
     skills: ['Presentations', 'Leadership', 'Sales'],
@@ -570,7 +589,12 @@ export const jobs = [
     id: 3,
     title: 'Client Services Director',
     companies: [
-      { name: 'WE Agency | Founder', periodStart: '2008', periodEnd: '2010' },
+      {
+        name: 'WE Agency | Founder',
+        periodStart: '2008',
+        periodEnd: '2010',
+        country: '🇧🇷',
+      },
     ],
     skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
     benefit:
@@ -580,7 +604,12 @@ export const jobs = [
     id: 2,
     title: 'Client Services Director',
     companies: [
-      { name: 'Rapp Collins Agency', periodStart: '2007', periodEnd: '2008' },
+      {
+        name: 'Rapp Collins Agency',
+        periodStart: '2007',
+        periodEnd: '2008',
+        country: '🇧🇷',
+      },
     ],
     skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
     benefit:
@@ -594,6 +623,7 @@ export const jobs = [
         name: 'Peugeot-Citroën Automobile',
         periodStart: '2000',
         periodEnd: '2007',
+        country: '🇧🇷',
       },
     ],
     skills: [
@@ -604,4 +634,39 @@ export const jobs = [
     benefit:
       'I will use my experience in campaign evaluation, critical thinking, and a keen eye for design to provide my opinion so the team can develop the best digital product.',
   },
+];
+
+export const galleryData = [
+  { id: '01', caption: 'WE 2008', span: true },
+  { id: '02', caption: 'Circus 2017', span: true },
+  { id: '03', caption: 'Circus 2019', span: false },
+  { id: '04', caption: 'Citroën 2007', span: true },
+  { id: '05', caption: 'WE 2008', span: true },
+  { id: '06', caption: 'Circus 2020', span: true },
+  { id: '07', caption: 'Circus 2016', span: false },
+  { id: '08', caption: 'Circus 2014', span: true },
+  { id: '09', caption: 'Citroën 2006', span: true },
+  { id: '10', caption: 'Circus 2020', span: true },
+  { id: '11', caption: 'Circus 2019', span: false },
+  { id: '12', caption: 'Rapp Collins 2008', span: false },
+  { id: '13', caption: 'Circus 2012', span: false },
+  { id: '14', caption: 'Rapp Collins 2007', span: false },
+  { id: '15', caption: 'Circus 2013', span: false },
+  { id: '16', caption: 'Rapp Collins 2007', span: false },
+  { id: '17', caption: 'Citroën 2006', span: false },
+  { id: '18', caption: 'THE LNK 2022', span: false },
+  { id: '19', caption: 'Citroën 2003', span: false },
+  { id: '20', caption: 'WE 2008', span: false },
+  { id: '21', caption: 'WE 2009', span: false },
+  { id: '22', caption: 'RAPP COLLINS 2008', span: false },
+  { id: '23', caption: 'CIRCUS 2018', span: false },
+  { id: '24', caption: 'Citroën 2004', span: false },
+  { id: '25', caption: 'THE LNK 2023', span: false },
+  { id: '26', caption: 'Citroën 2005', span: false },
+  { id: '27', caption: 'THE LNK 2022', span: false },
+  { id: '28', caption: 'Citroën France 2003', span: false },
+  { id: '29', caption: 'RAPP COLLINS 2008', span: false },
+  { id: '30', caption: 'THE LNK 2023', span: false },
+  { id: '31', caption: 'Citroën 2002', span: false },
+  { id: '32', caption: 'THE LNK 2023', span: false },
 ];
