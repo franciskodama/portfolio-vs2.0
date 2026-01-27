@@ -1,4 +1,3 @@
-/* src/app/globals.css */
 @import 'tailwindcss';
 
 /* stylelint-disable at-rule-no-unknown */
@@ -52,14 +51,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
-/* @font-face {
-  font-family: 'axiformabold';
-  src: url('../assets/fonts/kastelov_-_axiforma_semibold-webfont.otf')
-    format('opentype');
-  font-weight: normal;
-  font-style: normal;
-} */
 
 @font-face {
   font-family: 'axiformathin';
@@ -335,6 +326,31 @@
   50% {
     transform: translateY(-10px) rotate(1deg);
   }
+}
+
+@keyframes blink-reveal {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blink-reveal {
+  animation: blink-reveal 0.8s forwards;
 }
 
 /* ====================================

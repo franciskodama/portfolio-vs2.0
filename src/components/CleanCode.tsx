@@ -15,7 +15,9 @@ const CleanCode = () => {
     >
       <Parallax opacity={[0, 2]}>
         <h1 className='section-title text-center'>My code</h1>
-        <p className='mt-[0.4em] text-center'>It must be read like a story</p>
+        <p className='mt-[0.4em] text-center text-third font-main-regular'>
+          It must be read like a story
+        </p>
       </Parallax>
 
       <div className='container relative flex flex-col items-center w-full min-h-[70em] mt-36 mb-20 md-custom:min-h-[110em] mx-auto'>

@@ -156,7 +156,7 @@ const Contact = () => {
         <h1 className='section-title text-left text-regular'>
           hello generator
         </h1>
-        <p>{`Let me help you drop me a line! ;)`}</p>
+        <p className='font-main-regular mt-2'>{`Let me help you drop me a line! ;)`}</p>
         <DragDropContext
           onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
         >

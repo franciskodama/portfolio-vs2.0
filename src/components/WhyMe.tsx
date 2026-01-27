@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { galleryData, jobs } from '../data/Data';
+import BlinkingText from './BlinkingText';
 
 const WhyMe = () => {
   const [heartShown, setHeartShown] = useState(false);
@@ -28,6 +29,12 @@ const WhyMe = () => {
                 </p>
               </div>
             </div>
+            {/* <p
+              className='w-[12ch] ml-4 text-center text-third font-bold text-[1rem] leading-6 -rotate-15 tracking-widest'
+              style={{ fontFamily: 'var(--font-gloria)' }}
+            >
+              Why become a dev?
+            </p> */}
 
             <div className='flex flex-col'>
               {jobs.map((job) => (
@@ -49,19 +56,29 @@ const WhyMe = () => {
                             : 'text-third/50 group-hover:text-third'
                         }`}
                       >
-                        <h4 className='px-1'>{job.companies[0].periodStart}</h4>
+                        <BlinkingText
+                          tag='span'
+                          text={job.companies[0].periodStart}
+                        />
+                        <span className='px-1'></span>
                         {job.companies[0].periodEnd === 'TODAY' ? (
                           <h4
-                            className={`text-[0.8rem] px-1 ${
+                            className={`inline-block text-[0.8rem] px-1 ${
                               expandedJob === job.id
                                 ? 'text-bright bg-third/80'
                                 : 'text-bright bg-third/50 group-hover:text-bright'
                             }`}
                           >
-                            {job.companies[0].periodEnd}
+                            <BlinkingText
+                              tag='span'
+                              text={job.companies[0].periodEnd}
+                            />
                           </h4>
                         ) : (
-                          <h4 className='px-1'>{job.companies[0].periodEnd}</h4>
+                          <BlinkingText
+                            tag='span'
+                            text={job.companies[0].periodEnd}
+                          />
                         )}
                       </div>
 
@@ -73,7 +90,11 @@ const WhyMe = () => {
                               : 'text-bright/50 group-hover:text-bright'
                           }`}
                         >
-                          {job.title}
+                          <BlinkingText
+                            tag='span'
+                            text={job.title}
+                            stagger={1}
+                          />
                         </h3>
                         <div className='flex items-center gap-2'>
                           <h3
@@ -83,7 +104,10 @@ const WhyMe = () => {
                                 : 'text-third/50 group-hover:text-third'
                             }`}
                           >
-                            {job.companies[0].name}
+                            <BlinkingText
+                              tag='span'
+                              text={job.companies[0].name}
+                            />
                           </h3>
                           <div
                             className={`text-2xl transition-colors duration-300 ${
@@ -92,18 +116,13 @@ const WhyMe = () => {
                                 : 'text-third/50 group-hover:text-third'
                             }`}
                           >
-                            {job.companies[0].country}
+                            <BlinkingText
+                              tag='span'
+                              text={job.companies[0].country}
+                            />
                           </div>
                         </div>
                       </div>
-                      {/* {job.id === 8 && (
-                        <p
-                          className='w-[12ch] ml-4 text-center text-third font-bold text-[1rem] leading-6 -rotate-15 tracking-widest'
-                          style={{ fontFamily: 'var(--font-gloria)' }}
-                        >
-                          Why become a dev?
-                        </p>
-                      )} */}
                     </div>
 
                     <div
@@ -120,13 +139,16 @@ const WhyMe = () => {
                               key={index}
                               className='leading-6 tracking-widest text-[1rem] font-main-regular capitalize'
                             >
-                              {skill}
+                              <BlinkingText tag='span' text={skill} />
                             </h4>
                           ))}
                         </div>
                       ) : (
                         <h4 className='leading-6 tracking-widest text-[1rem] font-main-regular capitalize'>
-                          {job.skills.join(', ')}
+                          <BlinkingText
+                            tag='span'
+                            text={job.skills.join(', ')}
+                          />
                         </h4>
                       )}
                     </div>
