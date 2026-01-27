@@ -469,3 +469,139 @@ export const contactData = [
     content: 'Thanks! :)',
   },
 ];
+
+export const jobs = [
+  {
+    id: 8,
+    title: 'Software Engineer',
+    companies: [
+      { name: 'Self-Employed', periodStart: '2020', periodEnd: 'TODAY' },
+    ],
+    skills: [
+      'React',
+      'Next.js',
+      'JavaScript',
+      'Typescript',
+      'CSS3',
+      'SASS',
+      'HTML5',
+      'Styled Components',
+      'Tailwind',
+      'APIs',
+      'Prisma',
+      'GraphQL',
+      'Retool',
+      'Airtable',
+      'Firebase',
+      'Responsive Design',
+      'Figma',
+      'Adobe Photoshop',
+      'Agile',
+      'Jira.',
+    ],
+    benefit:
+      'I bring a collaborative mindset and technical expertise, empowering the team to solve complex problems and deliver exceptional software.',
+  },
+  {
+    id: 7,
+    title: 'Independent Investor',
+    companies: [
+      { name: 'Self-Employed', periodStart: '2023', periodEnd: '2025' },
+    ],
+    skills: [
+      'Technical Analysis',
+      'Portfolio Management',
+      'Elliott Wave Analysis.',
+    ],
+    benefit:
+      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+  },
+  {
+    id: 6,
+    title: 'Software Engineer',
+    companies: [{ name: 'THE LNK', periodStart: '2022', periodEnd: '2023' }],
+    skills: [
+      'React',
+      'Next.js',
+      'Typescript',
+      'Tailwind',
+      'APIs',
+      'Prisma',
+      'Retool',
+      'Airtable',
+      'Firebase',
+      'Responsive Design',
+      'Design System',
+      'Agile',
+      'Jira.',
+    ],
+    benefit:
+      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+  },
+  {
+    id: 5,
+    title: 'General Director',
+    companies: [
+      {
+        name: 'Circus Agency | Co-Founder',
+        periodStart: '2016',
+        periodEnd: '2020',
+      },
+    ],
+    skills: ['Leadership', 'Product Strategy', 'Agile methodology'],
+    benefit:
+      'I will bring valuable experience and leadership skills to your organization.',
+  },
+  {
+    id: 4,
+    title: 'Planning and new business director',
+    companies: [
+      {
+        name: 'Circus Agency | Co-Founder',
+        periodStart: '2011',
+        periodEnd: '2015',
+      },
+    ],
+    skills: ['Presentations', 'Leadership', 'Sales'],
+    benefit:
+      'Through listening, strategy, and effective communication, I will present my ideas, negotiating and optimizing results on multiple fronts.',
+  },
+  {
+    id: 3,
+    title: 'Client Services Director',
+    companies: [
+      { name: 'WE Agency | Founder', periodStart: '2008', periodEnd: '2010' },
+    ],
+    skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
+    benefit:
+      'I will listen closely to customers to understand and discover their real needs.',
+  },
+  {
+    id: 2,
+    title: 'Client Services Director',
+    companies: [
+      { name: 'Rapp Collins Agency', periodStart: '2007', periodEnd: '2008' },
+    ],
+    skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
+    benefit:
+      'I will listen closely to customers to understand and discover their real needs.',
+  },
+  {
+    id: 1,
+    title: 'Marketing Manager',
+    companies: [
+      {
+        name: 'Peugeot-Citroën Automobile',
+        periodStart: '2000',
+        periodEnd: '2007',
+      },
+    ],
+    skills: [
+      'Critical Thinking',
+      'Strategy & Creativity',
+      'Keen eye for design',
+    ],
+    benefit:
+      'I will use my experience in campaign evaluation, critical thinking, and a keen eye for design to provide my opinion so the team can develop the best digital product.',
+  },
+];
