@@ -6,6 +6,7 @@ import { Parallax } from 'react-scroll-parallax';
 import { jobs } from '../data/Data';
 import Balloon from './icons/Balloon';
 import AvatarRoulette from './AvatarRoulette';
+import Resume from './Resume';
 
 const galleryData = [
   { id: '01', caption: 'WE 2008', span: true },
@@ -47,15 +48,14 @@ const WhyMe = () => {
   const [heartShown, setHeartShown] = useState(false);
 
   return (
-    <section className='section bg-dark' id='whyme'>
-      <div className='container mt-20 mb-24 max-w-[80%] mx-auto lg-custom:max-w-full'>
-        <h1 className='section-title mt-20'>Why Me?</h1>
-        <p className='mt-[0.8em] mb-20 text-center'>
+    <section className='section max-w-[94em] mx-auto bg-dark' id='whyme'>
+      {/* <div className='container mt-20 mb-24 max-w-[80%] mx-auto lg-custom:max-w-full'> */}
+      <div className='container flex flex-col items-start mt-20 mb-24 max-w-[80%] lg-custom:max-w-full'>
+        {/* <p className='mt-[0.8em] mb-20'>
           The opportunity to have a fully<br></br>qualified professional in your
           team.
-        </p>
-
-        <div
+        </p> */}
+        {/* <div
           className='relative mx-auto w-fit z-10 pr-10'
           style={{
             animation:
@@ -87,7 +87,7 @@ const WhyMe = () => {
             size='43em'
             rotate={13}
           >
-            {/* <div className='flex flex-col items-left text-left ml-10 mb-35 rotate-[-25deg]'>
+            <div className='flex flex-col items-left text-left ml-10 mb-35 rotate-[-25deg]'>
               <h4 className='uppercase font-main-heavy text-[1.2rem] text-dark [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)]'>
                 PASSION
               </h4>
@@ -95,10 +95,10 @@ const WhyMe = () => {
                 My career in marketing <br></br> spanned more than two decades,
                 and I achieved important positions I had planned.
               </div>
-            </div> */}
+            </div>
           </Balloon>
 
-          {/* <div
+          <div
             className='absolute left-1/2 -translate-x-1/2 -bottom-[25px] flex flex-col bg-third rounded-full w-[4.5em] h-[4.5em] items-center p-[0.8em] border-2 border-dark cursor-pointer'
             onClick={() => setHeartShown(!heartShown)}
           >
@@ -108,10 +108,9 @@ const WhyMe = () => {
             <p className='font-main-regular text-[0.5rem] leading-2 text-center uppercase w-[5ch]'>
               Click here
             </p>
-          </div> */}
-        </div>
-
-        <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
+          </div>
+        </div> */}
+        {/* <section className='flex flex-col items-center relative lg-custom:after:content-[""] lg-custom:after:absolute lg-custom:after:top-0 lg-custom:after:left-1/2 lg-custom:after:-translate-x-1/2 lg-custom:after:h-[85%] lg-custom:after:w-[3px] lg-custom:after:bg-third'>
           {jobs.map((job) => (
             <Parallax
               key={job.id}
@@ -122,7 +121,6 @@ const WhyMe = () => {
               <div className='flex flex-col items-center justify-center lg-custom:flex-row'>
                 <div className='relative flex flex-col items-end text-right mr-0 w-[85%] lg-custom:w-[25em] lg-custom:my-8 lg-custom:mr-10'>
                   <h3 className='text-[1.5rem] leading-6 text-bright uppercase font-main-regular'>
-                    {/* <h3 className='text-[1.5rem] leading-6 text-dark uppercase font-main-heavy [text-shadow:-1px_1px_var(--color-bright),1px_1px_var(--color-bright),-1px_-1px_var(--color-bright),1px_-1px_var(--color-bright)] w-[15ch] mb-[0.4em]'> */}
                     {job.title}
                   </h3>
                   <div className='hidden absolute right-[-2.95em] top-8 bg-third w-3 h-3 lg-custom:block'></div>
@@ -155,10 +153,9 @@ const WhyMe = () => {
               </div>
             </Parallax>
           ))}
-        </section>
-
-        <AvatarRoulette />
-
+        </section> */}
+        {/* <AvatarRoulette /> */}
+        <Resume />
         <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[15em] mb-20 mx-12 lg-custom:w-[80%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
             <div

@@ -472,9 +472,11 @@ export const contactData = [
 
 export const jobs = [
   {
-    id: 7,
+    id: 8,
     title: 'Software Engineer',
-    companies: [{ name: 'Changing Careers', period: '2020 ~ TODAY' }],
+    companies: [
+      { name: 'Self-Employed', periodStart: '2020', periodEnd: 'TODAY' },
+    ],
     skills: [
       'React',
       'Next.js',
@@ -494,59 +496,91 @@ export const jobs = [
       'Responsive Design',
       'Figma',
       'Adobe Photoshop',
-      'Jira',
       'Agile',
-      '...And a big smile',
+      'Jira.',
     ],
     benefit:
       'I bring a collaborative mindset and technical expertise, empowering the team to solve complex problems and deliver exceptional software.',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Independent Investor',
-    companies: [{ name: 'Self-Employed', period: '2023 ~ 2025' }],
+    companies: [
+      { name: 'Self-Employed', periodStart: '2023', periodEnd: '2025' },
+    ],
     skills: [
       'Technical Analysis',
       'Portfolio Management',
-      'Elliott Wave Analysis',
+      'Elliott Wave Analysis.',
+    ],
+    benefit:
+      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+  },
+  {
+    id: 6,
+    title: 'Software Engineer',
+    companies: [{ name: 'THE LNK', periodStart: '2022', periodEnd: '2023' }],
+    skills: [
+      'React',
+      'Next.js',
+      'Typescript',
+      'Tailwind',
+      'APIs',
+      'Prisma',
+      'Retool',
+      'Airtable',
+      'Firebase',
+      'Responsive Design',
+      'Design System',
+      'Agile',
+      'Jira.',
     ],
     benefit:
       'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
   },
   {
     id: 5,
-    title: 'Software Engineer',
-    companies: [{ name: 'THE LNK', period: '2022 ~ 2023' }],
-    skills: [
-      'Technical Analysis',
-      'Portfolio Management',
-      'Elliott Wave Analysis',
-    ],
-    benefit:
-      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
-  },
-  {
-    id: 4,
     title: 'General Director',
-    companies: [{ name: 'Circus', period: '2016 ~ 2020' }],
+    companies: [
+      {
+        name: 'Circus Agency | Co-Founder',
+        periodStart: '2016',
+        periodEnd: '2020',
+      },
+    ],
     skills: ['Leadership', 'Product Strategy', 'Agile methodology'],
     benefit:
       'I will bring valuable experience and leadership skills to your organization.',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Planning and new business director',
-    companies: [{ name: 'Circus', period: '2011 ~ 2015' }],
+    companies: [
+      {
+        name: 'Circus Agency | Co-Founder',
+        periodStart: '2011',
+        periodEnd: '2015',
+      },
+    ],
     skills: ['Presentations', 'Leadership', 'Sales'],
     benefit:
       'Through listening, strategy, and effective communication, I will present my ideas, negotiating and optimizing results on multiple fronts.',
   },
   {
+    id: 3,
+    title: 'Client Services Director',
+    companies: [
+      { name: 'WE Agency | Founder', periodStart: '2008', periodEnd: '2010' },
+    ],
+    skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
+    benefit:
+      'I will listen closely to customers to understand and discover their real needs.',
+  },
+  {
     id: 2,
     title: 'Client Services Director',
     companies: [
-      { name: 'WE', period: '2008 ~ 2010' },
-      { name: 'Rapp Collins', period: '2007 ~ 2008' },
+      { name: 'Rapp Collins Agency', periodStart: '2007', periodEnd: '2008' },
     ],
     skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
     benefit:
@@ -554,8 +588,14 @@ export const jobs = [
   },
   {
     id: 1,
-    title: 'Advertising and digital marketing manager',
-    companies: [{ name: 'Peugeot-Citroën Automobile', period: '2000 ~ 2007' }],
+    title: 'Marketing Manager',
+    companies: [
+      {
+        name: 'Peugeot-Citroën Automobile',
+        periodStart: '2000',
+        periodEnd: '2007',
+      },
+    ],
     skills: [
       'Critical Thinking',
       'Strategy & Creativity',
