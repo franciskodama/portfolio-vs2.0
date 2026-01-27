@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import IconClose from '../assets/images/card-icon-close-white.svg';
 import Line from '../assets/images/line-cracked.svg';

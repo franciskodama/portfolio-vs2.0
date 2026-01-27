@@ -8,7 +8,7 @@ export const projects = [
     year: '2024',
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     url: 'https://handyfor.me/',
-    image: require('../assets/images/project-portfolio.jpg'),
+    image: require('../assets/images/projects/project-portfolio.jpg'),
     frontText:
       'A sophisticated multi-tool platform featuring AI integration and interactive gamification.',
     backText_titleOne: 'why',
@@ -35,7 +35,7 @@ export const projects = [
     tech: 'React, Next.js, TypeScript, A.I., Prisma, PostgreSQL, Neon, Auth.js, Tailwind CSS, Zod',
     category: 'web app',
     url: 'https://monkeybusiness-olive.vercel.app/',
-    image: require('../assets/images/project-portfolio.jpg'),
+    image: require('../assets/images/projects/project-portfolio.jpg'),
     frontText:
       'A high-performance financial engine featuring AI-powered transaction automation and advanced budget tracking.',
     backText_titleOne: 'why',
@@ -63,7 +63,7 @@ export const projects = [
     tech: 'React, Next.js, TypeScript, Prisma, PostgreSQL, Neon, Tailwind CSS, Clerk, Zod',
     category: 'web app',
     url: 'https://trezo.app/',
-    image: require('../assets/images/project-portfolio.jpg'),
+    image: require('../assets/images/projects/project-portfolio.jpg'),
     frontText:
       'A high-performance assets manager featuring the latest Next.js 15 and Prisma 7 architecture.',
     backText_titleOne: 'why',
@@ -91,7 +91,7 @@ export const projects = [
     tech: 'React, Next.js, TypeScript, matter-js, framer-motion, gsap, react-scroll-parallax',
     category: 'website',
     url: 'https://www.fkodama.com',
-    image: require('../assets/images/project-portfolio.jpg'),
+    image: require('../assets/images/projects/project-portfolio.jpg'),
     frontText: '100% React-based, this is my most important project built.',
     backText_titleOne: 'why',
     backText_textOne: `As a product strategist, I began by thinking about how to create a portfolio that would appeal to employers seeking talents with my skills.`,
@@ -115,7 +115,7 @@ export const projects = [
     tech: 'react, js, html, sass',
     category: 'website',
     url: 'https://www.fkodama.com',
-    image: require('../assets/images/project-portfolio.jpg'),
+    image: require('../assets/images/projects/project-portfolio.jpg'),
     frontText: '100% React-based, this is my most important project built.',
     backText_titleOne: 'why',
     backText_textOne: `As a product strategist, I began by thinking about how to create a portfolio that would appeal to employers seeking talents with my skills.`,
@@ -138,7 +138,7 @@ export const projects = [
     tech: 'html css javascript',
     category: 'website',
     url: 'https://fkodama.com/_dev/seletos',
-    image: require('../assets/images/project-seletos.jpg'),
+    image: require('../assets/images/projects/project-seletos.jpg'),
     frontText: 'First website that I fully developed with HTML, CSS, and JS.',
     backText_titleOne: 'why',
     backText_textOne:
@@ -164,7 +164,7 @@ export const projects = [
     tech: 'html css javascript',
     category: 'video game',
     url: 'https://fkodama.com/_dev/pacman/',
-    image: require('../assets/images/project-pacman.jpg'),
+    image: require('../assets/images/projects/project-pacman.jpg'),
     frontText: "Here's a tutorial project I took to a whole new level.",
     backText_titleOne: 'why',
     backText_textOne:
@@ -192,7 +192,7 @@ export const projects = [
     tech: 'html css',
     category: 'website',
     url: 'https://www.mundialcomunicacao.com.br/',
-    image: require('../assets/images/project-mundial.jpg'),
+    image: require('../assets/images/projects/project-mundial.jpg'),
     frontText: 'My first client website, my first big challenge.',
     backText_titleOne: 'why',
     backText_textOne:
@@ -218,7 +218,7 @@ export const projects = [
     tech: 'html css javascript',
     category: 'resume online',
     url: 'https://www.fkodama.com/_dev/resume-online/',
-    image: require('../assets/images/project-resume.jpg'),
+    image: require('../assets/images/projects/project-resume.jpg'),
     frontText: 'Building a website based on the design reference.',
     backText_titleOne: 'why',
     backText_textOne:
@@ -244,7 +244,7 @@ export const projects = [
     tech: 'html css javascript',
     category: 'video game',
     url: 'https://fkodama.com/_dev/space-invaders/',
-    image: require('../assets/images/project-space.jpg'),
+    image: require('../assets/images/projects/project-space.jpg'),
     frontText: 'Time to have fun with Vanilla Javascript.',
     backText_titleOne: 'why',
     backText_textOne:

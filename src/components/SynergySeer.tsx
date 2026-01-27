@@ -27,16 +27,16 @@ const SynergySeer = ({
 
   const handImages = {
     first: {
-      right: require('../assets/images/hand-right-black-bg.png'),
-      left: require('../assets/images/hand-left-black-bg.png'),
+      right: require('../assets/images/hands/hand-right-black-bg.png'),
+      left: require('../assets/images/hands/hand-left-black-bg.png'),
     },
     second: {
-      right: require('../assets/images/hand-right-blue-bg.png'),
-      left: require('../assets/images/hand-left-blue-bg.png'),
+      right: require('../assets/images/hands/hand-right-blue-bg.png'),
+      left: require('../assets/images/hands/hand-left-blue-bg.png'),
     },
     third: {
-      right: require('../assets/images/hand-right-grey-bg.png'),
-      left: require('../assets/images/hand-left-grey-bg.png'),
+      right: require('../assets/images/hands/hand-right-grey-bg.png'),
+      left: require('../assets/images/hands/hand-left-grey-bg.png'),
     },
   };
 
