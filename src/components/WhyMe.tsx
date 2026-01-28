@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { galleryData, jobs } from '../data/Data';
 import BlinkingText from './BlinkingText';
+import SpiralGallery from './SpiralGallery';
 
 const WhyMe = () => {
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
@@ -28,6 +29,7 @@ const WhyMe = () => {
                 </p>
               </div>
             </div>
+
             <div className='flex flex-col'>
               {jobs.map((job) => (
                 <div
@@ -189,6 +191,7 @@ const WhyMe = () => {
             </div>
           ))}
         </section>
+        {/* <SpiralGallery items={galleryData} /> */}
       </div>
     </section>
   );
