@@ -78,7 +78,7 @@ const Navbar = () => {
           ].map((link) => (
             <Link
               key={link.to}
-              className='relative font-main-regular text-bright text-[2rem] no-underline cursor-pointer block transform-gpu transition-all duration-300 mb-8 hover:scale-110'
+              className='relative font-main-regular text-bright text-[1.4rem] no-underline cursor-pointer block transform-gpu transition-all duration-300 mb-8 hover:scale-110'
               to={link.to}
               spy={true}
               smooth={true}
