@@ -139,7 +139,7 @@ const Hero = () => {
     >
       <div className='container mx-auto relative w-full h-full flex flex-col items-center justify-center'>
         <div
-          className='absolute z-10 top-[20%] left-6 md:top-[26%] lg:left-48 w-[80px] md:w-[100px] lg:w-[120px] floating-asset cursor-pointer'
+          className='absolute z-10 top-[27%] left-9 md:top-[26%] lg:left-48 w-[60px] md:w-[100px] lg:w-[120px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -150,7 +150,7 @@ const Hero = () => {
         </div>
 
         <div
-          className='absolute z-10 top-[18%] right-4 md:top-[24%] lg:right-38 w-[70px] md:w-[120px] lg:w-[180px] floating-asset cursor-pointer'
+          className='absolute z-10 top-[28%] right-4 md:top-[24%] lg:right-38 w-[70px] md:w-[120px] lg:w-[180px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -161,7 +161,7 @@ const Hero = () => {
         </div>
 
         <div
-          className='absolute z-50 bottom-[15%] left-4 md:bottom-[30%] lg:left-40 w-[60px] md:w-[80px] lg:w-[130px] floating-asset cursor-pointer'
+          className='absolute z-50 bottom-[20%] left-8 md:bottom-[30%] lg:left-40 w-[60px] md:w-[80px] lg:w-[130px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -172,7 +172,7 @@ const Hero = () => {
         </div>
 
         <div
-          className='absolute z-50 bottom-[18%] right-4 md:bottom-[33%] lg:right-28 w-[70px] md:w-[100px] lg:w-[160px] floating-asset cursor-pointer'
+          className='absolute z-50 bottom-[35%] right-4 md:bottom-[33%] lg:right-28 w-[70px] md:w-[100px] lg:w-[160px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
