@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header className='fixed w-full top-0 z-100 bg-dark overflow-visible'>
-      <div className='container mx-auto w-full lg-custom:w-[90%] flex justify-between items-center'>
+      <div className='container mx-auto w-full px-4 lg-custom:px-0 lg-custom:w-[90%] flex justify-between items-center'>
         <Link to='hero' spy={true} smooth={true} offset={0} duration={500}>
           <div className='py-4 cursor-pointer'>
             <Image

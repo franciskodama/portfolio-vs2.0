@@ -204,7 +204,7 @@ const Reason = () => {
   }, [gridItems, reasonReveal]); // Re-bind when gridItems change (DOM changes)
 
   return (
-    <section className='section flex flex-col max-w-[94em] mx-auto' id='reason'>
+    <section className='section flex flex-col max-w-[85em] mx-auto' id='reason'>
       <div
         className='flex flex-wrap gap-[0.3em] justify-center mt-[15em] mb-[10em] relative'
         ref={gridRef}
