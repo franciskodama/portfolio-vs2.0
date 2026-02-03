@@ -213,17 +213,17 @@ const About = () => {
             </div>
           </div>
 
-          <div className='w-full ml-12'>
+          <div className='w-full ml-4 md:ml-12'>
             <h3 className='mt-20 text-[1.2rem] font-main-light mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
               Francis Kodama
             </h3>
-            <h2 className='text-[1.5rem] font-main-medium uppercase'>
+            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase'>
               Software Engineer
             </h2>
-            <h2 className='text-[1.5rem] font-main-medium uppercase mb-0'>
+            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase mb-0'>
               React, Next.js, Typescript,
             </h2>
-            <h2 className='text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
+            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
               CSS, Prisma, UX/UI design
             </h2>
             <div className='font-main-light'>
@@ -241,51 +241,60 @@ const About = () => {
             </div>
           </div>
 
-          <div className='flex items-end justify-between ml-12'>
+          <div className='flex items-end justify-between ml-4 md:ml-12'>
             <div className='flex flex-col relative'>
               <p className='text-[0.7rem] font-main-light mt-12 mb-2'>
                 location:
               </p>
-              <form className='flex items-center mb-12'>
-                <input
-                  onClick={handleClickLocation}
-                  className='h-[0.8rem] cursor-pointer'
-                  type='radio'
-                  name='location'
-                  value='remote'
-                />
-                <label
-                  className='font-main-semibold text-[0.8rem] mx-2 mr-6'
-                  htmlFor='remote'
-                >
-                  Remote
-                </label>
-                <input
-                  onClick={handleClickLocation}
-                  className='h-[0.8rem] cursor-pointer'
-                  type='radio'
-                  name='location'
-                  value='ottawa'
-                />
-                <label
-                  className='font-main-semibold text-[0.8rem] mx-2 mr-6'
-                  htmlFor='ottawa'
-                >
-                  Ottawa
-                </label>
-                <input
-                  onClick={handleClickLocation}
-                  className='h-[0.8rem] cursor-pointer'
-                  type='radio'
-                  name='location'
-                  value='hybrid'
-                />
-                <label
-                  className='font-main-semibold text-[0.8rem] mx-2 mr-6'
-                  htmlFor='hybrid'
-                >
-                  Hybrid
-                </label>
+              <form className='flex flex-wrap items-center mb-12 gap-y-2'>
+                <div className='flex items-center'>
+                  <input
+                    onClick={handleClickLocation}
+                    className='h-[0.8rem] cursor-pointer'
+                    type='radio'
+                    name='location'
+                    value='remote'
+                    id='remote'
+                  />
+                  <label
+                    className='font-main-semibold text-[0.8rem] mx-2 mr-6'
+                    htmlFor='remote'
+                  >
+                    Remote
+                  </label>
+                </div>
+                <div className='flex items-center'>
+                  <input
+                    onClick={handleClickLocation}
+                    className='h-[0.8rem] cursor-pointer'
+                    type='radio'
+                    name='location'
+                    value='ottawa'
+                    id='ottawa'
+                  />
+                  <label
+                    className='font-main-semibold text-[0.8rem] mx-2 mr-6'
+                    htmlFor='ottawa'
+                  >
+                    Ottawa
+                  </label>
+                </div>
+                <div className='flex items-center'>
+                  <input
+                    onClick={handleClickLocation}
+                    className='h-[0.8rem] cursor-pointer'
+                    type='radio'
+                    name='location'
+                    value='hybrid'
+                    id='hybrid'
+                  />
+                  <label
+                    className='font-main-semibold text-[0.8rem] mx-2 mr-6'
+                    htmlFor='hybrid'
+                  >
+                    Hybrid
+                  </label>
+                </div>
               </form>
 
               <Button

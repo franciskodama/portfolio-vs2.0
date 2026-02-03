@@ -138,7 +138,7 @@ const Hero = () => {
       className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
     >
       <div
-        className='absolute z-20 top-[30%] left-[5%] md:left-[10%] w-[180px] md:w-[135px] floating-asset cursor-pointer'
+        className='absolute z-10 top-[20%] left-[2%] md:top-[22%] lg:left-[15%] w-[80px] md:w-[100px] lg:w-[150px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
       >
         <Image
@@ -149,7 +149,7 @@ const Hero = () => {
       </div>
 
       <div
-        className='absolute z-20 top-[27%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset cursor-pointer'
+        className='absolute z-10 top-[18%] right-[2%] md:top-[27%] lg:right-[10%] w-[70px] md:w-[120px] lg:w-[180px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
       >
         <Image
@@ -160,7 +160,7 @@ const Hero = () => {
       </div>
 
       <div
-        className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset cursor-pointer'
+        className='absolute z-10 bottom-[15%] left-[2%] md:bottom-[30%] lg:left-[10%] w-[60px] md:w-[80px] lg:w-[130px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
       >
         <Image
@@ -171,7 +171,7 @@ const Hero = () => {
       </div>
 
       <div
-        className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset cursor-pointer'
+        className='absolute z-10 bottom-[18%] right-[2%] md:bottom-[33%] lg:right-[8%] w-[70px] md:w-[100px] lg:w-[160px] floating-asset cursor-pointer'
         onMouseEnter={pushAsset}
       >
         <Image
@@ -181,34 +181,36 @@ const Hero = () => {
         />
       </div>
 
-      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
+      <h2 className='font-main-light text-bright/80 text-sm md:text-xl uppercase tracking-[0.2em] mb-4'>
         Hello, I am
       </h2>
 
-      <div className='relative z-40 flex flex-col items-center leading-none select-none'>
+      <div className='relative z-40 flex flex-col items-center leading-none select-none my-4 md:my-0'>
         <h1
           ref={titleOneRef}
-          className='font-main-heavy text-white text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter leading-[0.8]'
+          className='font-main-heavy text-white text-[18vw] md:text-[12vw] lg:text-[14vw] xl:text-[14vw] tracking-tighter leading-[0.8]'
         >
           {renderLetters('FRANCIS')}
         </h1>
         <h1
           ref={titleTwoRef}
-          className='font-main-heavy text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter text-white leading-[0.8]'
+          className='font-main-heavy text-[18vw] md:text-[12vw] lg:text-[14vw] xl:text-[14vw] tracking-tighter text-white leading-[0.8]'
         >
           {renderLetters('KODAMA')}
         </h1>
       </div>
 
-      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em]'>
+      <h2 className='font-main-light text-bright/80 text-sm md:text-xl uppercase tracking-[0.2em]'>
         Software Engineer
       </h2>
-      <h3 className='flex items-center gap-2 mt-2 font-main-light text-bright/80 text-xs uppercase tracking-[0.2em]'>
-        Brazilian<span className='text-lg'>🇧🇷</span>based in Ottawa, Canada
+      <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md:text-xs uppercase tracking-[0.2em] px-4 text-center'>
+        <span>Brazilian</span>
+        <span className='text-lg'>🇧🇷</span>
+        <span>based in Ottawa, Canada</span>
         <span className='text-lg'>🇨🇦</span>
       </h3>
 
-      <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30'>
+      <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30 hidden lg:block'>
         <ul
           ref={leftRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
@@ -222,7 +224,7 @@ const Hero = () => {
         </ul>
       </div>
 
-      <div className='absolute top-[50%] -translate-y-1/2 right-4 md:right-12 z-30'>
+      <div className='absolute top-[50%] -translate-y-1/2 right-4 md:right-12 z-30 hidden lg:block'>
         <ul
           ref={rightRef}
           className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
