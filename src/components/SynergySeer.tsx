@@ -111,7 +111,7 @@ const SynergySeer = ({
                 href='#curve-title'
                 startOffset='50%'
                 textAnchor='middle'
-                className='font-main-regular text-white uppercase tracking-tighter fill-current text-[3.8rem] md:text-[2.6rem] lg:text-[1.4rem]'
+                className='font-main-regular text-white uppercase tracking-tighter fill-current text-[3.8rem] md-custom:text-[2.6rem] lg-custom:text-[1.4rem]'
               >
                 Synergy Seer
               </textPath>
@@ -119,7 +119,7 @@ const SynergySeer = ({
           </svg>
           <svg
             viewBox='0 0 500 120'
-            className='absolute top-8 md:top-12 lg:top-22 w-[80%] h-auto overflow-visible text-third'
+            className='absolute top-8 md-custom:top-12 lg-custom:top-22 w-[80%] h-auto overflow-visible text-third'
           >
             <path id='curve' d='M 50 120 Q 250 10 450 120' fill='transparent' />
             <text width='500'>
@@ -127,7 +127,7 @@ const SynergySeer = ({
                 href='#curve'
                 startOffset='50%'
                 textAnchor='middle'
-                className='font-main-semibold uppercase tracking-wider fill-current text-[1.6rem] md:text-[1.2rem] lg:text-[1rem]'
+                className='font-main-semibold uppercase tracking-wider fill-current text-[1.6rem] md-custom:text-[1.2rem] lg-custom:text-[1rem]'
               >
                 The Ritual of Recruitment
               </textPath>
@@ -138,7 +138,7 @@ const SynergySeer = ({
           <div className='text-third p-4 my-8 text-center max-w-2xl w-full'>
             <div className='relative flex justify-between gap-12 max-w-[42ch] mx-auto mb-12'>
               <div className='flex flex-col items-end flex-1'>
-                <div className='w-10 h-10 md:mr-4 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
+                <div className='w-10 h-10 md-custom:mr-4 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
                   1
                 </div>
                 <p className='text-right font-main-light text-[0.9rem] leading-[1.6] text-bright'>
@@ -148,7 +148,7 @@ const SynergySeer = ({
               </div>
 
               <div className='flex flex-col flex-1'>
-                <div className='w-10 h-10 md:ml-4 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
+                <div className='w-10 h-10 md-custom:ml-4 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
                   2
                 </div>
                 <p className='text-left font-main-light text-[0.9rem] leading-[1.6] text-bright'>
@@ -159,9 +159,9 @@ const SynergySeer = ({
             </div>
           </div>
 
-          <div className='relative flex justify-center items-center w-full mt-12 md:mt-32 mb-12'>
+          <div className='relative flex justify-center items-center w-full mt-12 md-custom:mt-32 mb-12'>
             {imageLeftHand && (
-              <div className='absolute top-[0%] md:top-[-8%] lg:top-[-15%] left-[42%] lg:left-[50%] z-1 pointer-events-none transform -translate-x-full w-[7.5em] md-custom:w-[15em] lg-custom:w-[22em]'>
+              <div className='absolute top-[0%] md-custom:top-[-8%] lg-custom:top-[-15%] left-[42%] lg-custom:left-[50%] z-1 pointer-events-none transform -translate-x-full w-[7.5em] md-custom:w-[15em] lg-custom:w-[22em]'>
                 <Image
                   className='w-full animate-hand-left'
                   src={imageLeftHand}
@@ -203,7 +203,7 @@ const SynergySeer = ({
             </div>
 
             {imageRightHand && (
-              <div className='absolute top-[0%] md:top-[-8%] lg:top-[-15%] left-[45%] lg:left-[50%] z-1 pointer-events-none transform w-[8.5em] md-custom:w-[15em] lg-custom:w-[22em]'>
+              <div className='absolute top-[0%] md-custom:top-[-8%] lg-custom:top-[-15%] left-[45%] lg-custom:left-[50%] z-1 pointer-events-none transform w-[8.5em] md-custom:w-[15em] lg-custom:w-[22em]'>
                 <Image
                   className='w-full animate-hand-right'
                   src={imageRightHand}
@@ -214,9 +214,9 @@ const SynergySeer = ({
           </div>
 
           <div className='relative'>
-            <div className='absolute -left-36 md:-left-62 -top-[40px] w-[80px] md:w-[120px] pointer-events-none z-10'>
+            <div className='absolute -left-36 md-custom:-left-62 -top-[40px] w-[80px] md-custom:w-[120px] pointer-events-none z-10'>
               <p
-                className='absolute bottom-16 md:bottom-22 -left-6 md:-left-8 text-white text-[1.2rem] md:text-[1.5rem] leading-6 -rotate-12 translate-x-2'
+                className='absolute bottom-16 md-custom:bottom-22 -left-6 md-custom:-left-8 text-white text-[1.2rem] md-custom:text-[1.5rem] leading-6 -rotate-12 translate-x-2'
                 style={{ fontFamily: 'var(--font-gloria)' }}
               >
                 click
@@ -253,7 +253,7 @@ const SynergySeer = ({
             <button
               type='submit'
               disabled={status === 'Divining...'}
-              className='absolute left-1/2 top-4 md:top-0 transform -translate-x-1/2 w-[200px] md:w-[300px] -mt-30 md:-mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
+              className='absolute left-1/2 top-4 md-custom:top-0 transform -translate-x-1/2 w-[200px] md-custom:w-[300px] -mt-30 md-custom:-mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
               aria-label={status}
             >
               <svg

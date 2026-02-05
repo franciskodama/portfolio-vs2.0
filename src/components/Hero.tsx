@@ -139,7 +139,7 @@ const Hero = () => {
     >
       <div className='container mx-auto relative w-full h-full flex flex-col items-center justify-center'>
         <div
-          className='absolute z-10 top-[27%] left-9 md:top-[26%] lg:left-48 w-[60px] md:w-[100px] lg:w-[120px] floating-asset cursor-pointer'
+          className='absolute z-10 top-[27%] left-9 md-custom:top-[26%] lg-custom:left-48 w-[60px] md-custom:w-[100px] lg-custom:w-[120px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -150,7 +150,7 @@ const Hero = () => {
         </div>
 
         <div
-          className='absolute z-10 top-[28%] right-4 md:top-[24%] lg:right-38 w-[70px] md:w-[120px] lg:w-[180px] floating-asset cursor-pointer'
+          className='absolute z-10 top-[28%] right-4 md-custom:top-[24%] lg-custom:right-38 w-[70px] md-custom:w-[120px] lg-custom:w-[180px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -161,7 +161,7 @@ const Hero = () => {
         </div>
 
         <div
-          className='absolute z-50 bottom-[20%] left-8 md:bottom-[30%] lg:left-40 w-[60px] md:w-[80px] lg:w-[130px] floating-asset cursor-pointer'
+          className='absolute z-50 bottom-[20%] left-8 md-custom:bottom-[30%] lg-custom:left-40 w-[60px] md-custom:w-[80px] lg-custom:w-[130px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -172,7 +172,7 @@ const Hero = () => {
         </div>
 
         <div
-          className='absolute z-50 bottom-[35%] right-4 md:bottom-[33%] lg:right-28 w-[70px] md:w-[100px] lg:w-[160px] floating-asset cursor-pointer'
+          className='absolute z-50 bottom-[35%] right-4 md-custom:bottom-[33%] lg-custom:right-28 w-[70px] md-custom:w-[100px] lg-custom:w-[160px] floating-asset cursor-pointer'
           onMouseEnter={pushAsset}
         >
           <Image
@@ -182,39 +182,39 @@ const Hero = () => {
           />
         </div>
 
-        <h2 className='font-main-light text-bright/80 text-sm md:text-xl uppercase tracking-[0.2em] mb-4'>
+        <h2 className='font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em] mb-4'>
           Hello, I am
         </h2>
 
-        <div className='relative z-40 flex flex-col items-center leading-none select-none my-4 md:my-0'>
+        <div className='relative z-40 flex flex-col items-center leading-none select-none my-4 md-custom:my-0'>
           <h1
             ref={titleOneRef}
-            className='font-main-heavy text-white text-[18vw] md:text-[12vw] lg:text-[14vw] xl:text-[12rem] tracking-tighter leading-[0.8]'
+            className='font-main-heavy text-white text-[18vw] md-custom:text-[12vw] lg-custom:text-[14vw] xl:text-[12rem] tracking-tighter leading-[0.8]'
           >
             {renderLetters('FRANCIS')}
           </h1>
           <h1
             ref={titleTwoRef}
-            className='font-main-heavy text-[18vw] md:text-[12vw] lg:text-[14vw] xl:text-[12rem] tracking-tighter text-white leading-[0.8]'
+            className='font-main-heavy text-[18vw] md-custom:text-[12vw] lg-custom:text-[14vw] xl:text-[12rem] tracking-tighter text-white leading-[0.8]'
           >
             {renderLetters('KODAMA')}
           </h1>
         </div>
 
-        <h2 className='font-main-light text-bright/80 text-sm md:text-xl uppercase tracking-[0.2em]'>
+        <h2 className='font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
           Software Engineer
         </h2>
-        <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md:text-xs uppercase tracking-[0.2em] px-4 text-center'>
+        <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
           <span>Brazilian</span>
           <span className='text-lg'>🇧🇷</span>
           <span>based in Ottawa, Canada</span>
           <span className='text-lg'>🇨🇦</span>
         </h3>
 
-        <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-4 z-30 hidden lg:block'>
+        <div className='absolute top-[50%] -translate-y-1/2 left-4 md-custom:left-4 z-30 hidden lg-custom:block'>
           <ul
             ref={leftRef}
-            className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
+            className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-left'
           >
             <li className='text-white font-main-bold mb-2'>Stack</li>
             <li>React</li>
@@ -225,10 +225,10 @@ const Hero = () => {
           </ul>
         </div>
 
-        <div className='absolute top-[50%] -translate-y-1/2 right-4 md:right-4 z-30 hidden lg:block'>
+        <div className='absolute top-[50%] -translate-y-1/2 right-4 md-custom:right-4 z-30 hidden lg-custom:block'>
           <ul
             ref={rightRef}
-            className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
+            className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-right'
           >
             <li className='text-white font-main-bold mb-2'>Skills</li>
             <li>A.I.</li>

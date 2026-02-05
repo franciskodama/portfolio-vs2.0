@@ -60,7 +60,6 @@ const Projects = () => {
 
     const engine = Engine.create();
     const world = engine.world;
-    // Set higher gravity for more weight
     engine.gravity.y = 1;
 
     const width = containerRef.current.clientWidth;
@@ -71,7 +70,7 @@ const Projects = () => {
     // Negative angle because right side is higher (lower Y value in canvas)
     const angle = -Math.atan(slope);
 
-    // Create boundaries
+    // Boundaries
     const floorYOffset = (width / 2) * slope;
     const groundY = height - 10; // Base at bottom
 
@@ -79,7 +78,7 @@ const Projects = () => {
       isStatic: true,
       angle: angle,
       render: { visible: false },
-      friction: 0.1, // Allow sliding
+      friction: 0.1,
     });
 
     const leftWall = Bodies.rectangle(-50, height / 2, 100, height * 2, {

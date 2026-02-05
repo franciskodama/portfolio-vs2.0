@@ -71,7 +71,7 @@ const Navbar = () => {
             { to: 'reason', label: 'this.portfolio', offset: -50 },
             { to: 'about', label: 'about.me', offset: 0 },
             { to: 'whyme', label: 'why.me', offset: 100 },
-            { to: 'ai', label: 'a.i.', offset: 100 },
+            { to: 'ai', label: 'ai.labs', offset: 100 },
             { to: 'projects', label: 'projects', offset: 0 },
             { to: 'code', label: 'my.code', offset: 0 },
             { to: 'contact', label: 'contact', offset: 0 },
