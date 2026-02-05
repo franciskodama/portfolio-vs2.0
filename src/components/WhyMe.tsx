@@ -41,8 +41,8 @@ const WhyMe = () => {
                       : 'border-white/10 hover:bg-white/5'
                   }`}
                 >
-                  <div className='flex items-center justify-between gap-4'>
-                    <div className='flex flex-row gap-8'>
+                  <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
+                    <div className='flex flex-col md:flex-row gap-8'>
                       <div
                         className={`leading-4.5 text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
                           expandedJob === job.id
@@ -54,7 +54,7 @@ const WhyMe = () => {
                           tag='span'
                           text={job.companies[0].periodStart}
                         />
-                        <span className='px-1'></span>
+                        <span className='px-1'>|</span>
                         {job.companies[0].periodEnd === 'TODAY' ? (
                           <h4
                             className={`inline-block text-[0.8rem] px-1 ${
@@ -154,7 +154,7 @@ const WhyMe = () => {
                         : 'grid-rows-[0fr]'
                     }`}
                   >
-                    <div className='overflow-hidden'>
+                    <div className='hidden md:block overflow-hidden'>
                       <div className='pt-8 pb-2 flex items-start gap-6 border-l border-third/30 ml-2 pl-6 mt-6'>
                         <div className='flex flex-col gap-2'>
                           <h5 className='text-third font-main-semibold text-xs tracking-[0.2em] uppercase opacity-70'>
@@ -172,7 +172,7 @@ const WhyMe = () => {
             </div>
           </div>
         </div>
-        <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[5em] mb-20 mx-12 lg-custom:w-[90%] lg-custom:mx-auto'>
+        <section className='hidden md:grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[5em] mb-20 mx-12 lg-custom:w-[90%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
             <div
               key={item.id}
