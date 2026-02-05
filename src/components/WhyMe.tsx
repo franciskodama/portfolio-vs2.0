@@ -18,13 +18,13 @@ const WhyMe = () => {
       <div className='container flex flex-col items-start my-20 max-w-[80%] lg-custom:max-w-full'>
         <div className='w-full bg-dark py-20 overflow-hidden'>
           <div className='z-10 max-w-[90%] mx-auto'>
-            <div className='flex justify-between items-end mb-32'>
+            <div className='flex flex-col gap-4 md:flex-row justify-between md:items-end mb-32'>
               <h1 className='section-title'>Why Me?</h1>
-              <div className='text-right'>
+              <div className='flex flex-col items-center md:block text-center md:text-right'>
                 <h2 className='text-[1.5rem] font-main-semibold uppercase leading-none'>
                   Code with a Director’s perspective.
                 </h2>
-                <p className='text-third text-[1.2rem] font-main-light'>
+                <p className='mt-8 md:mt-0 w-[19ch] md:w-full text-third text-[1.2rem] font-main-light'>
                   I don't just build features; I build business outcomes.
                 </p>
               </div>
