@@ -106,7 +106,7 @@ const SynergySeer = ({
               d='M 50 120 Q 250 10 450 120'
               fill='transparent'
             />
-            <text width='500'>
+            <text width='1500'>
               <textPath
                 href='#curve-title'
                 startOffset='50%'
