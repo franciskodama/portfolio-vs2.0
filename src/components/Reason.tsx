@@ -18,16 +18,17 @@ const Reason = () => {
     'please take your time to discover what makes my work unique.';
 
   const [gridItems, setGridItems] = useState<any[]>([]);
+  const [columns, setColumns] = useState(12);
   const gridRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
 
   // Styles used for logic and rendering
   const brightClasses =
-    'reason__reveal-bright border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[1.6rem] bg-dark relative opacity-0 transition-all duration-2000 ease-in-out -translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
+    'reason__reveal-bright border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[0.9rem] bg-dark relative opacity-0 transition-all duration-2000 ease-in-out -translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
 
   // Note: Added distinct class for dark items if needed, but keeping structure similar
   const darkClasses =
-    'reason__reveal-dark border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[1.6rem] bg-dark text-third relative opacity-0 transition-all duration-2000 ease-in-out translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
+    'reason__reveal-dark border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[0.9rem] bg-dark text-third relative opacity-0 transition-all duration-2000 ease-in-out translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
 
   const calculateLayout = useCallback(() => {
     if (!gridRef.current || !measureRef.current) return;
@@ -43,7 +44,10 @@ const Reason = () => {
     // width = n * item + (n-1) * gap
     // width + gap = n * (item + gap)
     const totalItemWidth = itemWidth + gap;
-    const columns = Math.floor((containerWidth + gap) / totalItemWidth);
+    let columns = Math.floor((containerWidth + gap) / totalItemWidth);
+
+    // Ensure we have at least 12 columns to fit words like 'portfolio' and 'creativity'
+    if (columns < 12) columns = 12;
 
     if (columns <= 0) return;
 
@@ -78,9 +82,9 @@ const Reason = () => {
     const finalizeLine = (line: any[], lineWordsLength: number) => {
       if (line.length === 0) return;
 
-      const remaining = columns - lineWordsLength;
+      const remaining = Math.max(0, columns - lineWordsLength);
       const padLeft = Math.floor(remaining / 2);
-      const padRight = remaining - padLeft;
+      const padRight = Math.max(0, remaining - padLeft);
 
       // Add Left Fillers
       for (let i = 0; i < padLeft; i++) {
@@ -162,6 +166,7 @@ const Reason = () => {
     finalizeLine(currentLine, currentLineLength);
 
     setGridItems(newItems);
+    setColumns(columns);
   }, []);
 
   useLayoutEffect(() => {
@@ -206,7 +211,13 @@ const Reason = () => {
   return (
     <section className='section flex flex-col max-w-[85em] mx-auto' id='reason'>
       <div
-        className='flex flex-wrap gap-[0.3em] justify-center mt-[15em] mb-[10em] relative'
+        className='grid justify-center mt-[15em] mb-[10em] relative'
+        style={{
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          gap: '0.3em',
+          width: 'fit-content',
+          margin: '15em auto 10em auto',
+        }}
         ref={gridRef}
       >
         {/* Invisible measurement element */}

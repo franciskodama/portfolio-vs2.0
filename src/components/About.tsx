@@ -227,7 +227,7 @@ const About = () => {
               CSS, Prisma, UX/UI design
             </h2>
             <div className='font-main-light'>
-              <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
+              <p className='text-[0.95rem] mb-4 mr-4 md-custom:max-w-[35ch]'>
                 I'm an experienced tech services provider with a strong
                 understanding of the industry trends, as well as of the entire
                 web development process, including coding, UX/UI design, product
