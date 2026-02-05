@@ -18,7 +18,7 @@ const WhyMe = () => {
       <div className='container flex flex-col items-start my-20 max-w-[80%] lg-custom:max-w-full'>
         <div className='w-full bg-dark py-20 overflow-hidden'>
           <div className='z-10 max-w-[90%] mx-auto'>
-            <div className='flex flex-col gap-4 md:flex-row justify-between md:items-end mb-32'>
+            <div className='flex flex-col gap-4 lg:flex-row justify-between md:items-end mb-32'>
               <h1 className='section-title'>Why Me?</h1>
               <div className='flex flex-col items-center md:block text-center md:text-right'>
                 <h2 className='text-[1.5rem] font-main-semibold uppercase leading-none'>
@@ -41,8 +41,8 @@ const WhyMe = () => {
                       : 'border-white/10 hover:bg-white/5'
                   }`}
                 >
-                  <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
-                    <div className='flex flex-col md:flex-row gap-8'>
+                  <div className='flex flex-col lg:flex-row items-center md:items-end lg:items-center justify-between gap-4'>
+                    <div className='flex flex-col lg:flex-row gap-8'>
                       <div
                         className={`leading-4.5 text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
                           expandedJob === job.id
