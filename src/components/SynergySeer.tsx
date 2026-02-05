@@ -214,48 +214,46 @@ const SynergySeer = ({
           </div>
 
           <div className='relative'>
-            <div className='absolute -left-[100px] -top-[40px] w-[120px] h-[100px] pointer-events-none z-10'>
-              <div className='relative'>
-                <p
-                  className='absolute bottom-22 -left-8 text-white text-[1.5rem] leading-6 -rotate-12 translate-x-2'
-                  style={{ fontFamily: 'var(--font-gloria)' }}
-                >
-                  click
-                  <br />
-                  here
-                </p>
-                <svg
-                  viewBox='0 0 120 120'
-                  className='w-full h-full overflow-visible text-white mt-2 rotate-6 scale-y-75'
-                >
-                  <path
-                    d='M 10 50 Q 60 100 110 20'
-                    fill='none'
-                    stroke='currentColor'
-                    strokeWidth='2'
-                    markerEnd='url(#arrowhead)'
-                    strokeLinecap='round'
-                  />
-                  <defs>
-                    <marker
-                      id='arrowhead'
-                      markerWidth='10'
-                      markerHeight='10'
-                      refX='9'
-                      refY='3'
-                      orient='auto'
-                      markerUnits='strokeWidth'
-                    >
-                      <path d='M0,0 L0,6 L9,3 z' fill='currentColor' />
-                    </marker>
-                  </defs>
-                </svg>
-              </div>
+            <div className='absolute -left-36 md:-left-62 -top-[40px] w-[80px] md:w-[120px] pointer-events-none z-10'>
+              <p
+                className='absolute bottom-16 md:bottom-22 -left-6 md:-left-8 text-white text-[1.2rem] md:text-[1.5rem] leading-6 -rotate-12 translate-x-2'
+                style={{ fontFamily: 'var(--font-gloria)' }}
+              >
+                click
+                <br />
+                here
+              </p>
+              <svg
+                viewBox='0 0 120 120'
+                className='w-full h-full overflow-visible text-white mt-2 rotate-6 scale-y-75'
+              >
+                <path
+                  d='M 10 50 Q 60 100 110 20'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  markerEnd='url(#arrowhead)'
+                  strokeLinecap='round'
+                />
+                <defs>
+                  <marker
+                    id='arrowhead'
+                    markerWidth='10'
+                    markerHeight='10'
+                    refX='9'
+                    refY='3'
+                    orient='auto'
+                    markerUnits='strokeWidth'
+                  >
+                    <path d='M0,0 L0,6 L9,3 z' fill='currentColor' />
+                  </marker>
+                </defs>
+              </svg>
             </div>
             <button
               type='submit'
               disabled={status === 'Divining...'}
-              className='relative w-[200px] md:w-[300px] -mt-30 md:-mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
+              className='absolute left-1/2 top-4 md:top-0 transform -translate-x-1/2 w-[200px] md:w-[300px] -mt-30 md:-mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
               aria-label={status}
             >
               <svg
