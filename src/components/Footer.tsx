@@ -22,10 +22,10 @@ const Footer = () => {
         <h2 className='hidden lg-custom:block font-main-semibold lg-custom:mt-20 lg-custom:mb-4 lg-custom:col-start-2 lg-custom:row-start-1'>
           GET<span className='text-third'>BACK</span>
         </h2>
-        <h2 className='font-main-semibold mt-20 mb-4 lg-custom:col-start-3 lg-custom:row-start-1'>
+        <h2 className='hidden lg-custom:block font-main-semibold mt-20 mb-4 lg-custom:col-start-3 lg-custom:row-start-1'>
           GET<span className='text-third'>IN TOUCH</span>
         </h2>
-        <h2 className='font-main-semibold mt-20 mb-4 lg-custom:col-start-4 lg-custom:row-start-1'>
+        <h2 className='hidden lg-custom:block font-main-semibold mt-20 mb-4 lg-custom:col-start-4 lg-custom:row-start-1'>
           GET<span className='text-third'>CONNECTED</span>
         </h2>
 
