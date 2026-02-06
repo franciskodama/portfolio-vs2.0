@@ -45,47 +45,47 @@ const CleanCode = () => {
         </a>
 
         <Parallax opacity={[0, 2]}>
-          <ul className='font-main-heavy uppercase text-center h-[30em] animate-words-appearance mr-40 md-custom:mr-0 md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10'>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[3.75rem] leading-14 md-custom:text-[7.5rem] md-custom:leading-28'>
+          <ul className='font-main-heavy uppercase text-center min-h-[50em] animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[2.5rem] leading-10 md-custom:text-[7.5rem] md-custom:leading-28'>
               DRY
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[0.75rem] leading-6 md-custom:text-[1.5rem] md-custom:leading-[2.4rem]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[0.65rem] leading-4 md-custom:text-[1.5rem] md-custom:leading-[2.4rem]'>
               meticulousness
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[2.25rem] leading-[2.62rem] text-left pl-20 md-custom:text-[4.5rem] md-custom:leading-21 md-custom:pl-32'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.6rem] leading-[1.8rem] text-left pl-6 md-custom:text-[4.5rem] md-custom:leading-21 md-custom:pl-32'>
               easy to read
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.875rem] leading-[2.1rem] text-left pl-[6.1em] md-custom:text-[3.75rem] md-custom:leading-16 md-custom:pl-[2.4em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.2rem] leading-[1.45rem] text-left pl-[2em] md-custom:text-[3.75rem] md-custom:leading-16 md-custom:pl-[2.4em]'>
               easy to change
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.5rem] leading-[1.8rem] text-left pl-[8.3em] md-custom:text-[3rem] md-custom:leading-15 md-custom:pl-[3.5em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.1rem] leading-[1.3rem] text-left pl-[4em] md-custom:text-[3rem] md-custom:leading-15 md-custom:pl-[3.5em]'>
               naming
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[0.82rem] leading-[1.3rem] text-left pl-[16.5em] md-custom:text-[1.65rem] md-custom:leading-9 md-custom:pl-[7.9em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[0.65rem] leading-[0.9rem] text-left pl-[10em] md-custom:text-[1.65rem] md-custom:leading-9 md-custom:pl-[7.9em]'>
               conventions
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.5em] leading-[1.87rem] text-left pl-[9.3em] md-custom:text-[3rem] md-custom:leading-15 md-custom:pl-[4.6em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1rem] leading-[1.2rem] text-left pl-[5em] md-custom:text-[3rem] md-custom:leading-15 md-custom:pl-[4.6em]'>
               don't repeat
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.95rem] leading-9 text-left pl-[7.2em] md-custom:text-[3.9rem] md-custom:leading-[4.2rem] md-custom:pl-[3.6em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.3rem] leading-6 text-left pl-[4em] md-custom:text-[3.9rem] md-custom:leading-[4.2rem] md-custom:pl-[3.6em]'>
               your self
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[2.1rem] leading-[2.62rem] pl-[0.7em] md-custom:text-[4.2rem] md-custom:leading-20 md-custom:pr-[1.1em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.35rem] leading-[1.6rem] md-custom:text-[4.2rem] md-custom:leading-20 md-custom:pr-[1.1em]'>
               keep it
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[2.1rem] leading-[2.62rem] pl-[2.6em] md-custom:text-[4.2rem] md-custom:leading-20 md-custom:pl-[0.7em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.35rem] leading-[1.6rem] pl-[1em] md-custom:text-[4.2rem] md-custom:leading-20 md-custom:pl-[0.7em]'>
               simple
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.72rem] leading-9 pl-20 md-custom:text-[2.4rem] md-custom:leading-[2.4rem] md-custom:pr-[6.5em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.1rem] leading-6 pl-4 md-custom:text-[2.4rem] md-custom:leading-[2.4rem] md-custom:pr-[6.5em]'>
               clear and concise
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[2.25rem] leading-[2.85rem] text-left pl-24 md-custom:text-[3.5rem] md-custom:leading-18 md-custom:pl-[4.2em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.4rem] leading-[1.8rem] text-left pl-10 md-custom:text-[3.5rem] md-custom:leading-18 md-custom:pl-[4.2em]'>
               consistency
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[2.25rem] leading-[2.85rem] text-right pl-4 md-custom:text-[3rem] md-custom:leading-[3.6rem] md-custom:pr-[4.4em] lg-custom:text-[4.5rem] lg-custom:leading-[4.8rem] lg-custom:pl-[3.7em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.6rem] leading-[1.8rem] text-right pr-6 md-custom:text-[3rem] md-custom:leading-[3.6rem] md-custom:pr-[4.4em] lg-custom:text-[4.5rem] lg-custom:leading-[4.8rem] lg-custom:pl-[3.7em]'>
               uncomplicate
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[3.75rem] leading-16.5 text-left pl-[3.8em] md-custom:text-[7.5rem] md-custom:leading-[8.9rem] md-custom:pl-[2.85em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[2rem] leading-10 text-left pl-[1.5em] md-custom:text-[7.5rem] md-custom:leading-[8.9rem] md-custom:pl-[2.85em]'>
               BEM
             </li>
           </ul>
