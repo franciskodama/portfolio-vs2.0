@@ -60,16 +60,15 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-col lg-custom:col-start-3 lg-custom:row-start-2'>
-          <p className='text-[0.9rem] mb-2'>fk@fkodama.com</p>
           <Link
-            className='text-[0.9rem] underline cursor-pointer transition-all duration-200 ease-in hover:font-main-semibold hover:text-third hover:-translate-x-[3px]'
+            className='my-4 lg-custom:my-0 text-[0.9rem] underline cursor-pointer transition-all duration-200 ease-in hover:font-main-semibold hover:text-third hover:-translate-x-[3px]'
             to='contact'
             spy={true}
             smooth={true}
             offset={200}
             duration={500}
           >
-            send message
+            send a message
           </Link>
         </div>
 
