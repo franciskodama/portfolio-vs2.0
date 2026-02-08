@@ -121,7 +121,8 @@ const Projects = () => {
       // Instead of const startY = -400;
       const startY = -400 - index * 350; // Each card starts 350px higher than the last
 
-      const body = Bodies.rectangle(randomX, startY, 320, 320, {
+      // 270px - Body size
+      const body = Bodies.rectangle(randomX, startY, 270, 270, {
         restitution: 0.8, // Bouncy
         friction: 0.1, // Slide
         frictionAir: 0.02,
@@ -196,7 +197,7 @@ const Projects = () => {
           <div className='-mt-24'>
             <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
               <div className='flex flex-col -rotate-[4.29deg] items-end mr-[20%]'>
-                <h2 className='section-title text-7xl w-[8ch] leading-19 font-main-semibold text-right'>
+                <h2 className='section-title text-4xl md:text-7xl w-[8ch] md:leading-19 font-main-semibold text-right'>
                   selected projects
                 </h2>
                 <div className='flex items-center gap-2 mt-4 mr-8'>
@@ -217,7 +218,10 @@ const Projects = () => {
           </div>
 
           {/* Container Height */}
-          <div ref={containerRef} className='relative w-full h-[55vh]'>
+          <div
+            ref={containerRef}
+            className='relative w-full h-[80vh] md:h-[45vh]'
+          >
             {sortedProjects.map((project, index) => (
               <div
                 key={project.id}
