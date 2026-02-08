@@ -515,6 +515,5 @@ textarea {
 }
 
 ::placeholder {
-  color: var(--dark-color);
   font-family: inherit;
 }

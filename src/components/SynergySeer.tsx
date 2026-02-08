@@ -94,7 +94,8 @@ const SynergySeer = ({
   };
 
   const crystalBallInputClass =
-    'bg-transparent border-0 py-2 px-0 text-center text-dark placeholder:uppercase placeholder:text-dark/40 placeholder:px-0 focus:outline-none focus:border-third transition-colors w-full !font-[family-name:var(--font-gloria)] !placeholder:font-[family-name:var(--font-gloria)]';
+    'bg-transparent border-0 py-2 px-0 text-center md-custom:text-lg text-dark md-custom:placeholder:text-lg placeholder:text-dark/40 placeholder:px-0 focus:outline-none focus:border-third transition-colors w-full';
+  // !font-[family-name:var(--font-henny-penny)] !placeholder:font-[family-name:var(--font-henny-penny)]
 
   return (
     <section className='section relative pb-40 mt-40' id='ai'>
@@ -111,7 +112,8 @@ const SynergySeer = ({
                 href='#curve-title'
                 startOffset='50%'
                 textAnchor='middle'
-                className='font-main-regular text-white uppercase tracking-tighter fill-current text-[3.8rem] md-custom:text-[2.6rem] lg-custom:text-[1.4rem]'
+                className='font-main-regular text-white uppercase tracking-wider fill-current text-[3.8rem] md-custom:text-[2.6rem] lg-custom:text-[1.4rem]'
+                style={{ fontFamily: 'var(--font-henny-penny)' }}
               >
                 Synergy Seer
               </textPath>
@@ -128,6 +130,7 @@ const SynergySeer = ({
                 startOffset='50%'
                 textAnchor='middle'
                 className='font-main-semibold uppercase tracking-wider fill-current text-[1.6rem] md-custom:text-[1.2rem] lg-custom:text-[1rem]'
+                style={{ fontFamily: 'var(--font-henny-penny)' }}
               >
                 The Ritual of Recruitment
               </textPath>
@@ -254,6 +257,7 @@ const SynergySeer = ({
               type='submit'
               disabled={status === 'Divining...'}
               className='absolute left-1/2 top-4 md-custom:top-0 transform -translate-x-1/2 w-[200px] md-custom:w-[300px] -mt-30 md-custom:-mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
+              // style={{ fontFamily: 'var(--font-henny-penny)' }}
               aria-label={status}
             >
               <svg
