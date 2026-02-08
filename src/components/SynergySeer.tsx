@@ -94,7 +94,7 @@ const SynergySeer = ({
   };
 
   const crystalBallInputClass =
-    'bg-transparent border-0 p-2 text-center text-dark placeholder:uppercase placeholder:text-dark/40  focus:border-third transition-colors w-full';
+    'bg-transparent border-0 py-2 px-0 text-center text-dark placeholder:uppercase placeholder:text-dark/40 placeholder:px-0 focus:outline-none focus:border-third transition-colors w-full !font-[family-name:var(--font-gloria)] !placeholder:font-[family-name:var(--font-gloria)]';
 
   return (
     <section className='section relative pb-40 mt-40' id='ai'>
@@ -193,7 +193,7 @@ const SynergySeer = ({
                 <textarea
                   name='description'
                   placeholder='Paste here the job description (optional)'
-                  className={`${crystalBallInputClass} p-3 h-24 md-custom:h-32 text-sm resize-none`}
+                  className={`${crystalBallInputClass} py-3 h-24 md-custom:h-32 text-sm resize-none`}
                   value={formData.description}
                   onChange={handleInputChange}
                 />

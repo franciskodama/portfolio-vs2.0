@@ -507,11 +507,14 @@ button {
 }
 
 input,
-textarea,
-::placeholder {
+textarea {
   color: var(--dark-color);
   font-family: var(--main-font-light);
   font-size: 1rem;
   line-height: 1.5;
-  padding-left: 1em;
+}
+
+::placeholder {
+  color: var(--dark-color);
+  font-family: inherit;
 }
