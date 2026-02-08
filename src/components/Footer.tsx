@@ -11,7 +11,7 @@ const Resume = '/assets/files/resume.pdf';
 const Footer = () => {
   return (
     <section
-      className='section flex justify-center items-center flex-row bg-[#282828] border-t border-white/20'
+      className='section flex justify-center items-center flex-row bg-[#282828] border-t border-white/20 pb-6'
       id='footer'
     >
       <div className='grid grid-cols-1 grid-rows-[repeat(12,auto)] lg-custom:grid-cols-[2fr_1fr_1fr_1fr] lg-custom:grid-rows-[repeat(4,auto)] lg-custom:gap-x-16 w-[70%] max-w-[80em] mx-auto pb-16'>

@@ -17,18 +17,16 @@ const CleanCode = () => {
         </p>
       </Parallax>
 
-      <div className='container relative flex flex-col items-center w-full min-h-[70em] mt-36 mb-20 md-custom:min-h-[110em] mx-auto'>
+      <div className='container relative flex flex-col items-center w-full min-h-[56em] text-center mt-24 md-custom:min-h-[95em] mx-auto'>
         <Parallax opacity={[0, 2]} translateY={['0%', '-10%']}>
           <div className='flex flex-col'>
-            <q className='font-main-regular text-[1.6rem] leading-8 w-[20ch] mb-[2em] text-center md-custom:text-[2rem] md-custom:leading-[2.3rem]'>
+            <q className='font-main-regular text-[1.6rem] leading-8 w-[20ch] mb-[2em] md-custom:text-[2rem] md-custom:leading-[2.3rem]'>
               Clean code always looks like it was written by someone who cares.
             </q>
-            <p className='font-main-light text-[1.3rem] mb-[0.1em] text-center md-custom:text-[1.5rem] md-custom:leading-8'>
+            <p className='font-main-light text-[1.3rem] mb-[0.1em] md-custom:text-[1.5rem] md-custom:leading-8'>
               <span className='text-third'>― </span>Robert C. Martin
             </p>
-            <p className='font-main-light text-[1rem] mb-48 text-center md-custom:mb-80'>
-              Author of Clean Code
-            </p>
+            <p className='font-main-light text-[1rem]'>Author of Clean Code</p>
           </div>
         </Parallax>
 
@@ -36,7 +34,7 @@ const CleanCode = () => {
           href='https://github.com/franciskodama?tab=repositories'
           target='_blank'
           rel='noopener noreferrer'
-          className='hidden md-custom:block absolute top-[18%] left-1/2 -translate-x-1/2 text-center font-main-regular text-[0.7rem] leading-4 cursor-pointer z-10'
+          className='hidden md-custom:block text-center font-main-regular text-[0.7rem] mt-24 leading-4 cursor-pointer z-10'
         >
           <div className='flex items-center gap-2'>
             <Image src={ZoomIn} alt='icon zoom in' />
@@ -45,7 +43,7 @@ const CleanCode = () => {
         </a>
 
         <Parallax opacity={[0, 2]}>
-          <ul className='font-main-heavy uppercase text-center min-h-[50em] animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
+          <ul className='lg-custom:scale-75 mt-24 md-custom:mt-0 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[2.5rem] leading-10 md-custom:text-[7.5rem] md-custom:leading-28'>
               DRY
             </li>
