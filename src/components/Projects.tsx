@@ -12,6 +12,18 @@ const Projects = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [cardSize, setCardSize] = useState(270);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // 48em = 768px (md-custom)
+      setCardSize(window.innerWidth < 768 ? 150 : 270);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const sortedProjects = [...projects].sort(
     (a, b) => Number(a.year) - Number(b.year)
@@ -121,8 +133,8 @@ const Projects = () => {
       // Instead of const startY = -400;
       const startY = -400 - index * 350; // Each card starts 350px higher than the last
 
-      // 270px - Body size
-      const body = Bodies.rectangle(randomX, startY, 270, 270, {
+      // Dynamic Body size
+      const body = Bodies.rectangle(randomX, startY, cardSize, cardSize, {
         restitution: 0.8, // Bouncy
         friction: 0.1, // Slide
         frictionAir: 0.02,
@@ -165,8 +177,8 @@ const Projects = () => {
         if (body && cardEl) {
           const { x, y } = body.position;
           const rotation = body.angle;
-          cardEl.style.transform = `translate(${x - 135}px, ${
-            y - 150
+          cardEl.style.transform = `translate(${x - cardSize / 2}px, ${
+            y - cardSize / 2
           }px) rotate(${rotation}rad)`;
           cardEl.style.opacity = '1';
         }
@@ -183,7 +195,7 @@ const Projects = () => {
       Engine.clear(engine);
       timers.forEach((t) => clearTimeout(t)); // Clear timeouts to prevent bodies adding after unmount/scroll away
     };
-  }, [isMounted, inView]);
+  }, [isMounted, inView, cardSize]);
 
   return (
     <div className='api-external relative'>
@@ -230,12 +242,15 @@ const Projects = () => {
                 }}
                 className='absolute top-40 left-0 opacity-0' // Start hidden until physics takes over
                 style={{
-                  width: '320px', // Enforce width for physics sync
-                  height: '320px',
+                  width: `${cardSize}px`,
+                  height: `${cardSize}px`,
                   willChange: 'transform',
                 }}
               >
-                <div className='w-[320px] flex justify-center'>
+                <div
+                  style={{ width: `${cardSize}px` }}
+                  className='flex justify-center'
+                >
                   <ProjectCard
                     project={project}
                     onClick={() => {
