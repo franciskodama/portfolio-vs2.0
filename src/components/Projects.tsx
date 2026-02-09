@@ -13,11 +13,13 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [cardSize, setCardSize] = useState(270);
+  const [groundYOffset, setGroundYOffset] = useState(45);
 
   useEffect(() => {
     const handleResize = () => {
-      // 48em = 768px (md-custom)
-      setCardSize(window.innerWidth < 768 ? 150 : 270);
+      const isMobile = window.innerWidth < 768;
+      setCardSize(isMobile ? 150 : 270);
+      setGroundYOffset(isMobile ? 36 : -1);
     };
 
     handleResize();
@@ -84,7 +86,7 @@ const Projects = () => {
 
     // Boundaries
     const floorYOffset = (width / 2) * slope;
-    const groundY = height - 10; // Base at bottom
+    const groundY = height + groundYOffset; // Base at bottom
 
     const ground = Bodies.rectangle(width / 2, groundY, width + 200, 100, {
       isStatic: true,
@@ -195,7 +197,7 @@ const Projects = () => {
       Engine.clear(engine);
       timers.forEach((t) => clearTimeout(t)); // Clear timeouts to prevent bodies adding after unmount/scroll away
     };
-  }, [isMounted, inView, cardSize]);
+  }, [isMounted, inView, cardSize, groundYOffset]);
 
   return (
     <div className='api-external relative'>
@@ -212,7 +214,7 @@ const Projects = () => {
                 <h2 className='section-title text-4xl md:text-7xl w-[8ch] md:leading-19 font-main-semibold text-right'>
                   selected projects
                 </h2>
-                <div className='flex items-center gap-2 mt-4 mr-8'>
+                <div className='flex items-center gap-2 mt-2 md-custom:mt-4 md-custom:mr-8'>
                   <Star
                     className='w-[20px] h-[20px] mt-1'
                     strokeWidth={1.6}
@@ -232,7 +234,7 @@ const Projects = () => {
           {/* Container Height */}
           <div
             ref={containerRef}
-            className='relative w-full h-[80vh] md:h-[45vh]'
+            className='relative w-full h-[94vh] md:h-[45vh]'
           >
             {sortedProjects.map((project, index) => (
               <div

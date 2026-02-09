@@ -44,9 +44,9 @@ const ProjectCard = ({
               />
             )}
           </div>
-          <div className='flex flex-col justify-between mt-2 md:mt-4 h-[77%] w-[15em]'>
+          <div className='flex flex-col justify-between mt-4 h-[77%] w-[15em]'>
             <div>
-              <h3 className='font-main-bold text-[1.2rem] leading-8 uppercase md-custom:text-[2rem]'>
+              <h3 className='font-main-bold w-[10ch] md-custom:w-full text-[1rem] leading-5 md-custom:leading-8 uppercase md-custom:text-[2rem]'>
                 {project.title}
               </h3>
               <h3 className='hidden md-custom:block w-[25ch] mt-4 font-main-regular uppercase text-[0.8rem] text-third leading-4'>
