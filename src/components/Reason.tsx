@@ -197,6 +197,7 @@ const Reason = () => {
           scrollTrigger: {
             trigger: lineItems[0],
             start: 'top 85%',
+            toggleActions: 'restart none none reset',
           },
         });
       });
