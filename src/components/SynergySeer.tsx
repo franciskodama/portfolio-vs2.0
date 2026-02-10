@@ -21,7 +21,24 @@ const SynergySeer = ({
 
   useEffect(() => {
     if (result && resultRef.current) {
-      resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const isMobile = window.innerWidth < 768;
+
+      if (isMobile) {
+        const headerHeight = 84; // Header height estimate
+        const elementPosition = resultRef.current.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      } else {
+        resultRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
     }
   }, [result]);
 
@@ -98,7 +115,7 @@ const SynergySeer = ({
   // !font-[family-name:var(--font-henny-penny)] !placeholder:font-[family-name:var(--font-henny-penny)]
 
   return (
-    <section className='section relative pb-40 mt-40' id='ai'>
+    <section className='section relative pb-40 mt-10' id='ai'>
       <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
         <div className='relative flex flex-col items-center'>
           <svg viewBox='0 0 500 120' className='w-full h-auto overflow-visible'>
@@ -112,7 +129,7 @@ const SynergySeer = ({
                 href='#curve-title'
                 startOffset='50%'
                 textAnchor='middle'
-                className='font-main-regular text-white uppercase tracking-wider fill-current text-[3.8rem] md-custom:text-[2.6rem] lg-custom:text-[1.4rem]'
+                className='font-main-regular text-white uppercase tracking-wider fill-current text-[3.2rem] md-custom:text-[2.6rem] lg-custom:text-[1.4rem]'
                 style={{ fontFamily: 'var(--font-henny-penny)' }}
               >
                 Synergy Seer
@@ -121,7 +138,7 @@ const SynergySeer = ({
           </svg>
           <svg
             viewBox='0 0 500 120'
-            className='absolute top-8 md-custom:top-12 lg-custom:top-22 w-[80%] h-auto overflow-visible text-third'
+            className='absolute top-10 md-custom:top-12 lg-custom:top-22 w-[80%] h-auto overflow-visible text-third'
           >
             <path id='curve' d='M 50 120 Q 250 10 450 120' fill='transparent' />
             <text width='500'>
