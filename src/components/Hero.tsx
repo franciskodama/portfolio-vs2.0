@@ -135,114 +135,124 @@ const Hero = () => {
     <section
       ref={containerRef}
       id='hero'
-      className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden flex flex-col items-center justify-center'
+      className='relative w-full h-screen bg-linear-to-b from-black to-dark overflow-hidden'
     >
-      <div
-        className='absolute z-20 top-[30%] left-[5%] md:left-[10%] w-[180px] md:w-[135px] floating-asset cursor-pointer'
-        onMouseEnter={pushAsset}
-      >
-        <Image
-          src={SquareBracketsImg}
-          alt='3D Square Brackets'
-          className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-12'
-        />
-      </div>
-
-      <div
-        className='absolute z-20 top-[27%] right-[5%] md:right-[10%] w-[140px] md:w-[200px] floating-asset cursor-pointer'
-        onMouseEnter={pushAsset}
-      >
-        <Image
-          src={CurlyBracesBiggerImg}
-          alt='3D Curly Braces'
-          className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
-        />
-      </div>
-
-      <div
-        className='absolute z-50 bottom-[30%] left-[8%] md:left-[10%] w-[100px] md:w-[150px] floating-asset cursor-pointer'
-        onMouseEnter={pushAsset}
-      >
-        <Image
-          src={CurlyBracesImg}
-          alt='3D Curly Braces'
-          className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-6'
-        />
-      </div>
-
-      <div
-        className='absolute z-50 bottom-[33%] right-[5%] md:right-[8%] w-[120px] md:w-[180px] floating-asset cursor-pointer'
-        onMouseEnter={pushAsset}
-      >
-        <Image
-          src={CodeBracketsImg}
-          alt='3D Code Brackets'
-          className='w-full h-auto drop-shadow-2xl opacity-90 rotate-12'
-        />
-      </div>
-
-      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em] mb-4'>
-        Hello, I am
-      </h2>
-
-      <div className='relative z-40 flex flex-col items-center leading-none select-none'>
-        <h1
-          ref={titleOneRef}
-          className='font-main-heavy text-white text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter leading-[0.8]'
+      <div className='container mx-auto relative w-full h-full flex flex-col items-center justify-center'>
+        <div
+          className='absolute z-10 top-[27%] left-9 md-custom:top-[26%] lg-custom:left-48 w-[60px] md-custom:w-[100px] lg-custom:w-[120px] floating-asset cursor-pointer'
+          onMouseEnter={pushAsset}
         >
-          {renderLetters('FRANCIS')}
-        </h1>
-        <h1
-          ref={titleTwoRef}
-          className='font-main-heavy text-[10vw] md:text-[12vw] lg:text-[14vw] xl:text-[16vw] tracking-tighter text-white leading-[0.8]'
-        >
-          {renderLetters('KODAMA')}
-        </h1>
-      </div>
+          <Image
+            src={SquareBracketsImg}
+            alt='3D Square Brackets'
+            className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-12'
+          />
+        </div>
 
-      <h2 className='font-main-light text-bright/80 text-lg md:text-xl uppercase tracking-[0.2em]'>
-        Software Engineer
-      </h2>
-      <h3 className='flex items-center gap-2 mt-2 font-main-light text-bright/80 text-xs uppercase tracking-[0.2em]'>
-        Brazilian<span className='text-lg'>🇧🇷</span>based in Ottawa, Canada
-        <span className='text-lg'>🇨🇦</span>
-      </h3>
-
-      <div className='absolute top-[50%] -translate-y-1/2 left-4 md:left-12 z-30'>
-        <ul
-          ref={leftRef}
-          className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-left'
+        <div
+          className='absolute z-10 top-[28%] right-4 md-custom:top-[24%] lg-custom:right-38 w-[70px] md-custom:w-[120px] lg-custom:w-[180px] floating-asset cursor-pointer'
+          onMouseEnter={pushAsset}
         >
-          <li className='text-white font-main-bold mb-2'>Stack</li>
-          <li>React</li>
-          <li>Next.js</li>
-          <li>Typescript</li>
-          <li>Prisma</li>
-          <li>CSS / Tailwind</li>
-        </ul>
-      </div>
+          <Image
+            src={CurlyBracesBiggerImg}
+            alt='3D Curly Braces'
+            className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
+          />
+        </div>
 
-      <div className='absolute top-[50%] -translate-y-1/2 right-4 md:right-12 z-30'>
-        <ul
-          ref={rightRef}
-          className='flex flex-col gap-1 text-white/50 text-xs md:text-sm font-main-regular uppercase tracking-widest text-right'
+        <div
+          className='absolute z-50 bottom-[20%] left-8 md-custom:bottom-[30%] lg-custom:left-40 w-[60px] md-custom:w-[80px] lg-custom:w-[130px] floating-asset cursor-pointer'
+          onMouseEnter={pushAsset}
         >
-          <li className='text-white font-main-bold mb-2'>Skills</li>
-          <li>A.I.</li>
-          <li>Agile</li>
-          <li>Jira</li>
-          <li>Algolia</li>
-          <li>Marketing</li>
-          <li>Design</li>
-        </ul>
+          <Image
+            src={CurlyBracesImg}
+            alt='3D Curly Braces'
+            className='w-full h-auto drop-shadow-2xl opacity-90 -rotate-6'
+          />
+        </div>
+
+        <div
+          className='absolute z-50 bottom-[35%] right-4 md-custom:bottom-[33%] lg-custom:right-28 w-[70px] md-custom:w-[100px] lg-custom:w-[160px] floating-asset cursor-pointer'
+          onMouseEnter={pushAsset}
+        >
+          <Image
+            src={CodeBracketsImg}
+            alt='3D Code Brackets'
+            className='w-full h-auto drop-shadow-2xl opacity-90 rotate-12'
+          />
+        </div>
+
+        <h2 className='font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em] mb-4'>
+          Hello, I am
+        </h2>
+
+        <div className='relative z-40 flex flex-col items-center leading-none select-none my-4 md-custom:my-0'>
+          <h1
+            ref={titleOneRef}
+            className='font-main-heavy text-white text-[18vw] md-custom:text-[12vw] lg-custom:text-[14vw] xl:text-[12rem] tracking-tighter leading-[0.8]'
+          >
+            {renderLetters('FRANCIS')}
+          </h1>
+          <h1
+            ref={titleTwoRef}
+            className='font-main-heavy text-[18vw] md-custom:text-[12vw] lg-custom:text-[14vw] xl:text-[12rem] tracking-tighter text-white leading-[0.8]'
+          >
+            {renderLetters('KODAMA')}
+          </h1>
+        </div>
+
+        <h2 className='font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
+          Software Engineer
+        </h2>
+        <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
+          <span>Brazilian</span>
+          <span className='text-lg'>🇧🇷</span>
+          <span>based in Ottawa, Canada</span>
+          <span className='text-lg'>🇨🇦</span>
+        </h3>
+
+        <div className='absolute top-[50%] -translate-y-1/2 left-4 md-custom:left-4 z-30 hidden lg-custom:block'>
+          <ul
+            ref={leftRef}
+            className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-left'
+          >
+            <li className='text-white font-main-bold mb-2'>Stack</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Typescript</li>
+            <li>Prisma</li>
+            <li>CSS / Tailwind</li>
+          </ul>
+        </div>
+
+        <div className='absolute top-[50%] -translate-y-1/2 right-4 md-custom:right-4 z-30 hidden lg-custom:block'>
+          <ul
+            ref={rightRef}
+            className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-right'
+          >
+            <li className='text-white font-main-bold mb-2'>Skills</li>
+            <li>A.I.</li>
+            <li>Agile</li>
+            <li>Jira</li>
+            <li>Algolia</li>
+            <li>Marketing</li>
+            <li>Design</li>
+          </ul>
+        </div>
+        <Link
+          to='reason'
+          spy={true}
+          smooth={true}
+          offset={-150}
+          duration={2000}
+        >
+          <Image
+            src={Scroll}
+            className='absolute bottom-[6%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-3'
+            alt='icon to scroll'
+          />
+        </Link>
       </div>
-      <Link to='reason' spy={true} smooth={true} offset={-150} duration={2000}>
-        <Image
-          src={Scroll}
-          className='absolute bottom-[6%] left-[49%] -translate-x-1/2 w-10 h-10 border-0 cursor-pointer z-3'
-          alt='icon to scroll'
-        />
-      </Link>
     </section>
   );
 };

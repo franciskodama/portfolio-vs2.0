@@ -18,16 +18,16 @@ const Reason = () => {
     'please take your time to discover what makes my work unique.';
 
   const [gridItems, setGridItems] = useState<any[]>([]);
+  const [columns, setColumns] = useState(12);
   const gridRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
 
   // Styles used for logic and rendering
   const brightClasses =
-    'reason__reveal-bright border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[1.6rem] bg-dark relative opacity-0 transition-all duration-2000 ease-in-out -translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
+    'reason__reveal-bright reason__reveal-item border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[0.9rem] bg-dark relative opacity-0 -translate-x-[100px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
 
-  // Note: Added distinct class for dark items if needed, but keeping structure similar
   const darkClasses =
-    'reason__reveal-dark border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[1.6rem] bg-dark text-third relative opacity-0 transition-all duration-2000 ease-in-out translate-x-[1000px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
+    'reason__reveal-dark reason__reveal-item border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[0.9rem] bg-dark text-third relative opacity-0 translate-x-[100px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
 
   const calculateLayout = useCallback(() => {
     if (!gridRef.current || !measureRef.current) return;
@@ -43,12 +43,15 @@ const Reason = () => {
     // width = n * item + (n-1) * gap
     // width + gap = n * (item + gap)
     const totalItemWidth = itemWidth + gap;
-    const columns = Math.floor((containerWidth + gap) / totalItemWidth);
+    let columns = Math.floor((containerWidth + gap) / totalItemWidth);
+
+    // Ensure we have at least 12 columns to fit words like 'portfolio' and 'creativity'
+    if (columns < 12) columns = 12;
 
     if (columns <= 0) return;
 
     const newItems: any[] = [];
-    let currentColumn = 0;
+    let newLinesCount = 0;
 
     const processWords = (
       text: string,
@@ -75,22 +78,26 @@ const Reason = () => {
     let currentLine: any[] = [];
     let currentLineLength = 0;
 
-    const finalizeLine = (line: any[], lineWordsLength: number) => {
+    const finalizeLine = (
+      line: any[],
+      lineWordsLength: number,
+      lineIndex: number
+    ) => {
       if (line.length === 0) return;
 
-      const remaining = columns - lineWordsLength;
+      const remaining = Math.max(0, columns - lineWordsLength);
       const padLeft = Math.floor(remaining / 2);
-      const padRight = remaining - padLeft;
+      const padRight = Math.max(0, remaining - padLeft);
 
       // Add Left Fillers
       for (let i = 0; i < padLeft; i++) {
-        // Use the style of the first word in the line for consistent animation logic, or default to bright
         const fillerClass = line[0]?.className || brightClasses;
         newItems.push({
           char: '',
           type: 'filler',
           className: fillerClass,
           key: `filler-l-${newItems.length}`,
+          lineIndex,
         });
       }
 
@@ -102,15 +109,16 @@ const Reason = () => {
             type: item.type,
             className: item.className,
             key: `space-${newItems.length}`,
+            lineIndex,
           });
         } else {
-          // It's a word, break into chars
           for (let char of item.text) {
             newItems.push({
               char,
               type: item.type,
               className: item.className,
               key: `char-${newItems.length}`,
+              lineIndex,
             });
           }
         }
@@ -124,6 +132,7 @@ const Reason = () => {
           type: 'filler',
           className: fillerClass,
           key: `filler-r-${newItems.length}`,
+          lineIndex,
         });
       }
     };
@@ -135,10 +144,7 @@ const Reason = () => {
       const wordCost = wordObj.length;
 
       if (currentLineLength + spaceCost + wordCost <= columns) {
-        // Fits in current line
         if (needsSpace) {
-          // We store the space as a token in the line so we can render it later
-          // Using the current word's type/class for the space
           currentLine.push({
             isSpace: true,
             type: wordObj.type,
@@ -149,19 +155,17 @@ const Reason = () => {
         currentLine.push(wordObj);
         currentLineLength += wordCost;
       } else {
-        // Doesn't fit, finalize current line
-        finalizeLine(currentLine, currentLineLength);
-
-        // Start new line with this word
+        finalizeLine(currentLine, currentLineLength, newLinesCount);
+        newLinesCount++;
         currentLine = [wordObj];
         currentLineLength = wordCost;
       }
     });
 
-    // Finalize the last line
-    finalizeLine(currentLine, currentLineLength);
+    finalizeLine(currentLine, currentLineLength, newLinesCount);
 
     setGridItems(newItems);
+    setColumns(columns);
   }, []);
 
   useLayoutEffect(() => {
@@ -170,43 +174,47 @@ const Reason = () => {
     return () => window.removeEventListener('resize', calculateLayout);
   }, [calculateLayout]);
 
-  const reasonReveal = useCallback(() => {
-    const revealsBright = document.querySelectorAll('.reason__reveal-bright');
-    const revealsDark = document.querySelectorAll('.reason__reveal-dark');
-    const elementVisible = 250;
-    let windowHeight = window.innerHeight;
-
-    const activeClasses = ['!translate-x-0', '!opacity-100'];
-
-    const revealFn = (elements: NodeListOf<Element>) => {
-      elements.forEach((el) => {
-        let elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - elementVisible) {
-          el.classList.add(...activeClasses);
-        } else {
-          el.classList.remove(...activeClasses);
-        }
-      });
-    };
-
-    revealFn(revealsBright);
-    revealFn(revealsDark);
-  }, []);
-
   useEffect(() => {
-    window.addEventListener('scroll', reasonReveal);
-    // Trigger once on mount/update to catch initial state
-    reasonReveal();
+    if (gridItems.length === 0) return;
 
-    return () => {
-      window.removeEventListener('scroll', reasonReveal);
-    };
-  }, [gridItems, reasonReveal]); // Re-bind when gridItems change (DOM changes)
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray('.reason__reveal-item') as HTMLElement[];
+      const lines: { [key: number]: HTMLElement[] } = {};
+
+      items.forEach((item) => {
+        const lineIdx = parseInt(item.getAttribute('data-line') || '0');
+        if (!lines[lineIdx]) lines[lineIdx] = [];
+        lines[lineIdx].push(item);
+      });
+
+      Object.values(lines).forEach((lineItems) => {
+        gsap.to(lineItems, {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: 'power3.out',
+          stagger: 0.02,
+          scrollTrigger: {
+            trigger: lineItems[0],
+            start: 'top 85%',
+          },
+        });
+      });
+    }, gridRef);
+
+    return () => ctx.revert();
+  }, [gridItems]);
 
   return (
-    <section className='section flex flex-col max-w-[94em] mx-auto' id='reason'>
+    <section className='section flex flex-col max-w-[85em] mx-auto' id='reason'>
       <div
-        className='flex flex-wrap gap-[0.3em] justify-center mt-[15em] mb-[10em] relative'
+        className='grid justify-center mt-[15em] mb-[10em] relative'
+        style={{
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          gap: '0.3em',
+          width: 'fit-content',
+          margin: '15em auto 10em auto',
+        }}
         ref={gridRef}
       >
         {/* Invisible measurement element */}
@@ -225,7 +233,11 @@ const Reason = () => {
         </div>
 
         {gridItems.map((item) => (
-          <div key={item.key} className={item.className}>
+          <div
+            key={item.key}
+            className={item.className}
+            data-line={item.lineIndex}
+          >
             {item.char}
           </div>
         ))}

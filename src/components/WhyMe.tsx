@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { galleryData, jobs } from '../data/Data';
 import BlinkingText from './BlinkingText';
+import SpiralGallery from './SpiralGallery';
 
 const WhyMe = () => {
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
@@ -17,17 +18,18 @@ const WhyMe = () => {
       <div className='container flex flex-col items-start my-20 max-w-[80%] lg-custom:max-w-full'>
         <div className='w-full bg-dark py-20 overflow-hidden'>
           <div className='z-10 max-w-[90%] mx-auto'>
-            <div className='flex justify-between items-end mb-32'>
+            <div className='flex flex-col gap-4 lg-custom:flex-row justify-between md-custom:items-end mb-32'>
               <h1 className='section-title'>Why Me?</h1>
-              <div className='text-right'>
+              <div className='flex flex-col items-center md-custom:block text-center md-custom:text-right'>
                 <h2 className='text-[1.5rem] font-main-semibold uppercase leading-none'>
                   Code with a Director’s perspective.
                 </h2>
-                <p className='text-third text-[1.2rem] font-main-light'>
+                <p className='mt-8 md-custom:mt-0 w-[19ch] md-custom:w-full text-third text-[1.2rem] font-main-light'>
                   I don't just build features; I build business outcomes.
                 </p>
               </div>
             </div>
+
             <div className='flex flex-col'>
               {jobs.map((job) => (
                 <div
@@ -39,8 +41,8 @@ const WhyMe = () => {
                       : 'border-white/10 hover:bg-white/5'
                   }`}
                 >
-                  <div className='flex items-center justify-between gap-4'>
-                    <div className='flex flex-row gap-8'>
+                  <div className='flex flex-col lg-custom:flex-row items-center md-custom:items-end lg-custom:items-center justify-between gap-4'>
+                    <div className='flex flex-col lg-custom:flex-row gap-8'>
                       <div
                         className={`leading-4.5 text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
                           expandedJob === job.id
@@ -52,7 +54,7 @@ const WhyMe = () => {
                           tag='span'
                           text={job.companies[0].periodStart}
                         />
-                        <span className='px-1'></span>
+                        <span className='px-1'>|</span>
                         {job.companies[0].periodEnd === 'TODAY' ? (
                           <h4
                             className={`inline-block text-[0.8rem] px-1 ${
@@ -152,7 +154,7 @@ const WhyMe = () => {
                         : 'grid-rows-[0fr]'
                     }`}
                   >
-                    <div className='overflow-hidden'>
+                    <div className='hidden md-custom:block overflow-hidden'>
                       <div className='pt-8 pb-2 flex items-start gap-6 border-l border-third/30 ml-2 pl-6 mt-6'>
                         <div className='flex flex-col gap-2'>
                           <h5 className='text-third font-main-semibold text-xs tracking-[0.2em] uppercase opacity-70'>
@@ -170,7 +172,7 @@ const WhyMe = () => {
             </div>
           </div>
         </div>
-        <section className='grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[5em] mb-20 mx-12 lg-custom:w-[90%] lg-custom:mx-auto'>
+        <section className='hidden md-custom:grid grid-cols-2 lg-custom:grid-cols-8 grid-flow-dense gap-5 mt-[5em] mb-20 mx-12 lg-custom:w-[90%] lg-custom:mx-auto'>
           {galleryData.map((item) => (
             <div
               key={item.id}
@@ -189,6 +191,7 @@ const WhyMe = () => {
             </div>
           ))}
         </section>
+        {/* <SpiralGallery items={galleryData} /> */}
       </div>
     </section>
   );

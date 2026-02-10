@@ -12,6 +12,20 @@ const Projects = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [cardSize, setCardSize] = useState(270);
+  const [groundYOffset, setGroundYOffset] = useState(45);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      setCardSize(isMobile ? 150 : 270);
+      setGroundYOffset(isMobile ? 36 : -1);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const sortedProjects = [...projects].sort(
     (a, b) => Number(a.year) - Number(b.year)
@@ -60,7 +74,6 @@ const Projects = () => {
 
     const engine = Engine.create();
     const world = engine.world;
-    // Set higher gravity for more weight
     engine.gravity.y = 1;
 
     const width = containerRef.current.clientWidth;
@@ -71,15 +84,15 @@ const Projects = () => {
     // Negative angle because right side is higher (lower Y value in canvas)
     const angle = -Math.atan(slope);
 
-    // Create boundaries
+    // Boundaries
     const floorYOffset = (width / 2) * slope;
-    const groundY = height - 10; // Base at bottom
+    const groundY = height + groundYOffset; // Base at bottom
 
     const ground = Bodies.rectangle(width / 2, groundY, width + 200, 100, {
       isStatic: true,
       angle: angle,
       render: { visible: false },
-      friction: 0.1, // Allow sliding
+      friction: 0.1,
     });
 
     const leftWall = Bodies.rectangle(-50, height / 2, 100, height * 2, {
@@ -122,7 +135,8 @@ const Projects = () => {
       // Instead of const startY = -400;
       const startY = -400 - index * 350; // Each card starts 350px higher than the last
 
-      const body = Bodies.rectangle(randomX, startY, 320, 320, {
+      // Dynamic Body size
+      const body = Bodies.rectangle(randomX, startY, cardSize, cardSize, {
         restitution: 0.8, // Bouncy
         friction: 0.1, // Slide
         frictionAir: 0.02,
@@ -165,8 +179,8 @@ const Projects = () => {
         if (body && cardEl) {
           const { x, y } = body.position;
           const rotation = body.angle;
-          cardEl.style.transform = `translate(${x - 135}px, ${
-            y - 150
+          cardEl.style.transform = `translate(${x - cardSize / 2}px, ${
+            y - cardSize / 2
           }px) rotate(${rotation}rad)`;
           cardEl.style.opacity = '1';
         }
@@ -183,7 +197,7 @@ const Projects = () => {
       Engine.clear(engine);
       timers.forEach((t) => clearTimeout(t)); // Clear timeouts to prevent bodies adding after unmount/scroll away
     };
-  }, [isMounted, inView]);
+  }, [isMounted, inView, cardSize, groundYOffset]);
 
   return (
     <div className='api-external relative'>
@@ -197,10 +211,10 @@ const Projects = () => {
           <div className='-mt-24'>
             <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
               <div className='flex flex-col -rotate-[4.29deg] items-end mr-[20%]'>
-                <h2 className='section-title text-7xl w-[8ch] leading-19 font-main-semibold text-right'>
+                <h2 className='section-title text-4xl md:text-7xl w-[8ch] md:leading-19 font-main-semibold text-right'>
                   selected projects
                 </h2>
-                <div className='flex items-center gap-2 mt-4 mr-8'>
+                <div className='flex items-center gap-2 mt-2 md-custom:mt-4 md-custom:mr-8'>
                   <Star
                     className='w-[20px] h-[20px] mt-1'
                     strokeWidth={1.6}
@@ -218,7 +232,10 @@ const Projects = () => {
           </div>
 
           {/* Container Height */}
-          <div ref={containerRef} className='relative w-full h-[55vh]'>
+          <div
+            ref={containerRef}
+            className='relative w-full h-[94vh] md:h-[45vh]'
+          >
             {sortedProjects.map((project, index) => (
               <div
                 key={project.id}
@@ -227,12 +244,15 @@ const Projects = () => {
                 }}
                 className='absolute top-40 left-0 opacity-0' // Start hidden until physics takes over
                 style={{
-                  width: '320px', // Enforce width for physics sync
-                  height: '320px',
+                  width: `${cardSize}px`,
+                  height: `${cardSize}px`,
                   willChange: 'transform',
                 }}
               >
-                <div className='w-[320px] flex justify-center'>
+                <div
+                  style={{ width: `${cardSize}px` }}
+                  className='flex justify-center'
+                >
                   <ProjectCard
                     project={project}
                     onClick={() => {

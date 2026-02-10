@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Gloria_Hallelujah } from 'next/font/google';
+import {
+  Geist,
+  Geist_Mono,
+  Gloria_Hallelujah,
+  Henny_Penny,
+} from 'next/font/google';
 import './globals.css';
 
 const geistSans = Geist({
@@ -18,6 +23,12 @@ const gloria = Gloria_Hallelujah({
   subsets: ['latin'],
 });
 
+const hennyPenny = Henny_Penny({
+  weight: '400',
+  variable: '--font-henny-penny',
+  subsets: ['latin'],
+});
+
 export const metadata: Metadata = {
   title: 'fkodama.com',
   description: 'Francis Kodama Portfolio',
@@ -31,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${gloria.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${gloria.variable} ${hennyPenny.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}

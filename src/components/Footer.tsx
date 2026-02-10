@@ -11,7 +11,7 @@ const Resume = '/assets/files/resume.pdf';
 const Footer = () => {
   return (
     <section
-      className='section flex justify-center items-center flex-row bg-[#282828] border-t border-white/20'
+      className='section flex justify-center items-center flex-row bg-[#282828] border-t border-white/20 pb-6'
       id='footer'
     >
       <div className='grid grid-cols-1 grid-rows-[repeat(12,auto)] lg-custom:grid-cols-[2fr_1fr_1fr_1fr] lg-custom:grid-rows-[repeat(4,auto)] lg-custom:gap-x-16 w-[70%] max-w-[80em] mx-auto pb-16'>
@@ -22,10 +22,10 @@ const Footer = () => {
         <h2 className='hidden lg-custom:block font-main-semibold lg-custom:mt-20 lg-custom:mb-4 lg-custom:col-start-2 lg-custom:row-start-1'>
           GET<span className='text-third'>BACK</span>
         </h2>
-        <h2 className='font-main-semibold mt-20 mb-4 lg-custom:col-start-3 lg-custom:row-start-1'>
+        <h2 className='hidden lg-custom:block font-main-semibold mt-20 mb-4 lg-custom:col-start-3 lg-custom:row-start-1'>
           GET<span className='text-third'>IN TOUCH</span>
         </h2>
-        <h2 className='font-main-semibold mt-20 mb-4 lg-custom:col-start-4 lg-custom:row-start-1'>
+        <h2 className='hidden lg-custom:block font-main-semibold mt-20 mb-4 lg-custom:col-start-4 lg-custom:row-start-1'>
           GET<span className='text-third'>CONNECTED</span>
         </h2>
 
@@ -60,16 +60,15 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-col lg-custom:col-start-3 lg-custom:row-start-2'>
-          <p className='text-[0.9rem] mb-2'>fk@fkodama.com</p>
           <Link
-            className='text-[0.9rem] underline cursor-pointer transition-all duration-200 ease-in hover:font-main-semibold hover:text-third hover:-translate-x-[3px]'
+            className='my-4 lg-custom:my-0 text-[0.9rem] underline cursor-pointer transition-all duration-200 ease-in hover:font-main-semibold hover:text-third hover:-translate-x-[3px]'
             to='contact'
             spy={true}
             smooth={true}
             offset={200}
             duration={500}
           >
-            send message
+            send a message
           </Link>
         </div>
 
