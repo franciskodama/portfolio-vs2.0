@@ -37,6 +37,11 @@ export const projects = [
     category: 'web app',
     url: 'https://monkeybusiness-olive.vercel.app/',
     image: require('../assets/images/projects/project-portfolio.jpg'),
+    images: [
+      require('../assets/images/projects/project-portfolio.jpg'),
+      require('../assets/images/projects/project-seletos.jpg'),
+      require('../assets/images/projects/project-mundial.jpg'),
+    ],
     frontText:
       'A high-performance financial engine featuring AI-powered transaction automation and advanced budget tracking.',
     backText_titleOne: 'why',
