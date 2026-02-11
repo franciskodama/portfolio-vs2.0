@@ -19,10 +19,10 @@ export const projects = [
       'I needed a digital ecosystem that could keep pace with a developer’s mind. Generic productivity apps were too scattered; I wanted a single "Swiss Army Knife" that centralized everything from long-term vision to daily English practice.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'I architected a modular hub using Next.js and Prisma. I focused on creating diverse utility components—from a Stoic philosophy agent to a strategic "Yearly Promises" roadmap—ensuring each tool felt distinct yet integrated into a cohesive PostgreSQL database.',
+      'I architected a modular hub using Next.js and Prisma, focusing on high-utility components. I implemented a color-coded categorization system for data management and a randomized logic engine to power interactive learning tools, all synced to a centralized PostgreSQL database.',
     backText_titleThree: 'what',
     backText_textThree:
-      'A comprehensive personal productivity suite featuring a Vision Board, a quarter-based strategic planner, a "Decision Helper" for creative randomization, and an AI-powered Stoic mentor for mental resilience.',
+      'A personal productivity suite featuring a centralized Vision Board for goal tracking, a strategic "Yearly Promises" roadmap organized by quarters, and a collection of custom-built micro-tools for daily optimization.',
     backText_titleFour: 'result',
     backText_textFour:
       'A highly functional, multi-tool platform that proves I can build complex, feature-rich applications that solve nuanced user needs while maintaining a clean, performant UI/UX.',
@@ -82,13 +82,43 @@ export const projects = [
       'I engineered a multi-currency tracking engine that calculates net worth evolution and asset allocation in real-time. I implemented specific financial logic, like "ATH Estimation" and technical analysis projections, to assist in data-driven decision making.',
     backText_titleThree: 'what',
     backText_textThree:
-      'An advanced investment portfolio manager featuring currency-agnostic views, crypto allocation goals based on All-Time Highs (ATH), and detailed net worth evolution charts.',
+      'A holistic financial dashboard that tracks net worth across global exchanges, manages "cash-on-hand" liquidity, and visualizes asset distribution through dynamic charts and personalized allocation goals.',
     backText_titleFour: 'result',
     backText_textFour:
       'My first major full-stack project, showcasing my ability to handle complex mathematical logic, multi-currency state management, and the integration of Clerk for secure authentication.',
     backgroundColor: '#6366F1',
     visitIcon: true,
   },
+  // {
+  //   id: 8,
+  //   highlight: true,
+  //   frontShow: true,
+  //   icon: 'PiggyBank',
+  //   title: 'Trezo.app',
+  //   year: '2024',
+  //   tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Tailwind CSS Clerk Zod',
+  //   category: 'web app',
+  //   url: 'https://trezo.app/',
+  //   images: [
+  //     { image: require('../assets/images/projects/prj-trezo1.jpg') },
+  //     { image: require('../assets/images/projects/prj-trezo2.jpg') },
+  //     { image: require('../assets/images/projects/prj-trezo3.jpg') },
+  //   ],
+  //   backText_titleOne: 'why',
+  //   backText_textOne:
+  //     'As a global investor, I struggled to find a platform that unified assets across Brazil, Canada, and the US. I needed a tool that could handle three currencies (BRL, CAD, USD) and diverse asset classes (Stocks, Crypto, Bonds, etc) in one view.',
+  //   backText_titleTwo: 'how',
+  //   backText_textTwo:
+  //     'I engineered a multi-currency tracking engine that calculates net worth evolution and asset allocation in real-time. I implemented specific financial logic, like "ATH Estimation" and technical analysis projections, to assist in data-driven decision making.',
+  //   backText_titleThree: 'what',
+  //   backText_textThree:
+  //     'An advanced investment portfolio manager featuring currency-agnostic views, crypto allocation goals based on All-Time Highs (ATH), and detailed net worth evolution charts.',
+  //   backText_titleFour: 'result',
+  //   backText_textFour:
+  //     'My first major full-stack project, showcasing my ability to handle complex mathematical logic, multi-currency state management, and the integration of Clerk for secure authentication.',
+  //   backgroundColor: '#6366F1',
+  //   visitIcon: true,
+  // },
   {
     id: 10,
     highlight: true,
@@ -106,10 +136,10 @@ export const projects = [
     ],
     backText_titleOne: 'why',
     backText_textOne:
-      'To reflect my growth as a developer, I wanted to move beyond a "static resume" and create an immersive, agentic experience. The goal was to demonstrate mastery of modern animations and the new frontier of AI-driven UX.',
+      'Building on the success of my previous portfolio, I wanted to push the boundaries of modern web interaction. This version is not just a showcase of work; it is an immersive, agentic environment designed to demonstrate my ability to integrate high-level physics-based animations with the latest frontier of AI-driven UX.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'I refactored my entire codebase to Next.js for better performance and integrated Matter.js for physics-based animations (falling project cards). I also built the "Synergy Seer," a custom AI agent that provides real-time compatibility analysis for recruiters.',
+      'I refactored the entire architecture to Next.js for enhanced performance and integrated Matter.js to create a tactile, physics-simulated UI. The centerpiece is the Synergy Seer, a custom-built Gemini agent that transforms the recruiter’s experience from passive browsing into an interactive, AI-powered consultation.',
     backText_titleThree: 'what',
     backText_textThree:
       'A high-performance portfolio featuring physics-simulated UI components, parallax storytelling, and a ChatGPT-powered "Synergy Seer" that bridges the gap between traditional portfolios and Agentic AI.',
