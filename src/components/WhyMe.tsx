@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { galleryData, jobs } from '../data/Data';
 import BlinkingText from './BlinkingText';
-import SpiralGallery from './SpiralGallery';
 
 const WhyMe = () => {
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
