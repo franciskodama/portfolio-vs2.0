@@ -227,23 +227,24 @@ const About = () => {
               CSS, Prisma, UX/UI design
             </h2>
             <div className='font-main-light'>
-              <p className='text-[0.95rem] mb-4 mr-4 md-custom:max-w-[35ch]'>
-                I'm an experienced tech services provider with a strong
-                understanding of the industry trends, as well as of the entire
-                web development process, including coding, UX/UI design, product
-                management, and client services.
+              <p className='text-[0.95rem] my-4 mr-4 max-w-[30ch] md-custom:max-w-[42ch]'>
+                I am a software engineer and experienced tech services provider
+                with a high-level understanding of industry trends and the
+                full-cycle web development process. My background in advertising
+                and product management allows me to bridge the gap between
+                complex code and user-centric design.
               </p>
-              <p className='text-[0.95rem] mb-4 md-custom:max-w-[35ch]'>
-                Resourceful, curious, creative, and critical thinker, who loves
-                to solve problems by designing and coding enjoyable and useful
-                products.
+              <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch]'>
+                Driven by a resourceful and critical mindset, I thrive on
+                solving complex problems by architecting digital products that
+                are as enjoyable to use as they are impactful to the business.
               </p>
             </div>
           </div>
 
           <div className='flex items-end justify-between ml-4 md:ml-12'>
             <div className='flex flex-col relative'>
-              <p className='text-[0.7rem] font-main-light mt-12 mb-2'>
+              <p className='text-[0.7rem] font-main-light mt-8 mb-2'>
                 location:
               </p>
               <form className='flex flex-wrap items-center mb-12 gap-y-2'>
