@@ -51,20 +51,20 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           </DrawerClose>
 
           <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto py-16 xl-custom:flex-row xl-custom:items-center'>
-            <div className='flex flex-col pb-4 xl-custom:pb-0 xl-custom:w-1/2 xl-custom:items-center'>
-              <div className='w-[22em] self-center md-custom:w-[32em] lg-custom:w-[40em]'>
-                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-10 capitalize'>
+            <div className='flex flex-col pb-4 items-center xl-custom:pb-0 xl-custom:w-1/2'>
+              <div className='flex flex-col w-fit mx-auto xl-custom:mx-0 xl-custom:items-start items-center'>
+                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-10 capitalize text-center xl-custom:text-left'>
                   {project.titleA}
                 </h2>
-                <h3 className='font-main-semibold text-[1.2rem] mb-4 text-bright'>
+                <h3 className='font-main-semibold text-[1.2rem] mb-4 text-bright text-center xl-custom:text-left'>
                   {project.year}
                 </h3>
                 {project.images && project.images.length > 0 ? (
-                  <div className='flex items-center gap-2'>
+                  <div className='flex items-center gap-1 md-custom:gap-2 mx-auto'>
                     <Carousel className='flex items-center gap-2 group w-full'>
                       <CarouselPrevious className='static translate-y-0 left-auto top-auto bg-black/20 border-none' />
 
-                      <div className='w-[20em] md-custom:w-[30em] xl-custom:w-[35em]'>
+                      <div className='w-[70vw] md-custom:w-[28em] xl-custom:w-[30em]'>
                         <CarouselContent className='cursor-grab active:cursor-grabbing'>
                           {project.images.map((img: any, index: number) => (
                             <CarouselItem key={index}>
@@ -90,7 +90,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 )}
                 {project.visitIcon ? (
                   <a
-                    className='block relative mt-12 text-right cursor-pointer'
+                    className='block relative mt-4 text-right cursor-pointer'
                     href={project.url}
                     target='_blank'
                     rel='noreferrer'
