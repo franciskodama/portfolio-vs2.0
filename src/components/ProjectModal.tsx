@@ -50,13 +50,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
             />
           </DrawerClose>
 
-          <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto py-16 xl-custom:flex-row xl-custom:items-center'>
+          <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto py-4 xl-custom:flex-row xl-custom:items-center'>
             <div className='flex flex-col pb-4 items-center xl-custom:pb-0 xl-custom:w-1/2'>
               <div className='flex flex-col w-fit mx-auto xl-custom:mx-0 xl-custom:items-start items-center'>
-                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-10 capitalize text-center xl-custom:text-left'>
-                  {project.titleA}
+                <h2 className='font-main-heavy text-[2rem] text-dark leading-10 capitalize text-center xl-custom:text-left'>
+                  {project.title}
                 </h2>
-                <h3 className='font-main-semibold text-[1.2rem] mb-4 text-bright text-center xl-custom:text-left'>
+                <h3 className='font-main-semibold text-[1.2rem] my-4 text-bright text-center xl-custom:text-left'>
                   {project.year}
                 </h3>
                 {project.images && project.images.length > 0 ? (
@@ -97,7 +97,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <p className="font-main-semibold text-[1.25rem] text-bright before:absolute before:bottom-[-0.1em] before:right-0 before:content-[''] before:w-[7.4rem] before:h-px before:border-b-2 before:border-bright">
+                    <p className="font-main-semibold text-[1rem] text-bright before:absolute before:bottom-[-0.1em] before:right-0 before:content-[''] before:w-[5.9rem] before:h-px before:border-b-2 before:border-bright">
                       visit project
                     </p>
                   </a>
@@ -113,35 +113,35 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
 
             <div className='flex flex-col pb-4 xl-custom:w-1/2 xl-custom:items-center'>
               <div className='w-[18em] self-center md-custom:w-[22.5em]'>
-                <p className='font-main-semibold text-[1.25rem] text-bright text-left mt-6 mb-6 md-custom:mt-10 xl-custom:text-right'>
+                <p className='font-main-semibold text-[1rem] text-bright text-left mt-6 mb-6 md-custom:mt-10 xl-custom:text-right'>
                   {project.category}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleOne}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
+                <p className='w-[30ch] text-[0.8rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
                   {project.backText_textOne}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleTwo}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
+                <p className='w-[30ch] text-[0.8rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
                   {project.backText_textTwo}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleThree}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
+                <p className='w-[30ch] text-[0.8rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
                   {project.backText_textThree}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleFour}
                 </h4>
-                <p className='w-[30ch] text-[0.9rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
+                <p className='w-[30ch] text-[0s.8rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
                   {project.backText_textFour}
                 </p>
 
