@@ -62,7 +62,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 {project.images && project.images.length > 0 ? (
                   <div className='flex items-center gap-1 md-custom:gap-2 mx-auto'>
                     <Carousel className='flex items-center gap-2 group w-full'>
-                      <CarouselPrevious className='static translate-y-0 left-auto top-auto bg-black/20 border-none' />
+                      <CarouselPrevious className='static translate-y-0 left-auto top-auto border-none' />
 
                       <div className='w-[70vw] md-custom:w-[28em] xl-custom:w-[30em]'>
                         <CarouselContent className='cursor-grab active:cursor-grabbing'>
@@ -80,7 +80,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                         </CarouselContent>
                       </div>
 
-                      <CarouselNext className='static translate-y-0 right-auto top-auto bg-black/20 border-none' />
+                      <CarouselNext className='static translate-y-0 right-auto top-auto border-none' />
                     </Carousel>
                   </div>
                 ) : project.image ? (
