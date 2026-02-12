@@ -68,11 +68,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                         <CarouselContent className='cursor-grab active:cursor-grabbing'>
                           {project.images.map((img: any, index: number) => (
                             <CarouselItem key={index}>
-                              <Image
-                                className='block w-full h-[24em] [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:h-[35em] xl-custom:h-[42em] object-cover'
-                                src={img}
-                                alt={`project image ${index + 1}`}
-                              />
+                              {img.image && (
+                                <Image
+                                  className='block w-full h-[24em] [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:h-[35em] xl-custom:h-[42em] object-cover'
+                                  src={img.image}
+                                  alt={`project image ${index + 1}`}
+                                />
+                              )}
                             </CarouselItem>
                           ))}
                         </CarouselContent>
@@ -81,13 +83,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                       <CarouselNext className='static translate-y-0 right-auto top-auto bg-black/20 border-none' />
                     </Carousel>
                   </div>
-                ) : (
+                ) : project.image ? (
                   <Image
                     className='block w-[18em] h-[24em] mx-auto [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:w-[25em] md-custom:h-[35em] xl-custom:w-[32em] xl-custom:h-[42em]'
                     src={project.image}
                     alt='main project'
                   />
-                )}
+                ) : null}
                 {project.visitIcon ? (
                   <a
                     className='block relative mt-4 text-right cursor-pointer'

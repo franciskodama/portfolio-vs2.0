@@ -89,36 +89,6 @@ export const projects = [
     backgroundColor: '#6366F1',
     visitIcon: true,
   },
-  // {
-  //   id: 8,
-  //   highlight: true,
-  //   frontShow: true,
-  //   icon: 'PiggyBank',
-  //   title: 'Trezo.app',
-  //   year: '2024',
-  //   tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Tailwind CSS Clerk Zod',
-  //   category: 'web app',
-  //   url: 'https://trezo.app/',
-  //   images: [
-  //     { image: require('../assets/images/projects/prj-trezo1.jpg') },
-  //     { image: require('../assets/images/projects/prj-trezo2.jpg') },
-  //     { image: require('../assets/images/projects/prj-trezo3.jpg') },
-  //   ],
-  //   backText_titleOne: 'why',
-  //   backText_textOne:
-  //     'As a global investor, I struggled to find a platform that unified assets across Brazil, Canada, and the US. I needed a tool that could handle three currencies (BRL, CAD, USD) and diverse asset classes (Stocks, Crypto, Bonds, etc) in one view.',
-  //   backText_titleTwo: 'how',
-  //   backText_textTwo:
-  //     'I engineered a multi-currency tracking engine that calculates net worth evolution and asset allocation in real-time. I implemented specific financial logic, like "ATH Estimation" and technical analysis projections, to assist in data-driven decision making.',
-  //   backText_titleThree: 'what',
-  //   backText_textThree:
-  //     'An advanced investment portfolio manager featuring currency-agnostic views, crypto allocation goals based on All-Time Highs (ATH), and detailed net worth evolution charts.',
-  //   backText_titleFour: 'result',
-  //   backText_textFour:
-  //     'My first major full-stack project, showcasing my ability to handle complex mathematical logic, multi-currency state management, and the integration of Clerk for secure authentication.',
-  //   backgroundColor: '#6366F1',
-  //   visitIcon: true,
-  // },
   {
     id: 10,
     highlight: true,
@@ -604,7 +574,7 @@ export const jobs = [
       'Jira.',
     ],
     benefit:
-      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+      'I bring a collaborative mindset and technical expertise, empowering the team to solve complex problems and deliver exceptional software.',
   },
   {
     id: 5,
