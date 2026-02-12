@@ -56,7 +56,7 @@ export const projects = [
     backText_titleFour: 'result',
     backText_textFour:
       'A sophisticated FinTech tool that demonstrates my ability to implement AI for automation, manage complex relational data with Prisma/Neon, and build secure, multi-user environments.',
-    backgroundColor: '#10B981',
+    backgroundColor: '#6366F1',
     visitIcon: true,
   },
   {
@@ -86,7 +86,7 @@ export const projects = [
     backText_titleFour: 'result',
     backText_textFour:
       'My first major full-stack project, showcasing my ability to handle complex mathematical logic, multi-currency state management, and the integration of Clerk for secure authentication.',
-    backgroundColor: '#6366F1',
+    backgroundColor: '#3FABD8',
     visitIcon: true,
   },
   {
@@ -277,117 +277,6 @@ export const projects = [
     visitIcon: true,
   },
 ];
-
-export const whyData = {
-  reason: {
-    titleOne: 'Why?',
-    textOne:
-      'This portfolio has been created to help me gain a deeper understanding and practice of the languages I work with.',
-    titleTwo: 'Showcase',
-    textTwo:
-      'In addition, the portfolio displays my varied skill set which extends from conception to creativity, design, and coding.',
-    titleThree: 'Tech used',
-    textThree: 'React, Javascript, CSS, SASS, HTML, NPM, and Git.',
-    titleFour: 'Tools used',
-    textFour: 'Figma, Adobe Photoshop, and VS Code.',
-    observation: 'This portfolio was 100% created and programmed by me. :)',
-    bottom: '5%',
-    left: '50%',
-  },
-  about: {
-    titleOne: 'Why?',
-    textOne: `This page was created to serve as a real showcase for my future employer, who may be involved with e-commerce. Besides, the numerous "states" made it a good sandbox to practice my React skills.`,
-    titleTwo: 'Showcase',
-    textTwo: `Go with the flow: choosing a location is required to "add to my team". By clicking this button, an item will appear in the shop bag. When the customer clicks on the bag, I will appear as a product to be checked out with the location chosen. Next, you can delete the item or click on "schedule an interview." You will be directed to the contact form with the data you picked.`,
-    titleThree: 'Tech used',
-    textThree:
-      'As a starting point, I challenged myself to use either CSS Grid or Flexbox on each side of the page. Regarding JS, conditional was used to control the appearance of certain elements. Additionally, I used React events and React Hooks, such as useState and useRef.',
-    titleFour: '',
-    textFour: '',
-    observation: '',
-    bottom: '0.5%',
-    left: '50%',
-  },
-  ai: {
-    titleOne: 'Why?',
-    textOne: 'Artificial Intelligence had to be a part of my portfolio.',
-    titleTwo: 'Showcase',
-    textTwo:
-      'To demonstrate how powerful this technology is, I created a fun and mystical area where you can place any question, and the crystal ball will give you a reasonable response.',
-    titleThree: 'Tech used',
-    textThree:
-      'I used a cutting-edge API called Google Generative AI (Gemini) to achieve this.',
-    titleFour: '',
-    textFour: '',
-    observation: '',
-    bottom: '5%',
-    left: '50%',
-  },
-  selectedProjects: {
-    titleOne: 'Why?',
-    textOne:
-      'Managing props in reusable components were the goal of this page. There are three primary reusable components in this portfolio: the project cards on this page, these red cards from where you are reading right now, and some buttons.',
-    titleTwo: 'Showcase',
-    textTwo:
-      'The data is imported from another file, and the code creates the cards dynamically in two versions, the closed small card and the bigger opened card.',
-    titleThree: 'Tech used',
-    textThree:
-      'I highlight here the React Hooks such as useState, useRef, and useEffect.',
-    titleFour: '',
-    textFour: '',
-    observation: '',
-    bottom: '5%',
-    left: '50%',
-  },
-  api: {
-    titleOne: 'Why?',
-    textOne:
-      'I will certainly need to manage API interactions in my future job, so creating this portfolio page was crucial.',
-    titleTwo: 'Showcase',
-    textTwo:
-      'Fetching data from a third party, and promises were the key to this page. Moreover, the method of calculating the time, as well as how to present the data on the screen to the user, also contributed to my learning of React.',
-    titleThree: 'Tech used',
-    textThree:
-      'Fetch request, promises, React hooks such as useState and useEffect, and some JS methods.',
-    titleFour: '',
-    textFour: '',
-    observation: '',
-    bottom: '10%',
-    left: '50%',
-  },
-  code: {
-    titleOne: 'Why?',
-    textOne:
-      'As a professional obsessed with organization, standards, and clean code, I wanted to present this passion in a provocative and creative manner.',
-    titleTwo: 'Showcase',
-    textTwo:
-      'To be transparent, I want to show my code exactly as I write it. Thus, to view the original code of this page, click the magnifying glass icon.',
-    titleThree: 'Tech used',
-    textThree:
-      'ScrollTrigger, CSS and JS animation, useState, useRef, and use Effect.',
-    titleFour: '',
-    textFour: '',
-    observation: '',
-    bottom: '2%',
-    left: '50%',
-  },
-  contact: {
-    titleOne: 'Why?',
-    textOne:
-      'In order to feel complete in my learning, I needed drag-and-drop functionality. In response, I created the Hello Generator, an easy way to get you in touch, and of course, schedule an interview! :)',
-    titleTwo: 'Showcase',
-    textTwo:
-      'The ability to program and be creative. In addition to the drag and drop feature, this page receives and manages props (the interview request and the location information) from the about me page.',
-    titleThree: 'Tech used',
-    textThree:
-      'Hook useContext, DragDropContext, Droppable, Draggable from React Beautiful DnD library.',
-    titleFour: '',
-    textFour: '',
-    observation: '',
-    bottom: '6%',
-    left: '50%',
-  },
-};
 
 export const avatarData = [
   // {

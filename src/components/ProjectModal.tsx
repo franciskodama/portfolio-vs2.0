@@ -49,14 +49,14 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
               alt='close button'
             />
           </DrawerClose>
-
-          <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto py-4 xl-custom:flex-row xl-custom:items-center'>
-            <div className='flex flex-col pb-4 items-center xl-custom:pb-0 xl-custom:w-1/2'>
+          {/* xl-custom:items-center */}
+          <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto xl-custom:flex-row md-custom:mt-18'>
+            <div className='flex flex-col mt-18 md-custom:mt-0 pb-4 items-center xl-custom:pb-0 xl-custom:w-1/2'>
               <div className='flex flex-col w-fit mx-auto xl-custom:mx-0 xl-custom:items-start items-center'>
                 <h2 className='font-main-heavy text-[2rem] text-dark leading-10 capitalize text-center xl-custom:text-left'>
                   {project.title}
                 </h2>
-                <h3 className='font-main-semibold text-[1.2rem] my-4 text-bright text-center xl-custom:text-left'>
+                <h3 className='font-main-semibold text-[1.2rem] mt-2 mb-4 text-bright text-center xl-custom:text-left'>
                   {project.year}
                 </h3>
                 {project.images && project.images.length > 0 ? (
@@ -111,37 +111,37 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
               className='block w-[60em] animate-line-movement p-4 mt-8 xl-custom:hidden'
             />
 
-            <div className='flex flex-col pb-4 xl-custom:w-1/2 xl-custom:items-center'>
-              <div className='w-[18em] self-center md-custom:w-[22.5em]'>
-                <p className='font-main-semibold text-[1rem] text-bright text-left mt-6 mb-6 md-custom:mt-10 xl-custom:text-right'>
+            <div className='flex flex-col pb-4 mt-12 md-custom:mt-0 xl-custom:w-1/2 xl-custom:items-center'>
+              <div className='w-[18em] self-center md-custom:w-[30em]'>
+                <p className='font-main-semibold text-[1rem] text-bright text-left mb-6 md-custom:mt-0 xl-custom:text-right'>
                   {project.category}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleOne}
                 </h4>
-                <p className='w-[30ch] text-[0.8rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
+                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch]'>
                   {project.backText_textOne}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleTwo}
                 </h4>
-                <p className='w-[30ch] text-[0.8rem] font-main-regular md-custom:text-[1rem] md-custom:w-[35ch]'>
+                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch]'>
                   {project.backText_textTwo}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleThree}
                 </h4>
-                <p className='w-[30ch] text-[0.8rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
+                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch] md-custom:mb-0'>
                   {project.backText_textThree}
                 </p>
 
                 <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
                   {project.backText_titleFour}
                 </h4>
-                <p className='w-[30ch] text-[0s.8rem] font-main-regular mb-20 md-custom:text-[1rem] md-custom:w-[35ch] md-custom:mb-0'>
+                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch] md-custom:mb-0'>
                   {project.backText_textFour}
                 </p>
 
