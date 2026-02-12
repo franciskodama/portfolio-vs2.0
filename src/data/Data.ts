@@ -9,20 +9,23 @@ export const projects = [
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     category: 'web app',
     url: 'https://handyfor.me/',
-    image: require('../assets/images/projects/project-portfolio.jpg'),
-    frontText:
-      'A sophisticated multi-tool platform featuring AI integration and interactive gamification.',
+    images: [
+      { image: require('../assets/images/projects/prj-handy1.jpg') },
+      { image: require('../assets/images/projects/prj-handy2.jpg') },
+      { image: require('../assets/images/projects/prj-handy3.jpg') },
+    ],
     backText_titleOne: 'why',
-    backText_textOne: `I wanted to build an "all-in-one" utility ecosystem that prioritizes user experience through a clean, intuitive interface while handling complex conditional logic.`,
+    backText_textOne:
+      'I needed a digital ecosystem that could keep pace with a developer’s mind. Generic productivity apps were too scattered; I wanted a single "Swiss Army Knife" that centralized everything from long-term vision to daily English practice.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'Leveraging Next.js and Tailwind CSS, I engineered a highly modular architecture. I focused on atomic design principles to create reusable components like the dynamic Sidebar and interactive game modules.',
+      'I architected a modular hub using Next.js and Prisma, focusing on high-utility components. I implemented a color-coded categorization system for data management and a randomized logic engine to power interactive learning tools, all synced to a centralized PostgreSQL database.',
     backText_titleThree: 'what',
     backText_textThree:
-      'Integrated AI capabilities, custom-built logic for "Spin Magic" and "Letter Leap," and a fully responsive dashboard layout with refined UI transitions.',
+      'A personal productivity suite featuring a centralized Vision Board for goal tracking, a strategic "Yearly Promises" roadmap organized by quarters, and a collection of custom-built micro-tools for daily optimization.',
     backText_titleFour: 'result',
     backText_textFour:
-      'A high-performance, scalable web application that demonstrates my ability to bridge the gap between complex backend logic and pixel-perfect frontend execution.',
+      'A highly functional, multi-tool platform that proves I can build complex, feature-rich applications that solve nuanced user needs while maintaining a clean, performant UI/UX.',
     backgroundColor: '#0EA5E9',
     visitIcon: true,
   },
@@ -33,25 +36,27 @@ export const projects = [
     icon: 'Calculator',
     title: 'Monkey Business',
     year: '2026',
-    tech: 'React, Next.js, TypeScript, A.I., Prisma, PostgreSQL, Neon, Auth.js, Tailwind CSS, Zod',
+    tech: 'React Next.js TypeScript A.I. Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     category: 'web app',
     url: 'https://monkeybusiness-olive.vercel.app/',
-    image: require('../assets/images/projects/project-portfolio.jpg'),
-    frontText:
-      'A high-performance financial engine featuring AI-powered transaction automation and advanced budget tracking.',
+    images: [
+      { image: require('../assets/images/projects/prj-monkey1.jpg') },
+      { image: require('../assets/images/projects/prj-monkey2.jpg') },
+      { image: require('../assets/images/projects/prj-monkey3.jpg') },
+    ],
     backText_titleOne: 'why',
     backText_textOne:
-      'I wanted to solve the complexity of manual expense tracking by building a "financial command center" that bridge the gap between static bank statements and dynamic household planning.',
+      'Managing family finances was a manual, time-consuming chore. My goal was to eliminate the friction of expense tracking by replacing manual data entry with intelligent automation and collaborative features.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'I engineered a sophisticated data pipeline using Google Gemini AI to parse bank statements, coupled with a custom "Smart Rules" engine that learns user categorization patterns over time.',
-    backText_titleThree: 'logic',
+      'I integrated A.I. to parse complex credit card statements and built a custom "Rule Engine." This allows the system to learn from "messy" transaction descriptions (like Amazon codes) and auto-categorize them, becoming smarter with every use.',
+    backText_titleThree: 'what',
     backText_textThree:
-      'The architecture supports multi-month state management and relational database integrity, ensuring transactions are accurately mapped to specific monthly budget targets.',
-    backText_titleFour: 'aesthetic',
+      'A collaborative financial intelligence platform featuring bank statement AI-parsing, automated expense categorization, a "Household" mode for couples, and a high-level Yearly Overview for macro-financial planning.',
+    backText_titleFour: 'result',
     backText_textFour:
-      'Developed with a "Strict Geometric" design system, utilizing high-contrast typography and minimalist UI to deliver a professional, architectural user experience.',
-    backgroundColor: '#EAB308',
+      'A sophisticated FinTech tool that demonstrates my ability to implement AI for automation, manage complex relational data with Prisma/Neon, and build secure, multi-user environments.',
+    backgroundColor: '#10B981',
     visitIcon: true,
   },
   {
@@ -61,24 +66,27 @@ export const projects = [
     icon: 'PiggyBank',
     title: 'Trezo.app',
     year: '2024',
-    tech: 'React, Next.js, TypeScript, Prisma, PostgreSQL, Neon, Tailwind CSS, Clerk, Zod',
+    tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Tailwind CSS Clerk Zod',
     category: 'web app',
     url: 'https://trezo.app/',
-    image: require('../assets/images/projects/project-portfolio.jpg'),
-    frontText:
-      'A high-performance assets manager featuring the latest Next.js 15 and Prisma 7 architecture.',
+    images: [
+      { image: require('../assets/images/projects/prj-trezo1.jpg') },
+      { image: require('../assets/images/projects/prj-trezo2.jpg') },
+      { image: require('../assets/images/projects/prj-trezo3.jpg') },
+    ],
     backText_titleOne: 'why',
-    backText_textOne: `I wanted to build a bulletproof asset management system that leveraged the cutting-edge 'Edge Runtime' for speed while maintaining a secure, scalable database connection.`,
+    backText_textOne:
+      'As a global investor, I struggled to find a platform that unified assets across Brazil, Canada, and the US. I needed a tool that could handle three currencies (BRL, CAD, USD) and diverse asset classes (Stocks, Crypto, Bonds) in one view.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'I navigated a complex migration to Prisma 7 and Next.js 15, solving deep architectural conflicts between Node.js dependencies and Edge-light environments. I implemented a custom serverless database adapter (Neon) to ensure 100% uptime even when accessed through restrictive network environments or VPNs.',
-    backText_titleThree: 'challenge',
+      'I engineered a multi-currency tracking engine that calculates net worth evolution and asset allocation in real-time. I implemented specific financial logic, like "ATH Estimation" and technical analysis projections, to assist in data-driven decision making.',
+    backText_titleThree: 'what',
     backText_textThree:
-      'The biggest win was debugging a "phantom" crypto module error by decoupling the authentication middleware from the database driver, ensuring the app remains lightning-fast and globally accessible.',
-    backText_titleFour: 'what',
+      'A holistic financial dashboard that tracks net worth across global exchanges, manages "cash-on-hand" liquidity, and visualizes asset distribution through dynamic charts and personalized allocation goals.',
+    backText_titleFour: 'result',
     backText_textFour:
-      'Next.js 15 (App Router), Prisma 7, Neon Serverless Postgres, Clerk Auth, Tailwind CSS, and Zod for robust schema validation.',
-    backgroundColor: '#00E699',
+      'My first major full-stack project, showcasing my ability to handle complex mathematical logic, multi-currency state management, and the integration of Clerk for secure authentication.',
+    backgroundColor: '#6366F1',
     visitIcon: true,
   },
   {
@@ -88,21 +96,28 @@ export const projects = [
     icon: 'Book',
     title: 'Portfolio V.02',
     year: '2026',
-    tech: 'React, Next.js, TypeScript, matter-js, framer-motion, gsap, react-scroll-parallax',
+    tech: 'React Next.js TypeScript Matter.js Framer-motion GSAP React-scroll-parallax',
     category: 'website',
     url: 'https://www.fkodama.com',
-    image: require('../assets/images/projects/project-portfolio.jpg'),
-    frontText: '100% React-based, this is my most important project built.',
+    images: [
+      { image: require('../assets/images/projects/prj-port1.jpg') },
+      { image: require('../assets/images/projects/prj-port2.jpg') },
+      { image: require('../assets/images/projects/prj-port3.jpg') },
+    ],
     backText_titleOne: 'why',
-    backText_textOne: `As a product strategist, I began by thinking about how to create a portfolio that would appeal to employers seeking talents with my skills.`,
+    backText_textOne:
+      'Building on the success of my previous portfolio, I wanted to push the boundaries of modern web interaction. This version is not just a showcase of work; it is an immersive, agentic environment designed to demonstrate my ability to integrate high-level physics-based animations with the latest frontier of AI-driven UX.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'Therefore, I decided to develop pages that simulate digital product pages, such as an e-commerce site, a page with artificial intelligence, or a page with access to an API (Weather API in this case).',
-    backText_titleFour: 'what',
+      'I refactored the entire architecture to Next.js for enhanced performance and integrated Matter.js to create a tactile, physics-simulated UI. The centerpiece is the Synergy Seer, a custom-built Gemini agent that transforms the recruiter’s experience from passive browsing into an interactive, AI-powered consultation.',
+    backText_titleThree: 'what',
+    backText_textThree:
+      'A high-performance portfolio featuring physics-simulated UI components, parallax storytelling, and a ChatGPT-powered "Synergy Seer" that bridges the gap between traditional portfolios and Agentic AI.',
+    backText_titleFour: 'result',
     backText_textFour:
-      'React, SASS, and HTML. Some tools used: Git, Figma, Adobe Photoshop, and Adobe Premiere.',
-    backgroundColor: '#FC9651',
-    visitIcon: false,
+      'A technical "proof of concept" that showcases my ability to blend creative front-end artistry (GSAP/Framer Motion) with robust, modern software engineering and AI integration.',
+    backgroundColor: '#6D28D9',
+    visitIcon: true,
   },
   {
     id: 1,
@@ -375,53 +390,60 @@ export const whyData = {
 };
 
 export const avatarData = [
+  // {
+  //   key: 0,
+  //   title: 'Creative Innovation',
+  //   description:
+  //     'Leveraging my extensive advertising background and relentless curiosity, I deliver innovative technical solutions that balance creative vision with functional excellence.',
+  //   imgUrl: require('../assets/images/avatar-creative.jpg'),
+  // },
   {
-    key: 0,
-    title: 'creative and innovation',
+    key: 1,
+    title: 'Strategic Thinking',
     description:
-      'Due to my continuous curiosity and extensive advertising experience, I am always ready to contribute to the development of innovative solutions that can make a real impact.',
+      'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
     imgUrl: require('../assets/images/avatar-creative.jpg'),
   },
   {
     key: 1,
-    title: 'creative and innovation',
+    title: 'Strategic Thinking',
     description:
-      'Due to my continuous curiosity and extensive advertising experience, I am always ready to contribute to the development of innovative solutions that can make a real impact.',
+      'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
     imgUrl: require('../assets/images/avatar-creative.jpg'),
   },
   {
     key: 2,
-    title: 'problem-solving',
+    title: 'Agile Problem-Solving',
     description:
-      'I have the ability to handle and calmly identify solutions to difficult or unexpected situations both in programming challenges and in the workplace.',
+      'I maintain a calm, analytical approach to unexpected challenges, whether debugging complex state logic or navigating high-stakes workplace pivots.',
     imgUrl: require('../assets/images/avatar-problem.jpg'),
   },
   {
     key: 3,
-    title: 'effective communication',
+    title: 'Stakeholder Communication',
     description:
-      'Listening actively to the stakeholders is crucial, which has been my job for all my life. Good communication is one of my most valuable qualities.',
+      'Active listening is the core of my professional DNA. I excel at translating complex technical concepts into clear, actionable insights for all stakeholders.',
     imgUrl: require('../assets/images/avatar-communication.jpg'),
   },
   {
     key: 4,
-    title: 'lifelong learner',
+    title: 'Lifelong Learning',
     description:
-      'I find joy in continuous growth and development to keep up with changes in this new world. My aim is to develop skills and master new technologies in order to add value to the projects I work on.',
+      'I thrive on the rapid evolution of technology. My journey is defined by a commitment to mastering new stacks to bring cutting-edge value to every project.',
     imgUrl: require('../assets/images/avatar-learner2.jpg'),
   },
   {
     key: 5,
-    title: 'goal-oriented',
+    title: 'Goal-Oriented Execution',
     description:
-      'Motivated by my vision, goals, and meaningful aspirations, I really believe in hard work, good choices, and persistence. I am rarely distracted from my goals.',
+      'Driven by a clear vision and disciplined persistence, I focus on delivering high-quality results without getting distracted by the "noise" of development.',
     imgUrl: require('../assets/images/avatar-goal.jpg'),
   },
   {
     key: 6,
-    title: 'positive attitude',
+    title: 'Collaborative Culture',
     description:
-      'I am truly interested in deep relationships. Collaboration, flexibility, and empathy are some qualities I have developed over a strong and consistent career.',
+      'I believe great software is built on empathy and flexibility. I focus on building deep professional relationships that foster better teamwork and better code.',
     imgUrl: require('../assets/images/avatar-friendly.jpg'),
   },
 ];
@@ -552,7 +574,7 @@ export const jobs = [
       'Jira.',
     ],
     benefit:
-      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
+      'I bring a collaborative mindset and technical expertise, empowering the team to solve complex problems and deliver exceptional software.',
   },
   {
     id: 5,

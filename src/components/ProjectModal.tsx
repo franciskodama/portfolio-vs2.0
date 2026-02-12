@@ -4,6 +4,13 @@ import Image from 'next/image';
 import IconClose from '../assets/images/card-icon-close-white.svg';
 import Line from '../assets/images/line-cracked.svg';
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import {
   Drawer,
   DrawerContent,
   DrawerTitle,
@@ -44,22 +51,48 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           </DrawerClose>
 
           <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto py-16 xl-custom:flex-row xl-custom:items-center'>
-            <div className='flex flex-col pb-4 xl-custom:pb-0 xl-custom:w-1/2 xl-custom:items-center'>
-              <div className='w-[18em] self-center md-custom:w-[22.5em]'>
-                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-10 capitalize'>
+            <div className='flex flex-col pb-4 items-center xl-custom:pb-0 xl-custom:w-1/2'>
+              <div className='flex flex-col w-fit mx-auto xl-custom:mx-0 xl-custom:items-start items-center'>
+                <h2 className='font-main-heavy text-[2.7rem] text-dark leading-10 capitalize text-center xl-custom:text-left'>
                   {project.titleA}
                 </h2>
-                <h3 className='font-main-semibold text-[1.2rem] mb-4 text-bright'>
+                <h3 className='font-main-semibold text-[1.2rem] mb-4 text-bright text-center xl-custom:text-left'>
                   {project.year}
                 </h3>
-                <Image
-                  className='block w-[15em] h-[20em] ml-8 [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:w-[20.25em] md-custom:h-[28.85em] xl-custom:w-[22.5em] xl-custom:h-[31em]'
-                  src={project.image}
-                  alt='main project'
-                />
+                {project.images && project.images.length > 0 ? (
+                  <div className='flex items-center gap-1 md-custom:gap-2 mx-auto'>
+                    <Carousel className='flex items-center gap-2 group w-full'>
+                      <CarouselPrevious className='static translate-y-0 left-auto top-auto bg-black/20 border-none' />
+
+                      <div className='w-[70vw] md-custom:w-[28em] xl-custom:w-[30em]'>
+                        <CarouselContent className='cursor-grab active:cursor-grabbing'>
+                          {project.images.map((img: any, index: number) => (
+                            <CarouselItem key={index}>
+                              {img.image && (
+                                <Image
+                                  className='block w-full h-[24em] [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:h-[35em] xl-custom:h-[42em] object-cover'
+                                  src={img.image}
+                                  alt={`project image ${index + 1}`}
+                                />
+                              )}
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                      </div>
+
+                      <CarouselNext className='static translate-y-0 right-auto top-auto bg-black/20 border-none' />
+                    </Carousel>
+                  </div>
+                ) : project.image ? (
+                  <Image
+                    className='block w-[18em] h-[24em] mx-auto [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:w-[25em] md-custom:h-[35em] xl-custom:w-[32em] xl-custom:h-[42em]'
+                    src={project.image}
+                    alt='main project'
+                  />
+                ) : null}
                 {project.visitIcon ? (
                   <a
-                    className='block relative mt-12 text-right cursor-pointer'
+                    className='block relative mt-4 text-right cursor-pointer'
                     href={project.url}
                     target='_blank'
                     rel='noreferrer'

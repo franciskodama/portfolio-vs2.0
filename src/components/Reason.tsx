@@ -22,7 +22,6 @@ const Reason = () => {
   const gridRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
 
-  // Styles used for logic and rendering
   const brightClasses =
     'reason__reveal-bright reason__reveal-item border border-white/20 uppercase h-[1.5em] w-[1.5em] text-center font-main-light text-[0.9rem] bg-dark relative opacity-0 -translate-x-[100px] md-custom:text-[2rem] xl-custom:h-[1.3em] xl-custom:w-[1.3em] xl-custom:text-[3.8rem]';
 
@@ -197,6 +196,7 @@ const Reason = () => {
           scrollTrigger: {
             trigger: lineItems[0],
             start: 'top 85%',
+            toggleActions: 'restart none none reset',
           },
         });
       });
@@ -206,14 +206,16 @@ const Reason = () => {
   }, [gridItems]);
 
   return (
-    <section className='section flex flex-col max-w-[85em] mx-auto' id='reason'>
+    <section
+      className='section flex flex-col max-w-[85em]  mx-auto'
+      id='reason'
+    >
       <div
-        className='grid justify-center mt-[15em] mb-[10em] relative'
+        className='relative grid justify-center my-[10em] mx-auto'
         style={{
           gridTemplateColumns: `repeat(${columns}, 1fr)`,
           gap: '0.3em',
           width: 'fit-content',
-          margin: '15em auto 10em auto',
         }}
         ref={gridRef}
       >
