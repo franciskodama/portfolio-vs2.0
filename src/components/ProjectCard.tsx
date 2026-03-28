@@ -49,7 +49,7 @@ const ProjectCard = ({
               <h3 className='font-main-bold w-[10ch] md-custom:w-full text-[1rem] leading-5 md-custom:leading-8 uppercase md-custom:text-[2rem]'>
                 {project.title}
               </h3>
-              <h3 className='hidden md-custom:block w-[25ch] mt-4 font-main-regular uppercase text-[0.8rem] text-third leading-4'>
+              <h3 className='hidden md-custom:block w-[25ch] mt-4 font-main-regular uppercase text-[0.8rem] text-third leading-5'>
                 {project.tech}
               </h3>
             </div>

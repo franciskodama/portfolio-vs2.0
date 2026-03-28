@@ -95,20 +95,17 @@ const Projects = () => {
       friction: 0.1,
     });
 
-    const leftWall = Bodies.rectangle(-50, height / 2, 100, height * 2, {
+    const wallHeight = height * 15; // Height to hold cards falling from the top
+    const wallY = height / 2 - wallHeight / 3; // Shifted up to cover the startY of all cards
+
+    const leftWall = Bodies.rectangle(-50, wallY, 100, wallHeight, {
       isStatic: true,
       render: { visible: false },
     });
-    const rightWall = Bodies.rectangle(
-      width + 50,
-      height / 2,
-      100,
-      height * 2,
-      {
-        isStatic: true,
-        render: { visible: false },
-      }
-    );
+    const rightWall = Bodies.rectangle(width + 50, wallY, 100, wallHeight, {
+      isStatic: true,
+      render: { visible: false },
+    });
 
     World.add(world, [ground, leftWall, rightWall]);
 
