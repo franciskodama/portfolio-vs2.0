@@ -218,26 +218,57 @@ const About = () => {
               Francis Kodama
             </h3>
             <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase'>
-              Software Engineer
+              Technical Product Lead
             </h2>
             <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase mb-0'>
-              React, Next.js, Typescript,
+              Full-Stack Systems Architect
             </h2>
             <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
-              CSS, Prisma, UX/UI design
+              {/* Strategic Product Development */}
+              Ex-Agency Director (100+ Staff)
             </h2>
             <div className='font-main-light'>
               <p className='text-[0.95rem] my-4 mr-4 max-w-[30ch] md-custom:max-w-[42ch]'>
-                I am a software engineer and experienced tech services provider
-                with a high-level understanding of industry trends and the
-                full-cycle web development process. My background in advertising
-                and product management allows me to bridge the gap between
-                complex code and user-centric design.
+                {/* I am a high-velocity Technical Lead with over two decades of
+                experience bridging the gap between business strategy and robust
+                engineering. Having led multidisciplinary teams of 100+ for
+                global companies, I now translate that executive seniority into
+                the technical layer—architecting complex systems with the
+                precision of a veteran strategist and the speed of an
+                AI-augmented builder. */}
+                High-velocity Technical Lead bridging executive strategy with
+                robust engineering. I architect complex systems with the
+                precision of a 20-year veteran and the speed of an AI-augmented
+                builder.
               </p>
               <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch]'>
-                Driven by a resourceful and critical mindset, I thrive on
+                {/* Driven by a resourceful and critical mindset, I thrive on
                 solving complex problems by architecting digital products that
-                are as enjoyable to use as they are impactful to the business.
+                are as enjoyable to use as they are impactful to the business. */}
+                <ul className='list-inside'>
+                  <li>
+                    <span className='font-main-semibold'>
+                      - Systems Architecture:
+                    </span>{' '}
+                    - Designing scalable, mission-critical FinTech engines.
+                  </li>
+                  <li>
+                    <span className='font-main-semibold'>- Executive DNA:</span>
+                    Former Agency Owner; led multidisciplinary teams of 100+.
+                  </li>
+                  <li>
+                    <span className='font-main-semibold'>
+                      - Product Velocity:
+                    </span>{' '}
+                    Using AI workflows to collapse months of dev into weeks.
+                  </li>
+                  <li>
+                    <span className='font-main-semibold'>
+                      - Business Logic:
+                    </span>{' '}
+                    Aligning every line of code with P&L and risk mitigation.
+                  </li>
+                </ul>
               </p>
             </div>
           </div>
