@@ -9,7 +9,7 @@ import { AboutContext } from '../contexts/AboutContext';
 import Button from '../components/Button';
 import BagEmpty from '../assets/images/bag.svg';
 import Avatar from '../components/Avatar';
-import Thumbnail from '../assets/images/avatar-70x70.jpg';
+import Thumbnail from '../assets/images/avatar-300x300.jpg';
 import Trash from '../assets/images/about-trash.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
 
