@@ -217,13 +217,13 @@ const About = () => {
             <h3 className='mt-20 text-[1.2rem] font-main-light mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
               Francis Kodama
             </h3>
-            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase'>
+            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase'>
               Technical Product Lead
             </h2>
-            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase mb-0'>
+            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase mb-0'>
               Full-Stack Systems Architect
             </h2>
-            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
+            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase lg-custom:mb-[0.8em]'>
               {/* Strategic Product Development */}
               Ex-Agency Director (100+ Staff)
             </h2>
@@ -245,30 +245,28 @@ const About = () => {
                 {/* Driven by a resourceful and critical mindset, I thrive on
                 solving complex problems by architecting digital products that
                 are as enjoyable to use as they are impactful to the business. */}
-                <ul className='list-inside'>
+                I deliver business assets, not just features. From FinTech
+                engines to digital ecosystems, my focus is on structural
+                integrity, risk mitigation, and high-impact execution that moves
+                the needle.
+                {/* <ul className='list-inside'>
                   <li>
-                    <span className='font-main-semibold'>
-                      - Systems Architecture:
-                    </span>{' '}
-                    - Designing scalable, mission-critical FinTech engines.
+                    - Systems Architecture: Designing scalable, mission-critical
+                    FinTech engines.
                   </li>
                   <li>
-                    <span className='font-main-semibold'>- Executive DNA:</span>
-                    Former Agency Owner; led multidisciplinary teams of 100+.
+                    - Executive DNA: Former Agency Owner; led multidisciplinary
+                    teams of 100+.
                   </li>
                   <li>
-                    <span className='font-main-semibold'>
-                      - Product Velocity:
-                    </span>{' '}
-                    Using AI workflows to collapse months of dev into weeks.
+                    - Product Velocity: Using AI workflows to collapse months of
+                    dev into weeks.
                   </li>
                   <li>
-                    <span className='font-main-semibold'>
-                      - Business Logic:
-                    </span>{' '}
-                    Aligning every line of code with P&L and risk mitigation.
+                    - Business Logic: Aligning every line of code with P&L and
+                    risk mitigation.
                   </li>
-                </ul>
+                </ul> */}
               </p>
             </div>
           </div>
