@@ -202,7 +202,8 @@ const Hero = () => {
         </div>
 
         <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
-          TECHNICAL PRODUCT LEAD | FULL-STACK ARCHITECT
+          TECHNICAL PRODUCT LEAD
+          {/* | FULL-STACK ARCHITECT */}
         </h2>
         <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
           <span>Brazilian</span>
@@ -235,6 +236,7 @@ const Hero = () => {
             <li>TYPESCRIPT</li>
             <li>PRISMA / NEON</li>
             <li>AI WORKFLOWS</li>
+            <li>TAILWIND CSS</li>
           </ul>
         </div>
         <Link

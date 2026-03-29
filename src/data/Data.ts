@@ -284,21 +284,22 @@ export const avatarData = [
     title: 'Strategic Architecture',
     description:
       'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
-    imgUrl: require('../assets/images/avatar-creative.jpg'), // Suggesting: "Strategic" focus
+    imgUrl: require('../assets/images/avatar-problem.jpg'),
   },
   {
     key: 1,
     title: 'Strategic Architecture',
     description:
       'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
-    imgUrl: require('../assets/images/avatar-creative.jpg'), // Suggesting: "Strategic" focus
+    imgUrl: require('../assets/images/avatar-problem.jpg'),
+    // imgUrl: require('../assets/images/avatar-creative.jpg'), // Suggesting: "Strategic" focus
   },
   {
     key: 2,
     title: 'High-Velocity Execution',
     description:
       'Leveraging AI-augmented workflows, I collapse complex development cycles to ship high-impact FinTech solutions with the speed of a startup and the precision of a veteran.',
-    imgUrl: require('../assets/images/avatar-problem.jpg'), // Suggesting: "Efficiency" focus
+    imgUrl: require('../assets/images/avatar-goal.jpg'),
   },
   {
     key: 3,
@@ -311,7 +312,7 @@ export const avatarData = [
     key: 4,
     title: 'Adaptive Engineering',
     description:
-      'I thrive on technical evolution. From mastering Next.js to integrating DeFi protocols, I maintain a cutting-edge stack to deliver the most efficient solutions possible.',
+      'I thrive on technical evolution. From architecting modern React ecosystems to integrating complex financial data-streams, I maintain a cutting-edge stack to deliver the most efficient, scalable solutions regardless of the platform.',
     imgUrl: require('../assets/images/avatar-learner2.jpg'), // Suggesting: "Innovation" focus
   },
   {
