@@ -30,7 +30,7 @@ const Avatar = () => {
   return (
     <div className='mx-auto w-full'>
       <div className='grid grid-cols-[1em_auto_auto_1em] grid-rows-[repeat(6,auto)] w-full md-custom:grid-cols-[1fr_62px_1em_412px_1fr] md-custom:grid-rows-[5em_auto_auto_2em_8em_5em] lg-custom:grid-cols-[2fr_62px_1em_412px_1fr]'>
-        <p className='col-start-2 row-start-1 text-[0.7rem] font-main-light mt-20 mb-2 text-left md-custom:row-start-2 md-custom:mt-0'>
+        <p className='capitalize col-start-2 row-start-1 text-[0.7rem] font-main-light mt-20 mb-2 text-left md-custom:row-start-2 md-custom:mt-0'>
           soft skills:
         </p>
 

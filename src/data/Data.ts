@@ -279,63 +279,108 @@ export const projects = [
 ];
 
 export const avatarData = [
-  // {
-  //   key: 0,
-  //   title: 'Creative Innovation',
-  //   description:
-  //     'Leveraging my extensive advertising background and relentless curiosity, I deliver innovative technical solutions that balance creative vision with functional excellence.',
-  //   imgUrl: require('../assets/images/avatar-creative.jpg'),
-  // },
   {
-    key: 1,
-    title: 'Strategic Thinking',
+    key: 0,
+    title: 'Strategic Architecture',
     description:
-      'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
-    imgUrl: require('../assets/images/avatar-creative.jpg'),
+      'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
+    imgUrl: require('../assets/images/avatar-creative.jpg'), // Suggesting: "Strategic" focus
   },
   {
     key: 1,
-    title: 'Strategic Thinking',
+    title: 'Strategic Architecture',
     description:
-      'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
-    imgUrl: require('../assets/images/avatar-creative.jpg'),
+      'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
+    imgUrl: require('../assets/images/avatar-creative.jpg'), // Suggesting: "Strategic" focus
   },
   {
     key: 2,
-    title: 'Agile Problem-Solving',
+    title: 'High-Velocity Execution',
     description:
-      'I maintain a calm, analytical approach to unexpected challenges, whether debugging complex state logic or navigating high-stakes workplace pivots.',
-    imgUrl: require('../assets/images/avatar-problem.jpg'),
+      'Leveraging AI-augmented workflows, I collapse complex development cycles to ship high-impact FinTech solutions with the speed of a startup and the precision of a veteran.',
+    imgUrl: require('../assets/images/avatar-problem.jpg'), // Suggesting: "Efficiency" focus
   },
   {
     key: 3,
-    title: 'Stakeholder Communication',
+    title: 'Stakeholder Synthesis',
     description:
-      'Active listening is the core of my professional DNA. I excel at translating complex technical concepts into clear, actionable insights for all stakeholders.',
-    imgUrl: require('../assets/images/avatar-communication.jpg'),
+      'Drawing on my experience leading teams of 100+, I translate complex technical constraints into clear strategic insights for CEOs, investors, and cross-functional teams.',
+    imgUrl: require('../assets/images/avatar-communication.jpg'), // Suggesting: "Leadership" focus
   },
   {
     key: 4,
-    title: 'Lifelong Learning',
+    title: 'Adaptive Engineering',
     description:
-      'I thrive on the rapid evolution of technology. My journey is defined by a commitment to mastering new stacks to bring cutting-edge value to every project.',
-    imgUrl: require('../assets/images/avatar-learner2.jpg'),
+      'I thrive on technical evolution. From mastering Next.js to integrating DeFi protocols, I maintain a cutting-edge stack to deliver the most efficient solutions possible.',
+    imgUrl: require('../assets/images/avatar-learner2.jpg'), // Suggesting: "Innovation" focus
   },
   {
     key: 5,
-    title: 'Goal-Oriented Execution',
+    title: 'Risk-Averse Logic',
     description:
-      'Driven by a clear vision and disciplined persistence, I focus on delivering high-quality results without getting distracted by the "noise" of development.',
-    imgUrl: require('../assets/images/avatar-goal.jpg'),
+      'Driven by a quantitative mindset, I prioritize structural integrity and security, ensuring that rapid delivery never comes at the cost of system reliability.',
+    imgUrl: require('../assets/images/avatar-goal.jpg'), // Suggesting: "Stability" focus
   },
   {
     key: 6,
-    title: 'Collaborative Culture',
+    title: 'Collaborative Leadership',
     description:
-      'I believe great software is built on empathy and flexibility. I focus on building deep professional relationships that foster better teamwork and better code.',
-    imgUrl: require('../assets/images/avatar-friendly.jpg'),
+      'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
+    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
   },
 ];
+
+// export const avatarData = [
+//   {
+//     key: 1,
+//     title: 'Strategic Thinking',
+//     description:
+//       'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
+//     imgUrl: require('../assets/images/avatar-creative.jpg'),
+//   },
+//   {
+//     key: 1,
+//     title: 'Strategic Thinking',
+//     description:
+//       'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
+//     imgUrl: require('../assets/images/avatar-creative.jpg'),
+//   },
+//   {
+//     key: 2,
+//     title: 'Agile Problem-Solving',
+//     description:
+//       'I maintain a calm, analytical approach to unexpected challenges, whether debugging complex state logic or navigating high-stakes workplace pivots.',
+//     imgUrl: require('../assets/images/avatar-problem.jpg'),
+//   },
+//   {
+//     key: 3,
+//     title: 'Stakeholder Communication',
+//     description:
+//       'Active listening is the core of my professional DNA. I excel at translating complex technical concepts into clear, actionable insights for all stakeholders.',
+//     imgUrl: require('../assets/images/avatar-communication.jpg'),
+//   },
+//   {
+//     key: 4,
+//     title: 'Lifelong Learning',
+//     description:
+//       'I thrive on the rapid evolution of technology. My journey is defined by a commitment to mastering new stacks to bring cutting-edge value to every project.',
+//     imgUrl: require('../assets/images/avatar-learner2.jpg'),
+//   },
+//   {
+//     key: 5,
+//     title: 'Goal-Oriented Execution',
+//     description:
+//       'Driven by a clear vision and disciplined persistence, I focus on delivering high-quality results without getting distracted by the "noise" of development.',
+//     imgUrl: require('../assets/images/avatar-goal.jpg'),
+//   },
+//   {
+//     key: 6,
+//     title: 'Collaborative Culture',
+//     description:
+//       'I believe great software is built on empathy and flexibility. I focus on building deep professional relationships that foster better teamwork and better code.',
+//     imgUrl: require('../assets/images/avatar-friendly.jpg'),
+//   },
+// ];
 
 export const contactData = [
   {

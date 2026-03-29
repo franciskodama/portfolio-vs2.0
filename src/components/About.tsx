@@ -224,49 +224,20 @@ const About = () => {
               Full-Stack Systems Architect
             </h2>
             <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase lg-custom:mb-[0.8em]'>
-              {/* Strategic Product Development */}
               Ex-Agency Director (100+ Staff)
             </h2>
             <div className='font-main-light'>
               <p className='text-[0.95rem] my-4 mr-4 max-w-[30ch] md-custom:max-w-[42ch]'>
-                {/* I am a high-velocity Technical Lead with over two decades of
-                experience bridging the gap between business strategy and robust
-                engineering. Having led multidisciplinary teams of 100+ for
-                global companies, I now translate that executive seniority into
-                the technical layer—architecting complex systems with the
-                precision of a veteran strategist and the speed of an
-                AI-augmented builder. */}
                 High-velocity Technical Lead bridging executive strategy with
                 robust engineering. I architect complex systems with the
                 precision of a 20-year veteran and the speed of an AI-augmented
                 builder.
               </p>
               <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch]'>
-                {/* Driven by a resourceful and critical mindset, I thrive on
-                solving complex problems by architecting digital products that
-                are as enjoyable to use as they are impactful to the business. */}
                 I deliver business assets, not just features. From FinTech
                 engines to digital ecosystems, my focus is on structural
                 integrity, risk mitigation, and high-impact execution that moves
                 the needle.
-                {/* <ul className='list-inside'>
-                  <li>
-                    - Systems Architecture: Designing scalable, mission-critical
-                    FinTech engines.
-                  </li>
-                  <li>
-                    - Executive DNA: Former Agency Owner; led multidisciplinary
-                    teams of 100+.
-                  </li>
-                  <li>
-                    - Product Velocity: Using AI workflows to collapse months of
-                    dev into weeks.
-                  </li>
-                  <li>
-                    - Business Logic: Aligning every line of code with P&L and
-                    risk mitigation.
-                  </li>
-                </ul> */}
               </p>
             </div>
           </div>
@@ -274,7 +245,7 @@ const About = () => {
           <div className='flex items-end justify-between ml-4 md:ml-12'>
             <div className='flex flex-col relative'>
               <p className='text-[0.7rem] font-main-light mt-8 mb-2'>
-                location:
+                Location:
               </p>
               <form className='flex flex-wrap items-center mb-12 gap-y-2'>
                 <div className='flex items-center'>
