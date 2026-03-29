@@ -281,33 +281,33 @@ export const projects = [
 export const avatarData = [
   {
     key: 0,
-    title: 'Strategic Architecture',
+    title: 'Collaborative Leadership',
     description:
-      'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
-    imgUrl: require('../assets/images/avatar-problem.jpg'),
+      'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
+    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
   },
   {
     key: 1,
+    title: 'Collaborative Leadership',
+    description:
+      'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
+    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
+  },
+  {
+    key: 2,
     title: 'Strategic Architecture',
     description:
       'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
     imgUrl: require('../assets/images/avatar-problem.jpg'),
-    // imgUrl: require('../assets/images/avatar-creative.jpg'), // Suggesting: "Strategic" focus
   },
   {
-    key: 2,
+    key: 3,
     title: 'High-Velocity Execution',
     description:
       'Leveraging AI-augmented workflows, I collapse complex development cycles to ship high-impact FinTech solutions with the speed of a startup and the precision of a veteran.',
     imgUrl: require('../assets/images/avatar-goal.jpg'),
   },
-  {
-    key: 3,
-    title: 'Stakeholder Synthesis',
-    description:
-      'Drawing on my experience leading teams of 100+, I translate complex technical constraints into clear strategic insights for CEOs, investors, and cross-functional teams.',
-    imgUrl: require('../assets/images/avatar-communication.jpg'), // Suggesting: "Leadership" focus
-  },
+
   {
     key: 4,
     title: 'Adaptive Engineering',
@@ -320,14 +320,14 @@ export const avatarData = [
     title: 'Risk-Averse Logic',
     description:
       'Driven by a quantitative mindset, I prioritize structural integrity and security, ensuring that rapid delivery never comes at the cost of system reliability.',
-    imgUrl: require('../assets/images/avatar-goal.jpg'), // Suggesting: "Stability" focus
+    imgUrl: require('../assets/images/avatar-helmet.png'), // Suggesting: "Stability" focus
   },
   {
     key: 6,
-    title: 'Collaborative Leadership',
+    title: 'Stakeholder Synthesis',
     description:
-      'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
-    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
+      'Drawing on my experience leading teams of 100+, I translate complex technical constraints into clear strategic insights for CEOs, investors, and cross-functional teams.',
+    imgUrl: require('../assets/images/avatar-communication.jpg'), // Suggesting: "Leadership" focus
   },
 ];
 

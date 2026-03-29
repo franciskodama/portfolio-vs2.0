@@ -7,10 +7,9 @@ import {
   Rocket,
   Puzzle,
   MessageCircle,
-  GraduationCap,
-  Eye,
   Smile,
-  BugOff,
+  Layers,
+  ZapOff,
 } from 'lucide-react';
 
 const Avatar = () => {
@@ -22,12 +21,12 @@ const Avatar = () => {
   }, [isImgShown]);
 
   const softSkills = [
-    { icon: Puzzle, alt: 'creative', id: 1 },
-    { icon: Rocket, alt: 'problem solving', id: 2 },
-    { icon: MessageCircle, alt: 'passionate for technology', id: 3 },
-    { icon: GraduationCap, alt: 'constant learning', id: 4 },
-    { icon: BugOff, alt: 'detail oriented', id: 5 },
-    { icon: Smile, alt: 'friendly', id: 6 },
+    { icon: Smile, alt: 'many balls', id: 1 },
+    { icon: Puzzle, alt: 'magic cube', id: 2 },
+    { icon: Rocket, alt: 'bee', id: 3 },
+    { icon: Layers, alt: 'layers', id: 4 },
+    { icon: ZapOff, alt: 'safety helmet', id: 5 },
+    { icon: MessageCircle, alt: 'telephone', id: 6 },
   ];
 
   return (
@@ -48,7 +47,7 @@ const Avatar = () => {
                   setImgActive(false);
                 }}
                 strokeWidth={1.2}
-                className='border border-dashed border-dark p-2.5 w-[3.25em] h-[3.25em] cursor-pointer md-custom:w-16 md-custom:h-16'
+                className='border border-dashed border-dark p-[0.75em] w-[3.25em] h-[3.25em] cursor-pointer md-custom:w-16 md-custom:h-16'
                 aria-label={skill.alt}
               />
             );
