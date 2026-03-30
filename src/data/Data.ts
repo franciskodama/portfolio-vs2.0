@@ -334,43 +334,43 @@ export const avatarData = [
 export const contactData = [
   {
     id: '1',
-    content: 'Hey Francis!',
+    content: 'Hi Francis!',
   },
   {
     id: '2',
-    content: 'I hope this message finds you well.',
+    content: 'We need a Product-led Engineer.',
   },
   {
     id: '3',
-    content: 'Cool website, man!',
+    content: 'Your FinTech logic is impressive.',
   },
   {
     id: '4',
-    content: 'Do you want to work in our company?',
+    content: 'Can you bridge our Product/Eng gap?',
   },
   {
     id: '5',
-    content: 'ops, I found a bug.',
+    content: 'Found a bug? (Just testing you...lol).',
   },
   {
     id: '6',
-    content: 'Holly cow, what a portfolio!',
+    content: 'Exceptional architectural integrity.',
   },
   {
     id: '7',
-    content: `Let's schedule an interview?`,
+    content: 'Let’s discuss a strategic role.',
   },
   {
     id: '8',
-    content: 'I am looking for a professional like you.',
+    content: 'Your background is a perfect match.',
   },
   {
     id: '9',
-    content: 'Are you freelancing?',
+    content: 'We need you to lead our team.',
   },
   {
     id: '10',
-    content: 'Thanks! :)',
+    content: 'Let’s talk strategy.',
   },
 ];
 

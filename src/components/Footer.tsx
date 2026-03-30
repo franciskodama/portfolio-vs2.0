@@ -31,8 +31,9 @@ const Footer = () => {
 
         {/* ==================== CONTENT ==================== */}
         <p className='text-[0.9rem] lg-custom:col-start-1 lg-custom:row-start-2 lg-custom:max-w-[24ch]'>
-          A Software Engineer with a great deal of experience in marketing, a
-          natural leader, curious, and constantly provoked by new challenges.
+          A Technical Product Lead with a great deal of experience in product,
+          marketing, business, and technology. A natural leader, curious, and
+          constantly provoked by new challenges.
         </p>
 
         <div className='hidden lg-custom:flex lg-custom:flex-col lg-custom:col-start-2 lg-custom:row-start-2'>
@@ -40,9 +41,9 @@ const Footer = () => {
             { to: 'hero', text: 'this.portfolio' },
             { to: 'about', text: 'about me' },
             { to: 'whyme', text: 'why me' },
-            { to: 'ai', text: 'a.i.' },
+            { to: 'ai', text: 'ai.labs' },
             { to: 'projects', text: 'projects' },
-            { to: 'code', text: 'my code' },
+            { to: 'code', text: 'methodology' },
             { to: 'contact', text: 'contact', offset: -150 },
           ].map((item) => (
             <Link
