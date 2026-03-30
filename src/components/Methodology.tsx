@@ -46,7 +46,7 @@ const Methodology = () => {
         </a>
 
         <Parallax opacity={[0, 2]}>
-          <ul className='lg-custom:scale-80 mb-30 mt-24 md-custom:mt-0 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
+          <ul className='lg-custom:scale-65 mb-10 mt-24 md-custom:mt-0 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-bright text-[2.5rem] leading-10 md-custom:text-[5.5rem] md-custom:leading-28'>
               MISSIONARY
             </li>
