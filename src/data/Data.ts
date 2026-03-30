@@ -279,165 +279,128 @@ export const projects = [
 ];
 
 export const avatarData = [
-  // {
-  //   key: 0,
-  //   title: 'Creative Innovation',
-  //   description:
-  //     'Leveraging my extensive advertising background and relentless curiosity, I deliver innovative technical solutions that balance creative vision with functional excellence.',
-  //   imgUrl: require('../assets/images/avatar-creative.jpg'),
-  // },
   {
-    key: 1,
-    title: 'Strategic Thinking',
+    key: 0,
+    title: 'Collaborative Leadership',
     description:
-      'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
-    imgUrl: require('../assets/images/avatar-creative.jpg'),
+      'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
+    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
   },
   {
     key: 1,
-    title: 'Strategic Thinking',
+    title: 'Collaborative Leadership',
     description:
-      'I approach every line of code with a product-management mindset, ensuring that technical decisions align perfectly with business goals and user needs.',
-    imgUrl: require('../assets/images/avatar-creative.jpg'),
+      'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
+    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
   },
   {
     key: 2,
-    title: 'Agile Problem-Solving',
+    title: 'Strategic Architecture',
     description:
-      'I maintain a calm, analytical approach to unexpected challenges, whether debugging complex state logic or navigating high-stakes workplace pivots.',
+      'I align technical decisions with long-term business roadmaps, ensuring every architectural choice serves a specific product goal and mitigates future risk.',
     imgUrl: require('../assets/images/avatar-problem.jpg'),
   },
   {
     key: 3,
-    title: 'Stakeholder Communication',
+    title: 'High-Velocity Execution',
     description:
-      'Active listening is the core of my professional DNA. I excel at translating complex technical concepts into clear, actionable insights for all stakeholders.',
-    imgUrl: require('../assets/images/avatar-communication.jpg'),
+      'Leveraging AI-augmented workflows, I collapse complex development cycles to ship high-impact FinTech solutions with the speed of a startup and the precision of a veteran.',
+    imgUrl: require('../assets/images/avatar-goal.jpg'),
   },
+
   {
     key: 4,
-    title: 'Lifelong Learning',
+    title: 'Adaptive Engineering',
     description:
-      'I thrive on the rapid evolution of technology. My journey is defined by a commitment to mastering new stacks to bring cutting-edge value to every project.',
-    imgUrl: require('../assets/images/avatar-learner2.jpg'),
+      'I thrive on technical evolution. From architecting modern React ecosystems to integrating complex financial data-streams, I maintain a cutting-edge stack to deliver the most efficient, scalable solutions regardless of the platform.',
+    imgUrl: require('../assets/images/avatar-learner2.jpg'), // Suggesting: "Innovation" focus
   },
   {
     key: 5,
-    title: 'Goal-Oriented Execution',
+    title: 'Risk-Averse Logic',
     description:
-      'Driven by a clear vision and disciplined persistence, I focus on delivering high-quality results without getting distracted by the "noise" of development.',
-    imgUrl: require('../assets/images/avatar-goal.jpg'),
+      'Driven by a quantitative mindset, I prioritize structural integrity and security, ensuring that rapid delivery never comes at the cost of system reliability.',
+    imgUrl: require('../assets/images/avatar-helmet.png'), // Suggesting: "Stability" focus
   },
   {
     key: 6,
-    title: 'Collaborative Culture',
+    title: 'Stakeholder Synthesis',
     description:
-      'I believe great software is built on empathy and flexibility. I focus on building deep professional relationships that foster better teamwork and better code.',
-    imgUrl: require('../assets/images/avatar-friendly.jpg'),
+      'Drawing on my experience leading teams of 100+, I translate complex technical constraints into clear strategic insights for CEOs, investors, and cross-functional teams.',
+    imgUrl: require('../assets/images/avatar-communication.jpg'), // Suggesting: "Leadership" focus
   },
 ];
 
 export const contactData = [
   {
     id: '1',
-    content: 'Hey Francis!',
+    content: 'Hi Francis!',
   },
   {
     id: '2',
-    content: 'I hope this message finds you well.',
+    content: 'We need a Product-led Engineer.',
   },
   {
     id: '3',
-    content: 'Cool website, man!',
+    content: 'Your FinTech logic is impressive.',
   },
   {
     id: '4',
-    content: 'Do you want to work in our company?',
+    content: 'Can you bridge our Product/Eng gap?',
   },
   {
     id: '5',
-    content: 'ops, I found a bug.',
+    content: 'Found a bug? (Just testing you...lol).',
   },
   {
     id: '6',
-    content: 'Holly cow, what a portfolio!',
+    content: 'Exceptional architectural integrity.',
   },
   {
     id: '7',
-    content: `Let's schedule an interview?`,
+    content: 'Let’s discuss a strategic role.',
   },
   {
     id: '8',
-    content: 'I am looking for a professional like you.',
+    content: 'Your background is a perfect match.',
   },
   {
     id: '9',
-    content: 'Are you freelancing?',
+    content: 'We need you to lead our team.',
   },
   {
     id: '10',
-    content: 'Thanks! :)',
+    content: 'Let’s talk strategy.',
   },
 ];
 
 export const jobs = [
   {
     id: 8,
-    title: 'Software Engineer',
+    title: 'FinTech Architect & Investor',
     companies: [
       {
-        name: 'Self-Employed',
-        periodStart: '2020',
+        name: 'fkodama (Self-Employed)',
+        periodStart: '2023',
         periodEnd: 'TODAY',
         country: '🇨🇦',
       },
     ],
     skills: [
-      'React',
       'Next.js',
-      'JavaScript',
-      'Typescript',
-      'CSS3',
-      'SASS',
-      'HTML5',
-      'Styled Components',
-      'Tailwind',
-      'APIs',
-      'Prisma',
-      'GraphQL',
-      'Retool',
-      'Airtable',
-      'Firebase',
-      'Responsive Design',
-      'Figma',
-      'Adobe Photoshop',
-      'Agile',
-      'Jira.',
+      'TypeScript',
+      'Prisma / Neon',
+      'AI-Augmented',
+      'Systems Integration',
+      'Elliott Wave Analysis',
+      'Quantitative Analysis',
+      'Full-Stack Architecture',
     ],
     benefit:
-      'I bring a collaborative mindset and technical expertise, empowering the team to solve complex problems and deliver exceptional software.',
+      'I engineered a proprietary unified data engine to synchronize fragmented assets across BRL, USD, and CAD markets, collapsing development cycles from months to days through coding and AI-augmented workflows.',
   },
   {
     id: 7,
-    title: 'Independent Investor',
-    companies: [
-      {
-        name: 'Self-Employed',
-        periodStart: '2023',
-        periodEnd: '2025',
-        country: '🇨🇦',
-      },
-    ],
-    skills: [
-      'Technical Analysis',
-      'Portfolio Management',
-      'Elliott Wave Analysis.',
-    ],
-    benefit:
-      'My experience in high-pressure markets honed my ability to stay focused, analyze patterns, and make calculated decisions under uncertainty.',
-  },
-  {
-    id: 6,
     title: 'Software Engineer',
     companies: [
       {
@@ -448,55 +411,45 @@ export const jobs = [
       },
     ],
     skills: [
-      'React',
+      'Product Strategy',
       'Next.js',
-      'Typescript',
-      'Tailwind',
-      'APIs',
+      'TypeScript',
       'Prisma',
-      'Retool',
-      'Airtable',
-      'Firebase',
-      'Responsive Design',
-      'Design System',
-      'Agile',
-      'Jira.',
+      'FinTech Integration',
+      'Stripe / Spreedly',
+      'Organizational Audit',
+      'Product Culture',
+      'Agile Methodology',
     ],
     benefit:
-      'I bring a collaborative mindset and technical expertise, empowering the team to solve complex problems and deliver exceptional software.',
+      'Acting as "The Bridge" between strategy and execution, I translated complex business visions into scalable features and authored an organizational audit that shifted company-wide delivery standards.',
   },
   {
-    id: 5,
-    title: 'General Director',
+    id: 6,
+    title: 'General Director & Co-Founder',
     companies: [
       {
-        name: 'Circus Agency | Co-Founder',
-        periodStart: '2016',
+        name: 'Circus Agency',
+        periodStart: '2011',
         periodEnd: '2020',
         country: '🇧🇷',
       },
     ],
-    skills: ['Leadership', 'Product Strategy', 'Agile methodology'],
-    benefit:
-      'I will bring valuable experience and leadership skills to your organization.',
-  },
-  {
-    id: 4,
-    title: 'Planning and new business director',
-    companies: [
-      {
-        name: 'Circus Agency | Co-Founder',
-        periodStart: '2011',
-        periodEnd: '2015',
-        country: '🇧🇷',
-      },
+    skills: [
+      'Executive Leadership',
+      'Product Strategy',
+      'Business Operations',
+      'Scaling Organizations',
+      'Agile Methodology',
+      'P&L Management',
+      'New Business Strategy',
+      'Stakeholder Management',
     ],
-    skills: ['Presentations', 'Leadership', 'Sales'],
     benefit:
-      'Through listening, strategy, and effective communication, I will present my ideas, negotiating and optimizing results on multiple fronts.',
+      'As a Co-Founder and the main executive, I scaled the agency to a multidisciplinary team of 26, mastering the operational discipline required to lead a growing organization from inception to market success.',
   },
   {
-    id: 3,
+    id: 5,
     title: 'Client Services Director',
     companies: [
       {
@@ -506,12 +459,20 @@ export const jobs = [
         country: '🇧🇷',
       },
     ],
-    skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
+    skills: [
+      'Business Strategy',
+      'Financial Oversight',
+      'Founder Mindset',
+      'Problem Solving',
+      'Team Leadership',
+      'Product Strategy',
+      'Business Operations',
+    ],
     benefit:
-      'I will listen closely to customers to understand and discover their real needs.',
+      'As a founder, I developed a high-level understanding of P&L and client needs, ensuring that every technical and creative solution aligned with measurable business growth.',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Client Services Director',
     companies: [
       {
@@ -521,12 +482,21 @@ export const jobs = [
         country: '🇧🇷',
       },
     ],
-    skills: ['Leadership', 'Business & Financial', 'Problem Solving'],
+    skills: [
+      'Enterprise Leadership',
+      'Global Account Management',
+      'Strategic Planning',
+      'Financial Logic',
+      'Operational Excellence',
+      'Organization Management',
+      'New Business',
+    ],
     benefit:
-      'I will listen closely to customers to understand and discover their real needs.',
+      'I directed high-stakes operations for global brands, managing multidisciplinary teams of 100+ and translating complex executive requirements into actionable high-level roadmaps.',
   },
+
   {
-    id: 1,
+    id: 3,
     title: 'Marketing Manager',
     companies: [
       {
@@ -538,11 +508,17 @@ export const jobs = [
     ],
     skills: [
       'Critical Thinking',
-      'Strategy & Creativity',
-      'Keen eye for design',
+      'Strategic Planning',
+      'Budget Management',
+      'Product Lifecycle Management',
+      'Product Discovery',
+      'Brand Architecture',
+      'Cross-Functional Leadership',
+      'Media',
+      'Stakeholder Relations',
     ],
     benefit:
-      'I will use my experience in campaign evaluation, critical thinking, and a keen eye for design to provide my opinion so the team can develop the best digital product.',
+      'My foundational years in the automotive industry developed my keen eye for design and the critical thinking necessary to evaluate and optimize complex product campaigns.',
   },
 ];
 

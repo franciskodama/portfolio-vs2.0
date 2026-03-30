@@ -201,8 +201,9 @@ const Hero = () => {
           </h1>
         </div>
 
-        <h2 className='font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
-          Software Engineer
+        <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
+          TECHNICAL PRODUCT LEAD
+          {/* | FULL-STACK ARCHITECT */}
         </h2>
         <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
           <span>Brazilian</span>
@@ -216,12 +217,12 @@ const Hero = () => {
             ref={leftRef}
             className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-left'
           >
-            <li className='text-white font-main-bold mb-2'>Stack</li>
-            <li>React</li>
-            <li>Next.js</li>
-            <li>Typescript</li>
-            <li>Prisma</li>
-            <li>CSS / Tailwind</li>
+            <li className='text-white font-main-bold mb-2'>Skills</li>
+            <li>PRODUCT STRATEGY</li>
+            <li>SYSTEMS ARCH</li>
+            <li>FINTECH OPS</li>
+            <li>LEADERSHIP</li>
+            <li>MARKETING</li>
           </ul>
         </div>
 
@@ -230,13 +231,12 @@ const Hero = () => {
             ref={rightRef}
             className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-right'
           >
-            <li className='text-white font-main-bold mb-2'>Skills</li>
-            <li>A.I.</li>
-            <li>Agile</li>
-            <li>Jira</li>
-            <li>Algolia</li>
-            <li>Marketing</li>
-            <li>Design</li>
+            <li className='text-white font-main-bold mb-2'>Stack</li>
+            <li>REACT/NEXT.JS</li>
+            <li>TYPESCRIPT</li>
+            <li>PRISMA / NEON</li>
+            <li>AI WORKFLOWS</li>
+            <li>TAILWIND CSS</li>
           </ul>
         </div>
         <Link

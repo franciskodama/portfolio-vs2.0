@@ -12,10 +12,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Reason = () => {
+  // const originalMessageBright =
+  //   'this portfolio has been built to showcase my wide variety of skills from creativity to code.';
+  // const originalMessageDark =
+  //   'please take your time to discover what makes my work unique.';
+
   const originalMessageBright =
-    'this portfolio has been built to showcase my wide variety of skills from creativity to code.';
-  const originalMessageDark =
-    'please take your time to discover what makes my work unique.';
+    'This portfolio is designed to bridge executive strategy with technical architecture.';
+  const originalMessageDark = 'Explore the logic behind the code.';
 
   const [gridItems, setGridItems] = useState<any[]>([]);
   const [columns, setColumns] = useState(12);

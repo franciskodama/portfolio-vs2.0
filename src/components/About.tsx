@@ -9,7 +9,7 @@ import { AboutContext } from '../contexts/AboutContext';
 import Button from '../components/Button';
 import BagEmpty from '../assets/images/bag.svg';
 import Avatar from '../components/Avatar';
-import Thumbnail from '../assets/images/avatar-70x70.jpg';
+import Thumbnail from '../assets/images/avatar-300x300.jpg';
 import Trash from '../assets/images/about-trash.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
 
@@ -217,27 +217,27 @@ const About = () => {
             <h3 className='mt-20 text-[1.2rem] font-main-light mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
               Francis Kodama
             </h3>
-            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase'>
-              Software Engineer
+            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase'>
+              Technical Product Lead
             </h2>
-            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase mb-0'>
-              React, Next.js, Typescript,
+            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase mb-0'>
+              Full-Stack Systems Architect
             </h2>
-            <h2 className='text-[1.2rem] md:text-[1.5rem] font-main-medium uppercase lg-custom:mb-[0.8em]'>
-              CSS, Prisma, UX/UI design
+            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase lg-custom:mb-[0.8em]'>
+              Ex-Agency Director (100+ Staff)
             </h2>
             <div className='font-main-light'>
               <p className='text-[0.95rem] my-4 mr-4 max-w-[30ch] md-custom:max-w-[42ch]'>
-                I am a software engineer and experienced tech services provider
-                with a high-level understanding of industry trends and the
-                full-cycle web development process. My background in advertising
-                and product management allows me to bridge the gap between
-                complex code and user-centric design.
+                High-velocity Technical Lead bridging executive strategy with
+                robust engineering. I architect complex systems with the
+                precision of a 20-year veteran and the speed of an AI-augmented
+                builder.
               </p>
               <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch]'>
-                Driven by a resourceful and critical mindset, I thrive on
-                solving complex problems by architecting digital products that
-                are as enjoyable to use as they are impactful to the business.
+                I deliver business assets, not just features. From FinTech
+                engines to digital ecosystems, my focus is on structural
+                integrity, risk mitigation, and high-impact execution that moves
+                the needle.
               </p>
             </div>
           </div>
@@ -245,7 +245,7 @@ const About = () => {
           <div className='flex items-end justify-between ml-4 md:ml-12'>
             <div className='flex flex-col relative'>
               <p className='text-[0.7rem] font-main-light mt-8 mb-2'>
-                location:
+                Location:
               </p>
               <form className='flex flex-wrap items-center mb-12 gap-y-2'>
                 <div className='flex items-center'>
