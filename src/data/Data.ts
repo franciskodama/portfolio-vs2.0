@@ -278,7 +278,7 @@ export const projects = [
   },
 ];
 
-export const avatarData = [
+export const aboutMeData = [
   {
     key: 0,
     title: 'Collaborative Leadership',

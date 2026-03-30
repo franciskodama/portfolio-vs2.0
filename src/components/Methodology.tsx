@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import ZoomIn from '../assets/images/code-check.svg';
 
-const CleanCode = () => {
+const Methodology = () => {
   return (
     <section
-      id='code'
+      id='methodology'
       className='section relative flex flex-col transition-all duration-300 bg-dark bg-linear-to-b from-dark to-[#292929]'
     >
       <Parallax opacity={[0, 2]}>
@@ -93,4 +93,4 @@ const CleanCode = () => {
   );
 };
 
-export default CleanCode;
+export default Methodology;

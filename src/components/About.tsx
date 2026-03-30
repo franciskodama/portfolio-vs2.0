@@ -6,9 +6,9 @@ import { Link } from 'react-scroll';
 import gsap from 'gsap';
 
 import { AboutContext } from '../contexts/AboutContext';
-import Button from '../components/Button';
+import Button from '../components/ui/Button';
 import BagEmpty from '../assets/images/bag.svg';
-import Avatar from '../components/Avatar';
+import AboutMe from '../components/AboutMe';
 import Thumbnail from '../assets/images/avatar-300x300.jpg';
 import Trash from '../assets/images/about-trash.svg';
 import Close from '../assets/images/card-icon-close-white.svg';
@@ -102,7 +102,7 @@ const About = () => {
       <div className='container max-w-[85em] mx-auto relative flex flex-col bg-bright text-dark mt-20 mb-24 lg-custom:flex-row lg-custom:mb-12'>
         <div className='about__container-reveal-trigger absolute top-0 left-0 w-full h-full bg-dark z-10 translate-x-0 opacity-100 transition-all duration-2000 ease-in-out'></div>
         <div className='relative w-full bg-[#eaeaea] lg-custom:w-1/2'>
-          <Avatar />
+          <AboutMe />
         </div>
 
         <div className='relative flex flex-col w-full justify-center max-w-[36em] px-4 overflow-hidden mb-12 md-custom:pl-[10em] md-custom:max-w-[41em] md-custom:items-start lg-custom:pl-16 lg-custom:mb-0 lg-custom:w-1/2 lg-custom:max-w-[36em]'>

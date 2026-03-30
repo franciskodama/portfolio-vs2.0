@@ -42,20 +42,6 @@ const Reason = () => {
     const style = window.getComputedStyle(gridRef.current);
     const gap = parseFloat(style.gap) || 0;
 
-    // Calculate effective columns
-    // width = n * item + (n-1) * gap
-    // width + gap = n * (item + gap)
-    const totalItemWidth = itemWidth + gap;
-    let columns = Math.floor((containerWidth + gap) / totalItemWidth);
-
-    // Ensure we have at least 12 columns to fit words like 'portfolio' and 'creativity'
-    if (columns < 12) columns = 12;
-
-    if (columns <= 0) return;
-
-    const newItems: any[] = [];
-    let newLinesCount = 0;
-
     const processWords = (
       text: string,
       type: 'bright' | 'dark',
@@ -76,6 +62,22 @@ const Reason = () => {
     );
     const darkWords = processWords(originalMessageDark, 'dark', darkClasses);
     const allWords = [...brightWords, ...darkWords];
+
+    // Calculate effective columns
+    // width = n * item + (n-1) * gap
+    // width + gap = n * (item + gap)
+    const totalItemWidth = itemWidth + gap;
+    let columns = Math.floor((containerWidth + gap) / totalItemWidth);
+
+    const maxWordLength = Math.max(...allWords.map((w) => w.length));
+
+    // Ensure we have enough columns to fit the longest word, minimum 12
+    if (columns < Math.max(12, maxWordLength)) columns = Math.max(12, maxWordLength);
+
+    if (columns <= 0) return;
+
+    const newItems: any[] = [];
+    let newLinesCount = 0;
 
     // Build lines
     let currentLine: any[] = [];
