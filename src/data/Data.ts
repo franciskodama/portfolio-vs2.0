@@ -107,28 +107,30 @@ export const projects = [
     id: 11,
     highlight: true,
     frontShow: true,
-    icon: 'ShieldCheck', // or 'Lock'
+    icon: 'ShieldCheck',
     title: 'Monkey Mori',
     year: '2026',
-    tech: 'React Next.js TypeScript Prisma PostgreSQL Crypto-Logic Tailwind CSS',
-    category: 'Crypto Asset Security',
-    url: 'https://monkeymori.vercel.app/', // Update with your actual URL
+    tech: 'React Next.js TypeScript Prisma PostgreSQL Google Cloud Storage Resend Auth.js Tailwind CSS',
+    category: 'Digital Contingency Vault',
+    url: 'https://monkeymori.vercel.app/',
     images: [
-      { image: require('../assets/images/projects/project-portfolio.jpg') },
+      { image: require('../assets/images/projects/prj-mori-1.webp') },
+      { image: require('../assets/images/projects/prj-mori-2.webp') },
+      { image: require('../assets/images/projects/prj-mori-3.webp') },
     ],
     backText_titleOne: 'why',
     backText_textOne:
-      'The complexity of decentralized finance (DeFi) often leads to catastrophic "user-error" data loss. I identified a critical need for a secure, non-custodial documentation framework to help users navigate exchange migrations and asset recovery.',
+      'Managing emergency instructions and critical digital access is inherently risky. I identified a real-world need for a frictionless fail-safe that protects absolute privacy while guaranteeing the secure transfer of a digital legacy strictly during worst-case scenarios.',
     backText_titleTwo: 'how',
     backText_textTwo:
-      'I engineered a specialized documentation engine designed to organize fragmented crypto-asset data. I focused on "Minimal Viable Architecture" to ensure high-speed performance while maintaining a rigorous logical structure for sensitive information.',
+      'I engineered an automated "Dead Man\'s Switch" protocol utilizing Next.js, serverless background jobs, and a Resend email loop. This architecture enforces strict state-driven access controls, securely locking private vaults until a definitive inactivity threshold is breached.',
     backText_titleThree: 'what',
     backText_textThree:
-      'A security-centric dashboard for crypto-asset management, featuring step-by-step migration protocols, asset location tracking, and an emergency recovery "Mori" (Memento Mori) framework for legacy planning.',
+      'A secure contingency platform featuring mutual "Household" linking, private instructional vaults, and a passive communication check-in system that acts as an automated release mechanism for trusted partners.',
     backText_titleFour: 'result',
     backText_textFour:
-      'A technical proof-of-concept that demonstrates my ability to build specialized tools for the Web3 ecosystem, prioritizing data integrity and complex organizational logic over generic UI trends.',
-    backgroundColor: '#1F2937', // A dark, "Security" feel
+      'A high-stakes data protection product demonstrating my ability to architect robust, event-driven authorization flows and solve complex, emotionally sensitive privacy challenges through a seamless user experience.',
+    backgroundColor: '#7206bf',
     visitIcon: true,
   },
   {
