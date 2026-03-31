@@ -9,7 +9,22 @@ export const projects = [
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     category: 'Productivity Ecosystem',
     url: 'https://handyfor.me/',
-    // ... images remains the same
+    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    tagline: 'Your productivity, centralized.',
+    images: [
+      { 
+        image: require('../assets/images/projects/prj-handy1.jpg'),
+        legend: 'The centralized Command Center prioritizing high-velocity daily task execution.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-handy2.jpg'),
+        legend: 'Quarterly roadmaps keeping micro-tools aligned with long-term strategic vision.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-handy3.jpg'),
+        legend: 'Integrated deep-work environments designed to minimize context switching.'
+      },
+    ],
     backText_titleOne: 'why',
     backText_textOne:
       'Generic productivity tools suffer from feature-creep and fragmented data. I identified a need for a centralized "Command Center" that bridges long-term strategic vision with daily high-velocity execution.',
@@ -35,7 +50,22 @@ export const projects = [
     tech: 'React Next.js TypeScript A.I. Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     category: 'FinTech App',
     url: 'https://monkeybusiness-olive.vercel.app/',
-    // ... images remains the same
+    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    tagline: 'Family finances, automated.',
+    images: [
+      { 
+        image: require('../assets/images/projects/prj-monkey1.jpg'),
+        legend: 'Collaborative household dashboard synchronizing macro-financial planning across users.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-monkey2.jpg'),
+        legend: 'A custom Rule Engine learning from messy transaction descriptions to automate categorizations.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-monkey3.jpg'),
+        legend: 'Yearly Overview visualizations exposing long-term wealth management trajectories.'
+      },
+    ],
     backText_titleOne: 'why',
     backText_textOne:
       'Family financial tracking is often hindered by the friction of manual entry. My goal was to solve this user pain point by automating data ingestion and fostering collaborative household budgeting.',
@@ -61,7 +91,22 @@ export const projects = [
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Tailwind CSS Clerk Zod',
     category: 'Global Wealth Engine',
     url: 'https://trezo.app/',
-    // ... images remains the same
+    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    tagline: 'Global wealth, synchronized.',
+    images: [
+      { 
+        image: require('../assets/images/projects/prj-trezo1.jpg'),
+        legend: 'Multi-currency tracking engine plotting real-time asset distributions globally.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-trezo2.jpg'),
+        legend: 'Technical analysis logic projecting ATH estimations for data-driven allocation adjustments.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-trezo3.jpg'),
+        legend: 'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.'
+      },
+    ],
     backText_titleOne: 'why',
     backText_textOne:
       'Global investors face a fragmented view of their net worth. I identified a gap in the market for a tool that synchronizes assets across diverse classes and three distinct tax/currency jurisdictions (BRL, CAD, USD).',
@@ -87,7 +132,22 @@ export const projects = [
     tech: 'React Next.js TypeScript Matter.js Framer-motion GSAP React-scroll-parallax',
     category: 'Agentic Experience',
     url: 'https://www.fkodama.com',
-    // ... images remains the same
+    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    tagline: 'Empowered Execution, visualized.',
+    images: [
+      { 
+        image: require('../assets/images/projects/prj-port1.jpg'),
+        legend: 'Immersive agentic environment moving beyond static reading into interactive consultation.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-port2.jpg'),
+        legend: 'Physics-simulated UI components utilizing Matter.js for tactile, high-performance interactions.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-port3.jpg'),
+        legend: 'The Synergy Seer bridging traditional product framing with edge-case architectural execution.'
+      },
+    ],
     backText_titleOne: 'why',
     backText_textOne:
       'Traditional portfolios are static. I wanted to disrupt the "resume" experience by creating an immersive, agentic environment that demonstrates the "Empowered Execution" possible with modern AI and physics-based UI.',
@@ -113,10 +173,21 @@ export const projects = [
     tech: 'React Next.js TypeScript Prisma PostgreSQL Google Cloud Storage Resend Auth.js Tailwind CSS',
     category: 'Digital Contingency Vault',
     url: 'https://monkeymori.vercel.app/',
+    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    tagline: 'Your legacy, secured.',
     images: [
-      { image: require('../assets/images/projects/prj-mori-1.webp') },
-      { image: require('../assets/images/projects/prj-mori-2.webp') },
-      { image: require('../assets/images/projects/prj-mori-3.webp') },
+      { 
+        image: require('../assets/images/projects/prj-mori-1.webp'),
+        legend: 'Secure contingency platform vault strictly locked via continuous event-driven state checks.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-mori-2.webp'),
+        legend: 'Automated release mechanism dashboard detailing inactivity thresholds and partner access flows.'
+      },
+      { 
+        image: require('../assets/images/projects/prj-mori-3.webp'),
+        legend: 'Mutual household linking interface managing emotionally sensitive privacy configurations.'
+      },
     ],
     backText_titleOne: 'why',
     backText_textOne:
