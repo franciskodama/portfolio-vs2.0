@@ -5,7 +5,7 @@ import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
 import { AboutContext } from '../contexts/AboutContext';
 import { contactData } from '../data/Data';
-import Button from '../components/Button';
+import Button from '../components/ui/Button';
 
 let dropSpace = {
   drag: {

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { avatarData } from '../data/Data';
 import {
   Rocket,
   Puzzle,
@@ -11,8 +10,9 @@ import {
   Layers,
   ZapOff,
 } from 'lucide-react';
+import { aboutMeData } from '@/data/Data';
 
-const Avatar = () => {
+const AboutMe = () => {
   const [isImgShown, setIsImgShown] = useState(0);
   const [imgActive, setImgActive] = useState(false);
 
@@ -58,7 +58,7 @@ const Avatar = () => {
           className={`col-start-2 row-start-3 mt-4 w-[22em] z-5 md-custom:col-start-4 md-custom:row-start-3 md-custom:mt-0 md-custom:w-[25.75em] ${
             imgActive ? 'animate-image-change' : ''
           }`}
-          src={avatarData[isImgShown].imgUrl}
+          src={aboutMeData[isImgShown].imgUrl}
           alt='my avatar images'
         />
 
@@ -68,10 +68,10 @@ const Avatar = () => {
           }`}
         >
           <h3 className='mb-2 font-main-semibold text-[1.3rem] uppercase mt-4 md-custom:col-start-4 md-custom:row-start-2 md-custom:mt-0'>
-            {avatarData[isImgShown].title}
+            {aboutMeData[isImgShown].title}
           </h3>
           <p className='text-[0.9rem] font-main-light mb-20 md-custom:mb-0'>
-            {avatarData[isImgShown].description}
+            {aboutMeData[isImgShown].description}
           </p>
         </div>
       </div>
@@ -79,4 +79,4 @@ const Avatar = () => {
   );
 };
 
-export default Avatar;
+export default AboutMe;
