@@ -192,6 +192,7 @@ export const projects = [
     url: 'https://www.fkodama.com',
     logo: require('../assets/images/projects/logo-portfolio.png'),
     name: 'Portfolio V.02',
+    showName: true,
     tagline: 'Empowered Execution, visualized.',
     images: [
       {

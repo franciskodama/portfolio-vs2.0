@@ -44,20 +44,20 @@ const ParallaxImageBlock = ({
     <motion.div
       ref={ref}
       style={{ y: yFade }}
-      className='w-[90vw] md-custom:w-[80vw] max-w-7xl mb-16 md-custom:mb-24 relative flex flex-col items-center'
+      className='w-[90vw] md-custom:w-[80vw] max-w-7xl mb-16 md-custom:mb-24 relative flex flex-col items-center group'
     >
-      <div className='w-full rounded-lg overflow-hidden shadow-[0_2rem_4rem_rgba(0,0,0,0.1)] bg-black/5'>
+      <div className='w-full rounded-lg overflow-hidden shadow-[0_2rem_4rem_rgba(0,0,0,0.1)] bg-black/5 transition-transform duration-700 ease-out group-hover:scale-[1.02]'>
         <Image
           src={imgData.image}
           alt={altText}
-          className='w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-700 ease-out'
+          className='w-full h-auto object-cover'
         />
       </div>
 
       {imgData.legend && (
         <motion.div
           style={{ x: xParallax }}
-          className='absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 bg-red-600 backdrop-blur-xl px-6 py-1 shadow-lg z-20 pointer-events-none'
+          className='absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 bg-white/80 backdrop-blur-xl border border-white/50 px-6 py-4 rounded-xl shadow-lg z-20 pointer-events-none'
         >
           <p className='font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide text-dark opacity-90 leading-relaxed'>
             {imgData.legend}
@@ -243,23 +243,15 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                 </div>
 
-                {/* Second Image Feature */}
-                {project.images[1] && (
+                {/* Render remaining images dynamically */}
+                {project.images.slice(1).map((imgData: any, i: number) => (
                   <ParallaxImageBlock
-                    imgData={project.images[1]}
-                    altText='Feature Image 1'
+                    key={i}
+                    imgData={imgData}
+                    altText={`Feature Image ${i + 1}`}
                     containerRef={scrollContainerRef}
                   />
-                )}
-
-                {/* Third Image Final */}
-                {project.images[2] && (
-                  <ParallaxImageBlock
-                    imgData={project.images[2]}
-                    altText='Final App Image'
-                    containerRef={scrollContainerRef}
-                  />
-                )}
+                ))}
               </>
             ) : (
               /* Fallback Layout For Single Image Projects (Portfolio V1, etc) */
