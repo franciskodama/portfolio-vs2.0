@@ -10,19 +10,23 @@ export const projects = [
     category: 'Productivity Ecosystem',
     url: 'https://handyfor.me/',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    name: 'Handy For.Me',
     tagline: 'Your productivity, centralized.',
     images: [
-      { 
+      {
         image: require('../assets/images/projects/prj-handy1.jpg'),
-        legend: 'The centralized Command Center prioritizing high-velocity daily task execution.'
+        legend:
+          'The centralized Command Center prioritizing high-velocity daily task execution.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-handy2.jpg'),
-        legend: 'Quarterly roadmaps keeping micro-tools aligned with long-term strategic vision.'
+        legend:
+          'Quarterly roadmaps keeping micro-tools aligned with long-term strategic vision.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-handy3.jpg'),
-        legend: 'Integrated deep-work environments designed to minimize context switching.'
+        legend:
+          'Integrated deep-work environments designed to minimize context switching.',
       },
     ],
     backText_titleOne: 'why',
@@ -38,6 +42,8 @@ export const projects = [
     backText_textFour:
       'A high-utility ecosystem that demonstrates my ability to translate complex personal workflows into a clean, performant, and scalable technical product.',
     backgroundColor: '#0EA5E9',
+    titlesColor: '#FFF',
+    textColor: '#FFF',
     visitIcon: true,
   },
   {
@@ -51,19 +57,23 @@ export const projects = [
     category: 'FinTech App',
     url: 'https://monkeybusiness-olive.vercel.app/',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    name: 'Monkey Business',
     tagline: 'Family finances, automated.',
     images: [
-      { 
+      {
         image: require('../assets/images/projects/prj-monkey1.jpg'),
-        legend: 'Collaborative household dashboard synchronizing macro-financial planning across users.'
+        legend:
+          'Collaborative household dashboard synchronizing macro-financial planning across users.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-monkey2.jpg'),
-        legend: 'A custom Rule Engine learning from messy transaction descriptions to automate categorizations.'
+        legend:
+          'A custom Rule Engine learning from messy transaction descriptions to automate categorizations.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-monkey3.jpg'),
-        legend: 'Yearly Overview visualizations exposing long-term wealth management trajectories.'
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
       },
     ],
     backText_titleOne: 'why',
@@ -79,6 +89,8 @@ export const projects = [
     backText_textFour:
       'An automated financial asset that proves I can implement secure, AI-augmented solutions to solve complex data-entry problems in a multi-user environment.',
     backgroundColor: '#6366F1',
+    titlesColor: '#FFF',
+    textColor: '#FFF',
     visitIcon: true,
   },
   {
@@ -92,19 +104,23 @@ export const projects = [
     category: 'Global Wealth Engine',
     url: 'https://trezo.app/',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    name: 'Trezo.app',
     tagline: 'Global wealth, synchronized.',
     images: [
-      { 
+      {
         image: require('../assets/images/projects/prj-trezo1.jpg'),
-        legend: 'Multi-currency tracking engine plotting real-time asset distributions globally.'
+        legend:
+          'Multi-currency tracking engine plotting real-time asset distributions globally.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-trezo2.jpg'),
-        legend: 'Technical analysis logic projecting ATH estimations for data-driven allocation adjustments.'
+        legend:
+          'Technical analysis logic projecting ATH estimations for data-driven allocation adjustments.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-trezo3.jpg'),
-        legend: 'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.'
+        legend:
+          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
       },
     ],
     backText_titleOne: 'why',
@@ -120,6 +136,8 @@ export const projects = [
     backText_textFour:
       'A sophisticated FinTech architect’s proof-of-concept, showcasing my ability to manage complex state logic, secure authentication, and cross-border financial data streams.',
     backgroundColor: '#3FABD8',
+    titlesColor: '#FFF',
+    textColor: '#FFF',
     visitIcon: true,
   },
   {
@@ -133,19 +151,23 @@ export const projects = [
     category: 'Agentic Experience',
     url: 'https://www.fkodama.com',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    name: 'Portfolio V.02',
     tagline: 'Empowered Execution, visualized.',
     images: [
-      { 
+      {
         image: require('../assets/images/projects/prj-port1.jpg'),
-        legend: 'Immersive agentic environment moving beyond static reading into interactive consultation.'
+        legend:
+          'Immersive agentic environment moving beyond static reading into interactive consultation.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-port2.jpg'),
-        legend: 'Physics-simulated UI components utilizing Matter.js for tactile, high-performance interactions.'
+        legend:
+          'Physics-simulated UI components utilizing Matter.js for tactile, high-performance interactions.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-port3.jpg'),
-        legend: 'The Synergy Seer bridging traditional product framing with edge-case architectural execution.'
+        legend:
+          'The Synergy Seer bridging traditional product framing with edge-case architectural execution.',
       },
     ],
     backText_titleOne: 'why',
@@ -161,6 +183,8 @@ export const projects = [
     backText_textFour:
       'A technical "Manifesto" showcasing my ability to blend high-end creative artistry with robust engineering and cutting-edge AI integration.',
     backgroundColor: '#6D28D9',
+    titlesColor: '#FFF',
+    textColor: '#FFF',
     visitIcon: true,
   },
   {
@@ -174,19 +198,23 @@ export const projects = [
     category: 'Digital Contingency Vault',
     url: 'https://monkeymori.vercel.app/',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    name: 'Monkey Mori',
     tagline: 'Your legacy, secured.',
     images: [
-      { 
+      {
         image: require('../assets/images/projects/prj-mori-1.webp'),
-        legend: 'Secure contingency platform vault strictly locked via continuous event-driven state checks.'
+        legend:
+          'Secure contingency platform vault strictly locked via continuous event-driven state checks.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-mori-2.webp'),
-        legend: 'Automated release mechanism dashboard detailing inactivity thresholds and partner access flows.'
+        legend:
+          'Automated release mechanism dashboard detailing inactivity thresholds and partner access flows.',
       },
-      { 
+      {
         image: require('../assets/images/projects/prj-mori-3.webp'),
-        legend: 'Mutual household linking interface managing emotionally sensitive privacy configurations.'
+        legend:
+          'Mutual household linking interface managing emotionally sensitive privacy configurations.',
       },
     ],
     backText_titleOne: 'why',
@@ -201,7 +229,9 @@ export const projects = [
     backText_titleFour: 'result',
     backText_textFour:
       'A high-stakes data protection product demonstrating my ability to architect robust, event-driven authorization flows and solve complex, emotionally sensitive privacy challenges through a seamless user experience.',
-    backgroundColor: '#7206bf',
+    backgroundColor: '#423b32',
+    titlesColor: '#FFF',
+    textColor: '#FFF',
     visitIcon: true,
   },
   {
