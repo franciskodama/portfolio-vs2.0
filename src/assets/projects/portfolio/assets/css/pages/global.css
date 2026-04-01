@@ -1,0 +1,558 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-font: "Jost", sans-serif;
+  --second-font: "Karla", sans-serif;
+
+  font-family: "Nunito", sans-serif;
+  --darkest-color: #0c0a0a;
+  --darker-color: #616161;
+
+  --zero-color: #c5c4c4;
+  --primary-color: #bdbdbd;
+  --secondery-color: #e0e0e0;
+  --tertiary-color: #dbd8d8;
+  --quaternary-color: #eeeeee;
+  --quinary-color: #fafafa;
+
+  --blue-color: #12b3d8;
+  --pink-color: #e90d97;
+  --orange-color: #ff860f;
+  --green-color: #b3f90e;
+
+  --purple-color: #8a229e;
+
+  --gradient: linear-gradient(45deg, #2d3092, #8a229e);
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  background-color: var(--purple-color);
+  color: var(--primary-color);
+  line-height: 1.6;
+}
+
+.avatar-container {
+  overflow: hidden;
+}
+
+.grid {
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bg-animation 5s infinite alternate;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 0px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(2em, 1fr));
+  grid-auto-rows: 2em;
+  grid-auto-flow: dense;
+}
+
+.js-letter {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.item-0,
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6,
+.item-7,
+.item-8,
+.item-9,
+.item-10,
+.item-11,
+.item-12,
+.avatar-name,
+.avatar-hello,
+.avatar-mynameis,
+.avatar-linkedin,
+.scroll-arrow {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.item-0,
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6,
+.item-7,
+.item-8,
+.item-9,
+.item-10,
+.item-11,
+.item-12 {
+  height: 2rem;
+  background-color: transparent;
+}
+
+/* ------- AVATAR CONTAINERS COLORS ------- */
+
+.item-0,
+.item-3,
+.item-6,
+.item-9 {
+  color: var(--zero-color);
+  background-color: var(--secondery-color);
+}
+
+.item-1,
+.item-4,
+.item-7,
+.item-10 {
+  color: var(--secondary-color);
+  background-color: var(--tertiary-color);
+}
+
+.item-2,
+.item-5,
+.item-8,
+.item-11 {
+  color: var(--tertiary-color);
+  background-color: var(--quaternary-color);
+}
+
+/* ------- TESTING AFTER MANZI`S FEEDBACK ------- */
+
+.item-0,
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6,
+.item-7,
+.item-8,
+.item-9,
+.item-10,
+.item-11,
+.item-12 {
+  background-color: transparent;
+  opacity: 0.1;
+}
+
+/* ------- AVATAR CONTAINERS ------- */
+
+.francis-container,
+.kodama-container,
+.hello-container,
+.linkedin-container,
+.scroll-arrow {
+  position: absolute;
+}
+
+.linkedin-container,
+.francis-container,
+.kodama-container,
+.hello-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ------- CONTAINERS SIZES ------- */
+
+.francis-container {
+  width: 8em;
+}
+
+.kodama-container {
+  width: 14em;
+}
+
+.hello-container {
+  width: 12em;
+}
+
+.linkedin-container {
+  width: 10em;
+}
+
+/* ------- AVATAR ELEMENTS ------- */
+
+.avatar-linkedin,
+.avatar-name,
+.avatar-hello,
+.avatar-mynameis,
+.scroll-arrow {
+  font-size: 1.4rem;
+  width: 2rem;
+  height: 2rem;
+  color: var(--darkest-color);
+}
+
+.avatar-hello {
+  background-color: var(--blue-color);
+}
+
+.avatar-mynameis {
+  background-color: var(--pink-color);
+}
+
+.scroll-arrow {
+  border-radius: 50%;
+  background-color: var(--pink-color);
+}
+
+.avatar-name {
+  background-color: var(--orange-color);
+}
+
+.avatar-linkedin {
+  text-decoration: none;
+  background-color: var(--green-color);
+}
+
+.avatar-transparent {
+  opacity: 0;
+}
+
+/* ------- CONTAINERS POSITION ------- */
+
+.francis-container,
+.kodama-container,
+.hello-container,
+.linkedin-container,
+.scroll-arrow {
+  left: 0;
+  top: 0;
+  margin-left: 50vw;
+  transform: translate(-50%);
+}
+
+.hello-container {
+  margin-top: 10vh;
+}
+
+.francis-container {
+  margin-top: 20vh;
+}
+
+.kodama-container {
+  margin-top: 42vh;
+}
+
+.linkedin-container {
+  margin-top: 58vh;
+}
+
+.scroll-arrow {
+  margin-top: 80vh;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+  /* ------- GRID SIZE ------- */
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(2.5em, 1fr));
+    grid-auto-rows: 2.5em;
+  }
+
+  .item-0,
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9,
+  .item-10,
+  .item-11,
+  .item-12,
+  .avatar-name,
+  .avatar-hello,
+  .avatar-linkedin {
+    font-size: 1.75rem;
+  }
+
+  .item-0,
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9,
+  .item-10,
+  .item-11,
+  .item-12 {
+    height: 2.5rem;
+  }
+
+  /* ------- CONTAINERS SIZES ------- */
+
+  .hello-container {
+    width: 15em;
+  }
+
+  .francis-container {
+    width: 10em;
+  }
+
+  .kodama-container {
+    width: 17.5em;
+  }
+
+  .linkedin-container {
+    width: 12.5em;
+  }
+
+  /* ------- AVATAR ELEMENTS ------- */
+
+  .avatar-linkedin,
+  .avatar-name,
+  .avatar-hello,
+  .avatar-mynameis {
+    font-size: 1.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* ------- CONTAINERS POSITION ------- */
+
+  .hello-container {
+    margin-top: 5vh;
+  }
+
+  .francis-container {
+    margin-top: 17vh;
+  }
+
+  .kodama-container {
+    margin-top: 44vh;
+  }
+
+  .linkedin-container {
+    margin-top: 64vh;
+  }
+
+  .scroll-arrow {
+    margin-top: 90vh;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 62em) {
+  /* ------- GRID SIZE ------- */
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(3em, 1fr));
+    grid-auto-rows: 3em;
+  }
+
+  .item-0,
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9,
+  .item-10,
+  .item-11,
+  .item-12,
+  .avatar-name,
+  .avatar-hello,
+  .avatar-linkedin {
+    font-size: 2rem;
+  }
+
+  .item-0,
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9,
+  .item-10,
+  .item-11,
+  .item-12 {
+    height: 3rem;
+  }
+
+  /* ------- AVATAR ELEMENTS ------- */
+
+  .avatar-linkedin,
+  .avatar-name,
+  .avatar-hello,
+  .avatar-mynameis {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* ------- CONTAINERS SIZES ------- */
+
+  .hello-container {
+    width: 18em;
+  }
+
+  .francis-container {
+    width: 12em;
+  }
+
+  .kodama-container {
+    width: 21em;
+  }
+
+  .linkedin-container {
+    width: 15em;
+  }
+
+  /* ------- CONTAINERS POSITION ------- */
+
+  .hello-container {
+    margin-top: 10vh;
+  }
+
+  .francis-container {
+    margin-top: 23vh;
+  }
+
+  .kodama-container {
+    margin-top: 45vh;
+    margin-left: 29vw;
+  }
+
+  .linkedin-container {
+    margin-top: 55vh;
+    margin-left: 65vw;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  /* ------- GRID SIZE ------- */
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
+    grid-auto-rows: 4em;
+  }
+
+  .item-0,
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9,
+  .item-10,
+  .item-11,
+  .item-12,
+  .avatar-name,
+  .avatar-hello,
+  .avatar-linkedin {
+    font-size: 2.5rem;
+  }
+
+  .item-0,
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9,
+  .item-10,
+  .item-11,
+  .item-12 {
+    height: 4rem;
+  }
+
+  /* ------- AVATAR ELEMENTS ------- */
+
+  .avatar-linkedin,
+  .avatar-name,
+  .avatar-hello,
+  .avatar-mynameis {
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  /* ------- CONTAINERS SIZES ------- */
+
+  .hello-container {
+    width: 24em;
+  }
+
+  .francis-container {
+    width: 16em;
+  }
+
+  .kodama-container {
+    width: 28em;
+  }
+
+  .linkedin-container {
+    width: 20em;
+  }
+
+  /* ------- CONTAINERS POSITION ------- */
+
+  .hello-container {
+    margin-top: 10vh;
+  }
+
+  .francis-container {
+    margin-top: 23vh;
+  }
+
+  .kodama-container {
+    margin-top: 45vh;
+    margin-left: 26vw;
+  }
+
+  .linkedin-container {
+    margin-top: 55vh;
+    margin-left: 58vw;
+  }
+}

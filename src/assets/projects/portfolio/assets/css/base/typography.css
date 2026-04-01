@@ -1,0 +1,77 @@
+h2,
+h3 {
+  font-family: var(--main-font);
+  line-height: 1.3em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 0.7em;
+}
+
+.scroll-arrow i {
+  color: var(--darkest-color);
+}
+
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-title {
+  color: rgb(201, 201, 201, 0.5);
+  font-size: 0.8rem;
+}
+
+.footer-text-contatos,
+.footer-text,
+i {
+  font-size: 0.9rem;
+  color: rgb(201, 201, 201);
+}
+
+.footer-legaltext h5,
+.footer-legaltext a,
+.footer-legaltext a:link,
+.footer-legaltext a:visited {
+  color: rgb(201, 201, 201);
+  font-size: 0.8rem;
+}
+
+.whatsapp-container a:link {
+  text-decoration: none;
+}
+
+.policy-container h2 {
+  font-size: 1.5rem;
+  color: var(--green-color);
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+.policy-container h3 {
+  margin-top: 1.3em;
+  margin-bottom: 1em;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

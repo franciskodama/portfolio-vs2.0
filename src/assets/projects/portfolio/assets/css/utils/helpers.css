@@ -1,0 +1,61 @@
+.center {
+  text-align: center;
+}
+
+.blink {
+  animation: 1s infinite blink;
+  display: inline-block;
+}
+
+@keyframes blink {
+  0%,
+  15% {
+    opacity: 0;
+  }
+  16%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3em 4em;
+  background: rgba(0, 0, 0, 1);
+  overflow: scroll;
+}
+
+.lightbox:target {
+  display: block;
+}
+
+.lightbox-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#politica-privacidade:link {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  .lightbox {
+    padding: 2em 20em;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

@@ -11,6 +11,7 @@ export const projects = [
     url: 'https://handyfor.me/',
     logo: require('../assets/images/projects/logo-handy-for-me.png'),
     name: 'Handy For.Me',
+    showName: false,
     tagline: 'Your productivity, centralized.',
     images: [
       {
@@ -58,6 +59,7 @@ export const projects = [
     url: 'https://monkeybusiness-olive.vercel.app/',
     logo: require('../assets/images/projects/logo-monkey-business.png'),
     name: 'Monkey Business',
+    showName: true,
     tagline: 'Family finances, automated.',
     images: [
       {
@@ -145,6 +147,7 @@ export const projects = [
     url: 'https://trezo.app/',
     logo: require('../assets/images/projects/logo-trezo.png'),
     name: 'Trezo.app',
+    showName: false,
     tagline: 'Global wealth, synchronized.',
     images: [
       {
@@ -192,7 +195,7 @@ export const projects = [
     url: 'https://www.fkodama.com',
     logo: require('../assets/images/projects/logo-portfolio.png'),
     name: 'Portfolio V.02',
-    showName: true,
+    showName: false,
     tagline: 'Empowered Execution, visualized.',
     images: [
       {
@@ -229,6 +232,7 @@ export const projects = [
     url: 'https://monkeymori.vercel.app/',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
     name: 'Monkey Mori',
+    showName: true,
     tagline: 'Your legacy, secured.',
     images: [
       {
@@ -281,6 +285,7 @@ export const projects = [
     category: 'Product Case Study',
     url: 'https://www.fkodama.com',
     image: require('../assets/images/projects/project-portfolio.jpg'),
+    showName: false,
     backText_titleOne: 'why',
     backText_textOne:
       'To architect a career-pivot strategy by designing an immersive digital environment that simulated premium e-commerce and AI-driven product pages.',
@@ -307,6 +312,7 @@ export const projects = [
     category: 'Layout Systems R&D',
     url: 'https://fkodama.com/_dev/seletos',
     image: require('../assets/images/projects/project-seletos.jpg'),
+    showName: false,
     backText_titleOne: 'why',
     backText_textOne:
       'To master the fundamental "atoms" of web architecture—Flexbox, Grid, and Responsive Logic—without the abstraction of modern frameworks.',
@@ -333,6 +339,7 @@ export const projects = [
     category: 'Algorithmic Logic',
     url: 'https://fkodama.com/_dev/pacman/',
     image: require('../assets/images/projects/project-pacman.jpg'),
+    showName: false,
     backText_titleOne: 'why',
     backText_textOne:
       'To deep-dive into Vanilla JavaScript state management and the mathematical logic of grid-based navigation and collision systems.',
@@ -358,6 +365,9 @@ export const projects = [
     tech: 'HTML5 CSS3',
     category: 'Legacy Brand Migration',
     url: 'https://www.mundialcomunicacao.com.br/',
+    logo: require('../assets/images/projects/logo-mundial.png'),
+    name: 'Mundial',
+    showName: false,
     image: require('../assets/images/projects/project-mundial.jpg'),
     backText_titleOne: 'why',
     backText_textOne:
@@ -385,6 +395,7 @@ export const projects = [
     category: 'Event-Driven Logic',
     url: 'https://fkodama.com/_dev/space-invaders/',
     image: require('../assets/images/projects/project-space.jpg'),
+    showName: false,
     backText_titleOne: 'why',
     backText_textOne:
       'To master event-driven programming and asynchronous logic (sound effects and timing) using pure JavaScript.',

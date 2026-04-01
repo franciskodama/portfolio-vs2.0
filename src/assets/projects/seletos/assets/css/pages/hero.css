@@ -1,0 +1,131 @@
+.section-hero {
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bg-animation 5s infinite alternate;
+}
+
+.section-hero .r {
+  padding: 7rem 0;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.section-hero p {
+  margin-top: 6em;
+}
+
+.section-hero p,
+.hero-main-text {
+  padding-bottom: 1.5em;
+}
+
+.hero-main-text {
+  position: relative;
+  display: block;
+  /* transform: translateY(20rem); */
+  /* opacity: 0;
+  font-size: 0; */
+  overflow: hidden;
+  animation: up 750ms linear forwards;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(30rem);
+    /* opacity: 0;
+    font-size: 0; */
+  }
+  100% {
+    transform: translateY(0);
+    /* opacity: 1;
+    font-size: 2rem; */
+  }
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+  .section-hero h1 {
+    max-width: 9em;
+  }
+  .r-hero {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 33em) {
+  @keyframes up {
+    0% {
+      transform: translateY(30rem);
+      opacity: 0;
+      font-size: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      font-size: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .section-hero-bg {
+    background-image: url(../../img/hero-looking-left.png);
+    background-repeat: no-repeat;
+    background-size: 25em auto;
+    background-position: right 5% bottom;
+  }
+
+  .section-hero p,
+  .hero-main-text {
+    padding-bottom: 1em;
+  }
+
+  .r-hero a {
+    margin-bottom: 1em;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .r-hero {
+    padding: 0 2em;
+  }
+
+  .section-hero-bg {
+    background-size: 27em auto;
+    background-position: right 20% bottom;
+  }
+
+  .section-hero p {
+    padding-bottom: 2em;
+  }
+
+  .hero-main-text {
+    padding-bottom: 1em;
+  }
+
+  .r-hero a {
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .r-hero {
+    padding: 0 4em;
+  }
+
+  .section-hero-bg {
+    background-size: 27em auto;
+    background-position: right 30% bottom;
+  }
+}

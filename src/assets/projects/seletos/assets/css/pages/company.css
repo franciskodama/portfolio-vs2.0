@@ -1,0 +1,94 @@
+.company-outside-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.company-differential {
+  margin: 0.4em 0;
+}
+
+/* ------ LEFT CONTAINER ------ */
+
+.company-left-container h3,
+.company-left-container h2 {
+  text-align: left;
+}
+
+.company-left-container > .text-light {
+  margin: 0.5em 0 2em 0;
+  max-width: 40em;
+}
+
+.company-left-container li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.company-left-container li:last-child {
+  margin-bottom: 3em;
+}
+
+.company-left-container img {
+  width: 1.8rem;
+  margin: 1em 1em;
+}
+
+/* ------ RIGHT CONTAINER ------ */
+
+.company-right-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.company-right-container img:first-of-type {
+  height: fit-content;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.company-right-container img:last-of-type {
+  display: none;
+  height: fit-content;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  .company-left-container {
+    width: 55%;
+  }
+
+  .company-right-container {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+  .company-right-container img:first-of-type,
+  .company-right-container img:last-of-type {
+    display: inline-block;
+    width: 45%;
+  }
+
+  .company-right-container img:first-of-type {
+    margin-top: 2em;
+  }
+
+  .company-right-container img:last-of-type {
+    margin-bottom: 2em;
+  }
+}

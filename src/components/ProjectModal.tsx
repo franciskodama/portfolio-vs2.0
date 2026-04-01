@@ -125,7 +125,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   {project.title}
                 </h2>
               )}
-              {project.name && (
+              {project.showName && project.name && (
                 <h3
                   className='font-main-heavy uppercase text-2xl md-custom:text-5xl mb-2 tracking-tight'
                   style={{ color: project.textColor || '#1c1c1c' }}

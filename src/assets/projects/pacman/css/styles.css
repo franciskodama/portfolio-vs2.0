@@ -1,0 +1,537 @@
+/* ====================================
+        STARTERS
+======================================= */
+
+html,
+body {
+  margin: 10;
+  padding: 10;
+}
+
+body {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 16px;
+  background-color: black;
+  color: #b3f90e;
+  line-height: 1.6;
+}
+
+/* * {
+  box-sizing: border-box;
+  margin: 10;
+  padding: 10;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+} */
+
+/* ====================================
+        TYPOGRAPHY
+======================================= */
+
+h1,
+h2,
+h3,
+button {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+h3 {
+  color: #f47320;
+  background-color: #212121;
+  border-radius: 1rem;
+}
+
+button {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.7rem;
+}
+
+/* ====================================
+        LAYOUT
+======================================= */
+
+/* --- GENERAL --- */
+
+.limit-content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 420px;
+  padding: 4em 0 1em;
+}
+
+.score-display,
+.button-start,
+footer p {
+  text-align: center;
+}
+
+.score-display,
+.grid {
+  margin: 0 auto;
+}
+
+#score {
+  margin-left: 0.3rem;
+}
+
+/* --- GRID --- */
+
+.grid {
+  width: 420px;
+  height: 420px;
+  border: solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  width: 15px;
+  height: 15px;
+}
+
+/* --- WALLS --- */
+
+.wall-horizontal {
+  position: relative;
+}
+
+.wall-horizontal:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  border-bottom: 8px double blue;
+  width: 100%;
+}
+
+.wall-vertical-left {
+  box-sizing: border-box;
+  border-left: 8px double blue;
+  height: 100%;
+}
+
+.wall-vertical-right {
+  box-sizing: border-box;
+  border-right: 8px double blue;
+  height: 100%;
+}
+
+.wall-curve-top-left {
+  position: relative;
+}
+
+.wall-curve-top-left:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  border-bottom: 8px double blue;
+  border-left: 8px double blue;
+  width: 100%;
+  height: 100%;
+}
+
+.wall-curve-top-right {
+  position: relative;
+}
+
+.wall-curve-top-right:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  border-bottom: 8px double blue;
+  border-right: 8px double blue;
+  width: 100%;
+  height: 100%;
+}
+
+.wall-curve-bottom-right {
+  position: relative;
+}
+
+.wall-curve-bottom-right:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  border-top: 8px double blue;
+  border-right: 8px double blue;
+  width: 100%;
+  height: 100%;
+}
+
+.wall-curve-bottom-left {
+  position: relative;
+}
+
+.wall-curve-bottom-left:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  border-top: 8px double blue;
+  border-left: 8px double blue;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- WALL AJUSTMENTS --- */
+
+.wall-curve-top-left2 {
+  position: relative;
+}
+
+.wall-curve-top-left2:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  right: 45%;
+  border-top: 8px double blue;
+  border-right: 8px double blue;
+  width: 100%;
+  height: 100%;
+}
+
+.wall-curve-top-right2 {
+  position: relative;
+}
+
+.wall-curve-top-right2:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: 45%;
+  border-top: 8px double blue;
+  border-left: 8px double blue;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- PAC-DOTS --- */
+
+.pac-dot,
+.power-pellet {
+  background-color: #f4b191;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.pac-dot {
+  border: 5px solid black;
+}
+
+.power-pellet {
+  border: 2px solid black;
+}
+
+/* ====================================
+        CHARACTERS
+======================================= */
+
+/* .pacman {
+  background: url(../img/pacman-right.svg);
+  background-color: #faff22;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  width: 15px;
+} */
+
+.pacman-right {
+  background: url(../img/pacman-right.svg);
+}
+
+.pacman-left {
+  background: url(../img/pacman-left.svg);
+}
+
+.pacman-up {
+  background: url(../img/pacman-up.svg);
+}
+
+.pacman-down {
+  background: url(../img/pacman-down.svg);
+}
+
+.pacman-mouth {
+  position: absolute;
+  background: black;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  animation: eat 0.7s ease 0s infinite;
+}
+
+@keyframes eat {
+  0% {
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+  25% {
+    clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+  }
+  50% {
+    clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+  }
+  75% {
+    clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+  }
+  100% {
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+}
+
+.blinky,
+.pinky,
+.inky,
+.clyde,
+.scared-ghost {
+  border: none;
+}
+
+.blinky {
+  background: url(../img/ghost-yellow.svg);
+}
+
+.pinky {
+  background: url(../img/ghost-pink.svg);
+}
+
+.inky {
+  background: url(../img/ghost-aqua.svg);
+}
+
+.clyde {
+  background: url(../img/ghost-red.svg);
+}
+
+.scared-ghost {
+  background: url(../img/ghost-scared.svg);
+}
+
+/* ====================================
+        BUTTONS
+======================================= */
+
+button {
+  border: none;
+  background: none;
+  color: white;
+}
+
+.button-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 19rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 0 0.5rem #ac2023;
+  background-color: red;
+}
+
+.button-start:active,
+.btn-up:active,
+.btn-right:active,
+.btn-down:active,
+.btn-left:active {
+  position: relative;
+  top: 0.5rem;
+  box-shadow: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.button-move-parent {
+  display: inline-block;
+}
+
+.button-move {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  width: 9rem;
+}
+
+.btn-up,
+.btn-right,
+.btn-down,
+.btn-left {
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 2.5rem;
+  color: #eecfbb;
+  box-shadow: 0 0.5rem #da4c28;
+  background-color: #f47320;
+}
+
+.btn-up,
+.btn-down {
+  margin: 1rem 2.25rem;
+}
+
+.btn-left {
+  margin-right: 0.5rem;
+}
+
+/* ====================================
+        GAME OVER
+======================================= */
+
+#over {
+  display: none;
+}
+
+.gameover {
+  font-size: 0.5rem;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 44%;
+  width: 3rem;
+  animation: roll 4s infinite;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0) scale(0);
+  }
+  100% {
+    transform: rotate(360deg) scale(5);
+  }
+}
+
+/* ====================================
+        FOOTER
+======================================= */
+
+.footer {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#flip {
+  height: 30px;
+  overflow: hidden;
+}
+
+#flip > div > div {
+  color: #fff;
+  padding: 4px 12px;
+  height: 45px;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+
+#flip div:first-child {
+  animation: show 10s linear infinite;
+}
+
+#flip div div,
+#flip div:first-child div,
+#flip div:last-child div {
+  color: gray;
+}
+
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 430px) {
+}
+
+@media only screen and (min-width: 1080px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* BUTTON */
+
+  button {
+    font-size: 0.9rem;
+  }
+
+  .button-action {
+    flex-direction: column;
+  }
+
+  .btn-up,
+  .btn-right,
+  .btn-down,
+  .btn-left {
+    display: none;
+  }
+
+  .button-start {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  /* GAME OVER */
+
+  .gameover {
+    font-size: 0.9rem;
+    top: 45%;
+    left: 48%;
+    width: 5rem;
+  }
+}

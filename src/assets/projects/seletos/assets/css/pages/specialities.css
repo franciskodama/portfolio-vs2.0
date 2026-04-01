@@ -1,0 +1,126 @@
+.specialities-text {
+  text-align: center;
+  margin: 1em auto;
+  max-width: 65%;
+}
+
+.specialities-text em {
+  color: var(--secondery-color);
+}
+
+.specialities-formula {
+  margin-bottom: 2.5em;
+}
+
+.specialities-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.specialities-card {
+  margin-top: 3em;
+  border: 1px solid rgb(219, 218, 218);
+  border-radius: 0.5em;
+  padding: 3em 1.5em;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-size: 4em;
+  background-repeat: no-repeat;
+  background-position: 2em 2em;
+  transition: 0.5s;
+}
+
+.specialities-card:hover {
+  background-color: var(--secondery-color);
+  color: white;
+}
+
+.specialities-card:hover .text-light {
+  color: white;
+}
+
+.specialities-card:nth-child(1) {
+  background-image: url(../../img/portuguese.svg);
+}
+
+.specialities-card:nth-child(2) {
+  background-image: url(../../img/essay.svg);
+}
+
+.specialities-card:nth-child(3) {
+  background-image: url(../../img/math.svg);
+}
+
+.specialities-card:nth-child(4) {
+  background-image: url(../../img/logic.svg);
+}
+
+.specialities-card:nth-child(1):hover {
+  background-image: url(../../img/portuguese-light.svg);
+}
+
+.specialities-card:nth-child(2):hover {
+  background-image: url(../../img/essay-light.svg);
+}
+
+.specialities-card:nth-child(3):hover {
+  background-image: url(../../img/math-light.svg);
+}
+
+.specialities-card:nth-child(4):hover {
+  background-image: url(../../img/logic-light.svg);
+}
+
+.card-title {
+  text-align: left;
+  margin: 4em 0 1em 0;
+}
+
+.section-specialities .button {
+  margin-top: 2em;
+}
+
+/* .section-specialities h2 {
+  padding-bottom: 1em;
+} */
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+  .specialities-container {
+    gap: 2em;
+  }
+  .specialities-card {
+    max-width: 20em;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .specialities-container {
+    max-width: 45em;
+    margin: 0 auto;
+  }
+
+  .specialities-card {
+    max-width: 20em;
+    padding: 2em;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .specialities-container {
+    max-width: 55em;
+  }
+
+  .specialities-card {
+    max-width: 25em;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+}
