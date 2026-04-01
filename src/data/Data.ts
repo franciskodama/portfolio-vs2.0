@@ -9,7 +9,7 @@ export const projects = [
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     category: 'Productivity Ecosystem',
     url: 'https://handyfor.me/',
-    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    logo: require('../assets/images/projects/logo-handy-for-me.png'),
     name: 'Handy For.Me',
     tagline: 'Your productivity, centralized.',
     images: [
@@ -56,22 +56,62 @@ export const projects = [
     tech: 'React Next.js TypeScript A.I. Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
     category: 'FinTech App',
     url: 'https://monkeybusiness-olive.vercel.app/',
-    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    logo: require('../assets/images/projects/logo-monkey-business.png'),
     name: 'Monkey Business',
     tagline: 'Family finances, automated.',
     images: [
       {
-        image: require('../assets/images/projects/prj-monkey1.jpg'),
+        image: require('../assets/images/projects/prj-monkey-buss-1.webp'),
         legend:
           'Collaborative household dashboard synchronizing macro-financial planning across users.',
       },
       {
-        image: require('../assets/images/projects/prj-monkey2.jpg'),
+        image: require('../assets/images/projects/prj-monkey-buss-2.webp'),
         legend:
           'A custom Rule Engine learning from messy transaction descriptions to automate categorizations.',
       },
       {
-        image: require('../assets/images/projects/prj-monkey3.jpg'),
+        image: require('../assets/images/projects/prj-monkey-buss-3.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-4.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-5.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-6.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-7.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-8.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-9.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-10.webp'),
+        legend:
+          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-11.webp'),
         legend:
           'Yearly Overview visualizations exposing long-term wealth management trajectories.',
       },
@@ -89,8 +129,8 @@ export const projects = [
     backText_textFour:
       'An automated financial asset that proves I can implement secure, AI-augmented solutions to solve complex data-entry problems in a multi-user environment.',
     backgroundColor: '#6366F1',
-    titlesColor: '#FFF',
-    textColor: '#FFF',
+    titlesColor: '#D5896F',
+    textColor: '#031D44',
     visitIcon: true,
   },
   {
@@ -103,7 +143,7 @@ export const projects = [
     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Tailwind CSS Clerk Zod',
     category: 'Global Wealth Engine',
     url: 'https://trezo.app/',
-    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    logo: require('../assets/images/projects/logo-trezo.png'),
     name: 'Trezo.app',
     tagline: 'Global wealth, synchronized.',
     images: [
@@ -150,24 +190,13 @@ export const projects = [
     tech: 'React Next.js TypeScript Matter.js Framer-motion GSAP React-scroll-parallax',
     category: 'Agentic Experience',
     url: 'https://www.fkodama.com',
-    logo: require('../assets/images/projects/logo-monkey-mori.png'),
+    logo: require('../assets/images/projects/logo-portfolio.png'),
     name: 'Portfolio V.02',
     tagline: 'Empowered Execution, visualized.',
     images: [
       {
-        image: require('../assets/images/projects/prj-port1.jpg'),
-        legend:
-          'Immersive agentic environment moving beyond static reading into interactive consultation.',
-      },
-      {
-        image: require('../assets/images/projects/prj-port2.jpg'),
-        legend:
-          'Physics-simulated UI components utilizing Matter.js for tactile, high-performance interactions.',
-      },
-      {
-        image: require('../assets/images/projects/prj-port3.jpg'),
-        legend:
-          'The Synergy Seer bridging traditional product framing with edge-case architectural execution.',
+        image: require('../assets/images/projects/prj-portfolio1.jpg'),
+        legend: 'Blah blah blah.',
       },
     ],
     backText_titleOne: 'why',

@@ -19,30 +19,32 @@ interface ProjectModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-// Component to handle parallax effect for each individual image
 const ParallaxImageBlock = ({
   imgData,
   altText,
+  containerRef,
 }: {
   imgData: any;
   altText: string;
+  containerRef: any;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
+    container: containerRef,
     target: ref,
     offset: ['start end', 'end start'],
   });
 
-  // Slow horizontal shift (parallax) for the legend
-  const xParallax = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
-  // Subtle vertical fade/shift for the image container itself
-  const yFade = useTransform(scrollYProgress, [0, 1], ['5%', '-5%']);
+  // High-visibility horizontal shift (parallax) for the legend
+  const xParallax = useTransform(scrollYProgress, [0, 1], [-700, 700]);
+  // Vertical fade/shift for the image container itself
+  const yFade = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   return (
     <motion.div
       ref={ref}
       style={{ y: yFade }}
-      className='w-[90vw] max-w-7xl mb-16 md-custom:mb-24 relative flex flex-col items-center'
+      className='w-[90vw] md-custom:w-[80vw] max-w-7xl mb-16 md-custom:mb-24 relative flex flex-col items-center'
     >
       <div className='w-full rounded-lg overflow-hidden shadow-[0_2rem_4rem_rgba(0,0,0,0.1)] bg-black/5'>
         <Image
@@ -67,6 +69,8 @@ const ParallaxImageBlock = ({
 };
 
 const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   if (!project) return null;
 
   return (
@@ -85,7 +89,10 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
         {/* Floating Close Button that stays visible or top-right anchored */}
         {/* We place it absolute to the scrolling container so it scrolls away like the rest of the header, but isolated */}
 
-        <div className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative scroll-smooth bg-black/5'>
+        <div
+          ref={scrollContainerRef}
+          className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative scroll-smooth bg-black/5'
+        >
           {/* Sticky Top Right Actions */}
           <div className='sticky top-6 right-0 z-50 flex justify-end px-6 md:px-12 pointer-events-none h-0 w-full'>
             <div className='flex flex-col items-end gap-3 pointer-events-auto'>
@@ -108,7 +115,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <Image
                   src={project.logo}
                   alt='Project Logo'
-                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain drop-shadow-md'
+                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain drop-shadow-md my-10'
                 />
               ) : (
                 <h2
@@ -201,6 +208,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <ParallaxImageBlock
                   imgData={project.images[0]}
                   altText='Hero Image'
+                  containerRef={scrollContainerRef}
                 />
 
                 {/* Info Block 2 (HOW & RESULT) */}
@@ -240,6 +248,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   <ParallaxImageBlock
                     imgData={project.images[1]}
                     altText='Feature Image 1'
+                    containerRef={scrollContainerRef}
                   />
                 )}
 
@@ -248,6 +257,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   <ParallaxImageBlock
                     imgData={project.images[2]}
                     altText='Final App Image'
+                    containerRef={scrollContainerRef}
                   />
                 )}
               </>
@@ -321,6 +331,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   <ParallaxImageBlock
                     imgData={{ image: project.image, legend: null }}
                     altText='Main Project'
+                    containerRef={scrollContainerRef}
                   />
                 )}
               </>
