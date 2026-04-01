@@ -55,9 +55,9 @@ const ParallaxImageBlock = ({
       {imgData.legend && (
         <motion.div
           style={{ x: xParallax }}
-          className='absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 rounded-sm bg-white/80 backdrop-blur-xl border border-white/50 px-6 py-1 shadow-lg z-20 pointer-events-none'
+          className='absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 bg-red-600 backdrop-blur-xl px-6 py-1 shadow-lg z-20 pointer-events-none'
         >
-          <p className='font-main-medium text-sm md-custom:text-[0.95rem] tracking-wide text-dark opacity-90 leading-relaxed'>
+          <p className='font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide text-dark opacity-90 leading-relaxed'>
             {imgData.legend}
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <Image
                   src={project.logo}
                   alt='Project Logo'
-                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain mb-3 drop-shadow-md'
+                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain drop-shadow-md'
                 />
               ) : (
                 <h2
@@ -136,10 +136,10 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
               )}
 
               {/* Year & Visit Link */}
-              <div className='flex flex-col items-center mt-6 gap-2 pointer-events-auto'>
+              <div className='flex flex-col items-center mt-16 gap-2 pointer-events-auto'>
                 <span
                   className='font-main-semibold text-base md-custom:text-lg opacity-90'
-                  style={{ color: project.textColor || '#1c1c1c' }}
+                  style={{ color: project.titlesColor || '#1c1c1c' }}
                 >
                   {project.year}
                 </span>
@@ -148,7 +148,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                     href={project.url}
                     target='_blank'
                     rel='noreferrer'
-                    className='text-[0.65rem] md-custom:text-xs font-main-heavy opacity-80 hover:opacity-100 uppercase tracking-[0.2em] border-b pb-1 mt-4 transition-all'
+                    className='text-[0.6rem] md-custom:text-xs font-main-heavy opacity-80 hover:opacity-100 uppercase tracking-[0.2em] border-b pb-1 mt-4 transition-all'
                     style={{
                       color: project.textColor || '#1c1c1c',
                       borderColor: project.textColor
@@ -169,7 +169,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-32 mt-4 md-custom:mt-16 items-start px-4'>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
                       {project.backText_titleOne}
@@ -183,7 +183,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
                       {project.backText_titleThree}
@@ -207,7 +207,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-48 items-start px-4'>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
                       {project.backText_titleTwo}
@@ -221,7 +221,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
                       {project.backText_titleFour}

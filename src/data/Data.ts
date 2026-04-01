@@ -204,19 +204,25 @@ export const projects = [
       {
         image: require('../assets/images/projects/prj-mori-1.webp'),
         legend:
-          'Secure contingency platform vault strictly locked via continuous event-driven state checks.',
+          'Dashboard live view showing household connection, partner status, and upcoming check-in date.',
       },
       {
         image: require('../assets/images/projects/prj-mori-2.webp'),
         legend:
-          'Automated release mechanism dashboard detailing inactivity thresholds and partner access flows.',
+          'The Vault — secure note view displaying saved bank account details.',
       },
       {
         image: require('../assets/images/projects/prj-mori-3.webp'),
         legend:
-          'Mutual household linking interface managing emotionally sensitive privacy configurations.',
+          'Editing a note directly in the vault: a smooth, user‑centric editing experience.',
+      },
+      {
+        image: require('../assets/images/projects/prj-mori-4.webp'),
+        legend:
+          'A private note that becomes visible only after the dead‑man’s switch is triggered.',
       },
     ],
+
     backText_titleOne: 'why',
     backText_textOne:
       'Managing emergency instructions and critical digital access is inherently risky. I identified a real-world need for a frictionless fail-safe that protects absolute privacy while guaranteeing the secure transfer of a digital legacy strictly during worst-case scenarios.',
@@ -229,8 +235,8 @@ export const projects = [
     backText_titleFour: 'result',
     backText_textFour:
       'A high-stakes data protection product demonstrating my ability to architect robust, event-driven authorization flows and solve complex, emotionally sensitive privacy challenges through a seamless user experience.',
-    backgroundColor: '#423b32',
-    titlesColor: '#FFF',
+    backgroundColor: '#0f172a',
+    titlesColor: '#4F46E5',
     textColor: '#FFF',
     visitIcon: true,
   },
