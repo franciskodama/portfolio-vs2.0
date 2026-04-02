@@ -685,7 +685,7 @@ date_default_timezone_set('America/Sao_Paulo');
   <script src="assets/js/plugins/jquery.filterizr.js"></script>
   <script src="assets/js/vendor/jquery.fancybox.min.js"></script>
   <script src="assets/js/vendor/jquery.maskedinput.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDs3mrTgrYd6_hJS50x4Sha1lPtS2T-_JA"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<?php echo getenv('GOOGLE_MAPS_API_KEY'); ?>"></script>
   <!-- Contact Form Script -->
   <script type="text/javascript" src="assets/contact-form/js/validator.min.js"></script>
   <script type="text/javascript" src="assets/contact-form/js/form-scripts.js"></script>
