@@ -1,0 +1,94 @@
+.professors-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin-bottom: 2em;
+}
+
+.professors-title {
+  padding-bottom: 1em;
+}
+
+.professors-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.professors-card img {
+  border-radius: 0.3em 0.3em 0 0;
+}
+
+.professors-contend {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.professors-contend p {
+  margin-bottom: 1rem;
+}
+
+.professors-contend ul {
+  list-style-type: circle;
+  padding-left: 1em;
+}
+
+.professors-card-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.custom-marker > ::marker {
+  content: "\f00c";
+  font-size: 0.1em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+}
+
+.custom-marker > li {
+  padding-left: 0.5rem;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+  .professors-container {
+    flex-direction: column;
+    max-width: 26em;
+    margin: 0 auto;
+  }
+
+  .professors-contend {
+    padding: 2em;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .professors-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+    max-width: 90%;
+  }
+
+  .professors-card {
+    flex: 1 1 46%;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .professors-card {
+    max-width: 40%;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+}

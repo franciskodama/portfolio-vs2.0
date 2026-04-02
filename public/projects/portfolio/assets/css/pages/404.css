@@ -1,0 +1,123 @@
+.button-404-back-home {
+  font-family: var(--main-font);
+  font-size: 0.8rem;
+  font-weight: 900;
+  border: none;
+  width: 90%;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: 30vh;
+  margin-left: 50vw;
+  transform: translate(-50%);
+  background-color: var(--pink-color);
+}
+
+/* ------- CONTAINERS POSITION ------- */
+
+.hello-container {
+  margin-top: 10vh;
+}
+
+.francis-container {
+  margin-top: 20vh;
+}
+
+.kodama-container {
+  margin-top: 62vh;
+}
+
+.linkedin-container {
+  margin-top: 84vh;
+}
+
+.scroll-arrow {
+  margin-top: 85vh;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+  /* ------- CONTAINERS POSITION ------- */
+
+  .hello-container {
+    margin-top: 5vh;
+  }
+
+  .francis-container {
+    margin-top: 17vh;
+  }
+
+  .button-404-back-home {
+    top: 30vh;
+    max-width: 400px;
+  }
+
+  .kodama-container {
+    margin-top: 54vh;
+  }
+
+  .linkedin-container {
+    margin-top: 80vh;
+  }
+
+  .scroll-arrow {
+    margin-top: 90vh;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  /* ------- CONTAINERS POSITION ------- */
+
+  .hello-container {
+    margin-top: 10vh;
+  }
+
+  .francis-container {
+    margin-top: 23vh;
+  }
+
+  .button-404-back-home {
+    top: 30vh;
+  }
+
+  .kodama-container {
+    margin-top: 45vh;
+    margin-left: 29vw;
+  }
+
+  .linkedin-container {
+    margin-top: 55vh;
+    margin-left: 65vw;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  /* ------- CONTAINERS POSITION ------- */
+
+  .hello-container {
+    margin-top: 10vh;
+  }
+
+  .button-404-back-home {
+    top: 35vh;
+    margin-left: 50vw;
+  }
+
+  .francis-container {
+    margin-top: 23vh;
+  }
+
+  .kodama-container {
+    margin-top: 45vh;
+    margin-left: 26vw;
+  }
+
+  .linkedin-container {
+    margin-top: 55vh;
+    margin-left: 58vw;
+  }
+}

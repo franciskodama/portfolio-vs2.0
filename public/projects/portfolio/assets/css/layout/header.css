@@ -1,0 +1,143 @@
+.section-header {
+  padding: 0.5em 0;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header .logo {
+  display: inline-block;
+  width: 4em;
+  padding: 0.7em 0;
+  line-height: 1;
+}
+
+.section-header img {
+  width: 100%;
+  height: auto;
+}
+
+nav {
+  background-color: var(--secondery-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  width: 100%;
+  height: 60vh;
+  top: 6em;
+  bottom: 0;
+  right: 0;
+  left: 100%;
+  z-index: 999;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 100%;
+  height: 85%;
+}
+
+.open-nav,
+.close-nav {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+.close-nav {
+  position: absolute;
+  top: 34em;
+  left: 2.5em;
+  color: var(--secondery-color);
+  transform: translateX(0);
+  transition: transform 250ms;
+}
+
+.open-nav {
+  color: var(--secondery-color);
+  padding-right: 1em;
+}
+
+.navigation-open {
+  transform: translateX(-100%);
+}
+
+.button-hamburguer-hidden {
+  display: none;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  .open-nav,
+  .close-nav {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    height: auto;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: flex-end;
+    height: auto;
+    padding: 0;
+    padding-right: 2em;
+  }
+
+  .nav-item {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: 50% 50%;
+    transition: transform 250ms;
+    background-color: var(--primary-color);
+  }
+
+  .nav-item:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

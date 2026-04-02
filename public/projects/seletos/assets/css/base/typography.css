@@ -1,0 +1,239 @@
+h1,
+h2,
+h3,
+.nav-item,
+blockquote,
+.footer-title {
+  font-family: var(--main-font);
+}
+
+h1,
+h2,
+h3,
+.close-nav,
+.open-nav,
+.nav-item {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.8rem;
+  line-height: 1.3em;
+}
+
+h1,
+.nav-item,
+.close-nav i,
+.section-hero p,
+.section-mission blockquote,
+.professors-title,
+.testimonials-container .testimonials-text,
+.testimonials-course {
+  color: white;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 2.4rem;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1em;
+  margin-bottom: 1.2em;
+}
+
+h3,
+.open-nav i {
+  color: var(--secondery-color);
+}
+
+.dark-section h3 {
+  color: var(--quaternary-color);
+}
+
+.nav-item {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 1.5em;
+}
+
+.card-title {
+  font-size: 1.5em;
+}
+
+.card-title {
+  line-height: 1.1em;
+}
+
+button,
+.section-hero p,
+.section-mission blockquote,
+.testimonials-text,
+.testimonials-course {
+  font-family: var(--sencond-font);
+}
+
+.section-hero p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.text-light {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--third-color-light);
+}
+
+h2,
+h3,
+.section-mission h1 {
+  text-align: center;
+}
+
+.section-mission h1 {
+  font-size: 1.8rem;
+}
+
+.section-mission blockquote {
+  font-size: 1.3rem;
+  font-weight: 200;
+  line-height: 1.4em;
+  font-style: italic;
+}
+
+.section-mission cite {
+  font-size: 1.1rem;
+}
+
+.packages-card-classes li,
+.packages-card-title {
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.price-light {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.professors-contend .professors-card-title {
+  font-size: 1.8em;
+  line-height: 1.1;
+}
+
+.testimonials-text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.testimonials-course {
+  font-weight: 300;
+}
+
+.testimonials-course {
+  font-size: 0.8rem;
+}
+
+.testimonials-name {
+  color: var(--quaternary-color);
+  font-size: 1.3rem;
+}
+
+.testimonials-container .testimonials-text,
+.testimonials-course {
+  text-transform: none;
+}
+
+label,
+::placeholder,
+.footer-text-contatos,
+.footer-text,
+i,
+.footer-legaltext h5,
+.footer-legaltext a,
+.footer-legaltext a:link,
+.footer-legaltext a:visited {
+  font-weight: 300;
+}
+
+label {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+::placeholder {
+  font-size: 0.9rem;
+  color: grey;
+  font-family: "Roboto", Arial, sans-serif;
+  text-align: left;
+}
+
+.footer-title {
+  color: rgb(201, 201, 201);
+  font-size: 1rem;
+}
+
+.footer-text-contatos,
+.footer-text,
+i {
+  font-size: 0.9rem;
+  color: rgb(201, 201, 201);
+}
+
+.footer-legaltext h5,
+.footer-legaltext a,
+.footer-legaltext a:link,
+.footer-legaltext a:visited {
+  color: rgb(201, 201, 201);
+  font-size: 0.8rem;
+}
+
+.whatsapp-container a:link {
+  text-decoration: none;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .nav-item {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .nav-item {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .section-mission h1 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+}

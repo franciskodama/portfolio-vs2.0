@@ -1,0 +1,47 @@
+.section-testimonials {
+  padding: 4em 0;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials-img {
+  border: 0.5rem solid #3a3eb4;
+  border-radius: 50%;
+  width: 8em;
+  margin-bottom: 3em;
+}
+
+.testimonials-text {
+  margin-bottom: 2em;
+  max-width: 85%;
+}
+
+.testimonials-name {
+  margin-bottom: 0;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  .testimonials-text {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+  .testimonials-text {
+    max-width: 60%;
+  }
+}

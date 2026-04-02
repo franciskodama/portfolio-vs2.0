@@ -1,15 +1,9 @@
 'use client';
 
+import { useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import IconClose from '../assets/images/card-icon-close-white.svg';
-import Line from '../assets/images/line-cracked.svg';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
 import {
   Drawer,
   DrawerContent,
@@ -25,136 +19,315 @@ interface ProjectModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const ParallaxImageBlock = ({
+  imgData,
+  altText,
+  containerRef,
+}: {
+  imgData: any;
+  altText: string;
+  containerRef: any;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+
+  // High-visibility horizontal shift (parallax) for the legend
+  const xParallax = useTransform(scrollYProgress, [0, 1], [-700, 700]);
+  // Vertical fade/shift for the image container itself
+  const yFade = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ y: yFade }}
+      className='w-[90vw] md-custom:w-[80vw] max-w-7xl mb-16 md-custom:mb-24 relative flex flex-col items-center group'
+    >
+      <div className='w-full rounded-lg overflow-hidden shadow-[0_2rem_4rem_rgba(0,0,0,0.1)] bg-black/5 transition-transform duration-700 ease-out group-hover:scale-[1.02]'>
+        <Image
+          src={imgData.image}
+          alt={altText}
+          className='w-full h-auto object-cover'
+        />
+      </div>
+
+      {imgData.legend && (
+        <motion.div
+          style={{ x: xParallax }}
+          className='absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 bg-white/80 backdrop-blur-xl border border-white/50 px-6 py-4 rounded-xl shadow-lg z-20 pointer-events-none'
+        >
+          <p className='font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide text-dark opacity-90 leading-relaxed'>
+            {imgData.legend}
+          </p>
+        </motion.div>
+      )}
+    </motion.div>
+  );
+};
+
 const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   if (!project) return null;
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
       <DrawerContent
-        className='h-[90vh] border-none outline-none'
+        className='h-dvh md-custom:h-[96vh] border-none outline-none overflow-hidden'
         style={{ backgroundColor: project.backgroundColor }}
       >
         <div className='sr-only'>
           <DrawerHeader>
-            <DrawerTitle>{project.titleA}</DrawerTitle>
-            <DrawerDescription>{project.frontText}</DrawerDescription>
+            <DrawerTitle>{project.title}</DrawerTitle>
+            <DrawerDescription>{project.category}</DrawerDescription>
           </DrawerHeader>
         </div>
 
-        <div className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative'>
-          <DrawerClose className='absolute right-[5%] top-[2%] z-50'>
-            <Image
-              className='w-8 cursor-pointer hover:opacity-70 transition-opacity'
-              src={IconClose}
-              alt='close button'
-            />
-          </DrawerClose>
-          {/* xl-custom:items-center */}
-          <div className='flex flex-col justify-center w-[90%] max-w-[80em] mx-auto xl-custom:flex-row md-custom:mt-18'>
-            <div className='flex flex-col mt-18 md-custom:mt-0 pb-4 items-center xl-custom:pb-0 xl-custom:w-1/2'>
-              <div className='flex flex-col w-fit mx-auto xl-custom:mx-0 xl-custom:items-start items-center'>
-                <h2 className='font-main-heavy text-[2rem] text-dark leading-10 capitalize text-center xl-custom:text-left'>
+        {/* Floating Close Button that stays visible or top-right anchored */}
+        {/* We place it absolute to the scrolling container so it scrolls away like the rest of the header, but isolated */}
+
+        <div
+          ref={scrollContainerRef}
+          className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative scroll-smooth bg-black/5'
+        >
+          {/* Sticky Top Right Actions */}
+          <div className='sticky top-6 right-0 z-50 flex justify-end px-6 md:px-12 pointer-events-none h-0 w-full'>
+            <div className='flex flex-col items-end gap-3 pointer-events-auto'>
+              <DrawerClose className='focus:outline-none group'>
+                <div className='p-3 transition-all duration-300'>
+                  <Image
+                    src={IconClose}
+                    alt='close button'
+                    className='w-6 h-6 transition-transform group-hover:rotate-90'
+                  />
+                </div>
+              </DrawerClose>
+            </div>
+          </div>
+
+          <div className='w-full flex flex-col items-center px-4 md:px-12 pt-6 pb-32'>
+            {/* Logo Group */}
+            <div className='flex flex-col items-center justify-center pointer-events-none mb-4 md-custom:mb-10'>
+              {project.logo ? (
+                <Image
+                  src={project.logo}
+                  alt='Project Logo'
+                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain drop-shadow-md my-10'
+                />
+              ) : (
+                <h2
+                  className='font-main-heavy text-3xl md-custom:text-4xl mb-2 tracking-tight'
+                  style={{ color: project.textColor || '#1c1c1c' }}
+                >
                   {project.title}
                 </h2>
-                <h3 className='font-main-semibold text-[1.2rem] mt-2 mb-4 text-bright text-center xl-custom:text-left'>
-                  {project.year}
+              )}
+              {project.showName && project.name && (
+                <h3
+                  className='font-main-heavy uppercase text-2xl md-custom:text-5xl mb-2 tracking-tight'
+                  style={{ color: project.textColor || '#1c1c1c' }}
+                >
+                  {project.name}
                 </h3>
-                {project.images && project.images.length > 0 ? (
-                  <div className='flex items-center gap-1 md-custom:gap-2 mx-auto'>
-                    <Carousel className='flex items-center gap-2 group w-full'>
-                      <CarouselPrevious className='static translate-y-0 left-auto top-auto border-none' />
+              )}
+              {project.tagline && (
+                <p
+                  className='font-main-medium tracking-widest text-sm md-custom:text-base opacity-90 uppercase text-center px-4'
+                  style={{ color: project.textColor || '#1c1c1c' }}
+                >
+                  {project.tagline}
+                </p>
+              )}
 
-                      <div className='w-[70vw] md-custom:w-[28em] xl-custom:w-[30em]'>
-                        <CarouselContent className='cursor-grab active:cursor-grabbing'>
-                          {project.images.map((img: any, index: number) => (
-                            <CarouselItem key={index}>
-                              {img.image && (
-                                <Image
-                                  className='block w-full h-[24em] [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:h-[35em] xl-custom:h-[42em] object-cover'
-                                  src={img.image}
-                                  alt={`project image ${index + 1}`}
-                                />
-                              )}
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                      </div>
-
-                      <CarouselNext className='static translate-y-0 right-auto top-auto border-none' />
-                    </Carousel>
-                  </div>
-                ) : project.image ? (
-                  <Image
-                    className='block w-[18em] h-[24em] mx-auto [box-shadow:-2em_2em_rgba(0,0,0,0.1)] md-custom:w-[25em] md-custom:h-[35em] xl-custom:w-[32em] xl-custom:h-[42em]'
-                    src={project.image}
-                    alt='main project'
-                  />
-                ) : null}
-                {project.visitIcon ? (
+              {/* Year & Visit Link */}
+              <div className='flex flex-col items-center mt-16 gap-2 pointer-events-auto'>
+                <span
+                  className='font-main-heavy text-base md-custom:text-lg opacity-90'
+                  style={{ color: project.titlesColor || '#1c1c1c' }}
+                >
+                  {project.year}
+                </span>
+                {project.visitIcon && (
                   <a
-                    className='block relative mt-4 text-right cursor-pointer'
                     href={project.url}
                     target='_blank'
                     rel='noreferrer'
+                    className='text-[0.6rem] md-custom:text-xs font-main-heavy opacity-80 hover:opacity-100 uppercase tracking-[0.2em] border-b pb-1 mt-4 transition-all'
+                    style={{
+                      color: project.textColor || '#1c1c1c',
+                      borderColor: project.textColor
+                        ? `${project.textColor}4D`
+                        : 'rgba(28,28,28,0.3)',
+                    }}
                   >
-                    <p className="font-main-semibold text-[1rem] text-bright before:absolute before:bottom-[-0.1em] before:right-0 before:content-[''] before:w-[5.9rem] before:h-px before:border-b-2 before:border-bright">
-                      visit project
-                    </p>
+                    Visit Project
                   </a>
-                ) : null}
+                )}
               </div>
             </div>
 
-            <Image
-              src={Line}
-              alt='line separation'
-              className='block w-[60em] animate-line-movement p-4 mt-8 xl-custom:hidden'
-            />
+            {/* Dynamic Layout for Projects With Array of Images */}
+            {project.images && project.images.length > 0 ? (
+              <>
+                {/* Info Block 1 (WHY & WHAT) */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-32 mt-4 md-custom:mt-16 items-start px-4'>
+                  <div>
+                    <h4
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      style={{ color: project.titlesColor || '#1c1c1c' }}
+                    >
+                      {project.backText_titleOne}
+                    </h4>
+                    <p
+                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
+                      style={{ color: project.textColor || '#1c1c1c' }}
+                    >
+                      {project.backText_textOne}
+                    </p>
+                  </div>
+                  <div>
+                    <h4
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      style={{ color: project.titlesColor || '#1c1c1c' }}
+                    >
+                      {project.backText_titleThree}
+                    </h4>
+                    <p
+                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
+                      style={{ color: project.textColor || '#1c1c1c' }}
+                    >
+                      {project.backText_textThree}
+                    </p>
+                  </div>
+                </div>
 
-            <div className='flex flex-col pb-4 mt-12 md-custom:mt-0 xl-custom:w-1/2 xl-custom:items-center'>
-              <div className='w-[18em] self-center md-custom:w-[30em]'>
-                <p className='font-main-semibold text-[1rem] text-bright text-left mb-6 md-custom:mt-0 xl-custom:text-right'>
-                  {project.category}
-                </p>
+                {/* First Image Hero */}
+                <ParallaxImageBlock
+                  imgData={project.images[0]}
+                  altText='Hero Image'
+                  containerRef={scrollContainerRef}
+                />
 
-                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
-                  {project.backText_titleOne}
-                </h4>
-                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch]'>
-                  {project.backText_textOne}
-                </p>
+                {/* Info Block 2 (HOW & RESULT) */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-48 items-start px-4'>
+                  <div>
+                    <h4
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      style={{ color: project.titlesColor || '#1c1c1c' }}
+                    >
+                      {project.backText_titleTwo}
+                    </h4>
+                    <p
+                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
+                      style={{ color: project.textColor || '#1c1c1c' }}
+                    >
+                      {project.backText_textTwo}
+                    </p>
+                  </div>
+                  <div>
+                    <h4
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      style={{ color: project.titlesColor || '#1c1c1c' }}
+                    >
+                      {project.backText_titleFour}
+                    </h4>
+                    <p
+                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
+                      style={{ color: project.textColor || '#1c1c1c' }}
+                    >
+                      {project.backText_textFour}
+                    </p>
+                  </div>
+                </div>
 
-                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
-                  {project.backText_titleTwo}
-                </h4>
-                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch]'>
-                  {project.backText_textTwo}
-                </p>
+                {/* Render remaining images dynamically */}
+                {project.images.slice(1).map((imgData: any, i: number) => (
+                  <ParallaxImageBlock
+                    key={i}
+                    imgData={imgData}
+                    altText={`Feature Image ${i + 1}`}
+                    containerRef={scrollContainerRef}
+                  />
+                ))}
+              </>
+            ) : (
+              /* Fallback Layout For Single Image Projects (Portfolio V1, etc) */
+              <>
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-24 mt-4 md-custom:mt-8 items-start px-4'>
+                  <div className='flex flex-col gap-12'>
+                    <div>
+                      <h4
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        style={{ color: project.titlesColor || '#1c1c1c' }}
+                      >
+                        {project.backText_titleOne}
+                      </h4>
+                      <p
+                        className='font-main-regular text-lg md-custom:text-[1.3rem] leading-relaxed'
+                        style={{ color: project.textColor || '#1c1c1c' }}
+                      >
+                        {project.backText_textOne}
+                      </p>
+                    </div>
+                    <div>
+                      <h4
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        style={{ color: project.titlesColor || '#1c1c1c' }}
+                      >
+                        {project.backText_titleTwo}
+                      </h4>
+                      <p
+                        className='font-main-regular text-lg md-custom:text-[1.3rem] leading-relaxed'
+                        style={{ color: project.textColor || '#1c1c1c' }}
+                      >
+                        {project.backText_textTwo}
+                      </p>
+                    </div>
+                  </div>
+                  <div className='flex flex-col gap-12'>
+                    <div>
+                      <h4
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        style={{ color: project.titlesColor || '#1c1c1c' }}
+                      >
+                        {project.backText_titleThree}
+                      </h4>
+                      <p
+                        className='font-main-regular text-lg md-custom:text-[1.3rem] leading-relaxed'
+                        style={{ color: project.textColor || '#1c1c1c' }}
+                      >
+                        {project.backText_textThree}
+                      </p>
+                    </div>
+                    <div>
+                      <h4
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        style={{ color: project.titlesColor || '#1c1c1c' }}
+                      >
+                        {project.backText_titleFour}
+                      </h4>
+                      <p
+                        className='font-main-regular text-lg md-custom:text-[1.3rem] leading-relaxed'
+                        style={{ color: project.textColor || '#1c1c1c' }}
+                      >
+                        {project.backText_textFour}
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
-                  {project.backText_titleThree}
-                </h4>
-                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch] md-custom:mb-0'>
-                  {project.backText_textThree}
-                </p>
-
-                <h4 className='font-main-heavy text-dark text-[1.1rem] mt-6 mb-2'>
-                  {project.backText_titleFour}
-                </h4>
-                <p className='w-[29ch] text-[0.9rem] font-main-regular md-custom:text-[1rem] md-custom:w-[42ch] md-custom:mb-0'>
-                  {project.backText_textFour}
-                </p>
-
-                <a
-                  className='hidden font-main-semibold text-bright bg-black/10 text-[0.8rem] md-custom:block'
-                  href={project.backText_link}
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  {project.backText_linkName}
-                </a>
-              </div>
-            </div>
+                {project.image && (
+                  <ParallaxImageBlock
+                    imgData={{ image: project.image, legend: null }}
+                    altText='Main Project'
+                    containerRef={scrollContainerRef}
+                  />
+                )}
+              </>
+            )}
           </div>
         </div>
       </DrawerContent>

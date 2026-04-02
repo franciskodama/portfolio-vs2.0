@@ -1,0 +1,169 @@
+.button {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5em;
+  padding: 0.7em 1.5em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  box-shadow: inset 6.5em 0 0 0 white;
+  color: var(--secondery-color);
+  background-color: white;
+  border: 1px solid var(--secondery-color);
+}
+
+/* ----- HERO ----- */
+
+.hero-button,
+.hero-button {
+  background-color: var(--quaternary-color);
+  border: 1px solid var(--quaternary-color);
+  color: #2d3092;
+  font-weight: 600;
+}
+
+.hero-button:hover,
+.hero-button:focus,
+.hero-button:active {
+  box-shadow: inset 6.5em 0 0 0 white;
+  color: var(--secondery-color);
+  background-color: white;
+}
+
+/* ----- TOP ----- */
+
+.btn-top {
+  display: inline-block;
+  position: fixed;
+  bottom: 1em;
+  right: 0;
+  visibility: hidden;
+}
+
+.btn-top i {
+  color: var(--quaternary-color);
+  padding: 1em;
+  transition: all 0.3s ease;
+}
+
+.btn-top i:hover,
+.btn-top i:focus,
+.btn-top i:active {
+  transform: translateY(-1em);
+  color: var(--secondery-color);
+}
+
+/* ----- TESTIMONIALS, PACKAGES ----- */
+
+.btn-carousel-packages,
+.btn-carousel-testimonials {
+  background: transparent;
+  border: none;
+  position: absolute;
+  bottom: 45%;
+  height: 60px;
+  width: 35px;
+  transition: all 0.3s ease;
+}
+
+.btn-carousel-right-packages {
+  right: 6px;
+}
+
+.btn-carousel-left-packages {
+  left: 6px;
+}
+
+.btn-carousel-right-testimonials {
+  right: 0;
+}
+
+.btn-carousel-left-testimonials {
+  left: 0;
+}
+
+.btn-carousel-packages i,
+.btn-carousel-testimonials i {
+  padding: 0.3em;
+}
+
+.btn-carousel-packages i {
+  color: var(--primary-color);
+}
+
+.btn-carousel-testimonials i {
+  color: var(--quaternary-color);
+}
+
+.btn-carousel-packages:hover,
+.btn-carousel-packages:focus,
+.btn-carousel-packages:active,
+.btn-carousel-testimonials:hover,
+.btn-carousel-testimonials:focus,
+.btn-carousel-testimonials:active {
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-carousel-packages:hover,
+.btn-carousel-packages:focus,
+.btn-carousel-packages:active {
+  background: rgba(var(--primary-color-rgb), 0.3);
+}
+
+.btn-carousel-right-packages:hover,
+.btn-carousel-right-packages:focus,
+.btn-carousel-right-packages:active,
+.btn-carousel-right-testimonials:hover,
+.btn-carousel-right-testimonials:focus,
+.btn-carousel-right-testimonials:active {
+  transform: translateX(0.5em);
+}
+
+.btn-carousel-left-packages:hover,
+.btn-carousel-left-packages:focus,
+.btn-carousel-left-packages:active,
+.btn-carousel-left-testimonials:hover,
+.btn-carousel-left-testimonials:focus,
+.btn-carousel-left-testimonials:active {
+  transform: translateX(-0.5em);
+}
+
+.btn-carousel-packages:hover i,
+.btn-carousel-packages:focus i,
+.btn-carousel-packages:active i {
+  color: #ffffff;
+}
+
+/* ----- CONTACT ----- */
+
+.button-contact {
+  width: 8em;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1080px) {
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

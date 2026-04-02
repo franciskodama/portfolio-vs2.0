@@ -1,0 +1,88 @@
+.button {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  background-color: var(--blue-color);
+  color: #181818;
+  padding: 0.7em 2em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  width: auto;
+  margin-bottom: 5em;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: inset 6.5em 0 0 0 #181818;
+  color: var(--blue-color);
+  background-color: #181818;
+  border: 1px solid var(--blue-color);
+}
+
+/* ----- SCROLL DOWN BUTTON ----- */
+
+.scroll-arrow i {
+  transition: all 0.3s ease;
+}
+
+.scroll-arrow i:hover {
+  transform: translateY(0.2em);
+}
+
+/* ----- SCROLL TO TOP BUTTON ----- */
+
+.btn-top {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--blue-color);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  text-align: center;
+  font-size: 1.4rem;
+  z-index: 9999;
+}
+
+.btn-top i {
+  color: var(--darkest-color);
+  padding-bottom: 1em;
+  transition: all 0.3s ease;
+}
+
+.btn-top i:hover {
+  transform: translateY(-0.2em);
+}
+
+/* ----- TEST SEND BUTTON ----- */
+
+#button-contact-2 {
+  display: none;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 768px) {
+  .btn-carousel-right {
+    right: -3.5em;
+  }
+
+  .btn-carousel-left {
+    left: -3.5em;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

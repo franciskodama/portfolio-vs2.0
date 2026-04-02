@@ -1,0 +1,108 @@
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: #212121;
+  width: 100%;
+  z-index: 10;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.contact-section h2 {
+  margin-bottom: 2em;
+  color: var(--blue-color);
+}
+
+.contact-section h3 {
+  margin-top: 5em;
+}
+
+input,
+textarea {
+  padding: 1em;
+  width: 90%;
+  border: 1px solid rgb(158, 157, 157);
+}
+
+.form-field {
+  margin-bottom: 1em;
+}
+
+#form-container {
+  display: block;
+}
+
+#thankyou-main-container {
+  display: none;
+}
+
+.thankyou-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0 1em 0;
+  width: 90%;
+  background-color: rgba(100, 100, 100, 0.5);
+  margin: 1em auto 1em auto;
+}
+
+.thankyou-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.thankyou-text {
+  font-size: 1rem;
+  line-height: 2em;
+  color: var(--orange-color);
+  line-height: 0.8;
+  margin-bottom: 0.5em;
+}
+
+.thankyou-text-asap {
+  font-size: 1rem;
+  color: var(--orange-color);
+}
+
+.thankyou-container img {
+  width: 5em;
+  height: 100%;
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+  .thankyou-container {
+    max-width: 540px;
+  }
+
+  .thankyou-text {
+    font-size: 2.2rem;
+  }
+
+  .thankyou-text-asap {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}

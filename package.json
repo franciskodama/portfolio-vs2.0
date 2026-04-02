@@ -15,6 +15,7 @@
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",
     "lucide-react": "^0.563.0",
     "matter-js": "^0.20.0",

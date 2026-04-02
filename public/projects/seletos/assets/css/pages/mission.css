@@ -1,0 +1,50 @@
+.section-mission blockquote {
+  max-width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  transform: translateY(20rem);
+  opacity: 0;
+  animation: go-up 750ms linear forwards;
+}
+
+@keyframes go-up {
+  0% {
+    transform: translateY(20rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* .section-mission blockquote::before {
+  content: open-quote;
+  font-size: 2rem;
+}
+
+.section-mission blockquote::after {
+  content: close-quote;
+  font-size: 2rem;
+} */
+
+/* ====================================
+        MEDIA QUERY
+======================================= */
+
+@media only screen and (min-width: 20em) {
+}
+
+@media only screen and (min-width: 48em) {
+  .section-mission blockquote {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+}
+
+@media only screen and (min-width: 75em) {
+}
