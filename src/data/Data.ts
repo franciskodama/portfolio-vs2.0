@@ -151,17 +151,32 @@ export const projects = [
     tagline: 'Global wealth, synchronized.',
     images: [
       {
-        image: require('../assets/images/projects/prj-trezo1.jpg'),
+        image: require('../assets/images/projects/prj-trezo1.webp'),
         legend:
           'Multi-currency tracking engine plotting real-time asset distributions globally.',
       },
       {
-        image: require('../assets/images/projects/prj-trezo2.jpg'),
+        image: require('../assets/images/projects/prj-trezo2.webp'),
         legend:
           'Technical analysis logic projecting ATH estimations for data-driven allocation adjustments.',
       },
       {
-        image: require('../assets/images/projects/prj-trezo3.jpg'),
+        image: require('../assets/images/projects/prj-trezo3.webp'),
+        legend:
+          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo4.webp'),
+        legend:
+          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo5.webp'),
+        legend:
+          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo6.webp'),
         legend:
           'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
       },
@@ -178,9 +193,11 @@ export const projects = [
     backText_titleFour: 'result',
     backText_textFour:
       'A sophisticated FinTech architect’s proof-of-concept, showcasing my ability to manage complex state logic, secure authentication, and cross-border financial data streams.',
-    backgroundColor: '#3FABD8',
-    titlesColor: '#FFF',
-    textColor: '#FFF',
+    // backgroundColor: '#CA8A04', // yellow 600
+    // backgroundColor: '#fbbf24', // yellow 400
+    backgroundColor: '#ffffff', // white
+    titlesColor: '#10b981', // green 500
+    textColor: '#1e293b', // slate 800
     visitIcon: true,
   },
   {
@@ -196,10 +213,10 @@ export const projects = [
     logo: require('../assets/images/projects/logo-portfolio.png'),
     name: 'Portfolio V.02',
     showName: false,
-    tagline: 'Empowered Execution, visualized.',
+    tagline: '',
     images: [
       {
-        image: require('../assets/images/projects/prj-portfolio1.jpg'),
+        image: require('../assets/images/projects/prj-portfolio.webp'),
         legend: 'Blah blah blah.',
       },
     ],
@@ -215,8 +232,11 @@ export const projects = [
     backText_titleFour: 'result',
     backText_textFour:
       'A technical "Manifesto" showcasing my ability to blend high-end creative artistry with robust engineering and cutting-edge AI integration.',
-    backgroundColor: '#6D28D9',
-    titlesColor: '#FFF',
+    // backgroundColor: '#7f1d1d', red-900
+    // backgroundColor: '#1e293b', slate 800
+    backgroundColor: '#0f172a', // slate 900
+    // titlesColor: '#1e293b', slate 800
+    titlesColor: '#dc2626', // red 600
     textColor: '#FFF',
     visitIcon: true,
   },
@@ -284,7 +304,7 @@ export const projects = [
     tech: 'React JS SASS HTML5',
     category: 'Product Case Study',
     url: 'https://www.fkodama.com',
-    image: require('../assets/images/projects/project-portfolio.jpg'),
+    image: require('../assets/images/projects/prj-portfoliovs1.webp'),
     showName: false,
     backText_titleOne: 'why',
     backText_textOne:
@@ -412,286 +432,6 @@ export const projects = [
     visitIcon: true,
   },
 ];
-
-// export const projects = [
-//   {
-//     id: 9,
-//     highlight: true,
-//     frontShow: true,
-//     icon: 'Hammer',
-//     title: 'Handy For.Me',
-//     year: '2024',
-//     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
-//     category: 'web app',
-//     url: 'https://handyfor.me/',
-//     images: [
-//       { image: require('../assets/images/projects/prj-handy1.jpg') },
-//       { image: require('../assets/images/projects/prj-handy2.jpg') },
-//       { image: require('../assets/images/projects/prj-handy3.jpg') },
-//     ],
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'I needed a digital ecosystem that could keep pace with a developer’s mind. Generic productivity apps were too scattered; I wanted a single "Swiss Army Knife" that centralized everything from long-term vision to daily English practice.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'I architected a modular hub using Next.js and Prisma, focusing on high-utility components. I implemented a color-coded categorization system for data management and a randomized logic engine to power interactive learning tools, all synced to a centralized PostgreSQL database.',
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'A personal productivity suite featuring a centralized Vision Board for goal tracking, a strategic "Yearly Promises" roadmap organized by quarters, and a collection of custom-built micro-tools for daily optimization.',
-//     backText_titleFour: 'result',
-//     backText_textFour:
-//       'A highly functional, multi-tool platform that proves I can build complex, feature-rich applications that solve nuanced user needs while maintaining a clean, performant UI/UX.',
-//     backgroundColor: '#0EA5E9',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 7,
-//     highlight: true,
-//     frontShow: true,
-//     icon: 'Calculator',
-//     title: 'Monkey Business',
-//     year: '2026',
-//     tech: 'React Next.js TypeScript A.I. Prisma PostgreSQL Neon Auth.js Tailwind CSS Zod',
-//     category: 'web app',
-//     url: 'https://monkeybusiness-olive.vercel.app/',
-//     images: [
-//       { image: require('../assets/images/projects/prj-monkey1.jpg') },
-//       { image: require('../assets/images/projects/prj-monkey2.jpg') },
-//       { image: require('../assets/images/projects/prj-monkey3.jpg') },
-//     ],
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'Managing family finances was a manual, time-consuming chore. My goal was to eliminate the friction of expense tracking by replacing manual data entry with intelligent automation and collaborative features.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'I integrated A.I. to parse complex credit card statements and built a custom "Rule Engine." This allows the system to learn from "messy" transaction descriptions (like Amazon codes) and auto-categorize them, becoming smarter with every use.',
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'A collaborative financial intelligence platform featuring bank statement AI-parsing, automated expense categorization, a "Household" mode for couples, and a high-level Yearly Overview for macro-financial planning.',
-//     backText_titleFour: 'result',
-//     backText_textFour:
-//       'A sophisticated FinTech tool that demonstrates my ability to implement AI for automation, manage complex relational data with Prisma/Neon, and build secure, multi-user environments.',
-//     backgroundColor: '#6366F1',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 8,
-//     highlight: true,
-//     frontShow: true,
-//     icon: 'PiggyBank',
-//     title: 'Trezo.app',
-//     year: '2024',
-//     tech: 'React Next.js TypeScript Prisma PostgreSQL Neon Tailwind CSS Clerk Zod',
-//     category: 'web app',
-//     url: 'https://trezo.app/',
-//     images: [
-//       { image: require('../assets/images/projects/prj-trezo1.jpg') },
-//       { image: require('../assets/images/projects/prj-trezo2.jpg') },
-//       { image: require('../assets/images/projects/prj-trezo3.jpg') },
-//     ],
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'As a global investor, I struggled to find a platform that unified assets across Brazil, Canada, and the US. I needed a tool that could handle three currencies (BRL, CAD, USD) and diverse asset classes (Stocks, Crypto, Bonds) in one view.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'I engineered a multi-currency tracking engine that calculates net worth evolution and asset allocation in real-time. I implemented specific financial logic, like "ATH Estimation" and technical analysis projections, to assist in data-driven decision making.',
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'A holistic financial dashboard that tracks net worth across global exchanges, manages "cash-on-hand" liquidity, and visualizes asset distribution through dynamic charts and personalized allocation goals.',
-//     backText_titleFour: 'result',
-//     backText_textFour:
-//       'My first major full-stack project, showcasing my ability to handle complex mathematical logic, multi-currency state management, and the integration of Clerk for secure authentication.',
-//     backgroundColor: '#3FABD8',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 10,
-//     highlight: true,
-//     frontShow: true,
-//     icon: 'Book',
-//     title: 'Portfolio V.02',
-//     year: '2026',
-//     tech: 'React Next.js TypeScript Matter.js Framer-motion GSAP React-scroll-parallax',
-//     category: 'website',
-//     url: 'https://www.fkodama.com',
-//     images: [
-//       { image: require('../assets/images/projects/prj-port1.jpg') },
-//       { image: require('../assets/images/projects/prj-port2.jpg') },
-//       { image: require('../assets/images/projects/prj-port3.jpg') },
-//     ],
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'Building on the success of my previous portfolio, I wanted to push the boundaries of modern web interaction. This version is not just a showcase of work; it is an immersive, agentic environment designed to demonstrate my ability to integrate high-level physics-based animations with the latest frontier of AI-driven UX.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'I refactored the entire architecture to Next.js for enhanced performance and integrated Matter.js to create a tactile, physics-simulated UI. The centerpiece is the Synergy Seer, a custom-built Gemini agent that transforms the recruiter’s experience from passive browsing into an interactive, AI-powered consultation.',
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'A high-performance portfolio featuring physics-simulated UI components, parallax storytelling, and a ChatGPT-powered "Synergy Seer" that bridges the gap between traditional portfolios and Agentic AI.',
-//     backText_titleFour: 'result',
-//     backText_textFour:
-//       'A technical "proof of concept" that showcases my ability to blend creative front-end artistry (GSAP/Framer Motion) with robust, modern software engineering and AI integration.',
-//     backgroundColor: '#6D28D9',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 1,
-//     highlight: false,
-//     frontShow: true,
-//     icon: 'Book',
-//     title: 'Portfolio V.01',
-//     year: '2022',
-//     tech: 'react, js, html, sass',
-//     category: 'website',
-//     url: 'https://www.fkodama.com',
-//     image: require('../assets/images/projects/project-portfolio.jpg'),
-//     frontText: '100% React-based, this is my most important project built.',
-//     backText_titleOne: 'why',
-//     backText_textOne: `As a product strategist, I began by thinking about how to create a portfolio that would appeal to employers seeking talents with my skills.`,
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'Therefore, I decided to develop pages that simulate digital product pages, such as an e-commerce site, a page with artificial intelligence, or a page with access to an API (Weather API in this case).',
-//     backText_titleFour: 'what',
-//     backText_textFour:
-//       'React, SASS, and HTML. Some tools used: Git, Figma, Adobe Photoshop, and Adobe Premiere.',
-//     backgroundColor: '#FC9651',
-//     visitIcon: false,
-//   },
-//   {
-//     id: 2,
-//     highlight: false,
-//     frontShow: true,
-//     icon: 'GraduationCap',
-//     title: 'Seletos',
-//     year: '2021',
-//     tech: 'html css javascript',
-//     category: 'website',
-//     url: 'https://fkodama.com/_dev/seletos',
-//     image: require('../assets/images/projects/project-seletos.jpg'),
-//     frontText: 'First website that I fully developed with HTML, CSS, and JS.',
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'Customizing template websites was already something I knew how to do. Now, it was time to build a website from scratch.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       "In response to a client's briefing, I used my experience in digital marketing to design and code the entire website.",
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'The key features of the project were Flexbox, Display Grid, some simple animations, and Responsiveness in general.',
-//     backText_titleFour: '',
-//     backText_textFour: '',
-//     backgroundColor: '#BA88F9',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 3,
-//     highlight: false,
-//     frontShow: true,
-//     icon: 'Ghost',
-//     title: 'Pac Man',
-//     year: '2021',
-//     tech: 'html css javascript',
-//     category: 'video game',
-//     url: 'https://fkodama.com/_dev/pacman/',
-//     image: require('../assets/images/projects/project-pacman.jpg'),
-//     frontText: "Here's a tutorial project I took to a whole new level.",
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'After some courses, I focused on building projects following tutorials, until I got some fluency with the language. This was my first relevant project in Vanilla Javascript.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       "For this project, Ania Kubow's tutorial was very helpful. However, the design was really simple, and that was my opportunity to customize it myself.",
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'Using mainly Javascript and CSS, I redesigned the entire game and added a button to restart creating a better user experience.',
-//     backText_titleFour: '',
-//     backText_textFour: '',
-//     backText_linkName: '',
-//     backText_link: '',
-//     backgroundColor: '#efbe1c',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 4,
-//     highlight: false,
-//     frontShow: true,
-//     icon: 'Globe',
-//     title: 'Mundial',
-//     year: '2021',
-//     tech: 'html css',
-//     category: 'website',
-//     url: 'https://www.mundialcomunicacao.com.br/',
-//     image: require('../assets/images/projects/project-mundial.jpg'),
-//     frontText: 'My first client website, my first big challenge.',
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'This client needed a new communication and a new website as well.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'This project challenged me to come up with a new brand, font type, icons, and to create content for all areas.',
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'The client was very pleased with the final outcome, and so was I. Seeing that I was on the right track was the best motivation for me to keep studying even harder.',
-//     backText_titleFour: '',
-//     backText_textFour: '',
-//     backgroundColor: '#3FABD8',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 5,
-//     highlight: false,
-//     frontShow: true,
-//     icon: 'FileText',
-//     title: 'Resume',
-//     year: '2021',
-//     tech: 'html css javascript',
-//     category: 'resume online',
-//     url: 'https://www.fkodama.com/_dev/resume-online/',
-//     image: require('../assets/images/projects/project-resume.jpg'),
-//     frontText: 'Building a website based on the design reference.',
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'After completing my HTML and CSS course, I found this design offered by the author so people like me can practice building it using this design as a guide.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       'Despite being the beginning of my journey, I used advanced CSS techniques, such as flexbox and display grid, to construct this website.',
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'Developing this single-page application was my first experience with JS: the logic to scroll the page from the menu.',
-//     backText_titleFour: '',
-//     backText_textFour: '',
-//     backgroundColor: '#D3CFCC',
-//     visitIcon: true,
-//   },
-//   {
-//     id: 6,
-//     highlight: false,
-//     frontShow: true,
-//     icon: 'Rocket',
-//     title: 'Space Invaders',
-//     year: '2021',
-//     tech: 'html css javascript',
-//     category: 'video game',
-//     url: 'https://fkodama.com/_dev/space-invaders/',
-//     image: require('../assets/images/projects/project-space.jpg'),
-//     frontText: 'Time to have fun with Vanilla Javascript.',
-//     backText_titleOne: 'why',
-//     backText_textOne:
-//       'As I studied product management, agile, and some other things, I have not been coding for some time. I want to make my big return with a fun project to allow me to catch up with the syntax.',
-//     backText_titleTwo: 'how',
-//     backText_textTwo:
-//       "That's why I decided to build this project. This tutorial again from Ania Kubow (mentioned on the Pac Man project) uses a great deal of Vanilla Javascript logic. Therefore, it was a good place to restart.",
-//     backText_titleThree: 'what',
-//     backText_textThree:
-//       'As with Pac-Man, I challenged myself to create a restart button, redesign the entire video game, and this time, I even included some sound effects to boost the user experience.',
-//     backText_titleFour: '',
-//     backText_textFour: '',
-//     backText_linkName: '',
-//     backText_link: '',
-//     backgroundColor: '#70D1D5',
-//     visitIcon: true,
-//   },
-// ];
 
 export const aboutMeData = [
   {

@@ -145,7 +145,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
               {/* Year & Visit Link */}
               <div className='flex flex-col items-center mt-16 gap-2 pointer-events-auto'>
                 <span
-                  className='font-main-semibold text-base md-custom:text-lg opacity-90'
+                  className='font-main-heavy text-base md-custom:text-lg opacity-90'
                   style={{ color: project.titlesColor || '#1c1c1c' }}
                 >
                   {project.year}
