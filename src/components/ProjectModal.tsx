@@ -51,8 +51,8 @@ const ProjectImageBlock = ({
       </div>
 
       {imgData.legend && (
-        <div className='bg-slate-800 border border-white/60 absolute -bottom-4 w-[80%] md-custom:w-auto left-[50%] -translate-x-1/2 backdrop-blur-xl px-4 py-1 shadow-lg z-20 pointer-events-none'>
-          <p className='text-white font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide leading-relaxed'>
+        <div className='bg-slate-800 border border-white/60 absolute -bottom-4 whitespace-nowrap left-[50%] -translate-x-1/2 backdrop-blur-xl px-4 py-1 shadow-lg z-20 pointer-events-none'>
+          <p className='uppercase text-center text-white font-main-medium text-xs tracking-wide leading-relaxed'>
             {imgData.legend}
           </p>
         </div>

@@ -228,11 +228,9 @@ export const projects = [
     backText_titleFour: 'strategic outcome',
     backText_textFour:
       'Trezo successfully validated my ability to architect complex FinTech products that navigate secure, cross-border data streams. It stands as a definitive proof-of-concept for how technical leadership can transform fragmented data into a reliable, high-utility financial asset.',
-    // backgroundColor: '#CA8A04', // yellow 600
-    // backgroundColor: '#fbbf24', // yellow 400
-    backgroundColor: '#ffffff', // white
-    titlesColor: '#10b981', // green 500
-    textColor: '#1e293b', // slate 800
+    backgroundColor: '#ffffff',
+    titlesColor: '#2dbc5d',
+    textColor: '#1e293b',
     visitIcon: true,
   },
   {
