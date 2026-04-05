@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Drawer,
   DrawerContent,
@@ -11,13 +10,7 @@ import {
   DrawerClose,
   DrawerHeader,
 } from '@/components/ui/drawer';
-import {
-  Bomb,
-  ExternalLink,
-  Heart,
-  MessageCircleHeart,
-  XIcon,
-} from 'lucide-react';
+import { Bomb, Heart, XIcon } from 'lucide-react';
 
 interface ProjectModalProps {
   project: any;
@@ -25,32 +18,20 @@ interface ProjectModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const ParallaxImageBlock = ({
+const ProjectImageBlock = ({
   imgData,
   altText,
-  containerRef,
+  className,
 }: {
   imgData: any;
   altText: string;
-  containerRef: any;
+  className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    container: containerRef,
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
-
-  // High-visibility horizontal shift (parallax) for the legend
-  const xParallax = useTransform(scrollYProgress, [0, 1], [-700, 700]);
-  // Vertical fade/shift for the image container itself
-  const yFade = useTransform(scrollYProgress, [0, 1], [150, -150]);
-
   return (
-    <motion.div
-      ref={ref}
-      style={{ x: yFade }}
-      className='w-[45vw] max-w-7xl mb-12 relative flex flex-col items-center group'
+    <div
+      className={`max-w-7xl relative flex flex-col items-center group ${
+        className || 'w-[80vw] mb-12'
+      }`}
     >
       <div className='w-full rounded-lg overflow-hidden shadow-[0_2rem_4rem_rgba(0,0,0,0.1)] bg-black/5 transition-transform duration-700 ease-out group-hover:scale-[1.02]'>
         <Image
@@ -61,16 +42,13 @@ const ParallaxImageBlock = ({
       </div>
 
       {imgData.legend && (
-        <motion.div
-          style={{ x: xParallax }}
-          className='bg-slate-800 border border-white/60 absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 backdrop-blur-xl px-6 py-2 shadow-lg z-20 pointer-events-none'
-        >
+        <div className='bg-slate-800 border border-white/60 absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 backdrop-blur-xl px-6 py-2 shadow-lg z-20 pointer-events-none'>
           <p className='text-white font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide leading-relaxed'>
             {imgData.legend}
           </p>
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 
@@ -82,7 +60,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
       <DrawerContent
-        className='h-dvh md-custom:h-[96vh] border-none outline-none overflow-hidden'
+        className='h-dvh md-custom:h-[calc(100vh-10px)] border-none outline-none overflow-hidden'
         style={{ backgroundColor: project.backgroundColor }}
       >
         <div className='sr-only'>
@@ -100,7 +78,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative scroll-smooth bg-black/5'
         >
           {/* Sticky Top Right Actions */}
-          <div className='sticky top-12 right-0 z-50 flex justify-end px-6 md:px-12 pointer-events-none h-0 w-full'>
+          <div className='sticky top-8 right-0 z-50 flex justify-end px-6 md:px-12 pointer-events-none h-0 w-full'>
             <div className='flex flex-col items-end gap-3 pointer-events-auto'>
               <DrawerClose className='focus:outline-none group'>
                 <div className='p-3 transition-all duration-300'>
@@ -161,14 +139,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                         : 'rgba(28,28,28,0.3)',
                     }}
                   >
-                    {/* <div className='flex items-center gap-2'> */}
                     Visit Project
-                    {/* <ExternalLink
-                        className='w-4 h-4'
-                        strokeWidth={1.6}
-                        style={{ color: project.textColor || '#1c1c1c' }}
-                      />
-                    </div> */}
                   </a>
                 )}
               </div>
@@ -177,18 +148,64 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
             {/* Dynamic Layout for Projects With Array of Images */}
             {project.images && project.images.length > 0 ? (
               <>
-                {/* Info Block 1 (WHY & WHAT) */}
-                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-32 mt-4 md-custom:mt-16 items-start px-4'>
+                {/* Info Block 1 (PROBLEM & SOLUTION) */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-4 md-custom:mb-16 mt-4 md-custom:mt-16 items-start px-4'>
                   <div>
                     <h4
                       className='font-main-heavy text-[0.7rem] md-custom:text-lg tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {/* {project.backText_titleOne} */}
                       <div className='flex gap-4 items-center'>
                         <Bomb />
-                        problem
+                        {project.backText_titleOneFirstRow}
                       </div>
+                    </h4>
+                    <p
+                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
+                      style={{ color: project.textColor || '#1c1c1c' }}
+                    >
+                      {project.backText_textOneFirstRow}
+                    </p>
+                  </div>
+                  <div>
+                    <h4
+                      className='font-main-heavy text-[0.7rem] md-custom:text-lg tracking-[0.2em] uppercase mb-6'
+                      style={{ color: project.titlesColor || '#1c1c1c' }}
+                    >
+                      <div className='flex gap-4 items-center'>
+                        <Heart />
+                        {project.backText_titleTwoFirstRow}
+                      </div>
+                    </h4>
+                    <p
+                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
+                      style={{ color: project.textColor || '#1c1c1c' }}
+                    >
+                      {project.backText_textTwoFirstRow}
+                    </p>
+                  </div>
+                </div>
+
+                {/* First Image Row (2 images) */}
+                <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
+                  {project.images.slice(0, 2).map((imgData: any, i: number) => (
+                    <ProjectImageBlock
+                      key={i}
+                      imgData={imgData}
+                      altText={`Hero Image ${i + 1}`}
+                      className='w-full mb-12'
+                    />
+                  ))}
+                </div>
+
+                {/* Info Block 2 (WHY & HOW) */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-48 items-start px-4'>
+                  <div>
+                    <h4
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      style={{ color: project.titlesColor || '#1c1c1c' }}
+                    >
+                      {project.backText_titleOne}
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
@@ -199,32 +216,21 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-lg tracking-[0.2em] uppercase mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {/* {project.backText_titleThree} */}
-                      <div className='flex gap-4 items-center'>
-                        <Heart />
-                        solution
-                      </div>
+                      {project.backText_titleTwo}
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
                       style={{ color: project.textColor || '#1c1c1c' }}
                     >
-                      {project.backText_textThree}
+                      {project.backText_textTwo}
                     </p>
                   </div>
                 </div>
 
-                {/* First Image Hero */}
-                <ParallaxImageBlock
-                  imgData={project.images[0]}
-                  altText='Hero Image'
-                  containerRef={scrollContainerRef}
-                />
-
-                {/* Info Block 2 (HOW & RESULT) */}
+                {/* Info Block 3 (HOW & RESULT) */}
                 <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-48 items-start px-4'>
                   <div>
                     <h4
@@ -256,15 +262,17 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                 </div>
 
-                {/* Render remaining images dynamically */}
-                {project.images.slice(1).map((imgData: any, i: number) => (
-                  <ParallaxImageBlock
-                    key={i}
-                    imgData={imgData}
-                    altText={`Feature Image ${i + 1}`}
-                    containerRef={scrollContainerRef}
-                  />
-                ))}
+                {/* Render remaining images dynamically in a 2-column grid */}
+                <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
+                  {project.images.slice(2).map((imgData: any, i: number) => (
+                    <ProjectImageBlock
+                      key={i}
+                      imgData={imgData}
+                      altText={`Feature Image ${i + 1}`}
+                      className='w-full mb-12'
+                    />
+                  ))}
+                </div>
               </>
             ) : (
               /* Fallback Layout For Single Image Projects (Portfolio V1, etc) */
@@ -333,10 +341,9 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 </div>
 
                 {project.image && (
-                  <ParallaxImageBlock
+                  <ProjectImageBlock
                     imgData={{ image: project.image, legend: null }}
                     altText='Main Project'
-                    containerRef={scrollContainerRef}
                   />
                 )}
               </>

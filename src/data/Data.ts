@@ -29,6 +29,10 @@ export const projects = [
           'Integrated deep-work environments designed to minimize context switching.',
       },
     ],
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'Generic productivity tools suffer from feature-creep and fragmented data. I identified a need for a centralized "Command Center" that bridges long-term strategic vision with daily high-velocity execution.',
@@ -116,6 +120,10 @@ export const projects = [
           'Yearly Overview visualizations exposing long-term wealth management trajectories.',
       },
     ],
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'Family financial tracking is often hindered by the friction of manual entry. My goal was to solve this user pain point by automating data ingestion and fostering collaborative household budgeting.',
@@ -178,6 +186,10 @@ export const projects = [
           'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
       },
     ],
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'Global investors face a fragmented view of their net worth. I identified a gap in the market for a tool that synchronizes assets across diverse classes and three distinct tax/currency jurisdictions (BRL, CAD, USD).',
@@ -216,6 +228,10 @@ export const projects = [
         legend: 'Blah blah blah.',
       },
     ],
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'Traditional portfolios are static. I wanted to disrupt the "resume" experience by creating an immersive, agentic environment that demonstrates the "Empowered Execution" possible with modern AI and physics-based UI.',
@@ -271,7 +287,10 @@ export const projects = [
           'A private note that becomes visible only after the dead‑man’s switch is triggered.',
       },
     ],
-
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'Managing emergency instructions and critical digital access is inherently risky. I identified a real-world need for a frictionless fail-safe that protects absolute privacy while guaranteeing the secure transfer of a digital legacy strictly during worst-case scenarios.',
@@ -301,6 +320,10 @@ export const projects = [
     category: 'Product Case Study',
     url: 'https://www.fkodama.com',
     image: require('../assets/images/projects/prj-portfoliovs1.webp'),
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'To architect a career-pivot strategy by designing an immersive digital environment that simulated premium e-commerce and AI-driven product pages.',
@@ -328,7 +351,10 @@ export const projects = [
     category: 'Layout Systems R&D',
     url: 'https://fkodama.com/_dev/seletos',
     image: require('../assets/images/projects/project-seletos.jpg'),
-
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'To master the fundamental "atoms" of web architecture—Flexbox, Grid, and Responsive Logic—without the abstraction of modern frameworks.',
@@ -356,7 +382,10 @@ export const projects = [
     category: 'Algorithmic Logic',
     url: 'https://fkodama.com/_dev/pacman/',
     image: require('../assets/images/projects/project-pacman.jpg'),
-
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'To deep-dive into Vanilla JavaScript state management and the mathematical logic of grid-based navigation and collision systems.',
@@ -385,6 +414,10 @@ export const projects = [
     url: 'https://www.mundialcomunicacao.com.br/',
     logo: require('../assets/images/projects/logo-mundial.png'),
     image: require('../assets/images/projects/project-mundial.jpg'),
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'To execute a full-scale digital transformation for a communication agency, aligning their legacy brand with modern web standards.',
@@ -412,7 +445,10 @@ export const projects = [
     category: 'Event-Driven Logic',
     url: 'https://fkodama.com/_dev/space-invaders/',
     image: require('../assets/images/projects/project-space.jpg'),
-
+    backText_titleOneFirstRow: 'problem',
+    backText_textOneFirstRow: '',
+    backText_titleTwoFirstRow: 'solution',
+    backText_textTwoFirstRow: '',
     backText_titleOne: 'why',
     backText_textOne:
       'To master event-driven programming and asynchronous logic (sound effects and timing) using pure JavaScript.',
