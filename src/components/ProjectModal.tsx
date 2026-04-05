@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import IconClose from '../assets/images/card-icon-close-white.svg';
 import {
   Drawer,
   DrawerContent,
@@ -12,7 +11,13 @@ import {
   DrawerClose,
   DrawerHeader,
 } from '@/components/ui/drawer';
-import { XIcon } from 'lucide-react';
+import {
+  Bomb,
+  ExternalLink,
+  Heart,
+  MessageCircleHeart,
+  XIcon,
+} from 'lucide-react';
 
 interface ProjectModalProps {
   project: any;
@@ -44,8 +49,8 @@ const ParallaxImageBlock = ({
   return (
     <motion.div
       ref={ref}
-      style={{ y: yFade }}
-      className='w-[90vw] md-custom:w-[80vw] max-w-7xl mb-16 md-custom:mb-24 relative flex flex-col items-center group'
+      style={{ x: yFade }}
+      className='w-[45vw] max-w-7xl mb-12 relative flex flex-col items-center group'
     >
       <div className='w-full rounded-lg overflow-hidden shadow-[0_2rem_4rem_rgba(0,0,0,0.1)] bg-black/5 transition-transform duration-700 ease-out group-hover:scale-[1.02]'>
         <Image
@@ -82,7 +87,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
       >
         <div className='sr-only'>
           <DrawerHeader>
-            <DrawerTitle>{project.title}</DrawerTitle>
+            <DrawerTitle>{project.name}</DrawerTitle>
             <DrawerDescription>{project.category}</DrawerDescription>
           </DrawerHeader>
         </div>
@@ -95,7 +100,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           className='flex flex-col w-full h-full overflow-y-auto overflow-x-hidden relative scroll-smooth bg-black/5'
         >
           {/* Sticky Top Right Actions */}
-          <div className='sticky top-6 right-0 z-50 flex justify-end px-6 md:px-12 pointer-events-none h-0 w-full'>
+          <div className='sticky top-12 right-0 z-50 flex justify-end px-6 md:px-12 pointer-events-none h-0 w-full'>
             <div className='flex flex-col items-end gap-3 pointer-events-auto'>
               <DrawerClose className='focus:outline-none group'>
                 <div className='p-3 transition-all duration-300'>
@@ -112,19 +117,12 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           <div className='w-full flex flex-col items-center px-4 md:px-12 pt-6 pb-32'>
             {/* Logo Group */}
             <div className='flex flex-col items-center justify-center pointer-events-none mb-4 md-custom:mb-10'>
-              {project.logo ? (
+              {project.logo && (
                 <Image
                   src={project.logo}
                   alt='Project Logo'
-                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain my-10'
+                  className='max-w-[220px] w-32 object-contain mt-8 mb-4'
                 />
-              ) : (
-                <h2
-                  className='font-main-heavy text-3xl md-custom:text-4xl mb-2 tracking-tight'
-                  style={{ color: project.textColor || '#1c1c1c' }}
-                >
-                  {project.title}
-                </h2>
               )}
               {project.showName && project.name && (
                 <h3
@@ -143,8 +141,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 </p>
               )}
 
-              {/* Year & Visit Link */}
-              <div className='flex flex-col items-center mt-16 gap-2 pointer-events-auto'>
+              <div className='flex flex-col items-center mt-8 gap-2 pointer-events-auto'>
                 <span
                   className='font-main-heavy text-base md-custom:text-lg opacity-90'
                   style={{ color: project.titlesColor || '#1c1c1c' }}
@@ -156,7 +153,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                     href={project.url}
                     target='_blank'
                     rel='noreferrer'
-                    className='text-[0.6rem] md-custom:text-xs font-main-heavy opacity-80 hover:opacity-100 uppercase tracking-[0.2em] border-b pb-1 mt-4 transition-all'
+                    className='text-[0.6rem] md-custom:text-xs font-main-heavy opacity-80 hover:opacity-100 uppercase tracking-[0.2em] border-b pb-1 mt-2 transition-all'
                     style={{
                       color: project.textColor || '#1c1c1c',
                       borderColor: project.textColor
@@ -164,7 +161,14 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                         : 'rgba(28,28,28,0.3)',
                     }}
                   >
+                    {/* <div className='flex items-center gap-2'> */}
                     Visit Project
+                    {/* <ExternalLink
+                        className='w-4 h-4'
+                        strokeWidth={1.6}
+                        style={{ color: project.textColor || '#1c1c1c' }}
+                      />
+                    </div> */}
                   </a>
                 )}
               </div>
@@ -177,10 +181,14 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-32 mt-4 md-custom:mt-16 items-start px-4'>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-lg tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleOne}
+                      {/* {project.backText_titleOne} */}
+                      <div className='flex gap-4 items-center'>
+                        <Bomb />
+                        problem
+                      </div>
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
@@ -191,10 +199,14 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                   <div>
                     <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
+                      className='font-main-heavy text-[0.7rem] md-custom:text-lg tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleThree}
+                      {/* {project.backText_titleThree} */}
+                      <div className='flex gap-4 items-center'>
+                        <Heart />
+                        solution
+                      </div>
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
