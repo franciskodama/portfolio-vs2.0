@@ -115,8 +115,8 @@ const SynergySeer = ({
   // !font-[family-name:var(--font-henny-penny)] !placeholder:font-[family-name:var(--font-henny-penny)]
 
   return (
-    <section className='section relative pb-40 mt-10' id='ai'>
-      <div className='container pt-4 w-[90%] mx-auto mb-8 md-custom:w-[80%]'>
+    <section className='section relative pb-20' id='ai'>
+      <div className='container w-[90%] mx-auto md-custom:w-[80%]'>
         <div className='relative flex flex-col items-center'>
           <svg viewBox='0 0 500 120' className='w-full h-auto overflow-visible'>
             <path
@@ -155,7 +155,7 @@ const SynergySeer = ({
           </svg>
         </div>
         <form className='flex flex-col items-center' onSubmit={onSubmit}>
-          <div className='text-third p-4 my-8 text-center max-w-2xl w-full'>
+          <div className='text-third p-4 text-center max-w-2xl w-full'>
             <div className='relative flex justify-between gap-12 max-w-[42ch] mx-auto mb-12'>
               <div className='flex flex-col items-end flex-1'>
                 <div className='w-10 h-10 md-custom:mr-4 rounded-full border border-third text-third flex items-center justify-center font-main-regular mb-4 bg-dark z-10 shadow-[0_0_15px_rgba(237,28,36,0.2)]'>
