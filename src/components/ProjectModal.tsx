@@ -10,7 +10,16 @@ import {
   DrawerClose,
   DrawerHeader,
 } from '@/components/ui/drawer';
-import { Bomb, Heart, XIcon } from 'lucide-react';
+import {
+  Bomb,
+  Bot,
+  ChessKnight,
+  CornerDownLeft,
+  Cpu,
+  Drum,
+  Heart,
+  XIcon,
+} from 'lucide-react';
 
 interface ProjectModalProps {
   project: any;
@@ -42,7 +51,7 @@ const ProjectImageBlock = ({
       </div>
 
       {imgData.legend && (
-        <div className='bg-slate-800 border border-white/60 absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 backdrop-blur-xl px-6 py-2 shadow-lg z-20 pointer-events-none'>
+        <div className='bg-slate-800 border border-white/60 absolute -bottom-4 w-[80%] md-custom:w-auto left-[50%] -translate-x-1/2 backdrop-blur-xl px-4 py-1 shadow-lg z-20 pointer-events-none'>
           <p className='text-white font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide leading-relaxed'>
             {imgData.legend}
           </p>
@@ -145,7 +154,6 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
               </div>
             </div>
 
-            {/* Dynamic Layout for Projects With Array of Images */}
             {project.images && project.images.length > 0 ? (
               <>
                 {/* Info Block 1 (PROBLEM & SOLUTION) */}
@@ -198,14 +206,17 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   ))}
                 </div>
 
-                {/* Info Block 2 (WHY & HOW) */}
-                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-48 items-start px-4'>
+                {/* Info Block 2: Product Strategy + Technical Oversight */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 my-16 items-start px-4'>
                   <div>
                     <h4
                       className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleOne}
+                      <div className='flex gap-4 items-center'>
+                        <ChessKnight />
+                        {project.backText_titleOne}
+                      </div>
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
@@ -219,7 +230,10 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                       className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleTwo}
+                      <div className='flex gap-4 items-center'>
+                        <Bot />
+                        {project.backText_titleTwo}
+                      </div>
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
@@ -230,14 +244,29 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   </div>
                 </div>
 
-                {/* Info Block 3 (HOW & RESULT) */}
-                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 mb-16 md-custom:mb-48 items-start px-4'>
+                {/* Middle Image Row (2 images) */}
+                <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
+                  {project.images.slice(2, 4).map((imgData: any, i: number) => (
+                    <ProjectImageBlock
+                      key={i}
+                      imgData={imgData}
+                      altText={`Feature Image ${i + 3}`}
+                      className='w-full mb-12'
+                    />
+                  ))}
+                </div>
+
+                {/* Info Block 3 (Core Capability & Strategic Outcome) */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 my-16 items-start px-4'>
                   <div>
                     <h4
                       className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleThree}
+                      <div className='flex gap-4 items-center'>
+                        <Cpu />
+                        {project.backText_titleThree}
+                      </div>
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
@@ -251,7 +280,10 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                       className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleFour}
+                      <div className='flex gap-4 items-center'>
+                        <Drum />
+                        {project.backText_titleFour}
+                      </div>
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
@@ -264,11 +296,11 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
 
                 {/* Render remaining images dynamically in a 2-column grid */}
                 <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
-                  {project.images.slice(2).map((imgData: any, i: number) => (
+                  {project.images.slice(4).map((imgData: any, i: number) => (
                     <ProjectImageBlock
                       key={i}
                       imgData={imgData}
-                      altText={`Feature Image ${i + 1}`}
+                      altText={`Gallery Image ${i + 5}`}
                       className='w-full mb-12'
                     />
                   ))}

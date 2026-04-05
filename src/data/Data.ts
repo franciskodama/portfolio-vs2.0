@@ -15,19 +15,40 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-handy1.jpg'),
-        legend:
-          'The centralized Command Center prioritizing high-velocity daily task execution.',
+        legend: '',
       },
       {
         image: require('../assets/images/projects/prj-handy2.jpg'),
-        legend:
-          'Quarterly roadmaps keeping micro-tools aligned with long-term strategic vision.',
+        legend: '',
       },
       {
         image: require('../assets/images/projects/prj-handy3.jpg'),
-        legend:
-          'Integrated deep-work environments designed to minimize context switching.',
+        legend: '',
       },
+      // {
+      //   image: require('../assets/images/projects/prj-handy4.jpg'),
+      //   legend: '',
+      // },
+      // {
+      //   image: require('../assets/images/projects/prj-handy5.jpg'),
+      //   legend: '',
+      // },
+      // {
+      //   image: require('../assets/images/projects/prj-handy6.jpg'),
+      //   legend: '',
+      // },
+      // {
+      //   image: require('../assets/images/projects/prj-handy7.jpg'),
+      //   legend: '',
+      // },
+      // {
+      //   image: require('../assets/images/projects/prj-handy8.jpg'),
+      //   legend: '',
+      // },
+      // {
+      //   image: require('../assets/images/projects/prj-handy9.jpg'),
+      //   legend: '',
+      // },
     ],
     backText_titleOneFirstRow: 'problem',
     backText_textOneFirstRow:
@@ -68,58 +89,43 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-monkey-buss-1.webp'),
-        legend:
-          'Collaborative household dashboard synchronizing macro-financial planning across users.',
+        legend: 'Command Center',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-2.webp'),
-        legend:
-          'A custom Rule Engine learning from messy transaction descriptions to automate categorizations.',
+        legend: 'Household Management',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-3.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Monthly Planner',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-4.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Yearly Overview',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-5.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'AI Transaction Parser: automatic expenses import',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-6.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Code Import',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-7.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Waste Cutter and Radar (Monthly Obligations)',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-8.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Analytics and Insights Panel',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-9.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Settings: Rules Engine for automatic categorization',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-10.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
-      },
-      {
-        image: require('../assets/images/projects/prj-monkey-buss-11.webp'),
-        legend:
-          'Yearly Overview visualizations exposing long-term wealth management trajectories.',
+        legend: 'Settings: Backup and Restore',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -140,8 +146,8 @@ export const projects = [
     backText_titleFour: 'strategic outcome',
     backText_textFour:
       'Monkey Business proves I can architect secure, AI-augmented FinTech solutions to solve pervasive consumer problems. It stands as a definitive asset demonstrating the delivery of high-utility, collaborative, and automated data environments.',
-    backgroundColor: '#6366F1',
-    titlesColor: '#D5896F',
+    backgroundColor: '#CFDF17',
+    titlesColor: '#FFFFFF',
     textColor: '#031D44',
     visitIcon: true,
   },
@@ -161,33 +167,47 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-trezo1.webp'),
-        legend:
-          'Multi-currency tracking engine plotting real-time asset distributions globally.',
+        legend: 'Dashboard',
       },
       {
         image: require('../assets/images/projects/prj-trezo2.webp'),
-        legend:
-          'Technical analysis logic projecting ATH estimations for data-driven allocation adjustments.',
+        legend: 'Crypto asset tracking',
       },
       {
         image: require('../assets/images/projects/prj-trezo3.webp'),
-        legend:
-          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+        legend: 'Crypto allocation goals',
       },
       {
         image: require('../assets/images/projects/prj-trezo4.webp'),
-        legend:
-          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+        legend: 'Crypto total by ATH estimation',
       },
       {
         image: require('../assets/images/projects/prj-trezo5.webp'),
-        legend:
-          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+        legend: 'Crypto Heatmap',
       },
       {
         image: require('../assets/images/projects/prj-trezo6.webp'),
-        legend:
-          'Cash-on-hand liquidity dashboards managing complex state and multi-jurisdiction data.',
+        legend: 'Stock asset tracking',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo7.webp'),
+        legend: 'Assets Vault',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo8.webp'),
+        legend: 'Elliott Perspective Zone',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo9.webp'),
+        legend: 'Economic Calendar',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo10.webp'),
+        legend: 'Alert Hub: Emails and/or Whatsapp',
+      },
+      {
+        image: require('../assets/images/projects/prj-trezo11.webp'),
+        legend: 'Retirement Projection',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -231,13 +251,15 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-portfolio.webp'),
-        legend: 'Blah blah blah.',
+        legend: '',
       },
     ],
     backText_titleOneFirstRow: 'problem',
-    backText_textOneFirstRow: 'Professional portfolios are often static documents that fail to demonstrate real-time technical capabilities or bridge the gap between high-level strategy and hands-on execution. I identified a need for an immersive, agentic experience that transforms the recruitment journey into an interactive product consultation.',
+    backText_textOneFirstRow:
+      'Professional portfolios are often static documents that fail to demonstrate real-time technical capabilities or bridge the gap between high-level strategy and hands-on execution. I identified a need for an immersive, agentic experience that transforms the recruitment journey into a fun interactive product consultation.',
     backText_titleTwoFirstRow: 'solution',
-    backText_textTwoFirstRow: 'I architected this V2 ecosystem as a high-performance "Agentic Command Center" using Next.js and physics-based UI logic. By integrating a custom AI consultant and immersive interactive components, I successfully productized my career journey, demonstrating how technical leadership can be communicated through a premium experience.',
+    backText_textTwoFirstRow:
+      'I architected this V2 ecosystem as a high-performance "Agentic Command Center" using Next.js and physics-based UI logic. By integrating a custom AI consultant and immersive interactive components, I successfully productized my career journey, demonstrating how technical leadership can be communicated through a premium experience.',
     backText_titleOne: 'product strategy',
     backText_textOne:
       'I identified a core recruitment gap: the failure of static resumes to demonstrate technical leadership. My strategy was to productize my career journey into an interactive ecosystem that validates my ability to bridge high-end creative strategy with robust engineering.',
@@ -274,23 +296,19 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-mori-1.webp'),
-        legend:
-          'Dashboard live view showing household connection, partner status, and upcoming check-in date.',
+        legend: '',
       },
       {
         image: require('../assets/images/projects/prj-mori-2.webp'),
-        legend:
-          'The Vault — secure note view displaying saved bank account details.',
+        legend: '',
       },
       {
         image: require('../assets/images/projects/prj-mori-3.webp'),
-        legend:
-          'Editing a note directly in the vault: a smooth, user‑centric editing experience.',
+        legend: '',
       },
       {
         image: require('../assets/images/projects/prj-mori-4.webp'),
-        legend:
-          'A private note that becomes visible only after the dead‑man’s switch is triggered.',
+        legend: '',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -298,7 +316,7 @@ export const projects = [
       'Managing critical digital legacy information is a high-stakes security challenge with significant user friction. I identified a gap for a secure fail-safe that guarantees the transfer of access instructions to trusted partners strictly during contingency scenarios, without compromising lifelong privacy.',
     backText_titleTwoFirstRow: 'solution',
     backText_textTwoFirstRow:
-      "I engineered an event-driven \"Digital Contingency Vault\" centered on an automated dead-man's switch protocol. By architecting strict state-driven access controls and secure household linking, I solved the complex product challenge of balancing absolute user privacy with reliable, automated legacy transfer.",
+      'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. By architecting strict state-driven access controls and secure household linking, I solved the complex product challenge of balancing absolute user privacy with reliable, automated legacy transfer.',
     backText_titleOne: 'product strategy',
     backText_textOne:
       'I identified a critical "Security/Accessibility" paradox in digital legacy management. My strategy was to build a fail-safe contingency vault that guarantees access transfer strictly during worst-case scenarios, while maintaining absolute user privacy beforehand.',
