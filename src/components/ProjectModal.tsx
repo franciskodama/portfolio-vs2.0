@@ -104,12 +104,14 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
           <div className='w-full flex flex-col items-center px-4 md:px-12 pt-6 pb-32'>
             {/* Logo Group */}
             <div className='flex flex-col items-center justify-center pointer-events-none mb-4 md-custom:mb-10'>
-              {project.logo && (
+              {project.logo ? (
                 <Image
                   src={project.logo}
                   alt='Project Logo'
                   className='max-w-[220px] w-32 object-contain mt-8 mb-4'
                 />
+              ) : (
+                <div className='h-18' />
               )}
               {project.showName && project.name && (
                 <h3
@@ -195,7 +197,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 </div>
 
                 {/* First Image Row (2 images) */}
-                <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
+                <div
+                  className={`grid gap-4 w-full max-w-7xl ${
+                    project.images.length === 1
+                      ? 'grid-cols-1'
+                      : 'grid-cols-1 md-custom:grid-cols-2'
+                  }`}
+                >
                   {project.images.slice(0, 2).map((imgData: any, i: number) => (
                     <ProjectImageBlock
                       key={i}
@@ -245,7 +253,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 </div>
 
                 {/* Middle Image Row (2 images) */}
-                <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
+                <div
+                  className={`grid gap-4 w-full max-w-7xl ${
+                    project.images.length === 1
+                      ? 'grid-cols-1'
+                      : 'grid-cols-1 md-custom:grid-cols-2'
+                  }`}
+                >
                   {project.images.slice(2, 4).map((imgData: any, i: number) => (
                     <ProjectImageBlock
                       key={i}
@@ -295,7 +309,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 </div>
 
                 {/* Render remaining images dynamically in a 2-column grid */}
-                <div className='grid grid-cols-1 md-custom:grid-cols-2 gap-4 w-full max-w-7xl'>
+                <div
+                  className={`grid gap-4 w-full max-w-7xl ${
+                    project.images.length === 1
+                      ? 'grid-cols-1'
+                      : 'grid-cols-1 md-custom:grid-cols-2'
+                  }`}
+                >
                   {project.images.slice(4).map((imgData: any, i: number) => (
                     <ProjectImageBlock
                       key={i}
@@ -313,7 +333,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   <div className='flex flex-col gap-12'>
                     <div>
                       <h4
-                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                         style={{ color: project.titlesColor || '#1c1c1c' }}
                       >
                         {project.backText_titleOne}
@@ -327,7 +347,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                     </div>
                     <div>
                       <h4
-                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                         style={{ color: project.titlesColor || '#1c1c1c' }}
                       >
                         {project.backText_titleTwo}
@@ -343,7 +363,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   <div className='flex flex-col gap-12'>
                     <div>
                       <h4
-                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                         style={{ color: project.titlesColor || '#1c1c1c' }}
                       >
                         {project.backText_titleThree}
@@ -357,7 +377,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                     </div>
                     <div>
                       <h4
-                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase opacity-60 mb-6'
+                        className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                         style={{ color: project.titlesColor || '#1c1c1c' }}
                       >
                         {project.backText_titleFour}

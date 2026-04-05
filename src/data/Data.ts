@@ -248,7 +248,7 @@ export const projects = [
     tagline: '',
     images: [
       {
-        image: require('../assets/images/projects/prj-portfolio.webp'),
+        image: require('../assets/images/projects/prj-portfolio2.webp'),
         legend: '',
       },
     ],
@@ -270,11 +270,9 @@ export const projects = [
     backText_titleFour: 'strategic outcome',
     backText_textFour:
       'Portfolio V.02 stands as a definitive "Proof of Talent" asset. It successfully validates my ability to blend high-end creative artistry with cutting-edge AI integration and robust technical architecture in a public-facing product.',
-    // backgroundColor: '#7f1d1d', red-900
-    // backgroundColor: '#1e293b', slate 800
-    backgroundColor: '#0f172a', // slate 900
-    // titlesColor: '#1e293b', slate 800
-    titlesColor: '#dc2626', // red 600
+    // backgroundColor: '#0f172a', // slate 900
+    backgroundColor: '#1b1c1c',
+    titlesColor: '#dc2626',
     textColor: '#FFF',
     visitIcon: true,
   },
@@ -332,37 +330,40 @@ export const projects = [
     textColor: '#FFF',
     visitIcon: true,
   },
-  {
-    id: 6,
-    highlight: false,
-    frontShow: true,
-    icon: 'Book',
-    name: 'Portfolio v.01',
-    showName: true,
-    year: '2022',
-    tech: 'React JS SASS HTML5',
-    category: 'Product Case Study',
-    url: 'https://www.fkodama.com',
-    image: require('../assets/images/projects/prj-portfoliovs1.webp'),
-    backText_titleOneFirstRow: 'problem',
-    backText_textOneFirstRow: '',
-    backText_titleTwoFirstRow: 'solution',
-    backText_textTwoFirstRow: '',
-    backText_titleOne: 'why',
-    backText_textOne:
-      'To architect a career-pivot strategy by designing an immersive digital environment that simulated premium e-commerce and AI-driven product pages.',
-    backText_titleTwo: 'how',
-    backText_textTwo:
-      'I utilized React and SASS to build a high-fidelity "Product Showcase" aesthetic, integrating early-stage API logic to demonstrate full-stack potential.',
-    backText_titleThree: 'what',
-    backText_textThree:
-      'A 100% React-based portfolio designed with a "Director’s Perspective," prioritizing UX/UI excellence and clean component architecture.',
-    backText_titleFour: 'result',
-    backText_textFour:
-      'A successful proof-of-concept that validated the transition from Marketing Director to Technical Architect through disciplined execution.',
-    backgroundColor: '#FC9651',
-    visitIcon: false,
-  },
+  // {
+  //   id: 6,
+  //   highlight: false,
+  //   frontShow: true,
+  //   icon: 'Book',
+  //   name: 'Portfolio v.01',
+  //   showName: true,
+  //   tagline: 'The first, the foundation.',
+  //   year: '2022',
+  //   tech: 'React JS SASS HTML5',
+  //   category: 'Product Case Study',
+  //   url: '/projects/portfolio-v1',
+  //   image: require('../assets/images/projects/prj-portfoliovs1.webp'),
+  //   backText_titleOneFirstRow: 'problem',
+  //   backText_textOneFirstRow: '',
+  //   backText_titleTwoFirstRow: 'solution',
+  //   backText_textTwoFirstRow: '',
+  //   backText_titleOne: 'why',
+  //   backText_textOne:
+  //     'To architect a career-pivot strategy by designing an immersive digital environment that simulated premium e-commerce and AI-driven product pages.',
+  //   backText_titleTwo: 'how',
+  //   backText_textTwo:
+  //     'I utilized React and SASS to build a high-fidelity "Product Showcase" aesthetic, integrating early-stage API logic to demonstrate full-stack potential.',
+  //   backText_titleThree: 'what',
+  //   backText_textThree:
+  //     'A 100% React-based portfolio designed with a "Director’s Perspective," prioritizing UX/UI excellence and clean component architecture.',
+  //   backText_titleFour: 'result',
+  //   backText_textFour:
+  //     'A successful proof-of-concept that validated the transition from Marketing Director to Technical Architect through disciplined execution.',
+  //   backgroundColor: '#FC9651',
+  //   titlesColor: '#dc2626',
+  //   textColor: '#1b1c1c',
+  //   visitIcon: false,
+  // },
   {
     id: 7,
     highlight: false,
@@ -373,7 +374,7 @@ export const projects = [
     year: '2021',
     tech: 'HTML5 CSS3 JavaScript',
     category: 'Layout Systems R&D',
-    url: 'https://fkodama.com/_dev/seletos',
+    url: '/projects/seletos',
     image: require('../assets/images/projects/project-seletos.jpg'),
     backText_titleOneFirstRow: 'problem',
     backText_textOneFirstRow: '',
@@ -392,39 +393,41 @@ export const projects = [
     backText_textFour:
       'Confirmed my ability to bridge digital marketing strategy with low-level technical implementation from day one.',
     backgroundColor: '#BA88F9',
+    titlesColor: '#4927F5',
+    textColor: '#FFF',
     visitIcon: true,
   },
-  {
-    id: 8,
-    highlight: false,
-    frontShow: true,
-    icon: 'Ghost',
-    name: 'Pac Man',
-    showName: true,
-    year: '2021',
-    tech: 'Vanilla JavaScript CSS3 HTML5',
-    category: 'Algorithmic Logic',
-    url: 'https://fkodama.com/_dev/pacman/',
-    image: require('../assets/images/projects/project-pacman.jpg'),
-    backText_titleOneFirstRow: 'problem',
-    backText_textOneFirstRow: '',
-    backText_titleTwoFirstRow: 'solution',
-    backText_textTwoFirstRow: '',
-    backText_titleOne: 'why',
-    backText_textOne:
-      'To deep-dive into Vanilla JavaScript state management and the mathematical logic of grid-based navigation and collision systems.',
-    backText_titleTwo: 'how',
-    backText_textTwo:
-      'I refactored a baseline tutorial into a polished, custom-designed experience, optimizing the game loop and user interaction logic.',
-    backText_titleThree: 'what',
-    backText_textThree:
-      'A redesign of the classic arcade game focused on programmatic movement and condition-based win/loss states.',
-    backText_titleFour: 'result',
-    backText_textFour:
-      'Established the core algorithmic thinking and "KISS" (Keep It Simple, Stupid) coding principles I apply to complex FinTech engines today.',
-    backgroundColor: '#efbe1c',
-    visitIcon: true,
-  },
+  // {
+  //   id: 8,
+  //   highlight: false,
+  //   frontShow: true,
+  //   icon: 'Ghost',
+  //   name: 'Pac Man',
+  //   showName: true,
+  //   year: '2021',
+  //   tech: 'Vanilla JavaScript CSS3 HTML5',
+  //   category: 'Algorithmic Logic',
+  //   url: '/projects/pacman',
+  //   image: require('../assets/images/projects/project-pacman.jpg'),
+  //   backText_titleOneFirstRow: 'problem',
+  //   backText_textOneFirstRow: '',
+  //   backText_titleTwoFirstRow: 'solution',
+  //   backText_textTwoFirstRow: '',
+  //   backText_titleOne: 'why',
+  //   backText_textOne:
+  //     'To deep-dive into Vanilla JavaScript state management and the mathematical logic of grid-based navigation and collision systems.',
+  //   backText_titleTwo: 'how',
+  //   backText_textTwo:
+  //     'I refactored a baseline tutorial into a polished, custom-designed experience, optimizing the game loop and user interaction logic.',
+  //   backText_titleThree: 'what',
+  //   backText_textThree:
+  //     'A redesign of the classic arcade game focused on programmatic movement and condition-based win/loss states.',
+  //   backText_titleFour: 'result',
+  //   backText_textFour:
+  //     'Established the core algorithmic thinking and "KISS" (Keep It Simple, Stupid) coding principles I apply to complex FinTech engines today.',
+  //   backgroundColor: '#efbe1c',
+  //   visitIcon: true,
+  // },
   {
     id: 9,
     highlight: false,
@@ -455,39 +458,41 @@ export const projects = [
     backText_textFour:
       'A high-impact project that demonstrated the immediate business value of combining marketing leadership with technical execution.',
     backgroundColor: '#3FABD8',
+    titlesColor: '#FFFFFF',
+    // textColor: '#FFF',
     visitIcon: true,
   },
-  {
-    id: 10,
-    highlight: false,
-    frontShow: true,
-    icon: 'Rocket',
-    name: 'Space Invaders',
-    showName: true,
-    year: '2021',
-    tech: 'Vanilla JavaScript CSS3 HTML5',
-    category: 'Event-Driven Logic',
-    url: 'https://fkodama.com/_dev/space-invaders/',
-    image: require('../assets/images/projects/project-space.jpg'),
-    backText_titleOneFirstRow: 'problem',
-    backText_textOneFirstRow: '',
-    backText_titleTwoFirstRow: 'solution',
-    backText_textTwoFirstRow: '',
-    backText_titleOne: 'why',
-    backText_textOne:
-      'To master event-driven programming and asynchronous logic (sound effects and timing) using pure JavaScript.',
-    backText_titleTwo: 'how',
-    backText_textTwo:
-      'I engineered a custom "Restart" state and integrated audio-visual feedback loops to enhance the UX/UI beyond standard tutorials.',
-    backText_titleThree: 'what',
-    backText_textThree:
-      'A physics-based arcade clone focused on precise coordinate logic and real-time state updates.',
-    backText_titleFour: 'result',
-    backText_textFour:
-      'Confirmed my "Missionary Mindset"—the drive to go beyond the basic requirements to deliver a superior, polished product outcome.',
-    backgroundColor: '#70D1D5',
-    visitIcon: true,
-  },
+  // {
+  //   id: 10,
+  //   highlight: false,
+  //   frontShow: true,
+  //   icon: 'Rocket',
+  //   name: 'Space Invaders',
+  //   showName: true,
+  //   year: '2021',
+  //   tech: 'Vanilla JavaScript CSS3 HTML5',
+  //   category: 'Event-Driven Logic',
+  //   url: '/projects/space-invaders/',
+  //   image: require('../assets/images/projects/project-space.jpg'),
+  //   backText_titleOneFirstRow: 'problem',
+  //   backText_textOneFirstRow: '',
+  //   backText_titleTwoFirstRow: 'solution',
+  //   backText_textTwoFirstRow: '',
+  //   backText_titleOne: 'why',
+  //   backText_textOne:
+  //     'To master event-driven programming and asynchronous logic (sound effects and timing) using pure JavaScript.',
+  //   backText_titleTwo: 'how',
+  //   backText_textTwo:
+  //     'I engineered a custom "Restart" state and integrated audio-visual feedback loops to enhance the UX/UI beyond standard tutorials.',
+  //   backText_titleThree: 'what',
+  //   backText_textThree:
+  //     'A physics-based arcade clone focused on precise coordinate logic and real-time state updates.',
+  //   backText_titleFour: 'result',
+  //   backText_textFour:
+  //     'Confirmed my "Missionary Mindset"—the drive to go beyond the basic requirements to deliver a superior, polished product outcome.',
+  //   backgroundColor: '#70D1D5',
+  //   visitIcon: true,
+  // },
 ];
 
 export const aboutMeData = [
