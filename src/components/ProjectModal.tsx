@@ -12,6 +12,7 @@ import {
   DrawerClose,
   DrawerHeader,
 } from '@/components/ui/drawer';
+import { XIcon } from 'lucide-react';
 
 interface ProjectModalProps {
   project: any;
@@ -98,10 +99,10 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
             <div className='flex flex-col items-end gap-3 pointer-events-auto'>
               <DrawerClose className='focus:outline-none group'>
                 <div className='p-3 transition-all duration-300'>
-                  <Image
-                    src={IconClose}
-                    alt='close button'
-                    className='w-6 h-6 transition-transform group-hover:rotate-90'
+                  <XIcon
+                    strokeWidth={1.4}
+                    className='w-8 h-8 transition-transform group-hover:rotate-90 cursor-pointer'
+                    style={{ color: project.textColor || '#1c1c1c' }}
                   />
                 </div>
               </DrawerClose>
@@ -115,7 +116,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 <Image
                   src={project.logo}
                   alt='Project Logo'
-                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain drop-shadow-md my-10'
+                  className='max-w-[220px] h-14 md-custom:h-16 w-48 object-contain my-10'
                 />
               ) : (
                 <h2
