@@ -58,9 +58,9 @@ const ParallaxImageBlock = ({
       {imgData.legend && (
         <motion.div
           style={{ x: xParallax }}
-          className='absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 bg-white/80 backdrop-blur-xl border border-white/50 px-6 py-4 rounded-xl shadow-lg z-20 pointer-events-none'
+          className='bg-slate-800 border border-white/60 absolute -bottom-6 w-[80%] md-custom:w-auto left-[10%] md-custom:left-8 backdrop-blur-xl px-6 py-2 shadow-lg z-20 pointer-events-none'
         >
-          <p className='font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide text-dark opacity-90 leading-relaxed'>
+          <p className='text-white font-main-medium text-sm md-custom:text-[0.85rem] tracking-wide leading-relaxed'>
             {imgData.legend}
           </p>
         </motion.div>
