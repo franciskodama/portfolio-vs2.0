@@ -47,32 +47,32 @@ const Methodology = () => {
 
         <Parallax opacity={[0, 2]}>
           <ul className='lg-custom:scale-65 mb-10 mt-24 md-custom:mt-0 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-bright text-[2.5rem] leading-10 md-custom:text-[5.5rem] md-custom:leading-28'>
-              MISSIONARY
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] pr-66 text-bright text-[2.5rem] leading-10 md-custom:text-[7.5rem] md-custom:leading-42'>
+              PRODUCT
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] pr-30 text-bright text-[2.2rem] leading-10 md-custom:text-[5rem] md-custom:leading-22'>
-              MINDSET
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] pr-16 text-bright text-[2.2rem] leading-10 md-custom:text-[7rem] md-custom:leading-24'>
+              DISCOVERY
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.6rem] leading-[1.8rem] text-left pl-6 md-custom:text-[4.5rem] md-custom:leading-24 md-custom:pl-32'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.6rem] leading-[1.8rem] text-left pl-6 md-custom:text-[4.5rem] md-custom:leading-28 md-custom:pl-32'>
               OUTCOMES
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.6rem] leading-[1.45rem] text-left pl-[2em] md-custom:text-[4.5rem] md-custom:leading-18 md-custom:pl-32'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.6rem] leading-[1.45rem] text-left pl-[2em] md-custom:text-[4.5rem] md-custom:leading-14 md-custom:pl-32'>
               OVER OUTPUTS
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.1rem] leading-[1.3rem] text-left pl-[2em] md-custom:text-[3.4rem] md-custom:leading-21 md-custom:pl-[2em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.1rem] leading-[1.3rem] text-left pl-[2em] md-custom:text-[3.4rem] md-custom:leading-24 md-custom:pl-[2em]'>
               TECHNICAL FEASIBILITY
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1rem] leading-[1.2rem] text-left pl-[5em] md-custom:text-[3.5rem] md-custom:leading-14 md-custom:pl-[4em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1rem] leading-[1.2rem] text-left pl-[5em] md-custom:text-[3.5rem] md-custom:leading-11 md-custom:pl-[4em]'>
               MINIMAL VIABLE
             </li>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.3rem] leading-6 text-left pl-[4em] md-custom:text-[3.9rem] md-custom:leading-22 md-custom:pl-[3.6em]'>
               ARCHITECTURE
             </li>
             <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.35rem] leading-[1.6rem] md-custom:text-[6rem] md-custom:leading-28 md-custom:pr-[4em]'>
-              PRODUCT
+              USER
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.35rem] leading-[1.6rem] pl-[1em] md-custom:text-[6rem] md-custom:leading-28 md-custom:pl-[0.7em]'>
-              DISCOVERY
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[1.35rem] leading-[1.6rem] pl-[1em] md-custom:text-[6rem] md-custom:leading-28 md-custom:pl-[2em]'>
+              EXPERIENCE
             </li>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-third text-[1.1rem] leading-6 pl-4 md-custom:text-[4rem] md-custom:leading-19 md-custom:pr-[1.5em]'>
               SCALABLE
@@ -80,10 +80,10 @@ const Methodology = () => {
             <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-third text-[1.4rem] leading-[1.8rem] text-left pl-10 md-custom:text-[4rem] md-custom:leading-20 md-custom:pl-[4.2em]'>
               INTEGRITY
             </li>
-            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-bright text-[1.6rem] leading-[1.8rem] text-right pr-6 md-custom:text-[3rem] md-custom:leading-[3.6rem] md-custom:pr-[4.4em] lg-custom:text-[4.5rem] lg-custom:leading-24 lg-custom:pl-[3.7em]'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] text-bright text-[1.6rem] leading-[1.8rem] text-right pr-6 md-custom:text-[6.5rem] md-custom:leading-30 md-custom:pl-[2.4em]'>
               EMPOWERED
             </li>
-            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[2rem] leading-10 text-left pl-[1.5em] md-custom:text-[6.5rem] md-custom:leading-30 md-custom:pl-[3.1em]'>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] text-bright text-[2rem] leading-10 text-left pl-[1.5em] md-custom:text-[6.5rem] md-custom:leading-30 md-custom:pl-[2.9em]'>
               EXECUTION
             </li>
           </ul>
