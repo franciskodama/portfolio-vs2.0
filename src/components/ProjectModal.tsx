@@ -237,13 +237,13 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                       className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
                       style={{ color: project.titlesColor || '#1c1c1c' }}
                     >
-                      {project.backText_titleTwo}
+                      {project.backText_titleThree}
                     </h4>
                     <p
                       className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
                       style={{ color: project.textColor || '#1c1c1c' }}
                     >
-                      {project.backText_textTwo}
+                      {project.backText_textThree}
                     </p>
                   </div>
                   <div>
