@@ -39,11 +39,11 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-handy7.webp'),
-        legend: 'Random Questions: Conversation Starters',
+        legend: 'Random Questions: Conversation starters',
       },
       {
         image: require('../assets/images/projects/prj-handy8.webp'),
-        legend: 'Letter Leap: Letter to Conversation Practices',
+        legend: 'Letter Leap: Future-self messaging',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -102,15 +102,15 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-5.webp'),
-        legend: 'AI Transaction Parser: automatic expenses import',
+        legend: 'AI Transaction Parser: Auto-expense import',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-6.webp'),
-        legend: 'Code Import',
+        legend: 'Code-driven Import',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-7.webp'),
-        legend: 'Waste Cutter and Radar (Monthly Obligations)',
+        legend: 'Waste Cutter: Monthly obligation radar',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-8.webp'),
@@ -200,7 +200,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-trezo10.webp'),
-        legend: 'Alert Hub: Emails and/or Whatsapp',
+        legend: 'Alert Hub: Multi-channel notifications',
       },
       {
         image: require('../assets/images/projects/prj-trezo11.webp'),
@@ -246,7 +246,7 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-portfolio2.webp'),
-        legend: '',
+        legend: 'Interactive Agentic Experience',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -293,15 +293,15 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-mori-2.webp'),
-        legend: 'Vault for shared and private messages',
+        legend: 'Shared and private message vault',
       },
       {
         image: require('../assets/images/projects/prj-mori-3.webp'),
-        legend: 'Messages edition',
+        legend: 'Note editing and management',
       },
       {
         image: require('../assets/images/projects/prj-mori-4.webp'),
-        legend: 'Private Message: triggered after 3 weeks of no activity',
+        legend: 'Inactivity-triggered private messages',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -371,8 +371,7 @@ export const projects = [
   //   year: '2021',
   //   tech: 'HTML5 CSS3 JavaScript',
   //   category: 'Layout Systems R&D',
-  //   url: '/projects/seletos',
-  //   image: require('../assets/images/projects/project-seletos.jpg'),
+  //   image: require('../assets/images/projects/prj-seletos.webp'),
   //   backText_titleOneFirstRow: 'problem',
   //   backText_textOneFirstRow: '',
   //   backText_titleTwoFirstRow: 'solution',
@@ -425,40 +424,40 @@ export const projects = [
   //   backgroundColor: '#efbe1c',
   //   visitIcon: true,
   // },
-  {
-    id: 9,
-    highlight: false,
-    frontShow: true,
-    icon: 'Globe',
-    name: 'Mundial',
-    showName: true,
-    year: '2021',
-    tech: 'HTML5 CSS3',
-    category: 'Legacy Brand Migration',
-    url: 'https://www.mundialcomunicacao.com.br/',
-    logo: require('../assets/images/projects/logo-mundial.png'),
-    image: require('../assets/images/projects/prj-mundial1.webp'),
-    backText_titleOneFirstRow: 'problem',
-    backText_textOneFirstRow: '',
-    backText_titleTwoFirstRow: 'solution',
-    backText_textTwoFirstRow: '',
-    backText_titleOne: 'why',
-    backText_textOne:
-      'To execute a full-scale digital transformation for a communication agency, aligning their legacy brand with modern web standards.',
-    backText_titleTwo: 'how',
-    backText_textTwo:
-      'I acted as both Designer and Lead Developer, creating a unified system of custom icons, typography, and responsive layouts.',
-    backText_titleThree: 'what',
-    backText_textThree:
-      'A professional agency website built with a focus on clear information architecture and strategic stakeholder communication.',
-    backText_titleFour: 'result',
-    backText_textFour:
-      'A high-impact project that demonstrated the immediate business value of combining marketing leadership with technical execution.',
-    backgroundColor: '#3FABD8',
-    titlesColor: '#FFFFFF',
-    // textColor: '#FFF',
-    visitIcon: true,
-  },
+  // {
+  //   id: 9,
+  //   highlight: false,
+  //   frontShow: true,
+  //   icon: 'Globe',
+  //   name: 'Mundial',
+  //   showName: true,
+  //   year: '2021',
+  //   tech: 'HTML5 CSS3',
+  //   category: 'Legacy Brand Migration',
+  //   url: 'https://www.mundialcomunicacao.com.br/',
+  //   // logo: require('../assets/images/projects/logo-mundial.png'),
+  //   image: require('../assets/images/projects/prj-mundial1.webp'),
+  //   backText_titleOneFirstRow: 'problem',
+  //   backText_textOneFirstRow: '',
+  //   backText_titleTwoFirstRow: 'solution',
+  //   backText_textTwoFirstRow: '',
+  //   backText_titleOne: 'why',
+  //   backText_textOne:
+  //     'To execute a full-scale digital transformation for a communication agency, aligning their legacy brand with modern web standards.',
+  //   backText_titleTwo: 'how',
+  //   backText_textTwo:
+  //     'I acted as both Designer and Lead Developer, creating a unified system of custom icons, typography, and responsive layouts.',
+  //   backText_titleThree: 'what',
+  //   backText_textThree:
+  //     'A professional agency website built with a focus on clear information architecture and strategic stakeholder communication.',
+  //   backText_titleFour: 'result',
+  //   backText_textFour:
+  //     'A high-impact project that demonstrated the immediate business value of combining marketing leadership with technical execution.',
+  //   backgroundColor: '#3FABD8',
+  //   titlesColor: '#FFFFFF',
+  //   // textColor: '#FFF',
+  //   visitIcon: true,
+  // },
   // {
   //   id: 10,
   //   highlight: false,

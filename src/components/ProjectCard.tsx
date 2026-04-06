@@ -36,13 +36,13 @@ const ProjectCard = ({
                 strokeWidth={1.6}
               />
             )}
-            {project.highlight && (
+            {/* {project.highlight && (
               <LucideIcons.Star
                 className='w-[25px] h-[25px] md-custom:w-8 md-custom:h-8'
                 strokeWidth={1.6}
                 fill='yellow'
               />
-            )}
+            )} */}
           </div>
           <div className='flex flex-col justify-between mt-4 h-[77%] w-[15em]'>
             <div>

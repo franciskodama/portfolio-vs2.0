@@ -137,7 +137,7 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                 >
                   {project.year}
                 </span>
-                {project.visitIcon && (
+                {project.url && (
                   <a
                     href={project.url}
                     target='_blank'

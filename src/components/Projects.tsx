@@ -4,7 +4,6 @@ import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
-import { Star } from 'lucide-react';
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -211,19 +210,15 @@ const Projects = () => {
                 <h2 className='section-title text-4xl md:text-7xl w-[8ch] md:leading-19 font-main-semibold text-right'>
                   selected projects
                 </h2>
-                <div className='flex items-center gap-2 mt-2 md-custom:mt-4 md-custom:mr-8'>
-                  <Star
-                    className='w-[20px] h-[20px] mt-1'
-                    strokeWidth={1.6}
-                    fill='yellow'
-                  />
+                {/* <div className='flex items-end gap-4 mt-2 md-custom:mt-4 md-custom:mr-8'>
+                  <Star size={34} strokeWidth={1.6} fill='yellow' />
                   <p
-                    className='font-semibold text-dark text-[1.2rem] leading-9'
+                    className='font-semibold text-dark text-[2.2rem] leading-9'
                     style={{ fontFamily: 'var(--font-gloria)' }}
                   >
                     most recent
                   </p>
-                </div>
+                </div> */}
               </div>
             </Parallax>
           </div>
