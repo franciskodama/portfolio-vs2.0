@@ -240,7 +240,7 @@ export const projects = [
     category: 'Agentic Experience',
     url: 'https://www.fkodama.com',
     logo: require('../assets/images/projects/logo-portfolio.png'),
-    name: 'Portfolio V.02',
+    name: 'Portfolio',
     showName: false,
     tagline: '',
     images: [
