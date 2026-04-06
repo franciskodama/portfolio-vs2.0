@@ -14,41 +14,37 @@ export const projects = [
     tagline: 'Your productivity, centralized.',
     images: [
       {
-        image: require('../assets/images/projects/prj-handy1.jpg'),
-        legend: '',
+        image: require('../assets/images/projects/prj-handy1.webp'),
+        legend: 'Dashboard',
       },
       {
-        image: require('../assets/images/projects/prj-handy2.jpg'),
-        legend: '',
+        image: require('../assets/images/projects/prj-handy2.webp'),
+        legend: 'Yearly Promises by Quarter',
       },
       {
-        image: require('../assets/images/projects/prj-handy3.jpg'),
-        legend: '',
+        image: require('../assets/images/projects/prj-handy3.webp'),
+        legend: 'Vision Board',
       },
-      // {
-      //   image: require('../assets/images/projects/prj-handy4.jpg'),
-      //   legend: '',
-      // },
-      // {
-      //   image: require('../assets/images/projects/prj-handy5.jpg'),
-      //   legend: '',
-      // },
-      // {
-      //   image: require('../assets/images/projects/prj-handy6.jpg'),
-      //   legend: '',
-      // },
-      // {
-      //   image: require('../assets/images/projects/prj-handy7.jpg'),
-      //   legend: '',
-      // },
-      // {
-      //   image: require('../assets/images/projects/prj-handy8.jpg'),
-      //   legend: '',
-      // },
-      // {
-      //   image: require('../assets/images/projects/prj-handy9.jpg'),
-      //   legend: '',
-      // },
+      {
+        image: require('../assets/images/projects/prj-handy4.webp'),
+        legend: 'Shortcuts',
+      },
+      {
+        image: require('../assets/images/projects/prj-handy5.webp'),
+        legend: 'Bucket List',
+      },
+      {
+        image: require('../assets/images/projects/prj-handy6.webp'),
+        legend: 'Stoic Support',
+      },
+      {
+        image: require('../assets/images/projects/prj-handy7.webp'),
+        legend: 'Random Questions: Conversation Starters',
+      },
+      {
+        image: require('../assets/images/projects/prj-handy8.webp'),
+        legend: 'Letter Leap: Letter to Conversation Practices',
+      },
     ],
     backText_titleOneFirstRow: 'problem',
     backText_textOneFirstRow:
@@ -69,7 +65,8 @@ export const projects = [
     backText_textFour:
       'Handy For.Me stands as a high-utility technical asset that validates my ability to navigate the full product lifecycle—transforming abstract personal workflows into a clean, performant, and scalable technical solution.',
     backgroundColor: '#0EA5E9',
-    titlesColor: '#FFF',
+    // titlesColor: '#dc2626', // red
+    titlesColor: '#FDD835',
     textColor: '#FFF',
     visitIcon: true,
   },
@@ -292,19 +289,19 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-mori-1.webp'),
-        legend: '',
+        legend: 'Dashboard',
       },
       {
         image: require('../assets/images/projects/prj-mori-2.webp'),
-        legend: '',
+        legend: 'Vault for shared and private messages',
       },
       {
         image: require('../assets/images/projects/prj-mori-3.webp'),
-        legend: '',
+        legend: 'Messages edition',
       },
       {
         image: require('../assets/images/projects/prj-mori-4.webp'),
-        legend: '',
+        legend: 'Private Message: triggered after 3 weeks of no activity',
       },
     ],
     backText_titleOneFirstRow: 'problem',
@@ -364,39 +361,39 @@ export const projects = [
   //   textColor: '#1b1c1c',
   //   visitIcon: false,
   // },
-  {
-    id: 7,
-    highlight: false,
-    frontShow: true,
-    icon: 'GraduationCap',
-    name: 'Seletos',
-    showName: true,
-    year: '2021',
-    tech: 'HTML5 CSS3 JavaScript',
-    category: 'Layout Systems R&D',
-    url: '/projects/seletos',
-    image: require('../assets/images/projects/project-seletos.jpg'),
-    backText_titleOneFirstRow: 'problem',
-    backText_textOneFirstRow: '',
-    backText_titleTwoFirstRow: 'solution',
-    backText_textTwoFirstRow: '',
-    backText_titleOne: 'why',
-    backText_textOne:
-      'To master the fundamental "atoms" of web architecture—Flexbox, Grid, and Responsive Logic—without the abstraction of modern frameworks.',
-    backText_titleTwo: 'how',
-    backText_textTwo:
-      'I translated a professional marketing brief into a from-scratch build, focusing on semantic HTML and precise CSS execution.',
-    backText_titleThree: 'what',
-    backText_textThree:
-      'A lightweight, fully responsive landing page that served as the foundational benchmark for my future engineering standards.',
-    backText_titleFour: 'result',
-    backText_textFour:
-      'Confirmed my ability to bridge digital marketing strategy with low-level technical implementation from day one.',
-    backgroundColor: '#BA88F9',
-    titlesColor: '#4927F5',
-    textColor: '#FFF',
-    visitIcon: true,
-  },
+  // {
+  //   id: 7,
+  //   highlight: false,
+  //   frontShow: true,
+  //   icon: 'GraduationCap',
+  //   name: 'Seletos',
+  //   showName: true,
+  //   year: '2021',
+  //   tech: 'HTML5 CSS3 JavaScript',
+  //   category: 'Layout Systems R&D',
+  //   url: '/projects/seletos',
+  //   image: require('../assets/images/projects/project-seletos.jpg'),
+  //   backText_titleOneFirstRow: 'problem',
+  //   backText_textOneFirstRow: '',
+  //   backText_titleTwoFirstRow: 'solution',
+  //   backText_textTwoFirstRow: '',
+  //   backText_titleOne: 'why',
+  //   backText_textOne:
+  //     'To master the fundamental "atoms" of web architecture—Flexbox, Grid, and Responsive Logic—without the abstraction of modern frameworks.',
+  //   backText_titleTwo: 'how',
+  //   backText_textTwo:
+  //     'I translated a professional marketing brief into a from-scratch build, focusing on semantic HTML and precise CSS execution.',
+  //   backText_titleThree: 'what',
+  //   backText_textThree:
+  //     'A lightweight, fully responsive landing page that served as the foundational benchmark for my future engineering standards.',
+  //   backText_titleFour: 'result',
+  //   backText_textFour:
+  //     'Confirmed my ability to bridge digital marketing strategy with low-level technical implementation from day one.',
+  //   backgroundColor: '#BA88F9',
+  //   titlesColor: '#4927F5',
+  //   textColor: '#FFF',
+  //   visitIcon: true,
+  // },
   // {
   //   id: 8,
   //   highlight: false,
@@ -440,7 +437,7 @@ export const projects = [
     category: 'Legacy Brand Migration',
     url: 'https://www.mundialcomunicacao.com.br/',
     logo: require('../assets/images/projects/logo-mundial.png'),
-    image: require('../assets/images/projects/project-mundial.jpg'),
+    image: require('../assets/images/projects/prj-mundial1.webp'),
     backText_titleOneFirstRow: 'problem',
     backText_textOneFirstRow: '',
     backText_titleTwoFirstRow: 'solution',

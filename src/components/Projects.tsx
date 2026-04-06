@@ -231,7 +231,7 @@ const Projects = () => {
           {/* Container Height */}
           <div
             ref={containerRef}
-            className='relative w-full h-[94vh] md:h-[45vh]'
+            className='relative w-full h-[94vh] md:h-[35vh]'
           >
             {sortedProjects.map((project, index) => (
               <div
