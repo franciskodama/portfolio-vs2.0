@@ -517,11 +517,11 @@ export const aboutMeData = [
 export const contactData = [
   {
     id: '1',
-    content: 'Hi Francis!',
+    content: 'Hi Francis,',
   },
   {
     id: '2',
-    content: 'We need a Product-led Engineer.',
+    content: 'We need a Technical Product Lead.',
   },
   {
     id: '3',
@@ -549,7 +549,7 @@ export const contactData = [
   },
   {
     id: '9',
-    content: 'We need you to lead our team.',
+    content: 'We need you to lead our Product team.',
   },
   {
     id: '10',
