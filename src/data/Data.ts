@@ -228,18 +228,18 @@ export const projects = [
     images: [
       {
         image: require('../assets/images/projects/prj-portfolio2.webp'),
-        legend: 'Interactive Agentic Experience',
+        // legend: 'Interactive Agentic Experience',
       },
     ],
     backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'Professional portfolios are often static documents that fail to demonstrate real-time technical capabilities. I identified a need for an immersive experience that transforms the recruitment journey into an interactive product consultation.',
+      'Professional portfolios are often static documents that fail to demonstrate real-time technical capabilities. I identified a need for an immersive experience that transforms the recruitment journey into a high-engagement, fun, and interactive product consultation.',
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I architected this V2 ecosystem as a high-performance "Agentic Command Center" using Next.js and physics-based UI logic. By integrating a custom AI consultant, I successfully productized my career journey as a premium experience.',
+      "I architected this 'Product Hub' as a high-performance ecosystem synthesizing creativity, AI, e-commerce logic, and physics-based UI behavior. This immersive experience successfully productizes my skillset, proving my ability to bridge product vision with complex technical execution.",
     backText_titleTwo: 'technical governance',
     backText_textTwo:
-      'I governed the integration of advanced interactive logic and AI-driven consultative agents. By implementing physics-simulated UI components and real-time state management, I ensured a technical manifesto that functions as a live product.',
+      'I bridged advanced UX logic with AI-driven consultation, physics-simulated UI components, custom drag-and-drop mechanics, and global state management via the React Context API. This technical architecture ensures the portfolio functions as a live, production-grade product experience.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
       'Portfolio V.02 stands as a definitive "Proof of Talent" asset. It successfully validates my ability to blend high-end creative artistry with cutting-edge AI integration and robust technical architecture in a public-facing product.',
@@ -287,10 +287,11 @@ export const projects = [
       'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. This solution ensures the secure, reliable transfer of critical legacy data to designated loved ones only when definitive inactivity thresholds are breached, effectively removing the human-error risk from sensitive inheritance workflows.',
     backText_titleTwo: 'technical governance',
     backText_textTwo:
-      'I governed the architecture of an event-driven "Dead Man\'s Switch" protocol. By implementing strict state-driven access controls and secure household linking, I solved the high-stakes challenge of managing emergency digital access.',
+      'I architected a production-grade security layer, implementing Field-Level Encryption (AES-256-CBC) to safeguard all sensitive vault data at rest. By governing strict, state-driven access controls and secure environment variable isolation, I ensured that high-risk authentication tokens and legacy secrets remain unreadable to unauthorized parties, including database administrators.',
+
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Monkey Mori successfully validated my ability to architect robust, emotionally sensitive data-protection platforms. It demonstrates tactical engineering prowess in building secure, event-driven authorization flows for high-risk data.',
+      'Monkey Mori serves as a definitive proof-of-concept for architecting Privacy-First, mission-critical platforms. It validates my ability to marry complex technical safeguards — such as automated fail-over protocols and cryptographic data protection — with a sensitive user experience for high-stakes digital asset management. Technically as secure as a bank, but as gentle and supportive as a trusted family member.',
     backgroundColor: '#0f172a',
     titlesColor: '#4F46E5',
     textColor: '#FFF',
