@@ -11,7 +11,7 @@ const Philosophy = () => {
       className='section relative flex flex-col transition-all duration-300 bg-dark bg-linear-to-b from-dark to-[#292929]'
     >
       <Parallax opacity={[0, 2]}>
-        <h1 className='section-title text-center'>PRODUCT-LED ENGINEERING</h1>
+        <h1 className='section-title text-center'>PRODUCT PHILOSOPHY</h1>
         <p className='mt-[0.4em] text-center text-third font-main-regular'>
           Code is only as good as the value it creates.
         </p>
@@ -37,7 +37,7 @@ const Philosophy = () => {
           href='https://github.com/franciskodama?tab=repositories'
           target='_blank'
           rel='noopener noreferrer'
-          className='hidden md-custom:block text-center font-main-regular text-[0.7rem] mt-24 leading-4 cursor-pointer z-10'
+          className='hidden md-custom:block text-center font-main-regular text-[0.7rem] mt-18 leading-4 cursor-pointer z-10'
         >
           <div className='flex items-center gap-2'>
             <Image src={ZoomIn} alt='icon zoom in' />

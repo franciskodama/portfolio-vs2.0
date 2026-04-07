@@ -43,7 +43,7 @@ const Footer = () => {
             { to: 'whyme', text: 'why me' },
             { to: 'ai', text: 'ai.labs' },
             { to: 'projects', text: 'projects' },
-            { to: 'code', text: 'methodology' },
+            { to: 'philosophy', text: 'philosophy' },
             { to: 'contact', text: 'contact', offset: -150 },
           ].map((item) => (
             <Link

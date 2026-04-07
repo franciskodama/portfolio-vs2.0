@@ -73,7 +73,7 @@ const Navbar = () => {
             { to: 'whyme', label: 'why.me', offset: -100 },
             { to: 'ai', label: 'ai.labs', offset: -100 },
             { to: 'projects', label: 'projects', offset: -100 },
-            { to: 'methodology', label: 'methodology', offset: 0 },
+            { to: 'philosophy', label: 'philosophy', offset: 0 },
             { to: 'contact', label: 'contact', offset: 0 },
           ].map((link) => (
             <Link
@@ -93,14 +93,14 @@ const Navbar = () => {
 
         {/* -------- NAVBAR HORIZONTAL -------- */}
 
-        <nav className='hidden lg-custom:grid grid-cols-[8rem_6.6rem_5.5rem_5rem_5.8rem_8.6rem_4.3rem] items-center justify-end'>
+        <nav className='hidden lg-custom:grid grid-cols-[8rem_6.6rem_5.5rem_5rem_5.8rem_6.8rem_4.3rem] items-center justify-end'>
           {[
             { to: 'reason', label: 'this.portfolio', offset: -50 },
             { to: 'about', label: 'about.me', offset: 0 },
             { to: 'whyme', label: 'why.me', offset: -100 },
             { to: 'ai', label: 'ai.labs', offset: -100 },
             { to: 'projects', label: 'projects', offset: 0 },
-            { to: 'methodology', label: 'methodology', offset: 0 },
+            { to: 'philosophy', label: 'philosophy', offset: 0 },
             { to: 'contact', label: 'contact', offset: 0 },
           ].map((link) => (
             <Link

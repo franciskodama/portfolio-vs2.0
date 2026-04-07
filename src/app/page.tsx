@@ -12,7 +12,7 @@ import WhyMe from '../components/WhyMe';
 import SynergySeer from '@/components/SynergySeer';
 import ProjectsAbove from '../components/ProjectsAbove';
 import Projects from '../components/Projects';
-import Methodology from '../components/Methodology';
+import Philosophy from '../components/Philosophy';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { AboutContext } from '../contexts/AboutContext';
@@ -87,7 +87,7 @@ export default function Home() {
           <SynergySeer color={color} />
           <ProjectsAbove />
           <Projects />
-          <Methodology />
+          <Philosophy />
           <Contact />
         </AboutContext.Provider>
         <Footer />
