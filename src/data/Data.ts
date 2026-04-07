@@ -57,7 +57,7 @@ export const projects = [
       'I governed the architecture of a modular Next.js ecosystem, prioritizing a decoupled feature design where distinct tools operate on independent schemas. My oversight focused on ensuring consistent authentication and shared UI state across these micro-services.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Handy For.Me validates my ability to navigate the full product lifecycle—transforming abstract personal workflows into a clean, performant, and scalable technical solution that solves the context-switching friction.',
+      'Handy For.Me validates my ability to navigate the full product lifecycle, transforming abstract personal workflows into a clean, performant, and scalable technical solution that solves the context-switching friction.',
     backgroundColor: '#0EA5E9',
     titlesColor: '#FDD835',
     textColor: '#FFF',
