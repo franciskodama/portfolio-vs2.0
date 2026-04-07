@@ -54,7 +54,7 @@ export const projects = [
       'I designed a "Centralized Control Hub" utilizing a unified UI shell to host high-utility micro-tools. This modular approach allows users to pivot between planning and tactical execution without cognitive friction.',
     backText_titleTwo: 'technical governance',
     backText_textTwo:
-      'I governed the architecture of a modular Next.js ecosystem, prioritizing a decoupled feature design where distinct tools operate on independent schemas. My oversight focused on ensuring consistent authentication and shared UI state across these micro-services.',
+      'I governed the architectural orchestration of a modular Next.js ecosystem, enforcing a decoupled "Micro-Tool" design for long-term scalability. By implementing type-safe data integrity with Zod and a unified Auth layer, I reconciled disparate schemas into a high-performance "Productivity Shell" that ensures seamless, zero-friction state synchronization.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
       'Handy For.Me validates my ability to navigate the full product lifecycle, transforming abstract personal workflows into a clean, performant, and scalable technical solution that solves the context-switching friction.',
@@ -284,7 +284,7 @@ export const projects = [
       'Managing critical digital legacy information is a high-stakes security challenge. I identified a gap for a secure fail-safe that guarantees the transfer of access instructions strictly during contingency scenarios without compromising privacy.',
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. This solution ensures reliable, automated legacy transfer only when definitive inactivity thresholds are breached.',
+      'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. This solution ensures the secure, reliable transfer of critical legacy data to designated loved ones only when definitive inactivity thresholds are breached, effectively removing the human-error risk from sensitive inheritance workflows.',
     backText_titleTwo: 'technical governance',
     backText_textTwo:
       'I governed the architecture of an event-driven "Dead Man\'s Switch" protocol. By implementing strict state-driven access controls and secure household linking, I solved the high-stakes challenge of managing emergency digital access.',
