@@ -46,26 +46,19 @@ export const projects = [
         legend: 'Letter Leap: Future-self messaging',
       },
     ],
-    backText_titleOneFirstRow: 'problem',
+    backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'Generic productivity tools often suffer from feature-creep and siloed data, creating massive user friction. I identified a need for a centralized "Personal Command Center" to bridge long-term strategic vision with high-velocity daily task execution without context-switching between fragmented apps.',
-    backText_titleTwoFirstRow: 'solution',
+      'In a fragmented productivity landscape, I identified a core market gap: the disconnect between high-level ambition and daily execution. Users struggle to maintain strategic focus when context-switching between decoupled micro-tools.',
+    backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I engineered a modular productivity ecosystem focused on focus and alignment. By implementing a "Vision-to-Execution" roadmap and a minimalist daily dashboard, I created a high-utility product that translates complex personal workflows into a clean, performant technical solution.',
-    backText_titleOne: 'product strategy',
-    backText_textOne:
-      'In a fragmented Productivity landscape, I identified a core market gap: the disconnect between high-level ambition and daily execution. My strategy was to architect a "Productivity Hub" that treats vision boards and deep-work tasks as a unified, relational ecosystem.',
+      'I designed a "Centralized Control Hub" utilizing a unified UI shell to host high-utility micro-tools. This modular approach allows users to pivot between planning and tactical execution without cognitive friction.',
     backText_titleTwo: 'technical oversight',
     backText_textTwo:
-      'I governed the transition from fragmented micro-tools to a modular Next.js architecture. By implementing a "Vision-to-Execution" data model, I ensured that low-level tasks are always aligned with high-level quarterly roadmaps without compromising performance.',
-    backText_titleThree: 'core capability',
-    backText_textThree:
-      'A high-performance ecosystem featuring quarterly roadmap alignment, a minimalist daily execution dashboard, and integrated deep-work focus environments designed to minimize the "Cognitive Load" of complex workflow management.',
+      'I governed the architecture of a modular Next.js ecosystem, prioritizing a decoupled feature design where distinct tools operate on independent schemas. My oversight focused on ensuring consistent authentication and shared UI state across these micro-services.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Handy For.Me stands as a high-utility technical asset that validates my ability to navigate the full product lifecycle—transforming abstract personal workflows into a clean, performant, and scalable technical solution.',
+      'Handy For.Me validates my ability to navigate the full product lifecycle—transforming abstract personal workflows into a clean, performant, and scalable technical solution that solves the context-switching friction.',
     backgroundColor: '#0EA5E9',
-    // titlesColor: '#dc2626', // red
     titlesColor: '#FDD835',
     textColor: '#FFF',
     visitIcon: true,
@@ -93,14 +86,6 @@ export const projects = [
         legend: 'Household Management',
       },
       {
-        image: require('../assets/images/projects/prj-monkey-buss-3.webp'),
-        legend: 'Monthly Planner',
-      },
-      {
-        image: require('../assets/images/projects/prj-monkey-buss-4.webp'),
-        legend: 'Yearly Overview',
-      },
-      {
         image: require('../assets/images/projects/prj-monkey-buss-5.webp'),
         legend: 'AI Transaction Parser: Auto-expense import',
       },
@@ -108,6 +93,15 @@ export const projects = [
         image: require('../assets/images/projects/prj-monkey-buss-6.webp'),
         legend: 'Code-driven Import',
       },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-3.webp'),
+        legend: 'Monthly Planner',
+      },
+      {
+        image: require('../assets/images/projects/prj-monkey-buss-4.webp'),
+        legend: 'Yearly Overview',
+      },
+
       {
         image: require('../assets/images/projects/prj-monkey-buss-7.webp'),
         legend: 'Waste Cutter: Monthly obligation radar',
@@ -125,24 +119,18 @@ export const projects = [
         legend: 'Settings: Backup and Restore',
       },
     ],
-    backText_titleOneFirstRow: 'problem',
+    backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'Household financial management is often crippled by the high friction of manual entry and lack of multi-user alignment. I identified a pervasive product challenge: families struggle to maintain consistent, macro-level visibility into their wealth management while dealing with messy, unstructured transaction data.',
-    backText_titleTwoFirstRow: 'solution',
+      'Household budgeting is often crippled by high manual entry friction and a lack of real-time multi-user alignment. Families struggle to maintain consistent visibility into shared monthly expenses and contributions while navigating messy bank data.',
+    backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I architected an automated FinTech platform featuring AI-driven transaction parsing and a collaborative "Household" mode. By implementing a custom Rule Engine to automate categorizations, I bridged the gap between complex raw data and a "Zero-Friction" user experience for synchronized household budgeting.',
-    backText_titleOne: 'product strategy',
-    backText_textOne:
-      'I identified "Household Friction" as a preventable cost of manual financial tracking. My strategy was to automate the data-entry bottleneck, fostering collaborative budgeting and data-driven wealth management through a "Zero-Entry" product philosophy.',
+      'My strategy was to eliminate the "Manual Bottleneck" that kills tracking habits. I focused on a "Zero-Entry" product philosophy, using automation to foster collaborative transparency and ensure all members are aligned on shared household goals.',
     backText_titleTwo: 'technical oversight',
     backText_textTwo:
-      'I oversaw the implementation of AI-driven transaction parsing and a custom-built Rule Engine. By leveraging AI to clean and categorize unstructured bank data, I successfully bridged the gap between complex raw data ingestion and a seamless multi-user experience.',
-    backText_titleThree: 'core capability',
-    backText_textThree:
-      'A collaborative FinTech platform that features AI-driven automated categorizations, a "Household Sync" mode for transparent financial alignment, and macro-planning visualizations to predict long-term wealth trajectories.',
+      'I oversaw the implementation of an AI-driven transaction parsing engine and a custom Rule Engine that automates 90% of categorizations. I successfully bridged the gap between complex raw data ingestion and a seamless multi-user experience.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Monkey Business proves I can architect secure, AI-augmented FinTech solutions to solve pervasive consumer problems. It stands as a definitive asset demonstrating the delivery of high-utility, collaborative, and automated data environments.',
+      'Monkey Business proved that eliminating manual friction increases user retention in budgeting products. It stands as a definitive asset demonstrating the delivery of high-utility, collaborative, and automated FinTech data environments.',
     backgroundColor: '#CFDF17',
     titlesColor: '#FFFFFF',
     textColor: '#031D44',
@@ -207,24 +195,18 @@ export const projects = [
         legend: 'Retirement Projection',
       },
     ],
-    backText_titleOneFirstRow: 'problem',
+    backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'As a Brazilian living in Canada with investments in three countries, I navigated a critical data fragmentation problem. I lacked a unified "Single Source of Truth" capable of consolidating diverse asset classes (stocks, crypto, cash) into a real-time, multi-currency net worth projection, hindering strategic decision-making.',
-    backText_titleTwoFirstRow: 'solution',
+      'As a multi-national investor navigating Brazilian, Canadian, and US markets, I faced a critical data fragmentation problem. I lacked a unified "Single Source of Truth" capable of consolidating diverse asset classes into a real-time net worth projection.',
+    backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I defined and architected a customized global investment hub to synchronize this multi-jurisdictional complexity. The platform transforms messy, cross-border data into a streamlined dashboard that integrates strategic tools—like Elliott Wave analysis and economic calendars—to optimize asset allocation for HNW portfolios.',
-    backText_titleOne: 'product strategy',
-    backText_textOne:
-      'My strategy centered on bridging the "Jurisdictional Gap" for international HNW investors. I identified that existing tools failed due to currency-locked silos, necessitating a cross-border engine that treats BRL/CAD/USD as a single, liquid dataset rather than independent metrics.',
+      'I architected a global investment hub to synchronize multi-jurisdictional complexity. The platform transforms messy, cross-border data into a streamlined dashboard that integrates strategic tools like Elliott Wave analysis and economic calendars.',
     backText_titleTwo: 'technical oversight',
     backText_textTwo:
-      'I governed the implementation of a high-stakes multi-currency engine, prioritizing data fidelity and technical analysis logic. This required managing complex state synchronization across distributed financial streams to guarantee the accuracy required for global portfolio governance.',
-    backText_titleThree: 'core capability',
-    backText_textThree:
-      'The final hub offers a real-time net worth dashboard with integrated economic intelligence, providing a 360-degree view of global wealth. It features dynamic asset allocation visualizations that align low-level data with high-level investor strategy.',
+      'I governed the implementation of a high-stakes multi-currency engine, prioritizing data fidelity and technical analysis logic. This required managing complex state synchronization across distributed financial streams for global portfolio governance.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Trezo successfully validated my ability to architect complex FinTech products that navigate secure, cross-border data streams. It stands as a definitive proof-of-concept for how technical leadership can transform fragmented data into a reliable, high-utility financial asset.',
+      'Trezo successfully validated my ability to architect complex FinTech products that navigate secure, cross-border data. It stands as a definitive proof-of-concept for how technical leadership can transform fragmented data into a high-utility asset.',
     backgroundColor: '#ffffff',
     titlesColor: '#2dbc5d',
     textColor: '#1e293b',
@@ -249,25 +231,18 @@ export const projects = [
         legend: 'Interactive Agentic Experience',
       },
     ],
-    backText_titleOneFirstRow: 'problem',
+    backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'Professional portfolios are often static documents that fail to demonstrate real-time technical capabilities or bridge the gap between high-level strategy and hands-on execution. I identified a need for an immersive, agentic experience that transforms the recruitment journey into a fun interactive product consultation.',
-    backText_titleTwoFirstRow: 'solution',
+      'Professional portfolios are often static documents that fail to demonstrate real-time technical capabilities. I identified a need for an immersive experience that transforms the recruitment journey into an interactive product consultation.',
+    backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I architected this V2 ecosystem as a high-performance "Agentic Command Center" using Next.js and physics-based UI logic. By integrating a custom AI consultant and immersive interactive components, I successfully productized my career journey, demonstrating how technical leadership can be communicated through a premium experience.',
-    backText_titleOne: 'product strategy',
-    backText_textOne:
-      'I identified a core recruitment gap: the failure of static resumes to demonstrate technical leadership. My strategy was to productize my career journey into an interactive ecosystem that validates my ability to bridge high-end creative strategy with robust engineering.',
+      'I architected this V2 ecosystem as a high-performance "Agentic Command Center" using Next.js and physics-based UI logic. By integrating a custom AI consultant, I successfully productized my career journey as a premium experience.',
     backText_titleTwo: 'technical oversight',
     backText_textTwo:
-      'I governed the integration of advanced interactive logic and AI-driven consultative agents. By implementing physics-simulated UI components and real-time state management, I ensured a "Premium" product experience that functions as a live technical manifesto.',
-    backText_titleThree: 'core capability',
-    backText_textThree:
-      'A high-performance "Agentic Command Center" featuring physics-simulated UI components, real-time AI consultation via the Synergy Seer, and an immersive user journey designed for strategic product alignment.',
+      'I governed the integration of advanced interactive logic and AI-driven consultative agents. By implementing physics-simulated UI components and real-time state management, I ensured a technical manifesto that functions as a live product.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
       'Portfolio V.02 stands as a definitive "Proof of Talent" asset. It successfully validates my ability to blend high-end creative artistry with cutting-edge AI integration and robust technical architecture in a public-facing product.',
-    // backgroundColor: '#0f172a', // slate 900
     backgroundColor: '#1b1c1c',
     titlesColor: '#dc2626',
     textColor: '#FFF',
@@ -304,24 +279,18 @@ export const projects = [
         legend: 'Inactivity-triggered private messages',
       },
     ],
-    backText_titleOneFirstRow: 'problem',
+    backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'Managing critical digital legacy information is a high-stakes security challenge with significant user friction. I identified a gap for a secure fail-safe that guarantees the transfer of access instructions to trusted partners strictly during contingency scenarios, without compromising lifelong privacy.',
-    backText_titleTwoFirstRow: 'solution',
+      'Managing critical digital legacy information is a high-stakes security challenge. I identified a gap for a secure fail-safe that guarantees the transfer of access instructions strictly during contingency scenarios without compromising privacy.',
+    backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. By architecting strict state-driven access controls and secure household linking, I solved the complex product challenge of balancing absolute user privacy with reliable, automated legacy transfer.',
-    backText_titleOne: 'product strategy',
-    backText_textOne:
-      'I identified a critical "Security/Accessibility" paradox in digital legacy management. My strategy was to build a fail-safe contingency vault that guarantees access transfer strictly during worst-case scenarios, while maintaining absolute user privacy beforehand.',
+      'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. This solution ensures reliable, automated legacy transfer only when definitive inactivity thresholds are breached.',
     backText_titleTwo: 'technical oversight',
     backText_textTwo:
-      'I governed the architecture of an event-driven "Dead Man\'s Switch" protocol. By implementing strict state-driven access controls and secure household linking, I solved the high-stakes product challenge of managing emergency digital access without a single point of failure.',
-    backText_titleThree: 'core capability',
-    backText_textThree:
-      'A secure digital vault featuring mutual partner verification, private instructional notebooks, and an automated release mechanism that bridges the gap between secure storage and emergency contingency planning.',
+      'I governed the architecture of an event-driven "Dead Man\'s Switch" protocol. By implementing strict state-driven access controls and secure household linking, I solved the high-stakes challenge of managing emergency digital access.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Monkey Mori successfully validated my ability to architect robust, emotionally sensitive data-protection platforms. It demonstrates tactical engineering prowess in building secure, event-driven authorization flows for high-risk data environments.',
+      'Monkey Mori successfully validated my ability to architect robust, emotionally sensitive data-protection platforms. It demonstrates tactical engineering prowess in building secure, event-driven authorization flows for high-risk data.',
     backgroundColor: '#0f172a',
     titlesColor: '#4F46E5',
     textColor: '#FFF',
@@ -497,14 +466,14 @@ export const aboutMeData = [
     title: 'Collaborative Leadership',
     description:
       'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
-    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
+    imgUrl: require('../assets/images/avatar-friendly.jpg'),
   },
   {
     key: 1,
     title: 'Collaborative Leadership',
     description:
       'I believe the best products are built on radical transparency. I foster high-trust environments where engineering excellence and product vision move in perfect sync.',
-    imgUrl: require('../assets/images/avatar-friendly.jpg'), // Suggesting: "Culture" focus
+    imgUrl: require('../assets/images/avatar-friendly.jpg'),
   },
   {
     key: 2,
@@ -526,21 +495,21 @@ export const aboutMeData = [
     title: 'Adaptive Engineering',
     description:
       'I thrive on technical evolution. From architecting modern React ecosystems to integrating complex financial data-streams, I maintain a cutting-edge stack to deliver the most efficient, scalable solutions regardless of the platform.',
-    imgUrl: require('../assets/images/avatar-learner2.jpg'), // Suggesting: "Innovation" focus
+    imgUrl: require('../assets/images/avatar-learner2.jpg'),
   },
   {
     key: 5,
     title: 'Risk-Averse Logic',
     description:
       'Driven by a quantitative mindset, I prioritize structural integrity and security, ensuring that rapid delivery never comes at the cost of system reliability.',
-    imgUrl: require('../assets/images/avatar-helmet.png'), // Suggesting: "Stability" focus
+    imgUrl: require('../assets/images/avatar-helmet.png'),
   },
   {
     key: 6,
     title: 'Stakeholder Synthesis',
     description:
       'Drawing on my experience leading teams of 100+, I translate complex technical constraints into clear strategic insights for CEOs, investors, and cross-functional teams.',
-    imgUrl: require('../assets/images/avatar-communication.jpg'), // Suggesting: "Leadership" focus
+    imgUrl: require('../assets/images/avatar-communication.jpg'),
   },
 ];
 

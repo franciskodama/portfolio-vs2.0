@@ -214,25 +214,8 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                   ))}
                 </div>
 
-                {/* Info Block 2: Product Strategy + Technical Oversight */}
-                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 my-16 items-start px-4'>
-                  <div>
-                    <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
-                      style={{ color: project.titlesColor || '#1c1c1c' }}
-                    >
-                      <div className='flex gap-4 items-center'>
-                        <ChessKnight />
-                        {project.backText_titleOne}
-                      </div>
-                    </h4>
-                    <p
-                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
-                      style={{ color: project.textColor || '#1c1c1c' }}
-                    >
-                      {project.backText_textOne}
-                    </p>
-                  </div>
+                {/* Info Block 2: Technical Oversight + Strategic Outcome */}
+                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 my-32 items-start px-4'>
                   <div>
                     <h4
                       className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
@@ -248,45 +231,6 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                       style={{ color: project.textColor || '#1c1c1c' }}
                     >
                       {project.backText_textTwo}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Middle Image Row (2 images) */}
-                <div
-                  className={`grid gap-4 w-full max-w-7xl ${
-                    project.images.length === 1
-                      ? 'grid-cols-1'
-                      : 'grid-cols-1 md-custom:grid-cols-2'
-                  }`}
-                >
-                  {project.images.slice(2, 4).map((imgData: any, i: number) => (
-                    <ProjectImageBlock
-                      key={i}
-                      imgData={imgData}
-                      altText={`Feature Image ${i + 3}`}
-                      className='w-full mb-12'
-                    />
-                  ))}
-                </div>
-
-                {/* Info Block 3 (Core Capability & Strategic Outcome) */}
-                <div className='w-[85vw] md-custom:w-[70vw] max-w-5xl grid grid-cols-1 md-custom:grid-cols-2 gap-12 md-custom:gap-24 my-16 items-start px-4'>
-                  <div>
-                    <h4
-                      className='font-main-heavy text-[0.7rem] md-custom:text-sm tracking-[0.2em] uppercase mb-6'
-                      style={{ color: project.titlesColor || '#1c1c1c' }}
-                    >
-                      <div className='flex gap-4 items-center'>
-                        <Cpu />
-                        {project.backText_titleThree}
-                      </div>
-                    </h4>
-                    <p
-                      className='font-main-light text-lg md-custom:text-[1.1rem] leading-relaxed'
-                      style={{ color: project.textColor || '#1c1c1c' }}
-                    >
-                      {project.backText_textThree}
                     </p>
                   </div>
                   <div>
@@ -316,11 +260,11 @@ const ProjectModal = ({ project, open, onOpenChange }: ProjectModalProps) => {
                       : 'grid-cols-1 md-custom:grid-cols-2'
                   }`}
                 >
-                  {project.images.slice(4).map((imgData: any, i: number) => (
+                  {project.images.slice(2).map((imgData: any, i: number) => (
                     <ProjectImageBlock
                       key={i}
                       imgData={imgData}
-                      altText={`Gallery Image ${i + 5}`}
+                      altText={`Gallery Image ${i + 3}`}
                       className='w-full mb-12'
                     />
                   ))}
