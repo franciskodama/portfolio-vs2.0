@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+
 import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
@@ -206,10 +207,27 @@ const Projects = () => {
         <div className='container mx-auto lg-custom:w-full'>
           <div className='-mt-24'>
             <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
-              <div className='flex flex-col -rotate-[4.29deg] items-end mr-[20%]'>
-                <h2 className='section-title text-4xl md:text-7xl w-[8ch] md:leading-19 font-main-semibold text-right'>
+              <div className='flex justify-between -rotate-[4.29deg] mt-[13%] mx-24'>
+                <h2 className='text-6xl w-[8ch] md:leading-16 font-main-semibold text-right'>
                   selected projects
                 </h2>
+
+                <div className='flex flex-col gap-6 w-[33ch] mr-18'>
+                  <p className='font-main-bold text-dark text-3xl leading-9'>
+                    VISION. ARCHITECTURE. EXECUTION.
+                    <span className='font-main-heavy text-third'>
+                      <br />
+                      ALL BY ONE HAND.
+                    </span>
+                  </p>
+                  <p className='font-main-light text-dark text-xl leading-8'>
+                    These are not just case studies. They are functional assets
+                    I ideated, designed, and fully coded. I believe the
+                    strongest Technical Product Leads are those who have built
+                    the trenches they now lead.
+                  </p>
+                </div>
+
                 {/* <div className='flex items-end gap-4 mt-2 md-custom:mt-4 md-custom:mr-8'>
                   <Star size={34} strokeWidth={1.6} fill='yellow' />
                   <p
@@ -226,7 +244,7 @@ const Projects = () => {
           {/* Container Height */}
           <div
             ref={containerRef}
-            className='relative w-full h-[94vh] md:h-[35vh]'
+            className='relative w-full h-[94vh] md:h-[32vh]'
           >
             {sortedProjects.map((project, index) => (
               <div
