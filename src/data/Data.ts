@@ -27,15 +27,15 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-handy4.webp'),
-        legend: 'Shortcuts',
+        legend: 'Shortcuts: most used urls',
       },
       {
         image: require('../assets/images/projects/prj-handy5.webp'),
-        legend: 'Bucket List',
+        legend: 'Bucket List Manager',
       },
       {
         image: require('../assets/images/projects/prj-handy6.webp'),
-        legend: 'Stoic Support',
+        legend: 'Stoic philosophy by challenging life events',
       },
       {
         image: require('../assets/images/projects/prj-handy7.webp'),
@@ -43,7 +43,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-handy8.webp'),
-        legend: 'Letter Leap: Future-self messaging',
+        legend: 'Letter Leap: Vocabulary Builder',
       },
     ],
     backText_titleOneFirstRow: 'the problem',
@@ -91,7 +91,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-6.webp'),
-        legend: 'Code-driven Import',
+        legend: 'Code-driven Import (JSON)',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-3.webp'),
@@ -104,7 +104,7 @@ export const projects = [
 
       {
         image: require('../assets/images/projects/prj-monkey-buss-7.webp'),
-        legend: 'Waste Cutter: Monthly obligation radar',
+        legend: 'Waste Cutter + Monthly obligation radar',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-8.webp'),
@@ -112,11 +112,11 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-9.webp'),
-        legend: 'Settings: Rules Engine for automatic categorization',
+        legend: 'Rules Engine for automatic categorization',
       },
       {
         image: require('../assets/images/projects/prj-monkey-buss-10.webp'),
-        legend: 'Settings: Backup and Restore',
+        legend: 'Backup and Restore',
       },
     ],
     backText_titleOneFirstRow: 'the problem',
@@ -168,7 +168,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-trezo5.webp'),
-        legend: 'Crypto Heatmap',
+        legend: 'Monthly Returns Heatmap',
       },
       {
         image: require('../assets/images/projects/prj-trezo6.webp'),
@@ -180,7 +180,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-trezo8.webp'),
-        legend: 'Elliott Perspective Zone',
+        legend: 'AI-driven Elliott Wave Perspective',
       },
       {
         image: require('../assets/images/projects/prj-trezo9.webp'),
