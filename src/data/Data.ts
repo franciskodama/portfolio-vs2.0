@@ -242,7 +242,7 @@ export const projects = [
       'I bridged advanced UX logic with AI-driven consultation, physics-simulated UI components, custom drag-and-drop mechanics, and global state management via the React Context API. This technical architecture ensures the portfolio functions as a live, production-grade product experience.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Portfolio V.02 stands as a definitive "Proof of Talent" asset. It successfully validates my ability to blend high-end creative artistry with cutting-edge AI integration and robust technical architecture in a public-facing product.',
+      'This platform stands as a definitive "Proof of Talent" asset, transforming the recruitment journey into an immersive product experience. It successfully validates my ability to bridge high-end product vision with cutting-edge AI and robust engineering in a live, public-facing technical manifesto.',
     backgroundColor: '#1b1c1c',
     titlesColor: '#dc2626',
     textColor: '#FFF',
