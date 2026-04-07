@@ -52,7 +52,7 @@ export const projects = [
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
       'I designed a "Centralized Control Hub" utilizing a unified UI shell to host high-utility micro-tools. This modular approach allows users to pivot between planning and tactical execution without cognitive friction.',
-    backText_titleTwo: 'technical oversight',
+    backText_titleTwo: 'technical governance',
     backText_textTwo:
       'I governed the architecture of a modular Next.js ecosystem, prioritizing a decoupled feature design where distinct tools operate on independent schemas. My oversight focused on ensuring consistent authentication and shared UI state across these micro-services.',
     backText_titleFour: 'strategic outcome',
@@ -125,12 +125,12 @@ export const projects = [
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
       'My strategy was to eliminate the "Manual Bottleneck" that kills tracking habits. I focused on a "Zero-Entry" product philosophy, using automation to foster collaborative transparency and ensure all members are aligned on shared household goals.',
-    backText_titleTwo: 'technical oversight',
+    backText_titleTwo: 'technical governance',
     backText_textTwo:
       'I oversaw the implementation of an AI-driven transaction parsing engine and a custom Rule Engine that automates 90% of categorizations. I successfully bridged the gap between complex raw data ingestion and a seamless multi-user experience.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Monkey Business proved that eliminating manual friction increases user retention in budgeting products. It stands as a definitive asset demonstrating the delivery of high-utility, collaborative, and automated FinTech data environments.',
+      'Monkey Business proved that eliminating manual friction increases user consistency in tracking household income and expenses. It stands as a definitive asset demonstrating the delivery of high-utility, collaborative, and automated data environments.',
     backgroundColor: '#CFDF17',
     titlesColor: '#FFFFFF',
     textColor: '#031D44',
@@ -197,16 +197,16 @@ export const projects = [
     ],
     backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'As a multi-national investor navigating Brazilian, Canadian, and US markets, I faced a critical data fragmentation problem. I lacked a unified "Single Source of Truth" capable of consolidating diverse asset classes into a real-time net worth projection.',
+      'As a multi-national investor navigating Brazilian, Canadian, and US markets, I faced a critical data fragmentation problem. I lacked a unified "Single Source of Truth" capable of consolidating diverse asset classes into a real-time, multi-currency net worth projection.',
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
-      'I architected a global investment hub to synchronize multi-jurisdictional complexity. The platform transforms messy, cross-border data into a streamlined dashboard that integrates strategic tools like Elliott Wave analysis and economic calendars.',
-    backText_titleTwo: 'technical oversight',
+      'I architected a global investment hub to synchronize multi-jurisdictional complexity. The platform transforms fragmented, cross-border data into a high-utility dashboard featuring AI-driven Elliott Wave analysis, automated alerts, ATH estimations, and retirement projections.',
+    backText_titleTwo: 'technical governance',
     backText_textTwo:
-      'I governed the implementation of a high-stakes multi-currency engine, prioritizing data fidelity and technical analysis logic. This required managing complex state synchronization across distributed financial streams for global portfolio governance.',
+      'I governed the implementation of a high-stakes multi-currency engine, prioritizing data fidelity and technical analysis logic. This required managing complex state synchronization across distributed financial streams while leading the architecture for AI-driven analysis, automated market alerts, and high-performance visualizations for global portfolio governance.',
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Trezo successfully validated my ability to architect complex FinTech products that navigate secure, cross-border data. It stands as a definitive proof-of-concept for how technical leadership can transform fragmented data into a high-utility asset.',
+      'Trezo successfully validated my ability to architect complex FinTech products that navigate secure, cross-border data. It stands as a definitive proof-of-concept for how technical leadership can transform fragmented data into a high-utility asset. A platform so reliable that it has become my primary engine for daily global wealth governance.',
     backgroundColor: '#ffffff',
     titlesColor: '#2dbc5d',
     textColor: '#1e293b',
@@ -237,7 +237,7 @@ export const projects = [
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
       'I architected this V2 ecosystem as a high-performance "Agentic Command Center" using Next.js and physics-based UI logic. By integrating a custom AI consultant, I successfully productized my career journey as a premium experience.',
-    backText_titleTwo: 'technical oversight',
+    backText_titleTwo: 'technical governance',
     backText_textTwo:
       'I governed the integration of advanced interactive logic and AI-driven consultative agents. By implementing physics-simulated UI components and real-time state management, I ensured a technical manifesto that functions as a live product.',
     backText_titleFour: 'strategic outcome',
@@ -285,7 +285,7 @@ export const projects = [
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
       'I engineered an event-driven "Digital Contingency Vault" centered on an automated dead-man\'s switch protocol. This solution ensures reliable, automated legacy transfer only when definitive inactivity thresholds are breached.',
-    backText_titleTwo: 'technical oversight',
+    backText_titleTwo: 'technical governance',
     backText_textTwo:
       'I governed the architecture of an event-driven "Dead Man\'s Switch" protocol. By implementing strict state-driven access controls and secure household linking, I solved the high-stakes challenge of managing emergency digital access.',
     backText_titleFour: 'strategic outcome',
