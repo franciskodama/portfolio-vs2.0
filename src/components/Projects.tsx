@@ -220,11 +220,15 @@ const Projects = () => {
                     ALL BY ONE HAND.
                   </span>
                 </p>
-                <p className='font-main-light text-dark text-lg leading-8 w-[26ch]'>
-                  These are not just case studies. They are functional assets I
-                  ideated, designed, and fully coded. I believe the strongest
+                <p className='font-main-light text-dark text-lg leading-8 w-[32ch]'>
+                  These are not just case studies. They are functional assets
+                  {/* <br />
+                  <span>
+                  */}{' '}
+                  I ideated, designed, and fully coded. I believe the strongest
                   Technical Product Leads are those who have built the trenches
                   they now lead.
+                  {/* </span> */}
                 </p>
               </div>
 

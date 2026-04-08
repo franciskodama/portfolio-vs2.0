@@ -291,7 +291,7 @@ export const projects = [
 
     backText_titleFour: 'strategic outcome',
     backText_textFour:
-      'Monkey Mori serves as a definitive proof-of-concept for architecting Privacy-First, mission-critical platforms. It validates my ability to marry complex technical safeguards — such as automated fail-over protocols and cryptographic data protection — with a sensitive user experience for high-stakes digital asset management. Technically as secure as a bank, but as gentle and supportive as a trusted family member.',
+      'Monkey Mori serves as a definitive proof-of-concept for architecting Privacy-First, mission-critical platforms. It validates my ability to marry complex technical safeguards, such as automated fail-over protocols and cryptographic data protection, with a sensitive user experience for high-stakes digital asset management. Technically as secure as a bank, but as gentle and supportive as a trusted family member.',
     backgroundColor: '#0f172a',
     titlesColor: '#4F46E5',
     textColor: '#FFF',
