@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+
 import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
-import { Star } from 'lucide-react';
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -206,32 +206,49 @@ const Projects = () => {
       >
         <div className='container mx-auto lg-custom:w-full'>
           <div className='-mt-24'>
-            <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}>
-              <div className='flex flex-col -rotate-[4.29deg] items-end mr-[20%]'>
-                <h2 className='section-title text-4xl md:text-7xl w-[8ch] md:leading-19 font-main-semibold text-right'>
-                  selected projects
-                </h2>
-                <div className='flex items-center gap-2 mt-2 md-custom:mt-4 md-custom:mr-8'>
-                  <Star
-                    className='w-[20px] h-[20px] mt-1'
-                    strokeWidth={1.6}
-                    fill='yellow'
-                  />
+            {/* <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}> */}
+            <div className='flex justify-between -rotate-[4.29deg] mt-[18%] mx-24'>
+              <h2 className='text-6xl w-[8ch] md:leading-16 font-main-semibold text-right'>
+                selected projects
+              </h2>
+
+              <div className='flex flex-col gap-6 w-[30ch] mr-18'>
+                <p className='font-main-bold text-dark text-3xl leading-9'>
+                  VISION. ARCHITECTURE. EXECUTION.
+                  <span className='font-main-heavy text-third'>
+                    <br />
+                    ALL BY ONE HAND.
+                  </span>
+                </p>
+                <p className='font-main-light text-dark text-lg leading-8 w-[32ch]'>
+                  These are not just case studies. They are functional assets
+                  {/* <br />
+                  <span>
+                  */}{' '}
+                  I ideated, designed, and fully coded. I believe the strongest
+                  Technical Product Leads are those who have built the trenches
+                  they now lead.
+                  {/* </span> */}
+                </p>
+              </div>
+
+              {/* <div className='flex items-end gap-4 mt-2 md-custom:mt-4 md-custom:mr-8'>
+                  <Star size={34} strokeWidth={1.6} fill='yellow' />
                   <p
-                    className='font-semibold text-dark text-[1.2rem] leading-9'
+                    className='font-semibold text-dark text-[2.2rem] leading-9'
                     style={{ fontFamily: 'var(--font-gloria)' }}
                   >
                     most recent
                   </p>
-                </div>
-              </div>
-            </Parallax>
+                </div> */}
+            </div>
+            {/* </Parallax> */}
           </div>
 
           {/* Container Height */}
           <div
             ref={containerRef}
-            className='relative w-full h-[94vh] md:h-[35vh]'
+            className='relative w-full h-[94vh] md:h-[24vh]'
           >
             {sortedProjects.map((project, index) => (
               <div

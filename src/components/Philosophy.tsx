@@ -4,14 +4,14 @@ import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import ZoomIn from '../assets/images/code-check.svg';
 
-const Methodology = () => {
+const Philosophy = () => {
   return (
     <section
-      id='methodology'
+      id='philosophy'
       className='section relative flex flex-col transition-all duration-300 bg-dark bg-linear-to-b from-dark to-[#292929]'
     >
       <Parallax opacity={[0, 2]}>
-        <h1 className='section-title text-center'>PRODUCT-LED ENGINEERING</h1>
+        <h1 className='section-title text-center'>PRODUCT PHILOSOPHY</h1>
         <p className='mt-[0.4em] text-center text-third font-main-regular'>
           Code is only as good as the value it creates.
         </p>
@@ -37,7 +37,7 @@ const Methodology = () => {
           href='https://github.com/franciskodama?tab=repositories'
           target='_blank'
           rel='noopener noreferrer'
-          className='hidden md-custom:block text-center font-main-regular text-[0.7rem] mt-24 leading-4 cursor-pointer z-10'
+          className='hidden md-custom:block text-center font-main-regular text-[0.7rem] mt-18 leading-4 cursor-pointer z-10'
         >
           <div className='flex items-center gap-2'>
             <Image src={ZoomIn} alt='icon zoom in' />
@@ -46,7 +46,14 @@ const Methodology = () => {
         </a>
 
         <Parallax opacity={[0, 2]}>
-          <ul className='lg-custom:scale-65 mb-10 mt-24 md-custom:mt-0 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
+          <ul className='lg-custom:scale-65 -mb-20 mt-24 md-custom:-mt-28 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
+            <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] pr-60 text-third text-[2rem] leading-10 md-custom:text-[6.4rem] md-custom:leading-34'>
+              Authentic
+              {/* Visionary */}
+            </li>
+            <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] pr-32 text-third text-[2rem] leading-10 md-custom:text-[6rem] md-custom:leading-21'>
+              Leadership
+            </li>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] pr-66 text-bright text-[2.5rem] leading-10 md-custom:text-[7.5rem] md-custom:leading-42'>
               PRODUCT
             </li>
@@ -93,4 +100,4 @@ const Methodology = () => {
   );
 };
 
-export default Methodology;
+export default Philosophy;
