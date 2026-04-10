@@ -5,6 +5,7 @@ import ProjectModal from './ProjectModal';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import { scroller } from 'react-scroll';
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,12 +34,29 @@ const Projects = () => {
   // Sync state with URL on load and URL changes
   useEffect(() => {
     const projectSlug = searchParams.get('project');
+    const sectionParam = searchParams.get('section');
+
     if (projectSlug) {
       const project = projects.find((p) => p.slug === projectSlug);
       if (project) {
         setSelectedProject(project);
         setIsDrawerOpen(true);
+
+        // Scroll to projects section when a project is opened via link
+        scroller.scrollTo('projects', {
+          duration: 800,
+          delay: 200,
+          smooth: 'easeInOutQuart',
+          offset: -100,
+        });
       }
+    } else if (sectionParam === 'projects') {
+      scroller.scrollTo('projects', {
+        duration: 800,
+        delay: 200,
+        smooth: 'easeInOutQuart',
+        offset: -100,
+      });
     } else {
       setIsDrawerOpen(false);
     }
