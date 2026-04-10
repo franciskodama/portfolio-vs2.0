@@ -10,6 +10,7 @@ export const projects = [
     url: 'https://handyfor.me/',
     logo: require('../assets/images/projects/logo-handy-for-me.png'),
     name: 'Handy For.Me',
+    slug: 'handyfor-me',
     showName: false,
     tagline: 'Your productivity, centralized.',
     images: [
@@ -74,6 +75,7 @@ export const projects = [
     url: 'https://monkeybusiness-olive.vercel.app/',
     logo: require('../assets/images/projects/logo-monkey-business.png'),
     name: 'Monkey Business',
+    slug: 'monkey-business',
     showName: true,
     tagline: 'Family finances, automated.',
     images: [
@@ -147,6 +149,7 @@ export const projects = [
     url: 'https://trezo.app/',
     logo: require('../assets/images/projects/logo-trezo.png'),
     name: 'Trezo.app',
+    slug: 'trezo',
     showName: false,
     tagline: 'Global wealth, synchronized.',
     images: [
@@ -223,6 +226,7 @@ export const projects = [
     url: 'https://www.fkodama.com',
     logo: require('../assets/images/projects/logo-portfolio.png'),
     name: 'Portfolio',
+    slug: 'portfolio',
     showName: false,
     tagline: '',
     images: [
@@ -259,6 +263,7 @@ export const projects = [
     url: 'https://monkeymori.vercel.app/',
     logo: require('../assets/images/projects/logo-monkey-mori.png'),
     name: 'Monkey Mori',
+    slug: 'monkey-mori',
     showName: true,
     tagline: 'Your legacy, secured.',
     images: [

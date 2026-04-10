@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Palette from '../components/Palette';
@@ -86,7 +85,9 @@ export default function Home() {
           <WhyMe />
           <SynergySeer color={color} />
           <ProjectsAbove />
-          <Projects />
+          <Suspense fallback={null}>
+            <Projects />
+          </Suspense>
           <Philosophy />
           <Contact />
         </AboutContext.Provider>

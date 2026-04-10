@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-
 import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { projects } from '../data/Data';
 import { Parallax } from 'react-scroll-parallax';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import { scroller } from 'react-scroll';
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,6 +15,52 @@ const Projects = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [cardSize, setCardSize] = useState(270);
   const [groundYOffset, setGroundYOffset] = useState(45);
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Update URL helper
+  const updateProjectUrl = (slug: string | null) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (slug) {
+      params.set('project', slug);
+    } else {
+      params.delete('project');
+    }
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  // Sync state with URL on load and URL changes
+  useEffect(() => {
+    const projectSlug = searchParams.get('project');
+    const sectionParam = searchParams.get('section');
+
+    if (projectSlug) {
+      const project = projects.find((p) => p.slug === projectSlug);
+      if (project) {
+        setSelectedProject(project);
+        setIsDrawerOpen(true);
+
+        // Scroll to projects section when a project is opened via link
+        scroller.scrollTo('projects', {
+          duration: 800,
+          delay: 200,
+          smooth: 'easeInOutQuart',
+          offset: -100,
+        });
+      }
+    } else if (sectionParam === 'projects') {
+      scroller.scrollTo('projects', {
+        duration: 800,
+        delay: 200,
+        smooth: 'easeInOutQuart',
+        offset: -100,
+      });
+    } else {
+      setIsDrawerOpen(false);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -272,6 +319,7 @@ const Projects = () => {
                     onClick={() => {
                       setSelectedProject(project);
                       setIsDrawerOpen(true);
+                      updateProjectUrl(project.slug);
                     }}
                   />
                 </div>
@@ -285,7 +333,12 @@ const Projects = () => {
       <ProjectModal
         project={selectedProject}
         open={isDrawerOpen}
-        onOpenChange={setIsDrawerOpen}
+        onOpenChange={(open) => {
+          setIsDrawerOpen(open);
+          if (!open) {
+            updateProjectUrl(null);
+          }
+        }}
       />
     </div>
   );
