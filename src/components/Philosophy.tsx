@@ -34,7 +34,7 @@ const Philosophy = () => {
         </Parallax>
 
         <a
-          href='https://github.com/franciskodama?tab=repositories'
+          href='https://github.com/franciskodama'
           target='_blank'
           rel='noopener noreferrer'
           className='hidden md-custom:block text-center font-main-regular text-[0.7rem] mt-18 leading-4 cursor-pointer z-10'
