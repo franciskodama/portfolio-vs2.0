@@ -302,7 +302,7 @@ const About = () => {
               />
 
               <p
-                className={`absolute bottom-[-2.6em] font-main-regular text-[0.8rem] text-bright bg-third px-8 py-2 text-center animate-appear z-0 ${
+                className={`absolute bottom-[-2.6em] font-main-regular text-[0.8rem] text-bright bg-third px-[2em] py-2 text-center animate-appear z-0 ${
                   showMessageError ? 'block' : 'hidden'
                 }`}
               >

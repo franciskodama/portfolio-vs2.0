@@ -24,14 +24,27 @@ const Hero = () => {
   const rightRef = useRef<HTMLUListElement>(null);
 
   const [index, setIndex] = useState(0);
-  const slogans = ['TECHNICAL PRODUCT LEAD', '20+ Years Executive Leadership'];
+  const extraInfos = [
+    <span
+      key='geo'
+      className='flex flex-wrap justify-center items-center gap-2 px-4'
+    >
+      <span>Brazilian</span>
+      <span className='text-lg md-custom:text-xl'>🇧🇷</span>
+      <span>based in Ottawa, Canada</span>
+      <span className='text-lg md-custom:text-xl'>🇨🇦</span>
+    </span>,
+    <span key='exp' className='px-4'>
+      20+ Years Executive Leadership
+    </span>,
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slogans.length);
-    }, 2500); // 2 seconds + some buffer for animation
+      setIndex((prev) => (prev + 1) % extraInfos.length);
+    }, 2800);
     return () => clearInterval(timer);
-  }, []);
+  }, [extraInfos.length]);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -212,26 +225,24 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className='relative h-10 md-custom:h-12 w-full flex items-center justify-center overflow-hidden mt-2'>
+        <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
+          TECHNICAL PRODUCT LEAD
+        </h2>
+
+        <div className='relative h-10 w-full flex items-center justify-center overflow-hidden'>
           <AnimatePresence mode='wait'>
-            <motion.h2
+            <motion.h3
               key={index}
               initial={{ y: 20, opacity: 0, rotateX: -90 }}
               animate={{ y: 0, opacity: 1, rotateX: 0 }}
               exit={{ y: -20, opacity: 0, rotateX: 90 }}
               transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className='absolute font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em] whitespace-nowrap'
+              className='absolute font-main-light text-bright/80 text-[10px] md-custom:text-sm uppercase tracking-[0.2em] text-center whitespace-nowrap'
             >
-              {slogans[index]}
-            </motion.h2>
+              {extraInfos[index]}
+            </motion.h3>
           </AnimatePresence>
         </div>
-        <h3 className='flex flex-wrap justify-center items-center gap-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
-          <span>Brazilian</span>
-          <span className='text-lg'>🇧🇷</span>
-          <span>based in Ottawa, Canada</span>
-          <span className='text-lg'>🇨🇦</span>
-        </h3>
 
         <div className='absolute top-[50%] -translate-y-1/2 left-4 md-custom:left-4 z-30 hidden lg-custom:block'>
           <ul
