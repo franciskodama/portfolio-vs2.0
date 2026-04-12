@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-scroll';
@@ -21,6 +22,16 @@ const Hero = () => {
 
   const leftRef = useRef<HTMLUListElement>(null);
   const rightRef = useRef<HTMLUListElement>(null);
+
+  const [index, setIndex] = useState(0);
+  const slogans = ['TECHNICAL PRODUCT LEAD', '20+ Years Executive Leadership'];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slogans.length);
+    }, 2500); // 2 seconds + some buffer for animation
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -201,14 +212,21 @@ const Hero = () => {
           </h1>
         </div>
 
-        <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
-          TECHNICAL PRODUCT LEAD
-        </h2>
-        <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xs uppercase tracking-[0.2em]'>
-          20+ Years Executive Leadership
-        </h2>
-        <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
-          {/* <span> 20+ Years Executive Leadership | </span> */}
+        <div className='relative h-10 md-custom:h-12 w-full flex items-center justify-center overflow-hidden mt-2'>
+          <AnimatePresence mode='wait'>
+            <motion.h2
+              key={index}
+              initial={{ y: 20, opacity: 0, rotateX: -90 }}
+              animate={{ y: 0, opacity: 1, rotateX: 0 }}
+              exit={{ y: -20, opacity: 0, rotateX: 90 }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              className='absolute font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em] whitespace-nowrap'
+            >
+              {slogans[index]}
+            </motion.h2>
+          </AnimatePresence>
+        </div>
+        <h3 className='flex flex-wrap justify-center items-center gap-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
           <span>Brazilian</span>
           <span className='text-lg'>🇧🇷</span>
           <span>based in Ottawa, Canada</span>
@@ -225,7 +243,7 @@ const Hero = () => {
             <li>Systems Architecture</li>
             <li>Executive Leadership</li>
             <li>AI-Augmented Dev</li>
-            <li>Squad Leadership</li>
+            <li>Org Alignment</li>
           </ul>
         </div>
 
