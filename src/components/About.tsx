@@ -107,8 +107,8 @@ const About = () => {
 
         <div className='relative flex flex-col w-full justify-center max-w-[36em] px-4 overflow-hidden mb-12 md-custom:pl-[10em] md-custom:max-w-[41em] md-custom:items-start lg-custom:pl-16 lg-custom:mb-0 lg-custom:w-1/2 lg-custom:max-w-[36em]'>
           <div className='absolute top-12 left-[-5.2em] font-main-light text-[0.8rem] w-[20em] leading-[1.2em] p-2 text-bright bg-third -rotate-45 text-center'>
-            <p className='font-main-semibold'>VALID WORK PERMIT</p>
-            <p className='font-main-light'>to work in Canada</p>
+            <p className='font-main-semibold'>NOW WITH </p>
+            <p className='font-main-semibold'>BUILT-IN ARCHITECTURE</p>
           </div>
 
           <div
@@ -217,27 +217,23 @@ const About = () => {
             <h3 className='mt-20 text-[1.2rem] font-main-light mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
               Francis Kodama
             </h3>
-            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase'>
+            <h2 className='text-[1rem] md:text-[1.4rem] font-main-semibold uppercase'>
               Technical Product Lead
             </h2>
-            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase mb-0'>
-              Full-Stack Systems Architect
-            </h2>
-            <h2 className='text-[1rem] md:text-[1.2rem] font-main-semibold uppercase lg-custom:mb-[0.8em]'>
+            <h2 className='text-[1rem] md:text-[1rem] font-main-semibold uppercase lg-custom:mb-[0.8em]'>
               Ex-Agency Director (100+ Staff)
             </h2>
             <div className='font-main-light'>
               <p className='text-[0.95rem] my-4 mr-4 max-w-[30ch] md-custom:max-w-[42ch]'>
-                High-velocity Technical Lead bridging executive strategy with
-                robust engineering. I architect complex systems with the
-                precision of a 20-year veteran and the speed of an AI-augmented
-                builder.
+                Some leaders learn to code. Some engineers learn to lead. I did
+                both, but leadership was always the foundation. With 20+ years
+                directing enterprise teams and Fortune 500 programs, I bring the
+                rare ability to inspire people, make hard calls, and ship real
+                product.
               </p>
-              <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch]'>
-                I deliver business assets, not just features. From FinTech
-                engines to digital ecosystems, my focus is on structural
-                integrity, risk mitigation, and high-impact execution that moves
-                the needle.
+              <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch] mb-8'>
+                The full-stack engineering is the upgrade. The leadership is the
+                engine.
               </p>
             </div>
           </div>
