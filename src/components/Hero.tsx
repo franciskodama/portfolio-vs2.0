@@ -240,9 +240,9 @@ const Hero = () => {
           >
             <li className='text-white font-main-bold mb-2'>Skills</li>
             <li>Product Strategy</li>
-            <li>Systems Architecture</li>
-            <li>Executive Leadership</li>
-            <li>AI-Augmented Dev</li>
+            <li>Arch & Design</li>
+            <li>Exec Leadership</li>
+            <li>AI-Driven Dev</li>
             <li>Org Alignment</li>
           </ul>
         </div>
