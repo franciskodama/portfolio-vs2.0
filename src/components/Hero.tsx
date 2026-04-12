@@ -203,9 +203,12 @@ const Hero = () => {
 
         <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
           TECHNICAL PRODUCT LEAD
-          {/* | FULL-STACK ARCHITECT */}
+        </h2>
+        <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xs uppercase tracking-[0.2em]'>
+          20+ Years Executive Leadership
         </h2>
         <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
+          {/* <span> 20+ Years Executive Leadership | </span> */}
           <span>Brazilian</span>
           <span className='text-lg'>🇧🇷</span>
           <span>based in Ottawa, Canada</span>
@@ -218,11 +221,11 @@ const Hero = () => {
             className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-left'
           >
             <li className='text-white font-main-bold mb-2'>Skills</li>
-            <li>PRODUCT STRATEGY</li>
-            <li>SYSTEMS ARCH</li>
-            <li>FINTECH OPS</li>
-            <li>LEADERSHIP</li>
-            <li>MARKETING</li>
+            <li>Product Strategy</li>
+            <li>Systems Architecture</li>
+            <li>Executive Leadership</li>
+            <li>AI-Augmented Dev</li>
+            <li>Squad Leadership</li>
           </ul>
         </div>
 
@@ -232,11 +235,11 @@ const Hero = () => {
             className='flex flex-col gap-1 text-white/50 text-xs md-custom:text-sm font-main-regular uppercase tracking-widest text-right'
           >
             <li className='text-white font-main-bold mb-2'>Stack</li>
-            <li>REACT/NEXT.JS</li>
-            <li>TYPESCRIPT</li>
-            <li>PRISMA / NEON</li>
-            <li>AI WORKFLOWS</li>
-            <li>TAILWIND CSS</li>
+            <li>React / Next.js</li>
+            <li>Typescript</li>
+            <li>AI Workflows</li>
+            <li>API Integrations</li>
+            <li>Tailwind CSS</li>
           </ul>
         </div>
         <Link
