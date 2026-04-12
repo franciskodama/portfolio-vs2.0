@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-scroll';
@@ -21,6 +22,29 @@ const Hero = () => {
 
   const leftRef = useRef<HTMLUListElement>(null);
   const rightRef = useRef<HTMLUListElement>(null);
+
+  const [index, setIndex] = useState(0);
+  const extraInfos = [
+    <span
+      key='geo'
+      className='flex flex-wrap justify-center items-center gap-2 px-4'
+    >
+      <span>Brazilian</span>
+      <span className='text-lg md-custom:text-xl'>🇧🇷</span>
+      <span>based in Ottawa, Canada</span>
+      <span className='text-lg md-custom:text-xl'>🇨🇦</span>
+    </span>,
+    <span key='exp' className='px-4'>
+      20+ Years Executive Leadership
+    </span>,
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % extraInfos.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, [extraInfos.length]);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -204,16 +228,21 @@ const Hero = () => {
         <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xl uppercase tracking-[0.2em]'>
           TECHNICAL PRODUCT LEAD
         </h2>
-        <h2 className='m-2 font-main-light text-bright/80 text-sm md-custom:text-xs uppercase tracking-[0.2em]'>
-          20+ Years Executive Leadership
-        </h2>
-        <h3 className='flex flex-wrap justify-center items-center gap-2 mt-2 font-main-light text-bright/80 text-[10px] md-custom:text-xs uppercase tracking-[0.2em] px-4 text-center'>
-          {/* <span> 20+ Years Executive Leadership | </span> */}
-          <span>Brazilian</span>
-          <span className='text-lg'>🇧🇷</span>
-          <span>based in Ottawa, Canada</span>
-          <span className='text-lg'>🇨🇦</span>
-        </h3>
+
+        <div className='relative h-10 w-full flex items-center justify-center overflow-hidden'>
+          <AnimatePresence mode='wait'>
+            <motion.h3
+              key={index}
+              initial={{ y: 20, opacity: 0, rotateX: -90 }}
+              animate={{ y: 0, opacity: 1, rotateX: 0 }}
+              exit={{ y: -20, opacity: 0, rotateX: 90 }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              className='absolute font-main-light text-bright/80 text-[10px] md-custom:text-sm uppercase tracking-[0.2em] text-center whitespace-nowrap'
+            >
+              {extraInfos[index]}
+            </motion.h3>
+          </AnimatePresence>
+        </div>
 
         <div className='absolute top-[50%] -translate-y-1/2 left-4 md-custom:left-4 z-30 hidden lg-custom:block'>
           <ul
@@ -222,10 +251,10 @@ const Hero = () => {
           >
             <li className='text-white font-main-bold mb-2'>Skills</li>
             <li>Product Strategy</li>
-            <li>Systems Architecture</li>
-            <li>Executive Leadership</li>
-            <li>AI-Augmented Dev</li>
-            <li>Squad Leadership</li>
+            <li>Arch & Design</li>
+            <li>Exec Leadership</li>
+            <li>AI-Driven Dev</li>
+            <li>Org Alignment</li>
           </ul>
         </div>
 

@@ -565,7 +565,7 @@ export const contactData = [
 export const jobs = [
   {
     id: 8,
-    title: 'FinTech Architect & Investor',
+    title: 'FinTech Architect',
     companies: [
       {
         name: 'fkodama (Self-Employed)',
@@ -580,7 +580,6 @@ export const jobs = [
       'Prisma / Neon',
       'AI-Augmented',
       'Systems Integration',
-      'Elliott Wave Analysis',
       'Quantitative Analysis',
       'Full-Stack Architecture',
     ],
@@ -589,7 +588,7 @@ export const jobs = [
   },
   {
     id: 7,
-    title: 'Software Engineer',
+    title: 'Product Engineer',
     companies: [
       {
         name: 'THE LNK',
@@ -604,7 +603,7 @@ export const jobs = [
       'TypeScript',
       'Prisma',
       'FinTech Integration',
-      'Stripe / Spreedly',
+      'Stripe / Spreedly / Algolia',
       'Organizational Audit',
       'Product Culture',
       'Agile Methodology',
