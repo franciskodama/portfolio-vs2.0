@@ -1,11 +1,16 @@
 import React from 'react';
 
+interface Project {
+  title: string;
+  description: string;
+}
+
 interface SynergyResultProps {
   result: {
     score: number;
     ingredients: string[];
     prediction: string;
-    projects: string[];
+    projects: Project[];
   };
   onClose: () => void;
 }
@@ -106,14 +111,19 @@ const SynergyResult: React.FC<SynergyResultProps> = ({ result, onClose }) => {
               First 90 Days High-Impact Projects
             </h4>
             <ul className='flex flex-col gap-6'>
-              {result.projects.map((project: string, i: number) => (
+              {result.projects.map((project: Project, i: number) => (
                 <li key={i} className='flex gap-4 items-start group'>
                   <span className='shrink-0 w-8 h-8 rounded-full text-white font-main-semibold bg-third flex items-center justify-center text-sm group-hover:scale-110 transition-transform'>
                     {i + 1}
                   </span>
-                  <p className='text-dark font-main-regular text-sm leading-6'>
-                    {project}
-                  </p>
+                  <div className='flex flex-col'>
+                    <span className='text-dark font-main-semibold text-sm leading-6'>
+                      {project.title}
+                    </span>
+                    <p className='text-dark font-main-regular text-sm leading-6 opacity-80'>
+                      {project.description}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
