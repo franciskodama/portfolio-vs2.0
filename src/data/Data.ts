@@ -565,7 +565,7 @@ export const contactData = [
 export const jobs = [
   {
     id: 8,
-    title: 'FinTech Architect',
+    title: 'FinTech Product Architect',
     companies: [
       {
         name: 'fkodama (Self-Employed)',
@@ -575,13 +575,15 @@ export const jobs = [
       },
     ],
     skills: [
+      'Product Strategy',
+      'Design System',
+      'AI-Augmented',
+      'Full-Stack Architecture',
+      'Systems Integration',
       'Next.js',
       'TypeScript',
       'Prisma / Neon',
-      'AI-Augmented',
-      'Systems Integration',
       'Quantitative Analysis',
-      'Full-Stack Architecture',
     ],
     benefit:
       'I engineered a proprietary unified data engine to synchronize fragmented assets across BRL, USD, and CAD markets, collapsing development cycles from months to days through coding and AI-augmented workflows.',
@@ -617,7 +619,7 @@ export const jobs = [
     companies: [
       {
         name: 'Circus Agency',
-        periodStart: '2011',
+        periodStart: '2009',
         periodEnd: '2020',
         country: '🇧🇷',
       },
@@ -629,8 +631,8 @@ export const jobs = [
       'Scaling Organizations',
       'Agile Methodology',
       'P&L Management',
-      'New Business Strategy',
       'Stakeholder Management',
+      'New Business Strategy',
     ],
     benefit:
       'As a Co-Founder and the main executive, I scaled the agency to a multidisciplinary team of 26, mastering the operational discipline required to lead a growing organization from inception to market success.',
