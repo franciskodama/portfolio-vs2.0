@@ -619,7 +619,7 @@ export const jobs = [
     companies: [
       {
         name: 'Circus Agency',
-        periodStart: '2009',
+        periodStart: '2011',
         periodEnd: '2020',
         country: '🇧🇷',
       },
@@ -643,7 +643,7 @@ export const jobs = [
     companies: [
       {
         name: 'WE Agency | Founder',
-        periodStart: '2008',
+        periodStart: '2009',
         periodEnd: '2010',
         country: '🇧🇷',
       },
@@ -667,7 +667,7 @@ export const jobs = [
       {
         name: 'Rapp Collins Agency',
         periodStart: '2007',
-        periodEnd: '2008',
+        periodEnd: '2009',
         country: '🇧🇷',
       },
     ],
@@ -690,7 +690,7 @@ export const jobs = [
     companies: [
       {
         name: 'Peugeot-Citroën Automobile',
-        periodStart: '2000',
+        periodStart: '1999',
         periodEnd: '2007',
         country: '🇧🇷',
       },
