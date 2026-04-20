@@ -620,7 +620,7 @@ export const jobs = [
       {
         name: 'Circus Agency',
         periodStart: '2011',
-        periodEnd: '2020',
+        periodEnd: '2021',
         country: '🇧🇷',
       },
     ],
