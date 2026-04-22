@@ -191,7 +191,10 @@ const SynergySeer = ({
             )}
 
             <div className='relative flex flex-col items-center justify-center mt-32 w-[20em] h-[20em] rounded-full p-8 md-custom:w-[35em] md-custom:h-[35em] md-custom:p-20 overflow-hidden [box-shadow:0_-2.5em_4em_2em_rgba(255,255,255,0.4),inset_0_-2.5em_1.5em_1em_rgba(0,0,0,0.1)] border-2 border-black/20 z-2 bg-bright'>
-              <div className='flex flex-col gap-6 w-full max-w-[250px] md-custom:max-w-[400px] z-10'>
+              <div
+                className='flex flex-col gap-6 w-full max-w-[250px] md-custom:max-w-[400px] z-10'
+                style={{ fontFamily: 'var(--font-henny-penny)' }}
+              >
                 <input
                   type='text'
                   name='company'
