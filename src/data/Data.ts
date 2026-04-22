@@ -200,7 +200,7 @@ export const projects = [
     ],
     backText_titleOneFirstRow: 'the problem',
     backText_textOneFirstRow:
-      'As a multi-national investor navigating Brazilian, Canadian, and US markets, I faced a critical data fragmentation problem. I lacked a unified "Single Source of Truth" capable of consolidating diverse asset classes into a real-time, multi-currency net worth projection.',
+      "Strategic investors operating within the USD-CAD-BRL corridor suffer from 'Contextual Blindness.' Because their wealth is fragmented across disparate banking systems and local currencies, they lack a real-time, unified view of their true global diversification.",
     backText_titleTwoFirstRow: 'the solution',
     backText_textTwoFirstRow:
       'I architected a global investment hub to synchronize multi-jurisdictional complexity. The platform transforms fragmented, cross-border data into a high-utility dashboard featuring AI-driven Elliott Wave analysis, automated alerts, ATH estimations, and retirement projections.',
