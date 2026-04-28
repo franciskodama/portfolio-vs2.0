@@ -106,9 +106,9 @@ const About = () => {
         </div>
 
         <div className='relative flex flex-col w-full justify-center max-w-[36em] px-4 overflow-hidden mb-12 md-custom:pl-[10em] md-custom:max-w-[41em] md-custom:items-start lg-custom:pl-16 lg-custom:mb-0 lg-custom:w-1/2 lg-custom:max-w-[36em]'>
-          <div className='absolute top-12 left-[-5.2em] font-main-light text-[0.9rem] w-[20em] leading-[1.2em] p-2 text-bright bg-third -rotate-45 text-center'>
-            {/* <p className='font-main-semibold'>UPGRADED VERSION</p> */}
+          <div className='absolute top-12 left-[-5.2em] font-main-light text-[0.9rem] w-[20em] leading-[1.2em] p-3 text-bright bg-third -rotate-45 text-center'>
             <p className='font-main-semibold'>LIMITED EDITION</p>
+            <p className='text-xs font-main-medium'>STRATEGY + CODE INCLUDED</p>
           </div>
 
           <div
