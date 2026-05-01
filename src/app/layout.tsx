@@ -32,6 +32,16 @@ const hennyPenny = Henny_Penny({
 export const metadata: Metadata = {
   title: 'fkodama.com',
   description: 'Francis Kodama Portfolio',
+  openGraph: {
+    images: [
+      {
+        url: 'https://www.fkodama.com/og-tags/prj-portfolio.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Francis Kodama Portfolio',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
