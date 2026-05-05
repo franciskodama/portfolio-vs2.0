@@ -112,8 +112,7 @@ const Footer = () => {
         <div className='flex flex-col text-[0.8rem] mt-16 lg-custom:col-start-4 lg-custom:row-start-3 lg-custom:mt-0'>
           <p>Designed and built by</p>
           <p className='font-main-regular'>Francis Kodama</p>
-          <p>Copyright 2023</p>
-          <p>Updated 2026</p>
+          <p>Copyright 2026</p>
         </div>
 
         <div className='flex mt-12 items-end lg-custom:col-start-1 lg-custom:row-start-4 lg-custom:mt-0'>

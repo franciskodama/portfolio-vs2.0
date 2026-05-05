@@ -3,7 +3,6 @@ import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { projects } from '../data/Data';
-import { Parallax } from 'react-scroll-parallax';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { scroller } from 'react-scroll';
 
@@ -253,14 +252,13 @@ const Projects = () => {
       >
         <div className='container mx-auto lg-custom:w-full'>
           <div className='-mt-24'>
-            {/* <Parallax opacity={[0, 3]} scale={[1.5, 0.9]}> */}
-            <div className='flex justify-between -rotate-[4.29deg] mt-[18%] mx-24'>
-              <h2 className='text-6xl w-[8ch] md:leading-16 font-main-semibold text-right'>
+            <div className='flex flex-col items-center gap-12 md-custom:flex-row md-custom:justify-between -rotate-[4.29deg] mt-8 md-custom:mt-[18%] mx-4 md-custom:mx-24'>
+              <h2 className='text-6xl text-center mt-24 md:-mt-[3.4em] md-custom:text-right w-full md-custom:w-[8ch] md:leading-16 font-main-semibold'>
                 selected projects
               </h2>
 
-              <div className='flex flex-col gap-6 w-[30ch] mr-18'>
-                <p className='font-main-bold text-dark text-3xl leading-9'>
+              <div className='flex flex-col items-center text-center gap-6 w-full md-custom:w-[30ch] md-custom:mr-18 md-custom:items-start md-custom:text-left'>
+                <p className='font-main-bold text-dark w-[16ch] md-custom:w-full text-3xl leading-9'>
                   VISION. ARCHITECTURE. EXECUTION.
                   <span className='font-main-heavy text-third'>
                     <br />
@@ -268,34 +266,19 @@ const Projects = () => {
                   </span>
                 </p>
                 <p className='font-main-light text-dark text-lg leading-8 w-[32ch]'>
-                  These are not just case studies. They are functional assets
-                  {/* <br />
-                  <span>
-                  */}{' '}
-                  I ideated, designed, and fully coded. I believe the strongest
+                  These are not just case studies. They are functional assets I
+                  ideated, designed, and fully coded. I believe the strongest
                   Technical Product Leads are those who have built the trenches
                   they now lead.
-                  {/* </span> */}
                 </p>
               </div>
-
-              {/* <div className='flex items-end gap-4 mt-2 md-custom:mt-4 md-custom:mr-8'>
-                  <Star size={34} strokeWidth={1.6} fill='yellow' />
-                  <p
-                    className='font-semibold text-dark text-[2.2rem] leading-9'
-                    style={{ fontFamily: 'var(--font-gloria)' }}
-                  >
-                    most recent
-                  </p>
-                </div> */}
             </div>
-            {/* </Parallax> */}
           </div>
 
           {/* Container Height */}
           <div
             ref={containerRef}
-            className='relative w-full h-[94vh] md:h-[24vh]'
+            className='relative w-full h-[50vh] md:h-[24vh]'
           >
             {sortedProjects.map((project, index) => (
               <div

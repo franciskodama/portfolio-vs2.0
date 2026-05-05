@@ -117,7 +117,7 @@ const SynergySeer = ({
   return (
     <section className='section relative pb-20' id='ai'>
       <div className='container w-[90%] mx-auto md-custom:w-[80%]'>
-        <div className='relative flex flex-col items-center'>
+        <div className='relative flex flex-col items-center mt-32 md:mt-0'>
           <svg viewBox='0 0 500 120' className='w-full h-auto overflow-visible'>
             <path
               id='curve-title'
@@ -277,7 +277,6 @@ const SynergySeer = ({
               type='submit'
               disabled={status === 'Divining...'}
               className='absolute left-1/2 top-4 md-custom:top-0 transform -translate-x-1/2 w-[200px] md-custom:w-[300px] -mt-30 md-custom:-mt-33 group cursor-pointer not-first-of-type:focus:outline-none transition-transform hover:scale-105 active:scale-95'
-              // style={{ fontFamily: 'var(--font-henny-penny)' }}
               aria-label={status}
             >
               <svg
