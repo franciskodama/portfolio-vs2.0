@@ -3,7 +3,6 @@ import Matter from 'matter-js';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { projects } from '../data/Data';
-import { Parallax } from 'react-scroll-parallax';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { scroller } from 'react-scroll';
 
@@ -273,16 +272,6 @@ const Projects = () => {
                   they now lead.
                 </p>
               </div>
-
-              {/* <div className='flex items-end gap-4 mt-2 md-custom:mt-4 md-custom:mr-8'>
-                  <Star size={34} strokeWidth={1.6} fill='yellow' />
-                  <p
-                    className='font-semibold text-dark text-[2.2rem] leading-9'
-                    style={{ fontFamily: 'var(--font-gloria)' }}
-                  >
-                    most recent
-                  </p>
-                </div> */}
             </div>
           </div>
 

@@ -20,7 +20,7 @@ const Philosophy = () => {
       <div className='container relative flex flex-col items-center w-full min-h-[56em] text-center mt-24 md-custom:min-h-[95em] mx-auto'>
         <Parallax opacity={[0, 2]} translateY={['0%', '-10%']}>
           <div className='flex flex-col'>
-            <q className='font-main-regular text-[1.6rem] leading-8 w-[30ch] mb-[1em] md-custom:text-[2rem] md-custom:leading-[2.8rem]'>
+            <q className='w-full px-8 font-main-regular text-[1.6rem] leading-8 md-custom:w-[32ch] mb-[1em] md-custom:text-[2rem] md-custom:leading-[2.8rem]'>
               It doesn't matter how good your engineering team is if they are
               not given something worthwhile to build.
               {/* If you think professional architecture is expensive, try hiring an
@@ -49,7 +49,6 @@ const Philosophy = () => {
           <ul className='lg-custom:scale-65 -mb-20 mt-24 md-custom:-mt-28 font-main-heavy uppercase text-center animate-words-appearance md-custom:w-[28em] md-custom:text-[2em] md-custom:leading-10 mx-auto'>
             <li className='transform-[skew(0deg,-30deg)_scaleY(1.33333)] pr-60 text-third text-[2rem] leading-10 md-custom:text-[6.4rem] md-custom:leading-34'>
               Authentic
-              {/* Visionary */}
             </li>
             <li className='transform-[skew(60deg,-30deg)_scaleY(0.66667)] pr-32 text-third text-[2rem] leading-10 md-custom:text-[6rem] md-custom:leading-21'>
               Leadership
