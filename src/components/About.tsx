@@ -105,7 +105,7 @@ const About = () => {
           <AboutMe />
         </div>
 
-        <div className='relative flex flex-col w-full justify-center max-w-[36em] px-4 overflow-hidden mb-12 md-custom:pl-[10em] md-custom:max-w-[41em] md-custom:items-start lg-custom:pl-16 lg-custom:mb-0 lg-custom:w-1/2 lg-custom:max-w-[36em]'>
+        <div className='relative flex flex-col w-full justify-center items-center max-w-[36em] px-4 overflow-hidden mb-12 md-custom:pl-[10em] md-custom:max-w-[41em] md-custom:items-start lg-custom:pl-16 lg-custom:mb-0 lg-custom:w-1/2 lg-custom:max-w-[36em]'>
           <div className='absolute top-12 left-[-5.2em] font-main-light text-[0.9rem] w-[20em] leading-[1.2em] p-3 text-bright bg-third -rotate-45 text-center'>
             <p className='font-main-semibold'>LIMITED EDITION</p>
             <p className='text-xs font-main-medium'>STRATEGY + CODE INCLUDED</p>
@@ -186,6 +186,7 @@ const About = () => {
                   className='btn btn--bright'
                   onClick={handleClickInterview}
                   text='schedule an interview'
+                  align='flex-start'
                 />
               </Link>
             </div>
@@ -209,11 +210,12 @@ const About = () => {
                 className='btn btn--bright'
                 onClick={handleClickClose}
                 text='Continue Shopping'
+                align='flex-start'
               />
             </div>
           </div>
 
-          <div className='w-full ml-4 md:ml-12'>
+          <div className='w-full ml-0 text-center md-custom:ml-12 md-custom:text-left'>
             <h3 className='mt-20 text-[1.2rem] font-main-light mb-0 lg-custom:mt-0 lg-custom:mb-[0.8em]'>
               Francis Kodama
             </h3>
@@ -224,26 +226,26 @@ const About = () => {
               Ex-Agency Director (100+ Staff)
             </h2>
             <div className='font-main-light'>
-              <p className='text-[0.95rem] my-4 mr-4 max-w-[30ch] md-custom:max-w-[42ch]'>
+              <p className='text-[0.95rem] my-4 mx-auto max-w-[30ch] md-custom:mx-0 md-custom:max-w-[42ch]'>
                 Some leaders learn to code. Some engineers learn to lead. I did
                 both, but leadership was always the foundation. With 20+ years
                 directing enterprise teams and Fortune 500 programs, I bring the
                 rare ability to inspire people, make hard calls, and ship real
                 product.
               </p>
-              <p className='text-[0.95rem] max-w-[30ch] md-custom:max-w-[42ch] mb-8'>
+              <p className='text-[0.95rem] max-w-[30ch] mx-auto md-custom:mx-0 md-custom:max-w-[42ch] mb-8'>
                 The full-stack engineering is the upgrade. The leadership is the
                 engine.
               </p>
             </div>
           </div>
 
-          <div className='flex items-end justify-between ml-4 md:ml-12'>
-            <div className='flex flex-col relative'>
-              <p className='text-[0.7rem] font-main-light mt-8 mb-2'>
+          <div className='flex flex-col items-center ml-0 md-custom:flex-row md-custom:items-end md-custom:justify-between md-custom:ml-12'>
+            <div className='flex flex-col relative items-center md-custom:items-start'>
+              <p className='text-[0.7rem] font-main-light mt-8 mb-2 text-center md-custom:text-left'>
                 Location:
               </p>
-              <form className='flex flex-wrap items-center mb-12 gap-y-2'>
+              <form className='flex flex-wrap items-center justify-center md-custom:justify-start mb-12 gap-y-2'>
                 <div className='flex items-center'>
                   <input
                     onClick={handleClickLocation}
@@ -295,10 +297,9 @@ const About = () => {
               </form>
 
               <Button
-                className='btn btn--dark mb-20 lg-custom:mb-0'
+                className='btn btn--dark mb-20 self-center md-custom:self-start lg-custom:mb-0'
                 onClick={handleClickAddToTeam}
                 text='add to my team'
-                align='flex-start'
               />
 
               <p

@@ -2,7 +2,7 @@
 
 const Button = ({
   text = 'Click',
-  align = 'flex-start',
+  align,
   onClick,
   className = 'btn btn--third-color',
 }: {
@@ -15,7 +15,7 @@ const Button = ({
     <button
       className={className}
       onClick={onClick}
-      style={{ alignSelf: align }}
+      {...(align ? { style: { alignSelf: align } } : {})}
       type='button'
     >
       {text}
