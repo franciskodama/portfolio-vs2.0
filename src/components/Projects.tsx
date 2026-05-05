@@ -253,7 +253,7 @@ const Projects = () => {
       >
         <div className='container mx-auto lg-custom:w-full'>
           <div className='-mt-24'>
-            <div className='flex flex-col items-center gap-12 md-custom:flex-row md-custom:justify-between -rotate-[4.29deg] mt-[18%] mx-4 md-custom:mx-24'>
+            <div className='flex flex-col items-center gap-12 md-custom:flex-row md-custom:justify-between -rotate-[4.29deg] mt-8 md-custom:mt-[18%] mx-4 md-custom:mx-24'>
               <h2 className='text-6xl text-center mt-24 md:-mt-[3.4em] md-custom:text-right w-full md-custom:w-[8ch] md:leading-16 font-main-semibold'>
                 selected projects
               </h2>
@@ -289,7 +289,7 @@ const Projects = () => {
           {/* Container Height */}
           <div
             ref={containerRef}
-            className='relative w-full h-[94vh] md:h-[24vh]'
+            className='relative w-full h-[50vh] md:h-[24vh]'
           >
             {sortedProjects.map((project, index) => (
               <div
