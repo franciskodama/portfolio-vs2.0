@@ -31,12 +31,12 @@ const AboutMe = () => {
 
   return (
     <div className='mx-auto w-full'>
-      <div className='grid grid-cols-[1em_auto_auto_1em] grid-rows-[repeat(6,auto)] w-full md-custom:grid-cols-[1fr_62px_1em_412px_1fr] md-custom:grid-rows-[5em_auto_auto_2em_8em_5em] lg-custom:grid-cols-[2fr_62px_1em_412px_1fr]'>
-        <p className='capitalize col-start-2 row-start-1 text-[0.7rem] font-main-light mt-20 mb-2 text-left md-custom:row-start-2 md-custom:mt-0'>
+      <div className='grid grid-cols-[1em_1fr_1em] grid-rows-[repeat(6,auto)] w-full md-custom:grid-cols-[1fr_62px_1em_412px_1fr] md-custom:grid-rows-[5em_auto_auto_2em_8em_5em] lg-custom:grid-cols-[2fr_62px_1em_412px_1fr]'>
+        <p className='capitalize col-start-2 row-start-1 text-[0.7rem] font-main-light mt-20 mb-2 text-center md-custom:text-left md-custom:row-start-2 md-custom:mt-0'>
           soft skills:
         </p>
 
-        <div className='col-start-2 row-start-2 flex flex-row gap-2 text-center md-custom:row-start-3 md-custom:flex-col md-custom:w-[62px]'>
+        <div className='col-start-2 row-start-2 flex flex-row gap-2 justify-center md-custom:justify-start text-center md-custom:row-start-3 md-custom:flex-col md-custom:w-[62px]'>
           {softSkills.map((skill) => {
             const Icon = skill.icon;
             return (
@@ -55,7 +55,7 @@ const AboutMe = () => {
         </div>
 
         <Image
-          className={`col-start-2 row-start-3 mt-4 w-[22em] z-5 md-custom:col-start-4 md-custom:row-start-3 md-custom:mt-0 md-custom:w-[25.75em] ${
+          className={`col-start-2 row-start-3 mt-4 w-[22em] mx-auto md-custom:mx-0 z-5 md-custom:col-start-4 md-custom:row-start-3 md-custom:mt-0 md-custom:w-[25.75em] ${
             imgActive ? 'animate-image-change' : ''
           }`}
           src={aboutMeData[isImgShown].imgUrl}
@@ -63,7 +63,7 @@ const AboutMe = () => {
         />
 
         <div
-          className={`col-start-2 row-start-5 md-custom:col-start-4 md-custom:row-start-5 ${
+          className={`col-start-2 row-start-5 text-center md-custom:text-left md-custom:col-start-4 md-custom:row-start-5 ${
             imgActive ? 'animate-image-change' : ''
           }`}
         >
