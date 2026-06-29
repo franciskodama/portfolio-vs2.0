@@ -615,12 +615,12 @@ export const jobs = [
   },
   {
     id: 6,
-    title: 'General Director & Co-Founder',
+    title: 'Managing Director & Head of Product (Co-Founder)',
     companies: [
       {
         name: 'Circus Agency',
         periodStart: '2011',
-        periodEnd: '2021',
+        periodEnd: '2022',
         country: '🇧🇷',
       },
     ],
