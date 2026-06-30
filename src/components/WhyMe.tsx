@@ -43,7 +43,7 @@ const WhyMe = () => {
                   <div className='flex flex-col lg-custom:flex-row items-center md-custom:items-end lg-custom:items-center justify-between gap-4'>
                     <div className='flex flex-col lg-custom:flex-row gap-8'>
                       <div
-                        className={`leading-4.5 text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
+                        className={`leading-4.5 md-custom-[100ch] text-[1rem] font-main-semibold capitalize transition-colors duration-300 ${
                           expandedJob === job.id
                             ? 'text-third'
                             : 'text-third/50 group-hover:text-third'
