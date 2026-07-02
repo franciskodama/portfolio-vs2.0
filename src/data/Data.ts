@@ -565,7 +565,7 @@ export const contactData = [
 export const jobs = [
   {
     id: 8,
-    title: 'FinTech Product Architect',
+    title: 'Technical Product Lead',
     companies: [
       {
         name: 'fkodama (Self-Employed)',
