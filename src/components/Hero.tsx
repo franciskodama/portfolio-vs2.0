@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import SquareBracketsImg from '../assets/images/hero/hero_3d_square_brackets.png';
 import CodeBracketsImg from '../assets/images/hero/hero_3d_code_brackets.png';
-import CurlyBracesBiggerImg from '../assets/images/hero/hero_3d_curly_braces2.png';
+import CurlyBracesBiggerImg from '../assets/images/hero/hero_3d_curly_braces2.webp';
 import CurlyBracesImg from '../assets/images/hero/hero_3d_curly_braces.png';
 import Scroll from '../assets/images/ico-scroll.svg';
 
@@ -180,6 +180,7 @@ const Hero = () => {
           <Image
             src={CurlyBracesBiggerImg}
             alt='3D Curly Braces'
+            unoptimized
             className='w-full h-auto drop-shadow-2xl opacity-90 rotate-6'
           />
         </div>
