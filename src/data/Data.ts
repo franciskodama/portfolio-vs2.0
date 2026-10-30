@@ -31,20 +31,21 @@ export const projects = [
         legend: 'Groceries: Smart Pantry & Shopping Tracker',
       },
       {
+        image: require('../assets/images/projects/prj-handy8.webp'),
+        legend: 'Kanban board: Visual Workflow accelerator',
+      },
+      {
+        image: require('../assets/images/projects/prj-handy7.webp'),
+        legend: 'Random Questions: Conversation starters',
+      },
+
+      {
         image: require('../assets/images/projects/prj-handy5.webp'),
         legend: 'Bucket List Manager',
       },
       {
         image: require('../assets/images/projects/prj-handy6.webp'),
         legend: 'Stoic philosophy by challenging life events',
-      },
-      {
-        image: require('../assets/images/projects/prj-handy7.webp'),
-        legend: 'Random Questions: Conversation starters',
-      },
-      {
-        image: require('../assets/images/projects/prj-handy8.webp'),
-        legend: 'Kanban board: Visual Workflow accelerator',
       },
     ],
     backText_titleOneFirstRow: 'the problem',
