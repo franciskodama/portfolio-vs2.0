@@ -28,7 +28,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-handy4.webp'),
-        legend: 'Shortcuts: most used urls',
+        legend: 'Groceries: Smart Pantry & Shopping Tracker',
       },
       {
         image: require('../assets/images/projects/prj-handy5.webp'),
@@ -44,7 +44,7 @@ export const projects = [
       },
       {
         image: require('../assets/images/projects/prj-handy8.webp'),
-        legend: 'Letter Leap: Vocabulary Builder',
+        legend: 'Kanban board: Visual Workflow accelerator',
       },
     ],
     backText_titleOneFirstRow: 'the problem',
