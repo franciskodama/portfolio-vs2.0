@@ -15,6 +15,22 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/for/housesigma',
+        destination: '/for/housesigma/index.html',
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/for/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
