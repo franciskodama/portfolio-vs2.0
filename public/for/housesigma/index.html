@@ -229,6 +229,8 @@ td.num, th.num { text-align: right; }
 .ice tr.pick td { color: var(--fg); font-weight: 700; }
 .ice tr.pick td:first-child::before { content: "→ "; color: var(--accent); }
 .ice td { color: var(--muted-strong); }
+.ice .hidden-idea { filter: blur(5px); user-select: none; -webkit-user-select: none; pointer-events: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .metrics { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); grid-template-columns: 1fr; }
 @media (min-width: 900px) { .metrics { grid-template-columns: 1.3fr 1fr 1fr; } }
@@ -527,22 +529,22 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 <section id="choice">
   <div class="wrap stack-lg">
     <div class="head">
-      <p class="label">Why this bet first · ICE scoring</p>
+      <p class="label">Why this bet first · RICE scoring</p>
       <h2>I looked at four ideas.</h2>
-      <p class="body">Scores are 1 to 10 and reflect my outside-in judgment. Confidence would change quickly with internal data, and that is the point of writing it down.</p>
+      <p class="body">Score = Reach × Impact × Confidence ÷ Effort. Reach is the share of monthly users who would meet the feature, Impact runs from 0.25 to 3, and Effort is rough person-months. All are outside-in estimates: they would change quickly with internal data, and that is the point of writing them down.</p>
     </div>
     <div class="table-wrap">
       <table class="ice">
-        <thead><tr><th>Idea</th><th class="num">Impact</th><th class="num">Confidence</th><th class="num">Ease</th><th class="num">ICE</th></tr></thead>
+        <thead><tr><th>Idea</th><th class="num">Reach</th><th class="num">Impact</th><th class="num">Confidence</th><th class="num">Effort</th><th class="num">RICE</th></tr></thead>
         <tbody>
-          <tr class="pick"><td>Offer Insight: likely sold range, offer simulator, agent hand-off</td><td class="num">9</td><td class="num">7</td><td class="num">6</td><td class="num">7.3</td></tr>
-          <tr><td>Owner "ready to sell" signals with agent pricing review (seller leads)</td><td class="num">8</td><td class="num">6</td><td class="num">6</td><td class="num">6.7</td></tr>
-          <tr><td>Affordability-first search: browse by monthly payment</td><td class="num">5</td><td class="num">6</td><td class="num">8</td><td class="num">6.3</td></tr>
-          <tr><td>Conversational AI search across listings and stats</td><td class="num">6</td><td class="num">5</td><td class="num">5</td><td class="num">5.3</td></tr>
+          <tr class="pick"><td>Offer Insight: likely sold range, offer simulator, agent hand-off</td><td class="num">70%</td><td class="num">2</td><td class="num">70%</td><td class="num">3</td><td class="num">32.7</td></tr>
+          <tr><td><span class="hidden-idea" aria-hidden="true">Lorem ipsum dolor sit amet consectetur</span><span class="sr-only">Idea kept for the conversation</span></td><td class="num">50%</td><td class="num">1</td><td class="num">60%</td><td class="num">2</td><td class="num">15.0</td></tr>
+          <tr><td><span class="hidden-idea" aria-hidden="true">Sed do eiusmod tempor incididunt ut labore et dolore magna</span><span class="sr-only">Idea kept for the conversation</span></td><td class="num">15%</td><td class="num">3</td><td class="num">60%</td><td class="num">4</td><td class="num">6.8</td></tr>
+          <tr><td><span class="hidden-idea" aria-hidden="true">Ut enim ad minim veniam quis nostrud</span><span class="sr-only">Idea kept for the conversation</span></td><td class="num">30%</td><td class="num">1</td><td class="num">50%</td><td class="num">5</td><td class="num">3.0</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="body">The seller idea is a close second, and Offer Insight builds the engine it needs: the same range logic becomes "Pricing Insight" for sellers later, on the listing side where commissions are larger.</p>
+    <p class="body">The other three ideas are blurred on purpose. I'd be glad to walk through them in a conversation.</p>
   </div>
 </section>
 
@@ -581,7 +583,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <div class="wrap stack-lg">
     <p class="label">Looking forward</p>
     <h2 class="display">Let's talk<br>about it.</h2>
-    <p class="lede">I don't just build features. I build business outcomes. I'd love to pressure-test this with real data, starting with the funnel numbers behind that one slider. ;)</p>
+    <p class="lede">I don't just build features. I build business outcomes. I'd love to pressure-test this with real data, starting with the funnel numbers. ;)</p>
     <div class="contact">
       <b>Francis Kodama</b>
       <span>Senior Product Manager (AI-First)</span>
