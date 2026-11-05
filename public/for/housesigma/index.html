@@ -224,21 +224,6 @@ td.num, th.num { text-align: right; }
 .risk .test { border-top: 1px solid var(--line); padding-top: 16px; font-size: 15px; color: var(--muted-strong); }
 .risk .test b { font-weight: 700; color: var(--fg); text-transform: uppercase; font-size: 12px; letter-spacing: .16em; display: block; margin-bottom: 4px; }
 
-/* calculator */
-.calc { display: grid; gap: 48px; grid-template-columns: 1fr; }
-@media (min-width: 900px) { .calc { grid-template-columns: 1.1fr 1fr; gap: 64px; } }
-.calc > * { min-width: 0; }
-.sliders { display: grid; gap: 24px; }
-.slider { display: grid; gap: 6px; }
-.slider-top { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; }
-.slider-top label { color: var(--muted-strong); }
-.slider-top output { font-weight: 700; font-variant-numeric: tabular-nums; }
-.slider small { color: var(--muted); font-size: 12px; }
-.result { display: grid; gap: 24px; align-content: start; padding: 32px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; }
-.result .big { font-size: clamp(40px, 6vw, 64px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
-.result .row { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; font-variant-numeric: tabular-nums; }
-.result .row span { color: var(--muted); }
-
 /* ice + metrics tables */
 .ice td:first-child { white-space: normal; min-width: 220px; }
 .ice tr.pick td { color: var(--fg); font-weight: 700; }
@@ -532,40 +517,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         <span class="q">Viable · does it work for the business?</span>
         <h3>It monetizes trust HouseSigma already earned.</h3>
         <p>Every hand-off is a lead with intent, a specific home and a price. That is worth far more than a generic "contact an agent" form. It also feeds registrations, because the full range requires sign-in.</p>
-        <p class="test"><b>Cheapest test</b>Run the break-even model below with real numbers. Then check agent capacity: can the team answer a hand-off within one hour?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIABILITY CALC -->
-<section id="viability">
-  <div class="wrap stack-lg">
-    <div class="head">
-      <p class="label">Viability · break-even · every input is an assumption</p>
-      <h2>How many deals pay for it?</h2>
-      <p class="body">I don't know HouseSigma's funnel or agent splits, so instead of forecasting revenue, this asks a smaller question: how many extra deals a month would pay for the team that builds and runs Offer Insight? Change the inputs to your real numbers.</p>
-    </div>
-    <div class="calc">
-      <div class="sliders">
-        <p class="label">Cost and value of one deal</p>
-        <div class="slider"><div class="slider-top"><label for="c-team">Team cost per year</label><output id="o-team" for="c-team"></output></div><input type="range" id="c-team" min="300000" max="2000000" step="50000" value="900000"><small>For example a squad of six (PM, designer, three engineers, data scientist), fully loaded</small></div>
-        <div class="slider"><div class="slider-top"><label for="c-price">Average purchase price</label><output id="o-price" for="c-price"></output></div><input type="range" id="c-price" min="400000" max="1500000" step="25000" value="850000"><small>Ontario markets HouseSigma covers</small></div>
-        <div class="slider"><div class="slider-top"><label for="c-comm">Buyer-side commission</label><output id="o-comm" for="c-comm"></output></div><input type="range" id="c-comm" min="1" max="3" step="0.1" value="2"><small>Cooperating commission offered by the listing brokerage</small></div>
-        <div class="slider"><div class="slider-top"><label for="c-share">Brokerage share</label><output id="o-share" for="c-share"></output></div><input type="range" id="c-share" min="5" max="60" step="5" value="25"><small>What HouseSigma keeps after the agent's split</small></div>
-        <p class="label" style="padding-top:8px">Plausibility check</p>
-        <div class="slider"><div class="slider-top"><label for="c-users">Monthly Offer Insight users</label><output id="o-users" for="c-users"></output></div><input type="range" id="c-users" min="10000" max="200000" step="5000" value="50000"><small>People who open the full panel in a month</small></div>
-        <div class="slider"><div class="slider-top"><label for="c-close">Agent review to closed deal</label><output id="o-close" for="c-close"></output></div><input type="range" id="c-close" min="2" max="30" step="1" value="10"><small>Warm leads with a home and a price in mind</small></div>
-      </div>
-      <div class="result" aria-live="polite">
-        <p class="label">Break-even</p>
-        <div class="big" id="r-deals">18</div>
-        <p class="range-sub" id="r-deals-sub">extra deals a month pay for the team</p>
-        <div class="row"><span>HouseSigma revenue per deal</span><b id="r-per">$4,250</b></div>
-        <div class="row"><span>Extra deals needed per year</span><b id="r-year">212</b></div>
-        <div class="row"><span>Agent reviews needed per month</span><b id="r-leads">177</b></div>
-        <div class="row"><span>Share of users who must request one</span><b id="r-req">0.35%</b></div>
-        <p class="fine">Assumptions, not data. Only extra deals count, the ones the A/B test shows would not have happened anyway. Everything above break-even is upside.</p>
+        <p class="test"><b>Cheapest test</b>With the real funnel numbers, work out how many extra deals a month pay for the team. Then check agent capacity: can the team answer a hand-off within one hour?</p>
       </div>
     </div>
   </div>
@@ -848,31 +800,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
       $("next-note").textContent = "Viewing request started. Prototype only: nothing is sent.";
     }
   });
-
-  // viability calculator
-  var ids = ["team", "price", "comm", "share", "users", "close"];
-  function calc() {
-    var t = +$("c-team").value, p = +$("c-price").value, k = +$("c-comm").value, s = +$("c-share").value,
-        u = +$("c-users").value, c = +$("c-close").value;
-    $("o-team").textContent = t >= 1e6 ? "$" + (t / 1e6).toFixed(2).replace(/0$/, "") + "M" : "$" + Math.round(t / 1000) + "K";
-    $("o-price").textContent = fmt(p);
-    $("o-comm").textContent = k.toFixed(1) + "%";
-    $("o-share").textContent = s + "%";
-    $("o-users").textContent = u.toLocaleString("en-CA");
-    $("o-close").textContent = c + "%";
-    var per = p * (k / 100) * (s / 100);
-    var dealsYear = Math.ceil(t / per), dealsMonth = Math.ceil(dealsYear / 12);
-    var leads = Math.ceil(dealsMonth / (c / 100));
-    var req = leads / u * 100;
-    $("r-per").textContent = fmt(per);
-    $("r-year").textContent = dealsYear.toLocaleString("en-CA");
-    $("r-deals").textContent = dealsMonth.toLocaleString("en-CA");
-    $("r-deals-sub").textContent = (dealsMonth === 1 ? "extra deal" : "extra deals") + " a month pay for the team";
-    $("r-leads").textContent = leads.toLocaleString("en-CA");
-    $("r-req").textContent = (req < 1 ? req.toFixed(2) : req.toFixed(1)) + "%";
-  }
-  ids.forEach(function (id) { $("c-" + id).addEventListener("input", calc); });
-  calc();
 
   $("copy").addEventListener("click", function () {
     var b = this, txt = $("email").textContent;
