@@ -13,13 +13,18 @@ const nextConfig: NextConfig = {
         destination: '/?project=:slug',
         permanent: true,
       },
+      {
+        source: '/for/housesigma',
+        destination: '/for/hs',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
     return [
       {
-        source: '/for/housesigma',
-        destination: '/for/housesigma/index.html',
+        source: '/for/hs',
+        destination: '/for/hs/index.html',
       },
     ];
   },
