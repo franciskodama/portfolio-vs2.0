@@ -490,8 +490,7 @@ function select(id) {
   panel.style.setProperty("--c", `var(${L.c})`);
   panel.innerHTML = `
     <div class="meta"><span class="eyebrow" style="color:var(${L.c})">${L.name}</span>
-      <span class="pill">${t.tag === "GTM" ? "in GTM posting" : t.tag === "likely" ? "likely, not in posting" : "idea for a later phase"}</span>
-      <span class="pill ramp" style="--r:var(${r[1]})">${r[0]}</span></div>
+      <span class="pill">${t.tag === "GTM" ? "in GTM posting" : t.tag === "likely" ? "likely, not in posting" : "idea for a later phase"}</span></div>
     <h3 style="font-size:22px">${esc(t.name)}</h3>
     <p>${esc(t.what)}</p>
     <div class="field"><span class="k">My job</span><ul>${t.job.map(j => `<li>${esc(j)}</li>`).join("")}</ul></div>
