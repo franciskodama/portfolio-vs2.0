@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
         source: '/for/hs',
         destination: '/for/hs/index.html',
       },
+      {
+        source: '/for/remitian',
+        destination: '/for/remitian/index.html',
+      },
     ];
   },
   async headers() {
