@@ -496,7 +496,6 @@ function select(id) {
     <p>${esc(t.what)}</p>
     <div class="field"><span class="k">My job</span><ul>${t.job.map(j => `<li>${esc(j)}</li>`).join("")}</ul></div>
     <div class="field"><span class="k">What I bring</span><p>${esc(t.from)}</p></div>
-    <div class="field"><span class="k">Learn first</span><p>${esc(t.first)}</p></div>
     <p class="hint">Click any tool in the map to see its card.</p>`;
 }
 JOURNEY.forEach((s, i) => {
