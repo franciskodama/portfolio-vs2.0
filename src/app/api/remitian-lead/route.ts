@@ -3,6 +3,15 @@ import { Resend } from 'resend';
 
 // Lead form on /for/remitian: notifies Francis so he can send the first look review personally.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Only addresses in REMITIAN_ALLOWED_EMAILS (comma-separated, set in .env and in Vercel) may request the review.
+// Kept out of the repo and out of the page source. If the variable is missing, every request is refused.
+const allowedEmails = () =>
+  new Set(
+    (process.env.REMITIAN_ALLOWED_EMAILS ?? '')
+      .split(',')
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean),
+  );
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -22,6 +31,12 @@ export async function POST(request: Request) {
   const email = typeof body.email === 'string' ? body.email.trim().slice(0, 200) : '';
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json({ message: 'Please enter a valid email.' }, { status: 400 });
+  }
+  if (!allowedEmails().has(email.toLowerCase())) {
+    return NextResponse.json(
+      { message: "This email isn't authorized. If you're on the Remitian team, write to fk@fkodama.com." },
+      { status: 403 },
+    );
   }
   const page = typeof body.page === 'string' ? body.page.slice(0, 300) : '/for/remitian';
 
