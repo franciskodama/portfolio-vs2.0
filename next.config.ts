@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
         source: '/for/remitian',
         destination: '/for/remitian/index.html',
       },
+      {
+        source: '/for/remitian/first-look',
+        destination: '/for/remitian/first-look/index.html',
+      },
     ];
   },
   async headers() {
