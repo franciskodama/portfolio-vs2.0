@@ -46,7 +46,7 @@ h1, h2, h3 { margin: 0; font-weight: 900; text-transform: uppercase; text-wrap: 
 .top nav a:hover { color: var(--red); }
 @media (max-width: 860px) { .top nav { display: none; } }
 
-main { display: flex; flex-direction: column; gap: 112px; padding-block: 72px 96px; }
+main.gutter { display: flex; flex-direction: column; gap: 112px; padding-block: 72px 96px; }
 section { display: flex; flex-direction: column; gap: 32px; scroll-margin-top: 96px; }
 #map { scroll-margin-top: 96px; }
 
@@ -444,36 +444,19 @@ footer .sign { font-size: 12px; text-transform: uppercase; letter-spacing: .25em
   <section id="proof">
     <div class="head">
       <div class="eyebrow"><b>09</b> · The proof</div>
-      <h2>Systems I've built before.</h2>
-      <p>Different industries, same pattern: find what is broken, write the process down, and make it repeatable.</p>
+      <h2>Work I've led before.</h2>
+      <p>20+ years in marketing and New Business, and I build. Different industries, same pattern: find the real problem, build the process around it, and make it repeatable. Questions about my experience? Ask Remi, the chat in the corner: an AI assistant I built with n8n.</p>
     </div>
     <div class="grid cards">
+      <div><h3>Brand and channel growth</h3><span class="k">Peugeot Citroën Brasil · 7 years</span>
+        <p>Led advertising and digital marketing for 11+ product launches, with an R$80 million media and production budget. Guided marketing for the dealer network as it grew from 26 to 90 dealers: local campaigns, materials, database, dealer websites and launch events. Built Citroën's customer relationship website in 2002, on e-CRM and cross-selling.</p>
+        <span class="k r">Result</span><p>Citroën reached #1 in Brazil's MPV category, and was the auto brand that grew the most between 2005 and 2006.</p></div>
       <div><h3>New Business system</h3><span class="k">Rapp Collins (Omnicom) and Circus</span>
-        <p>A repeatable pitch method: a full briefing process, cross-functional brainstorms, discovery, testing our insights internally, and a rehearsal against every question the client could ask. Omnicom's International Director came to Brazil to learn it.</p>
-        <span class="k r">Result</span><p>A 6 out of 10 win rate, sustained at Circus, well above the market average.</p></div>
-      <div><h3>Briefing process</h3><span class="k">Circus</span>
-        <p>As projects grew more complex, teams stopped getting complete briefings. I designed a form for each type of project, shared with the team days before the brainstorm, with questions answered in a revised version, all run on our intranet.</p>
-        <span class="k r">Result</span><p>Information gaps removed before work started.</p></div>
+        <p>A repeatable pitch method: a full briefing process, cross-functional brainstorms, discovery, testing our insights internally, and a rehearsal against every question the client could ask. When Omnicom's International Director visited Brazil, she asked to meet me to understand why Rapp Collins Brazil was winning so many pitches.</p>
+        <span class="k r">Result</span><p>I took the method to Circus, where we sustained a 6 out of 10 RFP win rate, well above the market average.</p></div>
       <div><h3>Agile and product discovery</h3><span class="k">Circus</span>
         <p>I adapted Agile and the product operating model to an agency, adding product discovery and a four-risk check (valuable, usable, feasible, viable) to how we scoped and built.</p>
         <span class="k r">Result</span><p>Time to market 20% faster across new builds, with less rework.</p></div>
-    </div>
-  </section>
-
-  <section id="insights">
-    <div class="head">
-      <div class="eyebrow"><b>10</b> · The insights</div>
-      <h2>Insights to remember.</h2>
-      <p>These are ideas to test, not facts about Remitian.</p>
-    </div>
-    <div class="grid insights">
-      <div class="insight"><h3>Buyers avoid risk</h3><span class="k">Insight</span><p>Many B2B buyers act to avoid pain or risk more than to gain upside.</p><span class="k r">For Remitian</span><p>Lead with risk for firms: late or failed payments, unhappy clients, compliance. Test this framing with sales before building campaigns on it.</p></div>
-      <div class="insight"><h3>Segment early, from our own data</h3><span class="k">Insight</span><p>Segment in the first 30 days: use the data to see what drives revenue and where you already win. Keep it to about three attributes.</p><span class="k r">For Remitian</span><p>Start with current customers in HubSpot: which firms and platforms bring the most TPV? Then find more like them.</p></div>
-      <div class="insight"><h3>Mine support for the why</h3><span class="k">Insight</span><p>An airline cared less about AI answering calls and more about why people called, so fewer would call next week.</p><span class="k r">For Remitian</span><p>Track contacts per 100 payments by reason. Each top reason gets a fix: product, help content, or better expectations set before signup.</p></div>
-      <div class="insight"><h3>One lifecycle</h3><span class="k">Insight</span><p>GTM is every team that touches a customer or makes a dollar. Run it as one mapped journey, not separate departments.</p><span class="k r">For Remitian</span><p>Marketing segments should match sales and support segments, in one HubSpot data model.</p></div>
-      <div class="insight"><h3>Write it down before automating</h3><span class="k">Insight</span><p>Shadow the best person, write every step down, keep a human reviewing, and measure the agent on the same KPIs as the people.</p><span class="k r">For Remitian</span><p>No agent before the manual process is documented. Phase 1 builds that documentation.</p></div>
-      <div class="insight"><h3>Undefined isn't flexible</h3><span class="k">Insight</span><p>Teams often call a vague funnel "flexible". Without written definitions, every dashboard debate turns political. With them, it becomes a data question.</p><span class="k r">For Remitian</span><p>Five audiences and two products: MQL needs a clear definition for each product before any scoring is built.</p></div>
-      <div class="insight"><h3>GTM builders from the GTM side</h3><span class="k">Insight</span><p>An agent is only as good as the person it copies. One modelled on a rep with two years of experience makes calls a veteran wouldn't. Knowing good selling matters as much as code.</p><span class="k r">For me</span><p>20+ years in marketing and New Business, and I build. Both halves matter.</p></div>
     </div>
   </section>
 
@@ -676,5 +659,55 @@ lead.addEventListener("submit", async e => {
 });
 </script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat@1.46.1/dist/style.css">
+<style>
+:root {
+  --chat--color-primary: #ED1C24; --chat--color-primary-shade-50: #C9161D; --chat--color-primary-shade-100: #A81218;
+  --chat--color--primary: #ED1C24; --chat--color--primary-shade-50: #C9161D; --chat--color--primary--shade-100: #A81218;
+  --chat--color-secondary: #1C1C1C; --chat--color-secondary-shade-50: #000000; --chat--color--secondary: #1C1C1C;
+  --chat--color-white: #FFFFFF; --chat--color-light: #F6F6F6;
+  --chat--color-light-shade-50: rgba(28,28,28,.12); --chat--color-light-shade-100: rgba(28,28,28,.24);
+  --chat--color-medium: #EAEAEA; --chat--color-dark: #1C1C1C; --chat--color-disabled: #EAEAEA; --chat--color-typing: #777777;
+  --chat--spacing: 1rem; --chat--border-radius: 4px; --chat--transition-duration: 0.2s;
+  --chat--font-family: "Axiforma", "Montserrat", Helvetica, Arial, sans-serif;
+  --chat--window--width: 380px; --chat--window--height: 560px; --chat--window--bottom: var(--chat--spacing); --chat--window--right: var(--chat--spacing);
+  --chat--window--z-index: 9999; --chat--window--border: 1px solid rgba(28,28,28,.12); --chat--window--border-radius: 4px; --chat--window--margin-bottom: var(--chat--spacing);
+  --chat--header-height: auto; --chat--header--padding: 20px; --chat--header--background: #1C1C1C; --chat--header--color: #FFFFFF;
+  --chat--header--border-top: 3px solid #ED1C24; --chat--header--border-bottom: none; --chat--header--border-left: none; --chat--header--border-right: none;
+  --chat--heading--font-size: 20px; --chat--subtitle--font-size: 13px; --chat--subtitle--line-height: 1.5;
+  --chat--message--font-size: 15px; --chat--message--padding: 12px 14px; --chat--message--border-radius: 2px; --chat--message-line-height: 1.55; --chat--message--margin-bottom: 12px;
+  --chat--message--bot--background: #F6F6F6; --chat--message--bot--color: #1C1C1C; --chat--message--bot--border: none;
+  --chat--message--user--background: #1C1C1C; --chat--message--user--color: #FFFFFF; --chat--message--user--border: none;
+  --chat--message--pre--background: #EAEAEA; --chat--messages-list--padding: var(--chat--spacing);
+  --chat--toggle--size: 56px; --chat--toggle--width: 56px; --chat--toggle--height: 56px; --chat--toggle--border-radius: 4px;
+  --chat--toggle--background: #1C1C1C; --chat--toggle--hover--background: #ED1C24; --chat--toggle--active--background: #A81218; --chat--toggle--color: #FFFFFF;
+  --chat--textarea--height: 52px; --chat--textarea--max-height: 30rem;
+  --chat--input--font-size: 15px; --chat--input--border: 1px solid rgba(28,28,28,.12); --chat--input--border-radius: 2px; --chat--input--padding: 14px;
+  --chat--input--background: #FFFFFF; --chat--input--text-color: #1C1C1C; --chat--input--line-height: 1.45; --chat--input--placeholder--font-size: 15px;
+  --chat--input--border-active: 1px solid #1C1C1C; --chat--input--left--panel--width: 2rem;
+  --chat--button--color: #FFFFFF; --chat--button--background: #1C1C1C; --chat--button--padding: 10px 16px; --chat--button--border-radius: 2px;
+  --chat--button--hover--color: #FFFFFF; --chat--button--hover--background: #ED1C24; --chat--close--button--color-hover: #ED1C24;
+  --chat--input--send--button--background: #FFFFFF; --chat--input--send--button--color: #ED1C24;
+  --chat--input--send--button--background-hover: #F6F6F6; --chat--input--send--button--color-hover: #A81218;
+  --chat--input--file--button--background: #FFFFFF; --chat--input--file--button--color: #1C1C1C;
+  --chat--input--file--button--background-hover: #F6F6F6; --chat--input--file--button--color-hover: #ED1C24;
+  --chat--files-spacing: 0.25rem; --chat--body--background: #FFFFFF; --chat--footer--background: #FFFFFF; --chat--footer--color: #777777;
+}
+.chat-window-wrapper .chat-heading h1 { text-transform: uppercase; font-weight: 900; letter-spacing: .02em; }
+.chat-window-wrapper .chat-layout { background: #FFFFFF; }
+@media (max-width: 520px) { :root { --chat--window--width: calc(100vw - 32px); --chat--window--height: 70vh; } }
+</style>
+<script type="module">
+import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat@1.46.1/dist/chat.bundle.es.js";
+createChat({
+  webhookUrl: "https://fkodama.app.n8n.cloud/webhook/f28d1426-48a5-43e3-bb72-bed3efcf39b5/chat",
+  mode: "window",
+  showWelcomeScreen: false,
+  loadPreviousSession: false,
+  enableStreaming: true,
+  initialMessages: ["Hi there! 👋", "I'm Remi, Francis's AI assistant (and his best friend). He built me with n8n to show what an AI agent can do for Remitian.", "Ask me anything about him: his experience, his work, or how he'd approach this role. How can I help you today?"],
+  i18n: { en: { title: "Ask Remi", subtitle: "Francis's AI assistant, built with n8n.", footer: "", getStarted: "New conversation", inputPlaceholder: "Type your question…", closeButtonTooltip: "Close" } }
+});
+</script>
 </body>
 </html>
