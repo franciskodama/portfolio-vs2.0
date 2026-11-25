@@ -34,7 +34,7 @@ export async function POST(request: Request) {
   }
   if (!allowedEmails().has(email.toLowerCase())) {
     return NextResponse.json(
-      { message: "This email isn't authorized. If you're on the Remitian team, write to fk@fkodama.com." },
+      { message: "This email isn't authorized to request this content." },
       { status: 403 },
     );
   }
