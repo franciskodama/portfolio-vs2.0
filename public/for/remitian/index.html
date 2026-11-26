@@ -379,7 +379,7 @@ footer .sign { font-size: 12px; text-transform: uppercase; letter-spacing: .25em
       <li><b>01 · Release</b><span>Engineering ships something new.</span><em>Input: release notes and a short brief: what changed, for whom, why it matters.</em></li>
       <li><b>02 · Draft</b><span>Claude drafts it in the language of each audience, using the messaging document as context.</span><em>Accounting language for firms, product language for platforms.</em></li>
       <li><b>03 · Review</b><span>Product checks accuracy. I check the message.</span><em>Nothing goes out unreviewed.</em></li>
-      <li><b>04 · Ship</b><span>Changelog, email, LinkedIn, help centre, and a one-pager for sales.</span><em>Sales hears it before customers do.</em></li>
+      <li><b>04 · Ship</b><span>Changelog, email, LinkedIn, help center, and a one-pager for sales.</span><em>Sales hears it before customers do.</em></li>
       <li><b>05 · Learn</b><span>Which audience reacted, and what sales heard back.</span><em>Feeds the monthly message review.</em></li>
     </ol>
 
@@ -521,7 +521,7 @@ const TOOLS = [
     job: ["Keep the existing zaps running", "Move them into n8n over time, so there is one place to look when something breaks"] },
 
   { id: "hubspot", layer: "record", name: "HubSpot", tag: "in use", hub: true,
-    what: "The centre of the stack. Contacts, companies, deals, lifecycle stages, scores, email, forms, workflows and reports.",
+    what: "The center of the stack. Contacts, companies, deals, lifecycle stages, scores, email, forms, workflows and reports.",
     job: ["Own the marketing data model: sources, lifecycle stages, the MQL definition", "Separate the two products and five audiences cleanly", "Build scoring, routing and nurtures"] },
 
   { id: "claude", layer: "ai", name: "Claude & LLMs", tag: "proposed",
@@ -539,7 +539,7 @@ const TOOLS = [
 
   { id: "email", layer: "touch", name: "Email nurtures", tag: "proposed",
     what: "Automated email journeys by audience and stage, sent from HubSpot.",
-    job: ["Design the journeys and the triggers (behaviour, score, stage)", "Separate tracks for platforms, firms and financial institutions"] },
+    job: ["Design the journeys and the triggers (behavior, score, stage)", "Separate tracks for platforms, firms and financial institutions"] },
   { id: "handoff", layer: "touch", name: "Sales handoff", tag: "proposed",
     what: "The moment a lead is ready: an alert to sales with context, and a task in HubSpot.",
     job: ["Agree the rules with sales: when a lead is handed over and how fast they respond", "Slack alert with an AI summary of who the lead is and why now"] },
@@ -575,7 +575,7 @@ const JOURNEY = [
   { t: "She reads the guide and downloads the checklist. The form creates a contact in HubSpot, tagged with its source.", tools: ["web", "hubspot"] },
   { t: "A webhook starts an n8n workflow.", tools: ["api", "n8n"] },
   { t: "Claude researches the firm, classifies fit and audience, and writes a summary back to HubSpot.", tools: ["claude", "mcp", "agents", "hubspot"] },
-  { t: "HubSpot scores the firm on fit plus behaviour: guide reads, the team's LinkedIn posts, event visits.", tools: ["hubspot", "linkedin", "events"] },
+  { t: "HubSpot scores the firm on fit plus behavior: guide reads, the team's LinkedIn posts, event visits.", tools: ["hubspot", "linkedin", "events"] },
   { t: "Below the threshold: the lead enters the firm nurture.", tools: ["email", "claude", "hubspot"] },
   { t: "Above the threshold: it's an MQL. Slack alert to sales with the AI summary and the latest one-pager.", tools: ["handoff", "enable", "slack", "hubspot"] },
   { t: "The firm signs. HubSpot syncs it to ClickUp and onboarding starts.", tools: ["hubspot", "clickup"] },
@@ -679,8 +679,8 @@ lead.addEventListener("submit", async e => {
   --chat--message--bot--background: #F6F6F6; --chat--message--bot--color: #1C1C1C; --chat--message--bot--border: none;
   --chat--message--user--background: #1C1C1C; --chat--message--user--color: #FFFFFF; --chat--message--user--border: none;
   --chat--message--pre--background: #EAEAEA; --chat--messages-list--padding: var(--chat--spacing);
-  --chat--toggle--size: 56px; --chat--toggle--width: 56px; --chat--toggle--height: 56px; --chat--toggle--border-radius: 4px;
-  --chat--toggle--background: #1C1C1C; --chat--toggle--hover--background: #ED1C24; --chat--toggle--active--background: #A81218; --chat--toggle--color: #FFFFFF;
+  --chat--toggle--size: 64px; --chat--toggle--width: 64px; --chat--toggle--height: 64px; --chat--toggle--border-radius: 4px;
+  --chat--toggle--background: #ED1C24; --chat--toggle--hover--background: #C8161D; --chat--toggle--active--background: #A81218; --chat--toggle--color: #FFFFFF;
   --chat--textarea--height: 52px; --chat--textarea--max-height: 30rem;
   --chat--input--font-size: 15px; --chat--input--border: 1px solid rgba(28,28,28,.12); --chat--input--border-radius: 2px; --chat--input--padding: 14px;
   --chat--input--background: #FFFFFF; --chat--input--text-color: #1C1C1C; --chat--input--line-height: 1.45; --chat--input--placeholder--font-size: 15px;
