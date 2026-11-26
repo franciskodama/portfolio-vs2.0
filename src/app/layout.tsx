@@ -5,6 +5,7 @@ import {
   Gloria_Hallelujah,
   Henny_Penny,
 } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const geistSans = Geist({
@@ -56,6 +57,12 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        {/* HubSpot tracking code */}
+        <Script
+          id='hs-script-loader'
+          src='https://js.hs-scripts.com/52214175.js'
+          strategy='afterInteractive'
+        />
       </body>
     </html>
   );
