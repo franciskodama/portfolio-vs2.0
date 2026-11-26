@@ -140,9 +140,9 @@ h3 { font-size: 19px; font-weight: 700; letter-spacing: .04em; line-height: 1.2;
 /* plan */
 .phases { display: flex; flex-direction: column; gap: 56px; }
 .phase { display: flex; flex-direction: column; gap: 20px; }
-.phase-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding-top: 16px; border-top: 2px solid var(--ink); }
-.phase-head .eyebrow { color: var(--red); }
-.phase-head h3 { font-size: clamp(24px, 3vw, 32px); font-weight: 900; letter-spacing: -.01em; }
+.phase-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 32px; border-top: 2px solid var(--ink); }
+.phase-head .eyebrow { color: var(--ink); }
+.phase-head h3 { color: var(--red); font-size: clamp(24px, 3vw, 32px); font-weight: 900; letter-spacing: -.01em; }
 .phase-head p { color: var(--graphite); flex-basis: 100%; }
 .steps { margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .steps b { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
@@ -165,7 +165,9 @@ footer .sign { font-size: 12px; text-transform: uppercase; letter-spacing: .25em
 @media (prefers-reduced-motion: reduce) { .chip, .step { transition: none; } }
 /* added: narrative, messaging cards, lanes */
 .narrative { font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.25; letter-spacing: -.005em; max-width: 34ch; text-transform: none; }
-.narrative-wrap { display: flex; flex-direction: column; gap: 12px; padding: 32px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+.narrative-wrap { display: flex; flex-direction: column; gap: 16px; padding: clamp(28px, 5vw, 48px); background: var(--red); border-radius: 4px; }
+.narrative-wrap .narrative { color: #FFFFFF; }
+.narrative-wrap .eyebrow { color: rgba(255,255,255,.8); }
 .cards { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .cards .k { font-size: 11px; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); }
 .cards .k.r { color: var(--red); }
@@ -444,7 +446,7 @@ footer .sign { font-size: 12px; text-transform: uppercase; letter-spacing: .25em
   <section id="proof">
     <div class="head">
       <div class="eyebrow"><b>09</b> · The proof</div>
-      <h2>Work I've led before.</h2>
+      <h2 style="color: var(--red)">Work I've led before.</h2>
       <p>20+ years in marketing and New Business, and I build. Different industries, same pattern: find the real problem, build the process around it, and make it repeatable. Questions about my experience? Ask Remi, the chat in the corner: an AI assistant I built with n8n.</p>
     </div>
     <div class="grid cards">
@@ -652,7 +654,7 @@ lead.addEventListener("submit", async e => {
       return;
     }
     if (!r.ok) throw new Error();
-    lead.classList.add("done"); leadMsg.textContent = "Thanks. I'll send it today.";
+    lead.classList.add("done"); leadMsg.textContent = "Thanks. I'll send it to you shortly.";
   } catch {
     btn.disabled = false; leadMsg.className = "lead-note err"; leadMsg.textContent = "Your request couldn't be sent right now. Please use the contact details at the bottom of this page, and I'll send it directly.";
   }
