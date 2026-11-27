@@ -5,6 +5,7 @@ import {
   Gloria_Hallelujah,
   Henny_Penny,
 } from 'next/font/google';
+import HubSpotTracking from '@/components/HubSpotTracking';
 import './globals.css';
 
 const geistSans = Geist({
@@ -56,6 +57,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <HubSpotTracking />
       </body>
     </html>
   );
