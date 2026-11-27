@@ -1,23 +1,16 @@
-'use client';
-
-import { useEffect } from 'react';
-
-// Only track the live site, so localhost and Vercel previews stay out of HubSpot.
-const TRACKED_HOSTS = ['fkodama.com', 'www.fkodama.com'];
-const SCRIPT_ID = 'hs-script-loader';
-
+// HubSpot embed code, rendered in the server HTML so HubSpot's validator can find it.
+// Only the Vercel production deployment gets it: VERCEL_ENV is unset on localhost
+// and set to "preview" on preview deployments, so that traffic stays out of HubSpot.
 export default function HubSpotTracking() {
-  useEffect(() => {
-    if (!TRACKED_HOSTS.includes(window.location.hostname)) return;
-    if (document.getElementById(SCRIPT_ID)) return;
+  if (process.env.VERCEL_ENV !== 'production') return null;
 
-    const script = document.createElement('script');
-    script.id = SCRIPT_ID;
-    script.src = 'https://js.hs-scripts.com/52214175.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
-
-  return null;
+  return (
+    <script
+      type='text/javascript'
+      id='hs-script-loader'
+      async
+      defer
+      src='https://js.hs-scripts.com/52214175.js'
+    />
+  );
 }
